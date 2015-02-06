@@ -6,16 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-public class principal : MonoBehaviour {
+public class principal : Classevaisseau
+{
 
-    Classevaisseau joueur;
-    List<projectile> balles;
+    //Classevaisseau joueur;
+    //List<projectile> balles;
 
 	// Use this for initialization
 	void Start () 
     {
-        joueur = new Classevaisseau(10f, 5f, 100);
-        balles = new List<projectile>();
+        //this.Classevaisseau(10f, 5f, 100);
 	}
 	
 	// Update is called once per frame
@@ -26,24 +26,24 @@ public class principal : MonoBehaviour {
     {
         if(Input.GetKey(KeyCode.UpArrow))
         {
-            joueur.haut();
+            this.haut();
         }
         if(Input.GetKey(KeyCode.DownArrow))
         {
-            joueur.bas();
+            this.bas();
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
-            joueur.droite();
+            this.droite();
         }
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            joueur.gauche();
+            this.gauche();
         }
-        if(Input.GetKey(KeyCode.Space))
+        /*if(Input.GetKey(KeyCode.Space))
         {
             balles.Add(joueur.feu());
-        }
+        }*/
 
         //Gérer la mort, les collisions, l'effacement des balles
 	}

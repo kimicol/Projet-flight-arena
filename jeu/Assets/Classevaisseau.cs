@@ -28,11 +28,6 @@ public class Classevaisseau : OV
         }
     }
 
-    public Classevaisseau(float vitesse, float rotation, int vie) : base(vitesse, rotation)
-    {
-        //this.vie = vie;
-    }
-
     //Méthodes
 
     /// <summary>
@@ -43,9 +38,9 @@ public class Classevaisseau : OV
         Destroy(gameObject);
 	}
     
-    public projectile feu()//A COMPLETER
+    /*public projectile feu()//A COMPLETER
     {
         projectile tir = new projectile(50f, 0f, 10);
         return tir;
-    }
+    }*/
 }

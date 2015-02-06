@@ -14,16 +14,6 @@ public class OV : MonoBehaviour
     /// </summary>
     public float vitesse;
 
-    /// <summary>
-    /// Constructeur de la classe OV Objet Volant
-    /// </summary>
-    /// <param name="rotation">vitesse de rotation</param>
-    /// <param name="vitesse">vitesse vers l'avant</param>
-    public OV(float vitesse, float rotation)
-    {
-        this.rotation = rotation;
-        this.vitesse = vitesse;
-    }
 
     /// <summary>
     /// Méthode pour avancer
