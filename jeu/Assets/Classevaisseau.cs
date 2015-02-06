@@ -40,11 +40,12 @@ public class Classevaisseau : OV
     /// </summary>
 	public void destruction()
 	{
-
+        Destroy(gameObject);
 	}
     
     public projectile feu()//A COMPLETER
     {
-        projectile tir = new projectile();
+        projectile tir = new projectile(50f, 0f, 10);
+        return tir;
     }
 }
