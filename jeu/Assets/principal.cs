@@ -51,8 +51,8 @@ public class principal : MonoBehaviour {
     /// <summary>
     /// Ce que fait le joueur à chaque tour
     /// </summary>
-    void saisie()
+    /*void saisie()
     {
 
-    }
+    }*/
 }

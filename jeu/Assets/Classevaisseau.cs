@@ -23,14 +23,14 @@ public class Classevaisseau : OV
             }
             else
             {
-                vie = value;
+                this.vie = value;
             }
         }
     }
 
     public Classevaisseau(float vitesse, float rotation, int vie) : base(vitesse, rotation)
     {
-        this.vie = vie;
+        //this.vie = vie;
     }
 
     //Méthodes
