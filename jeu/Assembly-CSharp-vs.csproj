@@ -46,10 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Classevaisseau.cs" />
-     <Compile Include="Assets\OV.cs" />
-     <Compile Include="Assets\principal.cs" />
-     <Compile Include="Assets\projectile.cs" />
+     <Compile Include="Assets\joueur\controlplayer.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
