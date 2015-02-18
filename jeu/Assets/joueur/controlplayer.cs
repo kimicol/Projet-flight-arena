@@ -13,23 +13,23 @@ public class controlplayer : MonoBehaviour {
     {
 	    if(Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Rotate(Vector3.up * 10f * Time.deltaTime);
+            transform.Rotate(Vector3.right * 50f * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Rotate(Vector3.down * 10f * Time.deltaTime);
+            transform.Rotate(Vector3.left * 50f * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(Vector3.right * 10f * Time.deltaTime);
+            transform.Rotate(Vector3.up * 50f * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(Vector3.left * 10f * Time.deltaTime);
+            transform.Rotate(Vector3.down * 50f * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.Space))
         {
-            transform.Translate(-Vector3.back * Time.deltaTime * 10f);
+            transform.Translate(-Vector3.back * Time.deltaTime * 200f);
         }
 	}
 }
