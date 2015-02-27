@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\joueur\balle.cs" />
      <Compile Include="Assets\joueur\controlplayer.cs" />
      <Compile Include="Assets\joueur\tir.cs" />
+     <Compile Include="Assets\joueur\vie.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
