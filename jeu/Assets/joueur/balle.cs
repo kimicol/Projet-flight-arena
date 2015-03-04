@@ -9,6 +9,7 @@ public class balle : MonoBehaviour {
 	void Start () 
     {
         DestroyObject(gameObject, 2);
+        audio.Play();
 	}
 	
 	// Update is called once per frame
