@@ -4,22 +4,28 @@ using System.Collections;
 public class mainmenu_script : MonoBehaviour 
 {
     private int choix_menu = 1;
-    private int volume = 5;
+    private float volume = 0.5f;
+    public GUISkin skin;
 
 	// Use this for initialization
 	void Start () 
     {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	
+        //GUI.skin = skin;
+        volume = PlayerPrefs.GetFloat("Volume", volume);
+
+        if(PlayerPrefs.HasKey("Volume"))
+        {
+            AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("Volume", volume);
+        }
 	}
 
     void OnGUI()
     {
+        GUI.skin = skin;
         switch(choix_menu)
         {
             case 1:
@@ -31,9 +37,13 @@ public class mainmenu_script : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Le menu principal lorsqu'on arrive sur le jeu>
+    /// Redirige vers jouer, multi, options ou quitter
+    /// </summary>
     void menu_principal()
     {
-        if(GUI.Button(new Rect(Screen.width/2-200, Screen.height/2 - 60, 400, 25), "Un joueur"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 60, 400, 25), "Un joueur"))
         {
             Application.LoadLevel("try");
         }
@@ -56,12 +66,17 @@ public class mainmenu_script : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Le menu des options
+    /// </summary>
     void menu_options()
     {
-        volume = (int)GUI.HorizontalSlider(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 50, 100, 30), (float)volume, 0.0f, 10.0f);
-        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 80, 100, 30), ("Volume : " + volume));
+        //Gestion du son
+        volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 50, 100, 30), volume, 0.0f, 1.0f);
+        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 80, 100, 30), ("Volume : " + (int)(10*volume)));
 
-        Camera.main.audio.volume = volume;
+        AudioListener.volume = volume;
+        PlayerPrefs.SetFloat("Volume", volume);
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2, 400, 25), "Retour"))
         {
