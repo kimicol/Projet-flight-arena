@@ -11,9 +11,9 @@ FBXHeaderExtension:  {
 		Year: 2015
 		Month: 03
 		Day: 09
-		Hour: 11
-		Minute: 30
-		Second: 46
+		Hour: 13
+		Minute: 36
+		Second: 09
 		Millisecond: 0
 	}
 	Creator: "FBX SDK/FBX Plugins build 20070228"
@@ -21,7 +21,7 @@ FBXHeaderExtension:  {
 		FlagPLE: 0
 	}
 }
-CreationTime: "2015-03-09 11:30:46:000"
+CreationTime: "2015-03-09 13:36:09:000"
 Creator: "Blender version 2.69 (sub 0)"
 
 ; Object definitions
@@ -15414,8 +15414,8 @@ Takes:  {
 	Current: "Default Take"
 	Take: "Default Take" {
 		FileName: "Default_Take.tak"
-		LocalTime: 0,479181389250
-		ReferenceTime: 0,479181389250
+		LocalTime: 0,94296739250
+		ReferenceTime: 0,94296739250
 
 		;Models animation
 		;----------------------------------------------------
@@ -15615,7 +15615,7 @@ Version5:  {
 		SnapOnFrames: 0
 		ReferenceTimeIndex: -1
 		TimeLineStartTime: 0
-		TimeLineStopTime: 479181389250
+		TimeLineStopTime: 94296739250
 	}
 	RendererSetting:  {
 		DefaultCamera: "Producer Perspective"

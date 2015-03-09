@@ -11,8 +11,10 @@ ModelImporter:
     400004: //RootNode
     2300000: Cube
     2300002: Cylinder
+    2300004: //RootNode
     3300000: Cube
     3300002: Cylinder
+    3300004: //RootNode
     4300000: Cylinder
     4300002: Cube
     7400000: Default Take
@@ -39,7 +41,7 @@ ModelImporter:
     globalScale: 20
     meshCompression: 0
     addColliders: 0
-    importBlendShapes: 0
+    importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
