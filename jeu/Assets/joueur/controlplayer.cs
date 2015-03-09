@@ -10,6 +10,7 @@ public class controlplayer : MonoBehaviour
     private float r_max = 50f;
     private float rota_hor = 0f;
     private float rota_ver = 0f;
+    private float rota_s = 0f;
     private float r_acceleration = 5f;
 
 	// Use this for initialization
@@ -33,20 +34,33 @@ public class controlplayer : MonoBehaviour
         }
         transform.Rotate(Vector3.right * rota_ver * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.RightArrow) || (!Input.GetKey(KeyCode.LeftArrow) && rota_hor < 0f))
+        if (Input.GetKey(KeyCode.D) || (!Input.GetKey(KeyCode.A) && rota_hor < 0f))
         {
             if(rota_hor < r_max)
                 rota_hor += r_acceleration;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || rota_hor > 0f)
+        else if (Input.GetKey(KeyCode.A) || rota_hor > 0f)
         {
             if(rota_hor > -r_max)
                 rota_hor -= r_acceleration;
         }
         transform.Rotate(Vector3.up * rota_hor * Time.deltaTime);
 
+        //tourner sur soi-meme
+        if (Input.GetKey(KeyCode.LeftArrow) || (!Input.GetKey(KeyCode.RightArrow) && rota_s < 0f))
+        {
+            if (rota_s < r_max)
+                rota_s += r_acceleration;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || rota_s > 0f)
+        {
+            if (rota_s > -r_max)
+                rota_s -= r_acceleration;
+        }
+        transform.Rotate(Vector3.forward * rota_s * Time.deltaTime);
+
         //Déplacement vers l'avant
-        if(Input.GetKey(KeyCode.Space) && vitesse < v_max)
+        if(Input.GetKey(KeyCode.W) && vitesse < v_max)
         {
             vitesse += v_acceleration;
         }

@@ -10,3 +10,14 @@ C:\Users\Arthur\Documents\Epita\Projet\jeu\Temp\bin\Debug\ICSharpCode.NRefactory
 C:\Users\Arthur\Documents\Epita\Projet\jeu\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
 C:\Users\Arthur\Documents\Epita\Projet\jeu\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\Arthur\Documents\Epita\Projet\jeu\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\Temp\bin\Debug\UnityEditor.dll
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\Temp\bin\Debug\UnityEngine.dll
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\Temp\bin\Debug\nunit.framework.dll
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\jeu\obj\Debug\Assembly-CSharp-firstpass.pdb
