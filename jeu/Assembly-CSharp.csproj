@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\joueur\balle.cs" />
      <Compile Include="Assets\joueur\controlplayer.cs" />
+     <Compile Include="Assets\joueur\menu_pause.cs" />
      <Compile Include="Assets\joueur\tir.cs" />
      <Compile Include="Assets\joueur\vie.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
