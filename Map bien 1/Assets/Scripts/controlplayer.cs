@@ -68,6 +68,9 @@ public class controlplayer : MonoBehaviour
         {
             vitesse -= v_acceleration;
         }
+        if (Input.GetKey(KeyCode.O))
+            vitesse -= v_acceleration;
+
         transform.Translate(-Vector3.back * Time.deltaTime * vitesse);
 	}
 
