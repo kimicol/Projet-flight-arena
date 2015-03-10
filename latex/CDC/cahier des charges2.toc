@@ -1,0 +1,26 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Introduction}{2}
+\contentsline {chapter}{\numberline {2}Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}rale du projet}{3}
+\contentsline {section}{\numberline {2.1}Origines}{3}
+\contentsline {section}{\numberline {2.2}Pr\IeC {\'e}sentation g\IeC {\'e}n\IeC {\'e}rale}{3}
+\contentsline {section}{\numberline {2.3}D\IeC {\'e}coupage des t\IeC {\^a}ches}{4}
+\contentsline {paragraph}{Cr\IeC {\'e}ation des niveaux :}{4}
+\contentsline {paragraph}{Gameplay :}{4}
+\contentsline {paragraph}{L'Intelligence Artificielle :}{4}
+\contentsline {paragraph}{Script :}{4}
+\contentsline {paragraph}{Gestion des donn\IeC {\'e}es :}{5}
+\contentsline {paragraph}{Moteur graphique :}{5}
+\contentsline {paragraph}{Moteur physique :}{5}
+\contentsline {paragraph}{R\IeC {\'e}seaux :}{5}
+\contentsline {paragraph}{Son :}{5}
+\contentsline {paragraph}{Site web :}{5}
+\contentsline {paragraph}{Finalisation du projet :}{5}
+\contentsline {chapter}{\numberline {3}L'aspect utilitaire et \IeC {\'e}conomique}{6}
+\contentsline {section}{\numberline {3.1}Logiciels et utilitaires}{6}
+\contentsline {section}{\numberline {3.2}Ordinateurs et outils}{7}
+\contentsline {chapter}{\numberline {4}D\IeC {\'e}roulement du projet et r\IeC {\'e}partition du travail}{8}
+\contentsline {section}{\numberline {4.1}Premi\IeC {\`e}re soutenance}{8}
+\contentsline {section}{\numberline {4.2}Deuxi\IeC {\`e}me soutenance}{9}
+\contentsline {section}{\numberline {4.3}Soutenance finale}{9}
+\contentsline {chapter}{\numberline {5}Objectifs de ce projet}{10}
+\contentsline {chapter}{\numberline {6}Conclusion}{12}
