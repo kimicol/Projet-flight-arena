@@ -74,25 +74,36 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 Pendant cette première période, Arthur a fait tous les scripts en C\# du jeu et quelques modélisations 3D rapides avec blender.
 
 \subsection{Scripts}
-Tous les scripts en C\# du jeu ont été fait par Arthur grâce à des tutoriels sur internet. Il a entré les différentes saisies possibles du joueur, qui provoquent sur le vaisseau des translations avec la fonction $transform.Translate$ lorsque le joueur veut avancer ou des rotations avec la fonction $transform.Rotate$ lorsque le joueur veut tourner. Chacun peut donc aisément piloter le vaisseau pour éviter les obstacles. Il a aussi mis une touche pour tirer. \textit{Unity} crée une instance de la balle qui part droit devant. Elle disparait automatiquement au bout de quelques secondes, le temps d'au moins traverser le terrain, pour éviter d'avoir trop d'objets à la fois, ce qui provoquerait un ralentissement du jeu. \\
+Tous les scripts en C\# du jeu ont été fait par Arthur grâce à des tutoriels sur internet. La fonction $Input.GetKey()$ de \textit{unity} permet de lire tout ce que l'utilisateur entre sur le clavier. Il a donc enregistré les différentes saisies possibles du joueur, qui provoquent sur le vaisseau des translations avec la fonction $transform.Translate$ lorsque le joueur veut avancer ou des rotations avec la fonction $transform.Rotate$ lorsque le joueur veut tourner. Chacun peut donc aisément piloter le vaisseau pour éviter les obstacles.\\
+
+Il a aussi mis une touche pour tirer. Dans ce cas \textit{Unity} crée une instance de la balle (fonction $Instanciate$) qui part droit devant. Elle disparait automatiquement au bout de quelques secondes grâce à la fonction $DestroyObject$, le temps d'au moins traverser le terrain, pour éviter d'avoir trop d'objets à la fois qui partent vers l'infini, ce qui provoquerait un ralentissement du jeu.
+
+La balle contient aussi un trigger qui s'active lors d'une collision. Si le joueur entre en collision avec une balle, alors celle-ci est détruite et le joueur perd de la vie.
 
 La principale difficulté rencontrée fut la gestion de l'inertie lorsque l'objet est touché par le décor. En effet, il peut rapidement partir en vrille et n'est plus maniable. Après des recherches sur internet, il est apparu que le problème venait du rigidbody et c'est la vélocité de celui-ci qu'il faut remettre à zéro à chaque fois.\\ \\
 
- Il a aussi fait les menus, en utilisant les propriétés GUI (Graphical User Interface) de \textit{unity}. Il a pris une police futuriste nommée \textit{airstrike}, et c'est lui qui a choisit la musique \textit{Captain America March} pour le menu qu'il connaissait auparavant puisqu'il l'a joué à la trompette. Mais pour plus de confort, on a mis la version officielle de la musique. Nous aimerions par la suite conserver ce genre de musique pour le jeu, avec des grands orchestres et des cuivres sonnant, comme on peut en avoir dans \textit{Star Wars}.\\
+ Il a aussi fait les menus, en utilisant les propriétés GUI (Graphical User Interface) de \textit{unity}. Il a pris une police avec un effet de science-fiction nommée \textit{airstrike}, et c'est lui qui a choisit la musique \textit{Captain America March} pour le menu. Jouant de la trompette, il l'avait interprété dans un orchestre l'année dernière, mais pour plus de confort, on a mis la version officielle de la musique. Nous aimerions par la suite conserver ce genre de musique pour le jeu, avec des grands orchestres et des cuivres sonnant, comme on peut en avoir dans \textit{Star Wars}. On peut aller dans un menu option qui, pour l'instant, ne permet que de changer le volume, mais ce volume est conservé lorsque l'on redémarre le jeu.
 
-Il n'a pas réussi à intégrer les animations d'explosions faites dans \textit{unity}, car l'exportation depuis \textit{blender} échoue.
+Il a aussi intégré un menu de pause pour pouvoir quitter le jeu.\\
+
+Il n'a pas réussi à intégrer les animations d'explosions faites dans \textit{unity}, car l'exportation depuis \textit{blender} échoue. Il existe pourtant des fonctionnalités sur \textit{blender} pour faire exploser un objet en quelques clics, mais
 
 \subsection{Modélisation 3D}
-Arthur a fait quelques objets rapidement sur blender pour le projet. Il a ainsi créé six vaisseaux et quatre bâtiments rapidement. Ils sont cependant assez laid et ne seront donc utilisé que pour le décor ou en personnage non joué, le vaisseau principal ayant été fait par Vincent.
+Arthur a fait quelques objets rapidement sur blender pour le projet. Il a ainsi créé six vaisseaux et quatre bâtiments rapidement. Ils sont cependant assez laid et ne seront donc utilisé que pour le décor ou en personnage non joué, le vaisseau principal ayant été fait par Vincent.\\
 
-Il a utilisé les même techniques que Vincent pour la modélisation, à savoir l'outil \textit{mirror} pour avoir des vaisseaux symétriques, et  l'UV-mapping pour faire les textures.
+Il a utilisé les même techniques que Vincent pour la modélisation, à savoir l'outil \textit{mirror} pour avoir des vaisseaux symétriques par rapport à un axe, et  l'UV-mapping pour faire les textures à partir du patron de l'objet.
 
-Il a fait ses textures lui-même avec photoshop plutôt que de les prendre en ligne. Elles sont donc par conséquent moins détaillées mais plus personnelles.\\ \\ \\
+Il a fait ses textures lui-même avec photoshop plutôt que de les prendre en ligne. Elles sont donc par conséquent moins détaillées mais plus personnalisées. Grâce à l'outil tampon de ce logiciel, on peut facilement recopier un motif d'un endroit à un autre, ce qui est très pratique pour recopier les vitres des immeubles, plutôt que de faire des copier/coller/déplacer. Il a aussi utilisé des dégradés, qui sont plus esthétiques que le remplissage de surface.\\ \\ \\
 
-\begin{center}
-\includegraphics[height=6cm, width=9cm]{vaisseau arthur.jpg}\\
-\end{center}
+\begin{figure}
+\center
+\includegraphics[height=6cm, width=9cm]{vaisseau_arthur.jpg}
+\caption{L'un des vaisseaux fait par Arthur}
 
+\includegraphics[height=8.5cm, width=8cm]{batiment_arthur.jpg}
+\caption{L'un des immeubles fait par Arthur}
+
+\end{figure}
 
 \chapter{Pour la prochaine soutenance}
 
