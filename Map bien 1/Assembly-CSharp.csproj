@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Mvtvaisseau.cs" />
      <Compile Include="Assets\PlayerMvtTest.cs" />
      <Compile Include="Assets\RoadTool\Scripts\Road.cs" />
      <Compile Include="Assets\Scripts\balle.cs" />

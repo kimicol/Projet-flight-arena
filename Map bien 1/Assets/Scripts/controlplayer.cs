@@ -44,7 +44,7 @@ public class controlplayer : MonoBehaviour
             if(rota_hor > -r_max)
                 rota_hor -= r_acceleration;
         }
-        transform.Rotate(Vector3.up * rota_hor * Time.deltaTime);
+        transform.Rotate(Vector3.forward * rota_hor * Time.deltaTime);
 
         //tourner sur soi-meme
         if (Input.GetKey(KeyCode.LeftArrow) || (!Input.GetKey(KeyCode.RightArrow) && rota_s < 0f))
@@ -57,7 +57,7 @@ public class controlplayer : MonoBehaviour
             if (rota_s > -r_max)
                 rota_s -= r_acceleration;
         }
-        transform.Rotate(Vector3.forward * rota_s * Time.deltaTime);
+        transform.Rotate(Vector3.down * rota_s * Time.deltaTime);
 
         //Déplacement vers l'avant
         if(Input.GetKey(KeyCode.W) && vitesse < v_max)
@@ -71,7 +71,7 @@ public class controlplayer : MonoBehaviour
         if (Input.GetKey(KeyCode.O))
             vitesse -= v_acceleration;
 
-        transform.Translate(-Vector3.back * Time.deltaTime * vitesse);
+        transform.Translate(Vector3.down * Time.deltaTime * vitesse);
 	}
 
     void FixedUpdate()
