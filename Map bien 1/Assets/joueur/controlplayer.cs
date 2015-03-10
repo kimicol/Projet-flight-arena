@@ -3,7 +3,7 @@ using System.Collections;
 
 public class controlplayer : MonoBehaviour 
 {
-    public float v_max = 100f;
+    public float v_max = 75f;
     private float vitesse = 0f;
     private float v_acceleration = 5f;
 
@@ -16,7 +16,7 @@ public class controlplayer : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -70,4 +70,9 @@ public class controlplayer : MonoBehaviour
         }
         transform.Translate(-Vector3.back * Time.deltaTime * vitesse);
 	}
+
+    void FixedUpdate()
+    {
+        rigidbody.velocity = Vector3.zero;
+    }
 }
