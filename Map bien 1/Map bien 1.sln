@@ -5,6 +5,8 @@ Project("{48250CEA-5296-15F1-3546-01D858C480E2}") = "Map bien 1", "Assembly-CSha
 EndProject
 Project("{48250CEA-5296-15F1-3546-01D858C480E2}") = "Map bien 1", "Assembly-CSharp.csproj", "{22D9D85D-FC50-4CAE-FC9E-A4C7663B7FF1}"
 EndProject
+Project("{48250CEA-5296-15F1-3546-01D858C480E2}") = "Map bien 1", "Assembly-CSharp-Editor.csproj", "{86C650FF-2AFD-09B2-BA23-850ADE27EBDA}"
+EndProject
 Project("{48250CEA-5296-15F1-3546-01D858C480E2}") = "Map bien 1", "Assembly-UnityScript-firstpass.unityproj", "{E3F6065F-5D39-91AC-81BD-2808171CA3CE}"
 EndProject
 Global
@@ -21,6 +23,10 @@ Global
 		{22D9D85D-FC50-4CAE-FC9E-A4C7663B7FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22D9D85D-FC50-4CAE-FC9E-A4C7663B7FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22D9D85D-FC50-4CAE-FC9E-A4C7663B7FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C650FF-2AFD-09B2-BA23-850ADE27EBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C650FF-2AFD-09B2-BA23-850ADE27EBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C650FF-2AFD-09B2-BA23-850ADE27EBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C650FF-2AFD-09B2-BA23-850ADE27EBDA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3F6065F-5D39-91AC-81BD-2808171CA3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3F6065F-5D39-91AC-81BD-2808171CA3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3F6065F-5D39-91AC-81BD-2808171CA3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,7 +35,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																					GlobalSection(MonoDevelopProperties) = preSolution
+																																								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
