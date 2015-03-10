@@ -46,42 +46,24 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Done\Done_Scripts\Done_BGScroller.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_DestroyByBoundary.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_DestroyByContact.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_DestroyByTime.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_EvasiveManeuver.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_GameController.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_Mover.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_PlayerController.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_RandomRotator.cs" />
-     <Compile Include="Assets\Done\Done_Scripts\Done_WeaponController.cs" />
      <Compile Include="Assets\PlayerMvtTest.cs" />
-     <Compile Include="Assets\joueur\balle.cs" />
-     <Compile Include="Assets\joueur\controlplayer.cs" />
-     <Compile Include="Assets\joueur\tir.cs" />
-     <Compile Include="Assets\joueur\vie.cs" />
+     <Compile Include="Assets\Scripts\balle.cs" />
+     <Compile Include="Assets\Scripts\controlplayer.cs" />
+     <Compile Include="Assets\Scripts\menuPause.cs" />
+     <Compile Include="Assets\Scripts\tir.cs" />
+     <Compile Include="Assets\Scripts\vie.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
   </ItemGroup>
   <ItemGroup>
