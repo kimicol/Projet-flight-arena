@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  10 MAR 2015 13:01
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  10 MAR 2015 13:57
 entering extended mode
 **rendu.tex
 
@@ -557,34 +557,47 @@ Partie 2.
 
 ]
 Partie 3.
+[4
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
+]
+
+LaTeX Warning: File `vaisseau arthur.jpg' not found on input line 86.
+
+<vaisseau arthur.jpg, id=25, 1093.08376pt x 705.63625pt>
+File: vaisseau arthur.jpg Graphic file (type jpg)
+
+<use vaisseau arthur.jpg> [5 <C:/Users/epita/Documents/Projet-flight-arena/Proj
+et-flight-arena/latex/Rendu soutenance 1/vaisseau arthur.jpg>]
+Partie 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
 
  []
 
-[4
+[6
 
 ]
 ("C:\Users\epita\Documents\Projet-flight-arena\Projet-flight-arena\latex\Rendu 
 soutenance 1\rendu.aux") ) 
 Here is how much of TeX's memory you used:
- 3304 strings out of 494053
- 41224 string characters out of 3148603
+ 3312 strings out of 494053
+ 41368 string characters out of 3148603
  94504 words of memory out of 3000000
- 6514 multiletter control sequences out of 15000+200000
- 65412 words of font info for 65 fonts, out of 3000000 for 9000
+ 6520 multiletter control sequences out of 15000+200000
+ 72673 words of font info for 67 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,6n,43p,432b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,10n,43p,584b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec
 .enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb>
-Output written on rendu.pdf (5 pages, 175102 bytes).
+iles/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/lm/lmri10.pfb>
+Output written on rendu.pdf (7 pages, 288887 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
+ 60 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
