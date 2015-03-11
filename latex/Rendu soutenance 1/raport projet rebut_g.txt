@@ -1,0 +1,22 @@
+é ê à è â
+Guillaume Rebut
+
+|Gameplay|
+
+Notre jeu est un shooter multijoueur o(u`) le joueur est aux commandes d`un vaisseau et combat d`autres vaisseaux sur des petites arènes. Un jeu de bonne qualité se doit d`être facile à prendre en main mais difficile à maitriser. Pour répondre à cette exigence, nous avons decidé de créer les mouvements des vaisseaux en se basant sur les avions de chasses. Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l`axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l`axe vertical. Les vitesses de rotations s`inspirent aussi des valeurs des avions: le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet (les valeurs finalles ne sont pas encore déterminées). Nous avons aussi choisis de prendre ces valeurs pour des raisons de gameplay. En effet, il est plus facile de tourner avec le lacet plutot que d`utiliser la combinaison tangage+roulis. Il est donc logique de rendre cette dernière manoeuvre plus rapide en éxecution pour récompenser les joueurs les plus talentueux. Nous avons aussi placé la caméra de manière à inciter le joueur à utiliser cette derniere manoeuvre: le vaisseaux n`est pas représenté au milieu de l`écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l`inertie et ne peut pas reculer.
+Le vaisseau est entièrement controlable au clavier. Les touches directionelles représentent un joystick d`avion et permettent le tangage (fléche du haut pour piquer et fléche du bas pour "monter") et le roulis (fléche gauche pour une rotation anti-horaire et fléche droite pour une rotation horaire). La touche W permet l`accélération et les touches A et D permettent de tourner respectivement à gauche et à droite grâce au lacet.
+Les décors occuppent une place importante dans le gameplay. Notre niveau contient des buildings de tailles importantes par rapport au vaisseau qui devra les éviter, au risque d`exploser, ce qui augmente la difficulté des manoeuvres. Le placement des différents buildings est fait de sorte à ce qu'ils ne soient pas trop près pour éviter de rentrer dans un building directement après avoir contourné un autrev.
+Les buildings présentent aussi un aspect défensif important: lorsqu`un vaisseau chasse un autre vaisseau, ce dernier peut s`échapper en se faufilant entre les buildings, en manoeuvrant dans le parking ou en se cachant. 
+[DEJA COPIE]
+
+Certains buildings présentent des particularitées dans leur forme qui influencent le gameplay: 
+
+[Photo du parking] Ce parking propose des entrées sur chaque versant, des piliers, deux étages, un sous-sol et des ouvertures permettant le passage d'un étage à l'autre. Le parking demande, de par son architecture, une bonne maitrise du mouvement du vaisseau et permet au joueur habile de semer son adversaire qui ne pourra le suivre.
+
+[Photo de la triplette] Ce batiment forcera le joueur à choisir une des deux directions et peut donc permettre d'échapper à un prédateur.
+
+
+|Creation de la carte|
+
+Les différentes versions de la carte ont été crées avec unity. La première version utilisait uniquement le créateur de terrain offert par unity ainsi que l'apport d'assets. Cette méthode fut rapidement abandonner pour plusieurs raisons. Le créateur de terrain de unity ne propose pas de délimitation spatiale, ce qui permet au vaisseau de sortir du niveau et de se balader dans le vide. L'import d'assets créé une différence de qualité entre les différents composants de la carte, ce qui est dérangeant. Les vaisseaux importées ont des formes trop complexes, ce qui veut dire une boite de collision très complexe ce qui créé des bug de collisions.
+Cette version de la carte à été en utilisant 
