@@ -1,4 +1,4 @@
-é ê à è â
+é ê à è â où
 Guillaume Rebut
 
 |Gameplay|
@@ -19,4 +19,9 @@ Certains buildings présentent des particularitées dans leur forme qui influencen
 |Creation de la carte|
 
 Les différentes versions de la carte ont été crées avec unity. La première version utilisait uniquement le créateur de terrain offert par unity ainsi que l'apport d'assets. Cette méthode fut rapidement abandonner pour plusieurs raisons. Le créateur de terrain de unity ne propose pas de délimitation spatiale, ce qui permet au vaisseau de sortir du niveau et de se balader dans le vide. L'import d'assets créé une différence de qualité entre les différents composants de la carte, ce qui est dérangeant. Les vaisseaux importées ont des formes trop complexes, ce qui veut dire une boite de collision très complexe ce qui créé des bug de collisions.
-Cette version de la carte à été en utilisant 
+Cette version de la carte à été en utilisant six plans pour former un cube. Chaque plan contient un mesh collider avec l'option convex car sans cette option, le vaisseau peut traverser les plans si il touche la ligne de contact entre deux plans. De plus, utiliser un mesh collider sur le sol et non un terrain collider corrige certains bugs de collisions, notamment un problème où le vaisseau passe à travers le sol.
+Les batiments, créés par Arhur et Vincent, ont d'abord été implémenté en utilisant des box collider. Ceci présente un inconvénient majeur: le cube de collision ne correspondait pas à certain batiments complexes. La solution fut de créer un mesh collider pour chacun des buildings avec l'option convex. Cette solution ne fonctionne cependant pas pour le parking. En effet, le mesh collider créé une boite de collision entre tous les coins de l'objet, ce qui empêche les vaisseaux de rentrer dedans. On a donc créé de nombreuses box collider pour résoudre ce cas.
+
+|L'aspect visuel de la carte|
+
+Le ciel à été créé en utilisant l'asset skybox de unity. La lumière est gérer avec un directional light créé par l'asset de base de unity
