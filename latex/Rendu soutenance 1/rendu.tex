@@ -15,13 +15,13 @@
 \usepackage{graphicx} %insertion d'images
 \usepackage{fancyhdr} %en-tete et pied de page
 
-\title{\bsc{Rapport de la première soutenance}\\Projet flight arena}
+\title{\bsc{cahier des charges}\\Projet flight arena}
 \author{mr cube :\\
 Vincent \bsc{Rospini-Clerici},\\
 Guillaume \bsc{Rebut}\\
 %Nikolas \bsc{Miletic}\\
 chef de projet : Arthur \bsc{Remaud}}
-\date{12 mars 2015}
+\date{16 janvier 2015}
 
 \pagestyle{fancy}
 \fancyhead{}
@@ -55,11 +55,9 @@ Les retards que nous avons par rapport aux prévisions du cahier des charges son
 \section{Retard}
 
 \paragraph{Son :}
-Nous n'avons que très peu de fond sonore pour l'instant. Nous avons actuellement pris la musique du menu principal du jeu sur internet au lieu de la faire par nos propres moyens : il s'agit de \textit{Captain America March}. Nous ne ferons probablement pas la musique du jeu, car cela nous prendrait trop de temps.
+Nous avons pris la musique du menu principal du jeu sur internet au lieu de la faire par nos propres moyens : il s'agit de \textit{Captain America March}. Nous ne ferons pas de toute manière la musique du jeu, car cela nous prendrait trop de temps.
 
- Par contre, un ami de Vincent qui est en étude de musicologie a accepté de faire des musiques pour le jeu sur un thème symphonique, comme les musiques de Star Wars, et électroniques.\\
-
- Pour le son des tirs, nous avons pris un bruitage du jeu Pinball sur Windows XP qui ressemble à un son de laser. Nous rajouterons des bruitages lors du crash du vaisseau quand celui-ci sera implémenté et le bruit des réacteurs du vaisseau.
+ Pour le son des tirs, nous avons pris un bruitage du jeu Pinball sur Windows XP qui ressemble à un son de laser.
 
 \paragraph{Gestion des données :}
 Il n'y pas pour l'instant de gestion des données, ou du moins pas visible pour le joueur. En effet, il n'y a pas de sauvegardes dans le jeu ou de munitions, et la vie du joueur ne s'affiche pas à l'écran. Le menu option ne comporte pour l'instant que la modification du volume du jeu, qui est cependant conservée même après avoir fermé le jeu.
@@ -67,42 +65,17 @@ Il n'y pas pour l'instant de gestion des données, ou du moins pas visible pour 
 \section{Avance}
 
 \paragraph{Gameplay :}
-Le gameplay est plus avancé que ce que nous espérions. Nous avons déjà un vaisseau opérationnel avec des contrôles qui fonctionnent assez bien. Nous avons modélisé plusieurs bâtiments qui offrent un environnement agréable et permet déjà de s'amuser à piloter dans le décor sans trop de difficultés. On peut aussi tirer dans le jeu avec la touche \textit{espace}. Le jeu est donc déjà jouable, même s'il n'y a pas d'ennemis, car la prise en main du vaisseau est déjà un défi en soi.
-
-On a donc toutes les bases d'un gameplay de jeu de vaisseau : un vaisseau que l'on peut piloter, une carte de jeu avec des bâtiments qui nous obligent à zigzaguer pour les éviter, et les tirs pour tuer le joueur adverse. Il ne manque plus que la mort et les ennemis pour avoir l'intégral du gameplay de notre jeu final, ce qui sera fait pour les soutenances à venir.
+Le gameplay est plus avancé que ce que nous espérions. Nous avons déjà un vaisseau opérationnel avec des contrôles qui fonctionnent assez bien. Nous avons modélisé plusieurs bâtiments qui offrent un environnement agréable et permet déjà de s'amuser à piloter dans le décor sans trop de difficultés.
 
 \paragraph{Script :}
-Nous sommes en avance sur le script de base du jeu. Unity contient énormément de fonctions prédéfinies qui aident grandement à générer rapidement du code en C\#. Les contrôles se font simplement par des fonctions qui déplacent ou tourne le vaisseau de lui-même, et les balles tirés sont instanciées simplement en définissant le point de départ de l'apparition puis en les déplaçant droit devant elles.
-
- Nous n'avons pas eu besoin de faire de script pour la caméra : en la reliant au vaisseau dans Unity, elle suit le automatiquement en fonction de ses déplacement. Nous avons fait de même pour le point de départ des balles.
+Nous sommes en avance sur le script du jeu. Unity contient énormément de fonctions prédéfinies qui aident grandement à générer rapidement du code en C\#. Nous avons déjà toutes les fonctions pour contrôler le vaisseau du joueur et gérer les tirs et les dégâts causés par ceux-ci.
 
  Nous avons aussi bien avancé les menus, que ce soit le menu principal du jeu avec les options, ou le menu de pause dans le niveau que nous avons créé.
-
-\paragraph{Moteur physique :}
-La physique du jeu est quasiment terminée. En effet Unity permet de faire la physique du jeu et les collisions très facilement, en appliquant des collider directement sur les objets qui en prennent la forme. Les vaisseaux ont donc déjà leurs propriétés physique et entrent en collision avec les bâtiments.
-
- Les bords du niveau sont aussi faits, si bien que si le joueur tente de trop s'éloigner du niveau, il rencontre un mur invisible qui l'empêche d'avancer plus loin. Il ne peut donc pas faire planter le jeu en allant trop loin. 
-
-Le nombre de balles est aussi gérer, car elles s'autodétruisent au bout de quelques secondes. Il n'y a donc pas de saturation de mémoire parce qu'il y aurait trop d'objets.
 
 \chapter{Travail par membre}
 Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait pendant cette première période, avec leurs difficultés rencontrées et les techniques utilisées.
 
 \section{Guillaume Rebut}
-
-Notre jeu est un shooter multijoueur où le joueur est aux commandes d'un vaisseau et combat d'autres vaisseaux sur des petites arènes. Un jeu de bonne qualité se doit d'être facile à prendre en main mais difficile à maitriser. Pour répondre à cette exigence, nous avons décidé de créer les mouvements des vaisseaux en se basant sur les avions de chasses.\\
-
- Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent aussi des valeurs des avions: le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet (les valeurs finales ne sont pas encore déterminées).
-
- Nous avons aussi choisi de prendre ces valeurs pour des raisons de gameplay. En effet, il est plus facile de tourner avec le lacet plutôt que d'utiliser la combinaison tangage plus roulis. Il est donc logique de rendre cette dernière manœuvre plus rapide en exécution pour récompenser les joueurs les plus talentueux.
-
- Nous avons aussi placé la caméra de manière à inciter le joueur à utiliser cette dernière manœuvre : le vaisseaux n'est pas représenté au milieu de l'écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l'inertie et ne peut pas reculer.\\
-
-Le vaisseau est entièrement contrôlable au clavier. Les touches directionnelles représentent un joystick d'avion et permettent le tangage (flèche du haut pour piquer et flèche du bas pour "monter") et le roulis (flèche gauche pour une rotation anti-horaire et flèche droite pour une rotation horaire). La touche W permet l'accélération et les touches A et D permettent de tourner respectivement à gauche et à droite grâce au lacet.\\
-
-Les décors occupent une place importante dans le gameplay. Notre niveau contient des buildings de tailles importantes par rapport au vaisseau qui devra les éviter, au risque d'exploser, ce qui augmente la difficulté des manœuvres.
-
-Les buildings présentent aussi un aspect défensif important: lorsqu'un vaisseau chasse un autre vaisseau, ce dernier peut s'échapper en se faufilant entre les buildings, en manœuvrant dans le parking ou en se cachant. 
 
 \section{Vincent Rospini-Clerici}
 
@@ -113,7 +86,7 @@ Après le visionnage de différents tutoriels Blender sur la modélisation d'obj
 Il a aussi utilisé le modifier \textit{mirror} qui est très important. Il permet de créer une image reproduite de l’objet créé par Rapport à un axe. Ce qui permet au vaisseau d'être parfaitement symétrique.\\
 
 Vincent a également utilisé le modifier \textit{subdivision surface} pour créer des surfaces de subdivision, c’est-à-dire découper les faces de l’objet en plusieurs afin de le lisser. Ce modifier appliqué sur l’ensemble du vaisseau lui donne cet aspect rond et c’était exactement ce qu’il fallait pour coller aux graphismes du jeu.
-Une fois la modélisation terminée, il a fallu également texturer toutes les faces du vaisseau afin d'avoir un beau rendu dans le jeu.\\
+Une fois la modélisation terminée, il a fallu également texturer toutes les faces du vaisseau afin d'avoir un beau rendu dans le jeu. \\
 
 Pour se faire, il a fallu se servir de l'outil \textit{UV Mapping} qu'offre Blender. Il s'agit de sélectionner toutes les arrêtes du vaisseau et de les déplier sur un plan en deux dimensions. Le logiciel Photoshop permet ensuite de remplir les différentes faces avec les couleurs et textures voulues. Le vaisseau a pour l'instant été texturé entièrement en rouge et noir avec des dégradés de couleur. Mais, des différentes versions de textures de ce vaisseau seront peut-être ajoutées pour permettre au joueur de choisir la couleur de son vaisseau.\\
 
@@ -124,7 +97,7 @@ Les vaisseaux suivants seront sûrement réalisés avec ces mêmes procédés.
 \includegraphics[height=4.5cm, width=15cm]{vaisseau_vincent.jpg}
 \caption{Le vaisseau principal fait par Vincent}
 \end{figure}
-
+  
 \subsection{Modélisation des bâtiments}
 
 Vincent a créé sept bâtiments différents et entièrement texturés pour les besoins de la première carte. Ils ont tous des formes et des hauteurs différentes car ils ont permis de tester comment Unity gérait les collisions entre le vaisseau et les objets.\\
