@@ -51,10 +51,9 @@
      <Compile Include="Assets\RoadTool\Scripts\Road.cs" />
      <Compile Include="Assets\Scripts\balle.cs" />
      <Compile Include="Assets\Scripts\controlplayer.cs" />
-     <Compile Include="Assets\Scripts\menu_pause.cs" />
+     <Compile Include="Assets\Scripts\menuPause.cs" />
      <Compile Include="Assets\Scripts\tir.cs" />
      <Compile Include="Assets\Scripts\vie.cs" />
-     <Compile Include="Assets\menus\decor_menu.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
@@ -71,7 +70,7 @@
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>F:/epita/Projet-flight-arena/La bonne map/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>G:/LE FICHIER QUON OUVRE PAS 11_03 midi/Projet-flight-arena/La bonne map/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
