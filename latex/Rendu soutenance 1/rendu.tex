@@ -53,10 +53,10 @@ Le retard que nous avons par rapport aux prévisions du cahier des charges sont 
 \section{Retards}
 
 \paragraph{Son :}
-Nous avons pris la musique du menu sur internet au lieu de la faire par nos propres moyens : il s'agit de Captain America March. Pour le son des tirs, nous avons pris un bruitage du jeu Pinball sur Windows XP.
+Nous avons pris la musique du menu sur internet au lieu de la faire par nos propres moyens : il s'agit de Captain America March. Nous ne ferons de toute manière pas la musique du jeu, car cela nous prendrait trop de temps. Pour le son des tirs, nous avons pris un bruitage du jeu Pinball sur Windows XP qui ressemble à un son de laser.
 
 \paragraph{Gestion des données :}
-Il n'y pas pour l'instant de gestion des données. Il n'y a pas de sauvegardes ou de munitions, et la vie ne s'affiche pas à l'écran. Le menu option ne comporte que la modification du volume du jeu.
+Il n'y pas pour l'instant de gestion des données. En effet, il n'y a pas de sauvegardes dans le jeu ou de munitions, et la vie du joueur ne s'affiche pas à l'écran. Le menu option ne comporte pour l'instant que la modification du volume du jeu, qui est cependant conservée même après avoir fermé le jeu.
 
 \section{Avance}
 
@@ -74,11 +74,11 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 Pendant cette première période, Arthur a fait tous les scripts en C\# du jeu et quelques modélisations 3D rapides avec blender.
 
 \subsection{Scripts}
-Tous les scripts en C\# du jeu ont été fait par Arthur grâce à des tutoriels sur internet. La fonction $Input.GetKey()$ de \textit{unity} permet de lire tout ce que l'utilisateur entre sur le clavier. Il a donc enregistré les différentes saisies possibles du joueur, qui provoquent sur le vaisseau des translations avec la fonction $transform.Translate$ lorsque le joueur veut avancer ou des rotations avec la fonction $transform.Rotate$ lorsque le joueur veut tourner. Chacun peut donc aisément piloter le vaisseau pour éviter les obstacles.\\
+Tous les scripts en C\# du jeu ont été fait par Arthur grâce à des tutoriels sur internet. La fonction $Input.GetKey()$ de \textit{unity} permet de lire tout ce que l'utilisateur entre sur le clavier. Il a donc enregistré les différentes saisies possibles du joueur, qui provoquent sur le vaisseau des translations avec la fonction $transform.Translate()$ lorsque le joueur veut avancer ou des rotations avec la fonction $transform.Rotate()$ lorsque le joueur veut tourner. Chacun peut donc aisément piloter le vaisseau pour éviter les obstacles. L'inertie du vaisseau est géré par une variable de déplacement qui s'augmente à force d'appuyer sur la touche d'accélération, et diminue dans le cas contraire.\\
 
-Il a aussi mis une touche pour tirer. Dans ce cas \textit{Unity} crée une instance de la balle (fonction $Instanciate$) qui part droit devant. Elle disparait automatiquement au bout de quelques secondes grâce à la fonction $DestroyObject$, le temps d'au moins traverser le terrain, pour éviter d'avoir trop d'objets à la fois qui partent vers l'infini, ce qui provoquerait un ralentissement du jeu.
+Il a aussi mis une touche pour tirer avec le vaisseau. Dans ce cas \textit{Unity} crée une instance de la balle (fonction $Instanciate()$) qui part droit devant. Elle disparait automatiquement au bout de quelques secondes grâce à la fonction $DestroyObject()$, le temps d'au moins traverser le terrain, pour éviter d'avoir trop d'objets à la fois qui partent vers l'infini, ce qui provoquerait un ralentissement du jeu.
 
-La balle contient aussi un trigger qui s'active lors d'une collision. Si le joueur entre en collision avec une balle, alors celle-ci est détruite et le joueur perd de la vie.
+La balle contient aussi un trigger qui s'active lors d'une collision. Si le joueur entre en collision avec une balle, alors celle-ci est détruite et le joueur perd de la vie. Lorsque le joueur n'a plus de vie, le vaisseau est détruit. Pour l'instant il ne fait que disparaître mais par la suite, il y aura une animation de mort.
 
 La principale difficulté rencontrée fut la gestion de l'inertie lorsque l'objet est touché par le décor. En effet, il peut rapidement partir en vrille et n'est plus maniable. Après des recherches sur internet, il est apparu que le problème venait du rigidbody et c'est la vélocité de celui-ci qu'il faut remettre à zéro à chaque fois.\\ \\
 
@@ -89,11 +89,11 @@ Il a aussi intégré un menu de pause pour pouvoir quitter le jeu.\\
 Il n'a pas réussi à intégrer les animations d'explosions faites dans \textit{unity}, car l'exportation depuis \textit{blender} échoue. Il existe pourtant des fonctionnalités sur \textit{blender} pour faire exploser un objet en quelques clics, mais
 
 \subsection{Modélisation 3D}
-Arthur a fait quelques objets rapidement sur blender pour le projet. Il a ainsi créé six vaisseaux et quatre bâtiments rapidement. Ils sont cependant assez laid et ne seront donc utilisé que pour le décor ou en personnage non joué, le vaisseau principal ayant été fait par Vincent.\\
+Arthur a fait quelques objets rapidement sur blender pour le projet. Il a ainsi créé six vaisseaux et quatre bâtiments rapidement. Ils sont cependant assez laids car réalisés rapidement pour pouvoir faire les essais de physiques rapidement et ne seront donc utilisé que pour le décor ou en personnage non joué. Le vaisseau principal est celui fait par Vincent.\\
 
 Il a utilisé les même techniques que Vincent pour la modélisation, à savoir l'outil \textit{mirror} pour avoir des vaisseaux symétriques par rapport à un axe, et  l'UV-mapping pour faire les textures à partir du patron de l'objet.
 
-Il a fait ses textures lui-même avec photoshop plutôt que de les prendre en ligne. Elles sont donc par conséquent moins détaillées mais plus personnalisées. Grâce à l'outil tampon de ce logiciel, on peut facilement recopier un motif d'un endroit à un autre, ce qui est très pratique pour recopier les vitres des immeubles, plutôt que de faire des copier/coller/déplacer. Il a aussi utilisé des dégradés, qui sont plus esthétiques que le remplissage de surface.\\ \\ \\
+Il a fait ses textures lui-même avec photoshop plutôt que de les prendre en ligne. Elles sont donc par conséquent moins détaillées mais plus personnalisées. Grâce à l'outil tampon de ce logiciel, on peut facilement recopier un motif de l'image d'un endroit à un autre, ce qui est très pratique pour recopier les vitres des immeubles, plutôt que de faire des copier/coller/déplacer. Il suffit juste de sélectionner le point de départ du recopiage de motif et de colorier la zone voulue. Il a aussi utilisé des dégradés sur une surface délimitée, qui sont plus esthétiques que le remplissage de surface. Pour prendre une surface précise avec photoshop, on utilise l'outil baguette magique qui sélectionne une zone par sa couleur, comme le fait le pot de peinture de paint mais juste pour sélectionner. On peut après faire des modifications uniquement dans cette zone, ce qui est très utile avec l'UV-mapping qui délimite les zone à dessiner pour les textures.\\
 
 \begin{figure}
 \center
