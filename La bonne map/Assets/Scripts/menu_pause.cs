@@ -6,6 +6,11 @@ public class menu_pause : MonoBehaviour {
     bool paused = false;
     public GUISkin skin;
 
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))

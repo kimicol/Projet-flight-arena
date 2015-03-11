@@ -26,7 +26,7 @@ public class mainmenu_script : MonoBehaviour
     void OnGUI()
     {
         GUI.skin = skin;
-        GUI.TextArea(new Rect(Screen.width / 4, Screen.height / 5, Screen.width*3/4, Screen.height / 5), "Flight Arena");
+        GUI.TextArea(new Rect(Screen.width / 3, Screen.height / 5, Screen.width*3/4, Screen.height / 5), "Flight Arena");
         switch(choix_menu)
         {
             case 1:
