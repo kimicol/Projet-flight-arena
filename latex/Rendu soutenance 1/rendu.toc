@@ -13,13 +13,16 @@
 \contentsline {paragraph}{Moteur physique :}{5}
 \contentsline {chapter}{\numberline {3}Travail par membre}{7}
 \contentsline {section}{\numberline {3.1}Guillaume Rebut}{7}
-\contentsline {section}{\numberline {3.2}Vincent Rospini-Clerici}{8}
-\contentsline {subsection}{\numberline {3.2.1}Mod\IeC {\'e}lisation du vaisseau}{8}
-\contentsline {subsection}{\numberline {3.2.2}Mod\IeC {\'e}lisation des b\IeC {\^a}timents}{9}
-\contentsline {subsection}{\numberline {3.2.3}Diff\IeC {\'e}rents probl\IeC {\`e}mes rencontr\IeC {\'e}s}{9}
-\contentsline {subsection}{\numberline {3.2.4}Ce que Vincent doit faire pour la seconde soutenance}{10}
-\contentsline {section}{\numberline {3.3}Arthur Remaud}{10}
-\contentsline {subsection}{\numberline {3.3.1}Scripts}{10}
-\contentsline {subsection}{\numberline {3.3.2}Mod\IeC {\'e}lisation 3D}{11}
-\contentsline {subsection}{\numberline {3.3.3}Ce qu'Arthur doit faire pour la prochaine soutenance}{12}
-\contentsline {chapter}{\numberline {4}Pour la prochaine soutenance}{14}
+\contentsline {subsection}{\numberline {3.1.1}Gameplay}{7}
+\contentsline {subsection}{\numberline {3.1.2}Cr\IeC {\'e}ation de la carte}{8}
+\contentsline {subsection}{\numberline {3.1.3}L'aspect visuel de la carte}{9}
+\contentsline {section}{\numberline {3.2}Vincent Rospini-Clerici}{9}
+\contentsline {subsection}{\numberline {3.2.1}Mod\IeC {\'e}lisation du vaisseau}{9}
+\contentsline {subsection}{\numberline {3.2.2}Mod\IeC {\'e}lisation des b\IeC {\^a}timents}{10}
+\contentsline {subsection}{\numberline {3.2.3}Diff\IeC {\'e}rents probl\IeC {\`e}mes rencontr\IeC {\'e}s}{11}
+\contentsline {subsection}{\numberline {3.2.4}Ce que Vincent doit faire pour la seconde soutenance}{11}
+\contentsline {section}{\numberline {3.3}Arthur Remaud}{12}
+\contentsline {subsection}{\numberline {3.3.1}Scripts}{12}
+\contentsline {subsection}{\numberline {3.3.2}Mod\IeC {\'e}lisation 3D}{13}
+\contentsline {subsection}{\numberline {3.3.3}Ce qu'Arthur doit faire pour la prochaine soutenance}{15}
+\contentsline {chapter}{\numberline {4}Pour la prochaine soutenance}{16}

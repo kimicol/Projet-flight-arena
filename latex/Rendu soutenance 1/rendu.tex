@@ -104,19 +104,45 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 
 \section{Guillaume Rebut}
 
-Notre jeu est un shooter multijoueur où le joueur est aux commandes d'un vaisseau et combat d'autres vaisseaux sur des petites arènes. Un jeu de bonne qualité se doit d'être facile à prendre en main mais difficile à maitriser. Pour répondre à cette exigence, nous avons décidé de créer les mouvements des vaisseaux en se basant sur les avions de chasses.\\
+\subsection{Gameplay}
 
- Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent aussi des valeurs des avions: le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet (les valeurs finales ne sont pas encore déterminées).
+Notre jeu est un shooter multijoueur où le joueur est aux commandes d'un vaisseau et combat d'autres vaisseaux sur des petites arènes. Un jeu de bonne qualité se doit d'être facile à prendre en main mais difficile à maitriser. Pour répondre à cette exigence, nous avons décidé de créer les mouvements des vaisseaux en se basant sur les avions de chasse.\\
+
+ Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent aussi des valeurs des avions: le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet (les valeurs finales ne sont cependant pas encore déterminées).
 
  Nous avons aussi choisi de prendre ces valeurs pour des raisons de gameplay. En effet, il est plus facile de tourner avec le lacet plutôt que d'utiliser la combinaison tangage plus roulis. Il est donc logique de rendre cette dernière manœuvre plus rapide en exécution pour récompenser les joueurs les plus talentueux.
 
- Nous avons aussi placé la caméra de manière à inciter le joueur à utiliser cette dernière manœuvre : le vaisseaux n'est pas représenté au milieu de l'écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l'inertie et ne peut pas reculer.\\
+ Nous avons aussi placé la caméra de manière à inciter le joueur à utiliser cette dernière manœuvre : le vaisseau n'est pas représenté au milieu de l'écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l'inertie, lorsqu'il avance et aussi sur les trois types de mouvements, et il est impossible de reculer avec le vaisseau, il faut faire demi-tour.\\
 
 Le vaisseau est entièrement contrôlable au clavier. Les touches directionnelles représentent un joystick d'avion et permettent le tangage (flèche du haut pour piquer et flèche du bas pour "monter") et le roulis (flèche gauche pour une rotation anti-horaire et flèche droite pour une rotation horaire). La touche W permet l'accélération et les touches A et D permettent de tourner respectivement à gauche et à droite grâce au lacet.\\
 
 Les décors occupent une place importante dans le gameplay. Notre niveau contient des buildings de tailles importantes par rapport au vaisseau qui devra les éviter, au risque d'exploser, ce qui augmente la difficulté des manœuvres.
 
-Les buildings présentent aussi un aspect défensif important: lorsqu'un vaisseau chasse un autre vaisseau, ce dernier peut s'échapper en se faufilant entre les buildings, en manœuvrant dans le parking ou en se cachant. 
+Les buildings présentent aussi un aspect défensif important: lorsqu'un vaisseau chasse un autre vaisseau, ce dernier peut s'échapper en se faufilant entre les buildings, en manœuvrant dans le parking ou en se cachant.
+
+Certains buildings présentent des particularités dans leur forme qui influencent le gameplay : 
+
+\begin{center}
+\includegraphics[height=7cm, width=12cm]{parking_guillaume.jpg}\\
+\end{center}
+
+Ce parking propose des entrées sur chaque versant, des piliers, deux étages, un sous-sol et des ouvertures permettant le passage d'un étage à l'autre. Le parking demande, de par son architecture, une bonne maitrise du mouvement du vaisseau et permet au joueur habile de semer son adversaire qui ne pourra le suivre.
+
+ Le bâtiment qu'a fait Vincent (voir Figure 3.2) avec les trois tours dont deux reliées par un pont forcera le joueur à choisir une des deux directions et peut donc permettre d'échapper à un prédateur.
+
+
+\subsection{Création de la carte}
+
+Les différentes versions de la carte ont été créées avec unity. La première version utilisait uniquement le créateur de terrain offert par unity ainsi que l'apport d'assets. Cette méthode fut rapidement abandonner pour plusieurs raisons. Le créateur de terrain de unity ne propose pas de délimitation spatiale, ce qui permet au vaisseau de sortir du niveau et de se balader dans le vide. L'import d'assets créé une différence de qualité entre les différents composants de la carte, ce qui est dérangeant. Les vaisseaux importées ont des formes trop complexes, ce qui veut dire une boite de collision très complexe ce qui créé des bug de collisions.
+
+Cette version de la carte à été en utilisant six plans pour former un cube. Chaque plan contient un mesh collider avec l'option convex car sans cette option, le vaisseau peut traverser les plans si il touche la ligne de contact entre deux plans. De plus, utiliser un mesh collider sur le sol et non un terrain collider corrige certains bugs de collisions, notamment un problème où le vaisseau passe à travers le sol.\\
+
+Les batiments, créés par Arhur et Vincent, ont d'abord été implémenté en utilisant des box collider. Ceci présente un inconvénient majeur: le cube de collision ne correspondait pas à certain batiments complexes. La solution fut de créer un mesh collider pour chacun des buildings avec l'option convex. Cette solution ne fonctionne cependant pas pour le parking. En effet, le mesh collider créé une boite de collision entre tous les coins de l'objet, ce qui empêche les vaisseaux de rentrer dedans. On a donc créé de nombreuses box collider pour résoudre ce cas.
+
+\subsection{L'aspect visuel de la carte}
+
+Le ciel à été créé en utilisant l'asset skybox de unity. La lumière est gérer avec un directional light créé par l'asset de base de unity
+
 
 \section{Vincent Rospini-Clerici}
 
@@ -221,12 +247,17 @@ En fonction du temps restant, il pourra éventuellement aider pour faire des niv
 
 \chapter{Pour la prochaine soutenance}
 
-Tout d'abord, nous allons améliorer le contenu : nous allons rajouter des vaisseaux, des niveaux, des bâtiments\dots etc.\\
-Le menu sera complété, notamment dans les options et dans le choix de son vaisseau pour que le joueur puisse plus facilement personnaliser sa manière de jouer, avec peut-être aussi l'apparition de sauvegardes.
-Le site web sera commencé en \bsc{html}, pour pouvoir tenir au courant tous les fans qui suivent notre projet et veulent télécharger les dernières versions de notre jeu.\\
+Tout d'abord, nous allons améliorer le contenu. Nous allons rajouter au moins un autre vaisseau, des niveaux sur d'autres cartes, donc également de nouveaux bâtiments texturés à venir. La destruction du vaisseau et les flammes des réacteurs seront implémentés dans le programme pour améliorer grandement l'expérience du joueur. De nouveaux sons feront leur apparition afin de rendre le jeu plus vivant et toujours plus réaliste.\\
 
-Mais surtout, la prochaine soutenance verra l'apparition des \textbf{I.A}. Avec cela, le joueur pourra jouer contre des ennemis gérés par l'ordinateur qu'il devra détruire, tout en essayant de ne pas se faire exploser par eux !\\
+Des nouvelles données seront rajoutées telles que l'ajout du nombre de vies aux vaisseaux et le nombre de munitions. Ces données sont essentielles au gameplay. Sans un nombre de vies défini, les missiles seraient complètement obsolètes par exemple.\\
 
- Et surtout, le \textbf{multijoueur en réseau local} sera commencé ! Il ne sera sans doute pas déjà opérationnel à 100\% pour la prochaine soutenance, .
+La prochaine soutenance sera témoin l'apparition des \textbf{Intelligences Artificielles}. Avec cela, le joueur pourra jouer contre des ennemis gérés par l'ordinateur qu'il devra détruire, tout en essayant de ne pas se faire avoir par ces derniers! Les Intelligences artificielles chercheront évidemment a poursuivre le joueur voire à se poursuivre aussi entre elles. Il faudra aussi qu'elles détectent les boites de collision des obstacles afin qu'elles ne foncent pas directement dans un immeuble dès leur apparition. Enfin il faudra qu'elle puissent viser avec suffisamment de précision pour toucher parfois le joueur. \\
+
+Le menu sera aussi complété, notamment dans les options, ou nous essayerons d'implémenter le choix des graphismes ainsi que la possibilité de modifier les touches du clavier pour que le joueur puisse plus facilement personnaliser sa manière de jouer. Il sera également possible de choisir son vaisseau avant de démarrer la partie parmis ceux proposés.\\
+
+Le site web sera commencé en \bsc{html}, probablement sur le logiciel Adobe DreamWeaver, pour pouvoir tenir au courant tous les fans qui suivent notre projet et veulent télécharger les dernières versions de notre jeu. Les documents concernant le projet seront ainsi disponibles sur le site avec aussi des liens vers les sources utiles dont le groupe mr cube s'est servi pour la réalisation du jeu. La version du jeu disponible en ligne sera aussi mise à jour régulièrement par les membres de l'équipe. \\
+
+
+ Et surtout, le \textbf{multijoueur en réseau local} sera commencé ! Il ne sera sans doute pas totalement opérationnel pour la prochaine soutenance, mais il donnera déjà un bon aperçu de ce quoi est capable notre jeu.
 
 \end{document}
