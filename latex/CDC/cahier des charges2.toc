@@ -12,7 +12,6 @@
 \contentsline {paragraph}{Moteur graphique :}{5}
 \contentsline {paragraph}{Moteur physique :}{5}
 \contentsline {paragraph}{R\IeC {\'e}seaux :}{5}
-\contentsline {paragraph}{Son :}{5}
 \contentsline {paragraph}{Site web :}{5}
 \contentsline {paragraph}{Finalisation du projet :}{5}
 \contentsline {chapter}{\numberline {3}L'aspect utilitaire et \IeC {\'e}conomique}{6}
