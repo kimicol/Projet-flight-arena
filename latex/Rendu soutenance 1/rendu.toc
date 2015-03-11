@@ -1,0 +1,20 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Modification du cahier des charges}{2}
+\contentsline {chapter}{\numberline {2}Retard/Avance par rapport au cahier des charges}{3}
+\contentsline {section}{\numberline {2.1}Retards}{3}
+\contentsline {paragraph}{Son :}{3}
+\contentsline {paragraph}{Gestion des donn\IeC {\'e}es :}{3}
+\contentsline {section}{\numberline {2.2}Avance}{3}
+\contentsline {paragraph}{Gameplay :}{3}
+\contentsline {paragraph}{Script :}{4}
+\contentsline {chapter}{\numberline {3}Travail par membre}{5}
+\contentsline {section}{\numberline {3.1}Guillaume Rebut}{5}
+\contentsline {section}{\numberline {3.2}Vincent Rospini-Clerici}{5}
+\contentsline {subsection}{\numberline {3.2.1}Mod\IeC {\'e}lisation du vaisseau :}{5}
+\contentsline {subsection}{\numberline {3.2.2}Mod\IeC {\'e}lisation des b\IeC {\^a}timents :}{6}
+\contentsline {subsection}{\numberline {3.2.3}Diff\IeC {\'e}rents probl\IeC {\`e}mes rencontr\IeC {\'e}s :}{6}
+\contentsline {subsection}{\numberline {3.2.4}Ce que Vincent doit faire pour la seconde soutenance :}{7}
+\contentsline {section}{\numberline {3.3}Arthur Remaud}{7}
+\contentsline {subsection}{\numberline {3.3.1}Scripts}{7}
+\contentsline {subsection}{\numberline {3.3.2}Mod\IeC {\'e}lisation 3D}{8}
+\contentsline {chapter}{\numberline {4}Pour la prochaine soutenance}{11}
