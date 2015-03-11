@@ -5,13 +5,13 @@ public class controlplayer : MonoBehaviour
 {
     public float v_max = 75f;
     private float vitesse = 0f;
-    private float v_acceleration = 5f;
+    private float v_acceleration = 0.5f;
 
     private float r_max = 50f;
     private float rota_hor = 0f;
     private float rota_ver = 0f;
     private float rota_s = 0f;
-    private float r_acceleration = 5f;
+    private float r_acceleration = 4f;
 
 	// Use this for initialization
 	void Start ()
