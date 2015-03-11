@@ -15,7 +15,7 @@ Platform assembly: F:\epita\Projet-flight-arena\soutenance1_Data\Managed\Assembl
 Loading F:\epita\Projet-flight-arena\soutenance1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: F:\epita\Projet-flight-arena\soutenance1_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading F:\epita\Projet-flight-arena\soutenance1_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.036 seconds
+- Completed reload, in  0.037 seconds
 desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -24,14 +24,4 @@ This message parameter has to be of type: Collider
 The message will be ignored.
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/Runtime/Mono/MonoScriptCache.cpp Line: 288)
-
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1783)
-
-UnloadTime: 0.286454 ms
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 412.
-Total: 1.044094 ms (FindLiveObjects: 0.017205 ms CreateObjectMapping: 0.008451 ms MarkObjects: 0.110778 ms  DeleteObjects: 0.568682 ms)
 

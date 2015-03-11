@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  11 MAR 2015 21:00
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  11 MAR 2015 21:28
 entering extended mode
 **rendu.tex
 ("F:\epita\Projet-flight-arena\latex\Rendu soutenance 1\rendu.tex"
@@ -596,60 +596,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
+<niveau_guillaume.jpg, id=39, 877.77937pt x 496.10344pt>
+File: niveau_guillaume.jpg Graphic file (type jpg)
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-
+<use niveau_guillaume.jpg>
+Overfull \hbox (40.25977pt too wide) in paragraph at lines 149--149
+ [] 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+[10 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 1/niveau_guillaume.jpg
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--169
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-<vaisseau_vincent.jpg, id=42, 1606.0pt x 437.635pt>
+<vaisseau_vincent.jpg, id=46, 1606.0pt x 437.635pt>
 File: vaisseau_vincent.jpg Graphic file (type jpg)
  <use vaisseau_vincent.jpg>
-Overfull \hbox (81.78876pt too wide) in paragraph at lines 176--177
+Overfull \hbox (81.78876pt too wide) in paragraph at lines 179--180
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
-
- []
-
-[10] <batiments_vincent.jpg, id=46, 1108.14pt x 594.22pt>
-File: batiments_vincent.jpg Graphic file (type jpg)
-
-<use batiments_vincent.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
 [11 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 1/vaisseau_vincent.jpg
-> <F:/epita/Projet-flight-arena/latex/Rendu soutenance 1/batiments_vincent.jpg>
-]
-Underfull \hbox (badness 10000) in paragraph at lines 203--205
+>] <batiments_vincent.jpg, id=50, 1108.14pt x 594.22pt>
+File: batiments_vincent.jpg Graphic file (type jpg)
+
+<use batiments_vincent.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
@@ -658,107 +661,158 @@ Underfull \hbox (badness 10000) in paragraph at lines 206--208
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-
- []
-
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+[12 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 1/batiments_vincent.jp
+g>]
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
+[13] <menu_arthur.jpg, id=60, 877.77937pt x 496.85625pt>
+File: menu_arthur.jpg Graphic file (type jpg)
+ <use menu_arthur.jpg>
+Overfull \hbox (53.34552pt too wide) in paragraph at lines 231--231
+ [] 
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+<explosion_arthur.jpg, id=61, 1047.915pt x 432.11438pt>
+File: explosion_arthur.jpg Graphic file (type jpg)
+
+<use explosion_arthur.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
-<vaisseau_arthur.jpg, id=59, 1093.08376pt x 705.63625pt>
+[14 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 1/menu_arthur.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+
+ []
+
+<vaisseau_arthur.jpg, id=65, 1093.08376pt x 705.63625pt>
 File: vaisseau_arthur.jpg Graphic file (type jpg)
 
 <use vaisseau_arthur.jpg>
-<batiment_arthur.jpg, id=60, 975.645pt x 916.42375pt>
+<batiment_arthur.jpg, id=66, 975.645pt x 916.42375pt>
 File: batiment_arthur.jpg Graphic file (type jpg)
 
-<use batiment_arthur.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+<use batiment_arthur.jpg> [15 <F:/epita/Projet-flight-arena/latex/Rendu soutena
+nce 1/explosion_arthur.jpg>] [16 <F:/epita/Projet-flight-arena/latex/Rendu sout
+enance 1/vaisseau_arthur.jpg> <F:/epita/Projet-flight-arena/latex/Rendu soutena
+nce 1/batiment_arthur.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
-[14] [15 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 1/vaisseau_arthur
-.jpg> <F:/epita/Projet-flight-arena/latex/Rendu soutenance 1/batiment_arthur.jp
-g>]
+[17]
 Partie 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
-[16
+[18
 
-] [17] ("F:\epita\Projet-flight-arena\latex\Rendu soutenance 1\rendu.aux") ) 
+]
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+ []
+
+<vaisseux_petit.png, id=80, 513.92pt x 513.92pt>
+File: vaisseux_petit.png Graphic file (type png)
+ <use vaisseux_petit.png>
+[19 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 1/vaisseux_petit.png>]
+("F:\epita\Projet-flight-arena\latex\Rendu soutenance 1\rendu.aux") ) 
 Here is how much of TeX's memory you used:
- 3335 strings out of 494053
- 41556 string characters out of 3148603
+ 3356 strings out of 494053
+ 42001 string characters out of 3148603
  97517 words of memory out of 3000000
- 6538 multiletter control sequences out of 15000+200000
+ 6554 multiletter control sequences out of 15000+200000
  75468 words of font info for 68 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,11n,43p,791b,260s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:
-/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX
- 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dv
-ips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/eurosym/feymr1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/lm/lmri10.pfb>
-Output written on rendu.pdf (18 pages, 827687 bytes).
+ 27i,10n,43p,791b,275s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Progra
+m Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTeX 2.9/fo
+nts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/
+lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
+lmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmri10.pfb>
+Output written on rendu.pdf (20 pages, 1410228 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 119 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
