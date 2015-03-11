@@ -75,6 +75,52 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 
 \section{Vincent Rospini-Clerici}
 
+\subsection{Modélisation du vaisseau :}
+
+Après le visionnage de différents tutoriels Blender sur la modélisation d'objets 3D, Vincent a commencé le premier vaisseau qui sera utilisé par le joueur dans le jeu. C'était la première fois qu'il utilisait le logiciel Blender. Il s'est servi principalement de la fonction extrude en partant d'un simple cube pour parvenir à modéliser ce qu'il souhaitait. Cette fonction permet en effet d'avoir un vaisseau en un seul objet plus aisément qu'en utilisant l'ajout de "Mesh". Par exemple, en coupant les solides en différentes parties grâce à l'outil "Knife", cela a permis d'extraire la forme basique des ailes à partir du corps principal du vaisseau.\\
+
+Il a aussi utilisé le modifier « Mirror » qui est très important. Il permet de créer une image reproduite de l’objet créé par Rapport à un axe. Ce qui permet au vaisseau d'être parfaitement symétrique.\\
+
+Vincent a également utilisé le modifier « Subdivision surface » pour créer des surfaces de subdivision, c’est-à-dire découper les faces de l’objet en plusieurs afin de le lisser. Ce modifier appliqué sur l’ensemble du vaisseau lui donne cet aspect rond et c’était exactement ce qu’il fallait pour coller aux graphismes du jeu.
+Une fois la modélisation terminée, il a fallu également texturer toutes les faces du vaisseau afin d'avoir un beau rendu dans le jeu. \\
+
+Pour se faire, il a fallu se servir de l'outil d"UV Mapping" qu'offre Blender. Il s'agit de sélectionner toutes les arrêtes du vaisseau et de les déplier sur un plan en deux dimensions. Le logiciel Photoshop permet ensuite de remplir les différentes faces avec les couleurs et textures voulues. Le vaisseau a pour l'instant été texturé entièrement en rouge et noir avec des dégradés de couleur. Mais, des différentes versions de textures de ce vaisseau seront peut-être ajoutées pour permettre au joueur de choisir la couleur de son vaisseau.\\
+
+Les vaisseaux suivants seront sûrement réalisés avec ces mêmes procédés.
+
+\begin{figure}
+\center
+\includegraphics[height=4.5cm, width=15cm]{vaisseau_vincent.jpg}
+\caption{Le vaisseau principal fait par Vincent}
+\end{figure}
+  
+\subsection{Modélisation des bâtiments :}
+
+Vincent a créé 7 bâtiments différents et entièrement texturés pour les besoins de la première carte. Ils ont tous des formes et des hauteurs différentes car ils ont permis de tester comment Unity gérait les collisions entre le vaisseau et les objets.\\
+
+Ces bâtiments ont été créés sur Blender et texturés sur Photoshop de la même façon que le vaisseau.
+  
+
+\subsection{Différents problèmes rencontrés :}
+
+De nombreux problèmes ont été rencontrés lors de la création de textures pour le vaisseau.\\
+
+Au moment de passer l’Uv Mapping de Blender pour le vaisseau, le vaisseau texture, Blender affichait le vaisseau avec des problèmes de symétrie. C’était en réalité du au modifier "Bevel" qui était censé entre autre biseauter les faces du vaisseau. En l’enlevant, Vincent a réalisé que le vaisseau était bien mieux avec le modifier  "Subdivision Surface" qu’avec le modifier "Bevel" et que les problèmes de symétrie disparaissaient.\\
+
+Un autre problème est survenu lors du dépliage des faces du vaisseau par l’Uv mapping.
+
+Le vaisseau ayant plus de 300 faces, Vincent a décidé de découper l’Uv mapping par patrons, mais cette tâche s’est révélée très complexe et lorsque Vincent a déplié le patron du vaisseau, les faces étaient méconnaissables et toutes empilées les unes sur les autres. Il a donc fallu qu’il opte pour une autre méthode. Il a sélectionné toutes les faces du vaisseau, puis il les a dépliées toutes indépendamment. Finalement il a fallu repérer toutes les faces et les regrouper par endroit du vaisseau (ailes, avant, etc...)
+
+\subsection{Ce que Vincent doit faire pour la seconde soutenance :}
+Il faut modéliser et texturer au moins un autre vaisseau sur Blender pour créer du contenu dans le jeu. Un autre vaisseau a d’ailleurs été ébauché.
+Modéliser la destruction du vaisseau lors d'un crash et l'implémenter au code est indispensable pour la prochaine soutenance. Nous pensons d’ailleurs que la fonction " Explode" pourra nous être très utile pour que le vaisseau éclate en plusieurs morceaux.\\
+
+Il faudra évidemment implémenter les flammes des réacteurs des vaisseaux afin que le joueur n’ai pas l’impression que le vaisseau avance tout seul sans raison..
+Les premiers sons qui sont actuellement dans le jeu sont basiques. Il s’agirait d’en rajouter d’autres avant la seconde soutenance.\\
+
+Enfin, il faudra commencer le site internet et en faire la majeure partie. Il sera a priori créé grâce au logiciel Adobe Dreamweaver.
+
+
 \section{Arthur Remaud}
 Pendant cette première période, Arthur a fait tous les scripts en C\# du jeu et quelques modélisations 3D rapides avec blender.
 
