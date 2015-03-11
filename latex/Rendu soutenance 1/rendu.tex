@@ -52,10 +52,12 @@ Pour les soutenances à venir, nous avons donc renoncé à faire le son, mais no
 \chapter{Retard/Avance par rapport au cahier des charges}
 Les retards que nous avons par rapport aux prévisions du cahier des charges sont principalement causées par le départ d'un membre. Si nous regardons ce que nous nous avions fixé par personne, nous sommes dans les temps. 
 
-\section{Retards}
+\section{Retard}
 
 \paragraph{Son :}
-Nous avons pris la musique du menu principal du jeu sur internet au lieu de la faire par nos propres moyens : il s'agit de \textit{Captain America March}. Nous ne ferons de toute manière pas la musique du jeu, car cela nous prendrait trop de temps. Pour le son des tirs, nous avons pris un bruitage du jeu Pinball sur Windows XP qui ressemble à un son de laser.
+Nous avons pris la musique du menu principal du jeu sur internet au lieu de la faire par nos propres moyens : il s'agit de \textit{Captain America March}. Nous ne ferons pas de toute manière la musique du jeu, car cela nous prendrait trop de temps.
+
+ Pour le son des tirs, nous avons pris un bruitage du jeu Pinball sur Windows XP qui ressemble à un son de laser.
 
 \paragraph{Gestion des données :}
 Il n'y pas pour l'instant de gestion des données, ou du moins pas visible pour le joueur. En effet, il n'y a pas de sauvegardes dans le jeu ou de munitions, et la vie du joueur ne s'affiche pas à l'écran. Le menu option ne comporte pour l'instant que la modification du volume du jeu, qui est cependant conservée même après avoir fermé le jeu.
@@ -66,7 +68,9 @@ Il n'y pas pour l'instant de gestion des données, ou du moins pas visible pour 
 Le gameplay est plus avancé que ce que nous espérions. Nous avons déjà un vaisseau opérationnel avec des contrôles qui fonctionnent assez bien. Nous avons modélisé plusieurs bâtiments qui offrent un environnement agréable et permet déjà de s'amuser à piloter dans le décor sans trop de difficultés.
 
 \paragraph{Script :}
-Nous sommes en avance sur le script du jeu. Unity contient énormément de fonctions prédéfinies qui aident grandement à générer rapidement du code en C\#. Nous avons déjà toutes les fonctions pour contrôler le vaisseau du joueur et gérer les tirs et les dégâts générer par ceux-ci. Nous avons aussi bien avancé les menus, que ce soit au niveau du menu principal avec les options, ou au niveau du menu de pause dans le niveau.
+Nous sommes en avance sur le script du jeu. Unity contient énormément de fonctions prédéfinies qui aident grandement à générer rapidement du code en C\#. Nous avons déjà toutes les fonctions pour contrôler le vaisseau du joueur et gérer les tirs et les dégâts causés par ceux-ci.
+
+ Nous avons aussi bien avancé les menus, que ce soit le menu principal du jeu avec les options, ou le menu de pause dans le niveau que nous avons créé.
 
 \chapter{Travail par membre}
 Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait pendant cette première période, avec leurs difficultés rencontrées et les techniques utilisées.
@@ -75,16 +79,16 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 
 \section{Vincent Rospini-Clerici}
 
-\subsection{Modélisation du vaisseau :}
+\subsection{Modélisation du vaisseau}
 
-Après le visionnage de différents tutoriels Blender sur la modélisation d'objets 3D, Vincent a commencé le premier vaisseau qui sera utilisé par le joueur dans le jeu. C'était la première fois qu'il utilisait le logiciel Blender. Il s'est servi principalement de la fonction extrude en partant d'un simple cube pour parvenir à modéliser ce qu'il souhaitait. Cette fonction permet en effet d'avoir un vaisseau en un seul objet plus aisément qu'en utilisant l'ajout de "Mesh". Par exemple, en coupant les solides en différentes parties grâce à l'outil "Knife", cela a permis d'extraire la forme basique des ailes à partir du corps principal du vaisseau.\\
+Après le visionnage de différents tutoriels Blender sur la modélisation d'objets 3D, Vincent a commencé le premier vaisseau qui sera utilisé par le joueur dans le jeu. C'était la première fois qu'il utilisait le logiciel Blender. Il s'est servi principalement de la fonction extrude en partant d'un simple cube pour parvenir à modéliser ce qu'il souhaitait. Cette fonction permet en effet d'avoir un vaisseau en un seul objet plus aisément qu'en utilisant l'ajout de \textit{mesh}. Par exemple, en coupant les solides en différentes parties grâce à l'outil \textit{knife}, cela a permis d'extraire la forme basique des ailes à partir du corps principal du vaisseau.\\
 
-Il a aussi utilisé le modifier « Mirror » qui est très important. Il permet de créer une image reproduite de l’objet créé par Rapport à un axe. Ce qui permet au vaisseau d'être parfaitement symétrique.\\
+Il a aussi utilisé le modifier \textit{mirror} qui est très important. Il permet de créer une image reproduite de l’objet créé par Rapport à un axe. Ce qui permet au vaisseau d'être parfaitement symétrique.\\
 
-Vincent a également utilisé le modifier « Subdivision surface » pour créer des surfaces de subdivision, c’est-à-dire découper les faces de l’objet en plusieurs afin de le lisser. Ce modifier appliqué sur l’ensemble du vaisseau lui donne cet aspect rond et c’était exactement ce qu’il fallait pour coller aux graphismes du jeu.
+Vincent a également utilisé le modifier \textit{subdivision surface} pour créer des surfaces de subdivision, c’est-à-dire découper les faces de l’objet en plusieurs afin de le lisser. Ce modifier appliqué sur l’ensemble du vaisseau lui donne cet aspect rond et c’était exactement ce qu’il fallait pour coller aux graphismes du jeu.
 Une fois la modélisation terminée, il a fallu également texturer toutes les faces du vaisseau afin d'avoir un beau rendu dans le jeu. \\
 
-Pour se faire, il a fallu se servir de l'outil d"UV Mapping" qu'offre Blender. Il s'agit de sélectionner toutes les arrêtes du vaisseau et de les déplier sur un plan en deux dimensions. Le logiciel Photoshop permet ensuite de remplir les différentes faces avec les couleurs et textures voulues. Le vaisseau a pour l'instant été texturé entièrement en rouge et noir avec des dégradés de couleur. Mais, des différentes versions de textures de ce vaisseau seront peut-être ajoutées pour permettre au joueur de choisir la couleur de son vaisseau.\\
+Pour se faire, il a fallu se servir de l'outil \textit{UV Mapping} qu'offre Blender. Il s'agit de sélectionner toutes les arrêtes du vaisseau et de les déplier sur un plan en deux dimensions. Le logiciel Photoshop permet ensuite de remplir les différentes faces avec les couleurs et textures voulues. Le vaisseau a pour l'instant été texturé entièrement en rouge et noir avec des dégradés de couleur. Mais, des différentes versions de textures de ce vaisseau seront peut-être ajoutées pour permettre au joueur de choisir la couleur de son vaisseau.\\
 
 Les vaisseaux suivants seront sûrement réalisés avec ces mêmes procédés.
 
@@ -94,26 +98,31 @@ Les vaisseaux suivants seront sûrement réalisés avec ces mêmes procédés.
 \caption{Le vaisseau principal fait par Vincent}
 \end{figure}
   
-\subsection{Modélisation des bâtiments :}
+\subsection{Modélisation des bâtiments}
 
-Vincent a créé 7 bâtiments différents et entièrement texturés pour les besoins de la première carte. Ils ont tous des formes et des hauteurs différentes car ils ont permis de tester comment Unity gérait les collisions entre le vaisseau et les objets.\\
+Vincent a créé sept bâtiments différents et entièrement texturés pour les besoins de la première carte. Ils ont tous des formes et des hauteurs différentes car ils ont permis de tester comment Unity gérait les collisions entre le vaisseau et les objets.\\
 
 Ces bâtiments ont été créés sur Blender et texturés sur Photoshop de la même façon que le vaisseau.
-  
 
-\subsection{Différents problèmes rencontrés :}
+\begin{figure}
+\center
+\includegraphics[height=6cm, width=11cm]{batiments_vincent.jpg}
+\caption{Deux bâtiments faits par Vincent}
+\end{figure}
+
+\subsection{Différents problèmes rencontrés}
 
 De nombreux problèmes ont été rencontrés lors de la création de textures pour le vaisseau.\\
 
-Au moment de passer l’Uv Mapping de Blender pour le vaisseau, le vaisseau texture, Blender affichait le vaisseau avec des problèmes de symétrie. C’était en réalité du au modifier "Bevel" qui était censé entre autre biseauter les faces du vaisseau. En l’enlevant, Vincent a réalisé que le vaisseau était bien mieux avec le modifier  "Subdivision Surface" qu’avec le modifier "Bevel" et que les problèmes de symétrie disparaissaient.\\
+Au moment de passer l’\textit{Uv Mapping} de Blender pour le vaisseau, le vaisseau texture, Blender affichait le vaisseau avec des problèmes de symétrie. C’était en réalité du au modifier \textit{bevel} qui était censé entre autre biseauter les faces du vaisseau. En l’enlevant, Vincent a réalisé que le vaisseau était bien mieux avec le modifier  \textit{Subdivision Surface} qu’avec le modifier \textit{Bevel} et que les problèmes de symétrie disparaissaient.\\
 
-Un autre problème est survenu lors du dépliage des faces du vaisseau par l’Uv mapping.
+Un autre problème est survenu lors du dépliage des faces du vaisseau par l’\textit{Uv mapping}.
 
-Le vaisseau ayant plus de 300 faces, Vincent a décidé de découper l’Uv mapping par patrons, mais cette tâche s’est révélée très complexe et lorsque Vincent a déplié le patron du vaisseau, les faces étaient méconnaissables et toutes empilées les unes sur les autres. Il a donc fallu qu’il opte pour une autre méthode. Il a sélectionné toutes les faces du vaisseau, puis il les a dépliées toutes indépendamment. Finalement il a fallu repérer toutes les faces et les regrouper par endroit du vaisseau (ailes, avant, etc...)
+Le vaisseau ayant plus de trois cent faces, Vincent a décidé de découper l’\textit{Uv mapping} par patrons, mais cette tâche s’est révélée très complexe et lorsque Vincent a déplié le patron du vaisseau, les faces étaient méconnaissables et toutes empilées les unes sur les autres. Il a donc fallu qu’il opte pour une autre méthode. Il a sélectionné toutes les faces du vaisseau, puis il les a dépliées toutes indépendamment. Finalement il a fallu repérer toutes les faces et les regrouper par endroit du vaisseau (ailes, avant, etc...)
 
-\subsection{Ce que Vincent doit faire pour la seconde soutenance :}
+\subsection{Ce que Vincent doit faire pour la seconde soutenance}
 Il faut modéliser et texturer au moins un autre vaisseau sur Blender pour créer du contenu dans le jeu. Un autre vaisseau a d’ailleurs été ébauché.
-Modéliser la destruction du vaisseau lors d'un crash et l'implémenter au code est indispensable pour la prochaine soutenance. Nous pensons d’ailleurs que la fonction " Explode" pourra nous être très utile pour que le vaisseau éclate en plusieurs morceaux.\\
+Modéliser la destruction du vaisseau lors d'un crash et l'implémenter au code est indispensable pour la prochaine soutenance. Nous pensons d’ailleurs que la fonction \textit{explode} pourra nous être très utile pour que le vaisseau éclate en plusieurs morceaux.\\
 
 Il faudra évidemment implémenter les flammes des réacteurs des vaisseaux afin que le joueur n’ai pas l’impression que le vaisseau avance tout seul sans raison..
 Les premiers sons qui sont actuellement dans le jeu sont basiques. Il s’agirait d’en rajouter d’autres avant la seconde soutenance.\\
@@ -125,26 +134,30 @@ Enfin, il faudra commencer le site internet et en faire la majeure partie. Il se
 Pendant cette première période, Arthur a fait tous les scripts en C\# du jeu et quelques modélisations 3D rapides avec blender.
 
 \subsection{Scripts}
-Tous les scripts en C\# du jeu ont été fait par Arthur grâce à des tutoriels sur internet. La fonction $Input.GetKey()$ de \textit{unity} permet de lire tout ce que l'utilisateur entre sur le clavier. Il a donc enregistré les différentes saisies possibles du joueur, qui provoquent sur le vaisseau des translations avec la fonction $transform.Translate()$ lorsque le joueur veut avancer ou des rotations avec la fonction $transform.Rotate()$ lorsque le joueur veut tourner. Chacun peut donc aisément piloter le vaisseau pour éviter les obstacles. L'inertie du vaisseau est géré par une variable de déplacement qui s'augmente à force d'appuyer sur la touche d'accélération, et diminue dans le cas contraire.\\
 
-Il a aussi mis une touche pour tirer avec le vaisseau. Dans ce cas \textit{Unity} crée une instance de la balle (fonction $Instanciate()$) qui part droit devant. Elle disparait automatiquement au bout de quelques secondes grâce à la fonction $DestroyObject()$, le temps d'au moins traverser le terrain, pour éviter d'avoir trop d'objets à la fois qui partent vers l'infini, ce qui provoquerait un ralentissement du jeu.
+Tous les scripts en C\# du jeu ont été fait par Arthur grâce à des tutoriels sur internet. La fonction $Input.GetKey()$ de Unity permet de lire tout ce que l'utilisateur entre sur le clavier. Il a donc enregistré les différentes saisies possibles du joueur, qui provoquent sur le vaisseau des translations avec la fonction $transform.Translate()$ lorsque le joueur veut avancer ou des rotations avec la fonction $transform.Rotate()$ lorsque le joueur veut tourner. Chacun peut donc aisément piloter le vaisseau pour éviter les obstacles. L'inertie du vaisseau est géré par une variable de déplacement qui augmente à force d'appuyer sur la touche d'accélération, et diminue dans le cas contraire.\\
 
-La balle contient aussi un trigger qui s'active lors d'une collision. Si le joueur entre en collision avec une balle, alors celle-ci est détruite et le joueur perd de la vie. Lorsque le joueur n'a plus de vie, le vaisseau est détruit. Pour l'instant il ne fait que disparaître mais par la suite, il y aura une animation de mort.
+Il a aussi mis une touche pour tirer avec le vaisseau. Dans ce cas Unity crée une instance de la balle (fonction $Instantiate()$) qui part droit devant. Elle disparait automatiquement au bout de quelques secondes grâce à la fonction $DestroyObject()$, le temps d'au moins traverser le terrain, pour éviter d'avoir trop d'objets à la fois qui partent vers l'infini, ce qui provoquerait un ralentissement du jeu.
 
-La principale difficulté rencontrée fut la gestion de l'inertie lorsque l'objet est touché par le décor. En effet, il peut rapidement partir en vrille et n'est plus maniable. Après des recherches sur internet, il est apparu que le problème venait du rigidbody et c'est la vélocité de celui-ci qu'il faut remettre à zéro à chaque fois.\\ \\
+La balle contient aussi un \textit{trigger} qui s'active lors d'une collision. Si le joueur entre en collision avec une balle, alors celle-ci est détruite et le joueur perd de la vie.
 
- Il a aussi fait les menus, en utilisant les propriétés GUI (Graphical User Interface) de \textit{unity}. Il a pris une police avec un effet de science-fiction nommée \textit{airstrike}, et c'est lui qui a choisit la musique \textit{Captain America March} pour le menu. Jouant de la trompette, il l'avait interprété dans un orchestre l'année dernière, mais pour plus de confort, on a mis la version officielle de la musique. Nous aimerions par la suite conserver ce genre de musique pour le jeu, avec des grands orchestres et des cuivres sonnant, comme on peut en avoir dans \textit{Star Wars}. On peut aller dans un menu option qui, pour l'instant, ne permet que de changer le volume, mais ce volume est conservé lorsque l'on redémarre le jeu.
+La principale difficulté rencontrée fut la gestion de l'inertie lorsque l'objet est touché par le décor. En effet, il peut rapidement partir en vrille et n'est plus maniable. Après des recherches sur internet, il est apparu que le problème venait du \textit{rigidbody} et c'est la vélocité de celui-ci qu'il faut remettre à zéro à chaque fois.\\ \\
+
+ Il a aussi fait les menus, en utilisant les propriétés GUI (Graphical User Interface) de Unity. Il a pris une police avec un effet de science-fiction nommée \textit{airstrike}, et c'est lui qui a choisit la musique \textit{Captain America March} pour le menu. Jouant de la trompette, il l'avait interprété dans un orchestre l'année dernière, mais pour plus de confort, nous avons mis la version officielle de la musique. Nous aimerions par la suite conserver ce genre de musique pour le jeu, avec des grands orchestres et des cuivres sonnants, comme on peut en écouter dans \textit{Star Wars}. Il est possible d'aller dans un menu option qui, pour l'instant, ne permet que de changer le volume, mais ce volume est conservé lorsque l'on redémarre le jeu.
 
 Il a aussi intégré un menu de pause pour pouvoir quitter le jeu.\\
 
-Il n'a pas réussi à intégrer les animations d'explosions faites dans \textit{unity}, car l'exportation depuis \textit{blender} échoue. Il existe pourtant des fonctionnalités sur \textit{blender} pour faire exploser un objet en quelques clics, mais
+Il n'a pas réussi à intégrer les animations d'explosions faites dans Unity, car l'exportation depuis blender échoue. Il existe pourtant des fonctionnalités sur blender pour faire exploser un objet en quelques clics, mais cette animation que l'on peut voir sur blender n'est pas lue par Unity et donc ne peut pas être intégrée.
 
 \subsection{Modélisation 3D}
-Arthur a fait quelques objets rapidement sur blender pour le projet. Il a ainsi créé six vaisseaux et quatre bâtiments rapidement. Ils sont cependant assez laids car réalisés rapidement pour pouvoir faire les essais de physiques rapidement et ne seront donc utilisé que pour le décor ou en personnage non joué. Le vaisseau principal est celui fait par Vincent.\\
+
+Arthur a fait quelques objets rapidement sur blender pour le projet. Il a ainsi créé six vaisseaux et quatre bâtiments. Ils sont cependant assez simples car réalisés rapidement pour pouvoir faire les essais de physiques le plus vite possible et ne seront donc utilisé que pour le décor ou en personnage non joué. Le vaisseau principal est celui fait par Vincent.\\
 
 Il a utilisé les même techniques que Vincent pour la modélisation, à savoir l'outil \textit{mirror} pour avoir des vaisseaux symétriques par rapport à un axe, et  l'UV-mapping pour faire les textures à partir du patron de l'objet.
 
-Il a fait ses textures lui-même avec photoshop plutôt que de les prendre en ligne. Elles sont donc par conséquent moins détaillées mais plus personnalisées. Grâce à l'outil tampon de ce logiciel, on peut facilement recopier un motif de l'image d'un endroit à un autre, ce qui est très pratique pour recopier les vitres des immeubles, plutôt que de faire des copier/coller/déplacer. Il suffit juste de sélectionner le point de départ du recopiage de motif et de colorier la zone voulue. Il a aussi utilisé des dégradés sur une surface délimitée, qui sont plus esthétiques que le remplissage de surface. Pour prendre une surface précise avec photoshop, on utilise l'outil baguette magique qui sélectionne une zone par sa couleur, comme le fait le pot de peinture de paint mais juste pour sélectionner. On peut après faire des modifications uniquement dans cette zone, ce qui est très utile avec l'UV-mapping qui délimite les zone à dessiner pour les textures.\\
+Il a fait ses textures lui-même avec Photoshop plutôt que de les prendre en ligne. Elles sont donc par conséquent moins détaillées mais plus personnalisées. Grâce à l'outil tampon de ce logiciel, on peut facilement recopier un motif de l'image d'un endroit à un autre, ce qui est très pratique pour recopier les vitres des immeubles, plutôt que de faire des copier/coller/déplacer. Il suffit juste de sélectionner le point de départ du recopiage de motif et de colorier la zone voulue.
+
+ Il a aussi utilisé des dégradés sur une surface délimitée, qui sont plus esthétiques que le remplissage de surface. Pour prendre une surface précise avec Photoshop, on utilise l'outil \textit{baguette magique} qui sélectionne une zone par sa couleur comme le fait le pot de peinture de paint, mais juste pour sélectionner. On peut après faire des modifications uniquement dans cette zone, ce qui est très utile avec l'UV-mapping qui délimite les zone à dessiner pour les textures.\\
 
 \begin{figure}
 \center
@@ -156,11 +169,18 @@ Il a fait ses textures lui-même avec photoshop plutôt que de les prendre en li
 
 \end{figure}
 
+\subsection{Ce qu'Arthur doit faire pour la prochaine soutenance}
+
+Arthur continuera le script en C\# pour obtenir un meilleur gameplay. Il va principalement gérer la mort du joueur et la destruction de son vaisseau avec une animation et un écran qui affiche que l'on est mort et aussi une réaparition dans le niveau. 
+
+ Il va aussi rechercher si on peut modifier la vue de la caméra pour qu'elle se mouve en fonction des rotations du vaisseau contrôlé par le joueur. Cela améliorerait le visuel du jeu et éviterait dans rendre malade le joueur à force de jouer.\\
+
+Il va commencer l'I.A avec Guillaume pour que l'on puisse jouer avec ou contre l'ordinateur.
+
 \chapter{Pour la prochaine soutenance}
 
-Tout d'abord, nous allons améliorer le contenu : nous allons rajouter des vaisseaux, des niveaux, des bâtiments\dots\\
-Le menu sera aussi complété, notamment dans les options et dans le choix de son vaisseau pour que le joueur puisse plus facilement personnaliser sa manière de jouer.
-
+Tout d'abord, nous allons améliorer le contenu : nous allons rajouter des vaisseaux, des niveaux, des bâtiments\dots etc.\\
+Le menu sera complété, notamment dans les options et dans le choix de son vaisseau pour que le joueur puisse plus facilement personnaliser sa manière de jouer, avec peut-être aussi l'apparition de sauvegardes.
 Le site web sera commencé en \bsc{html}, pour pouvoir tenir au courant tous les fans qui suivent notre projet et veulent télécharger les dernières versions de notre jeu.\\
 
 Mais surtout, la prochaine soutenance verra l'apparition des \textbf{I.A}. Avec cela, le joueur pourra jouer contre des ennemis gérés par l'ordinateur qu'il devra détruire, tout en essayant de ne pas se faire exploser par eux !\\
