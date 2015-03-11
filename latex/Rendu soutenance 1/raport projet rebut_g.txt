@@ -24,4 +24,14 @@ Les batiments, créés par Arhur et Vincent, ont d'abord été implémenté en utilisa
 
 |L'aspect visuel de la carte|
 
-Le ciel à été créé en utilisant l'asset skybox de unity. La lumière est gérer avec un directional light créé par l'asset de base de unity
+Le ciel à été créé en utilisant l'asset skybox de unity. La lumière est gérée avec un directional light créé par l'asset de base de unity.   [DEJA COPIE] 
+
+Les textures du sol ont été créé en utilisant l'outil brush. La texture de la montagne vient d'un asset de l'asset store de Unity et celle du sol vient des textures de base de unity. Les textures des batiments ont été créé par Vincent et Arthur et ont directement été plaqué sur les faces des batiments.
+
+
+|titre a mettre travail du future huehuehuehuehuehuehuehue|
+
+La première étape sera de créer les sphères de collision des vaisseaux qui interagieront avec les missiles. En effet, le vol des vaisseaux étant assez difficile, on souhaite aider le joueur en créant un système de detection de tir permissif à travers une sphère de detection plus grande que le vaisseau.
+Il faudra créer le premier mode de jeu. Le mode de jeu sera un "chacun pour soi" et proposera un système de réapparition, de la vie et un nombre maximal de destructions.
+Nous allons implémenter un système de jeu en réseau local qui permettra de jouer au nouveau mode de jeu.
+Nous créerons ensuite de nouveaux niveaux, dont un niveau dans l'espace. Ce niveau devra donc respecter le changement de contexte tel que le manque de gravité ou l'absence de frottements.
