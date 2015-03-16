@@ -7,6 +7,8 @@ public class mainmenu_script : MonoBehaviour
     private float volume = 0.5f;
     public GUISkin skin;
 
+    
+
 	// Use this for initialization
 	void Start () 
     {

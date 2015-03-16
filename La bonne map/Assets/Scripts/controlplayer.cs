@@ -13,6 +13,14 @@ public class controlplayer : MonoBehaviour
     private float rota_s = 0f;
     private float r_acceleration = 4f;
 
+    private KeyCode Avancer = KeyCode.W;
+    private KeyCode RotHaut = KeyCode.UpArrow;
+    private KeyCode RotBas = KeyCode.DownArrow;
+    private KeyCode PivGauche = KeyCode.A;
+    private KeyCode PivDroite = KeyCode.D;
+    private KeyCode RotGauche = KeyCode.LeftArrow;
+    private KeyCode RotDroite = KeyCode.RightArrow;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -20,26 +28,26 @@ public class controlplayer : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
     {
-	    if(Input.GetKey(KeyCode.UpArrow) || (!Input.GetKey(KeyCode.DownArrow) &&rota_ver < 0f))
+        if (Input.GetKey(RotHaut) || (!Input.GetKey(RotBas) && rota_ver < 0f))
         {
             if(rota_ver < r_max)
                 rota_ver += r_acceleration; 
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || rota_ver > 0f)
+        else if (Input.GetKey(RotBas) || rota_ver > 0f)
         {
             if(rota_ver > -r_max)
                 rota_ver -= r_acceleration;
         }
         transform.Rotate(Vector3.right * rota_ver * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.D) || (!Input.GetKey(KeyCode.A) && rota_hor < 0f))
+        if (Input.GetKey(PivDroite) || (!Input.GetKey(PivGauche) && rota_hor < 0f))
         {
             if(rota_hor < r_max)
                 rota_hor += r_acceleration;
         }
-        else if (Input.GetKey(KeyCode.A) || rota_hor > 0f)
+        else if (Input.GetKey(PivGauche) || rota_hor > 0f)
         {
             if(rota_hor > -r_max)
                 rota_hor -= r_acceleration;
@@ -47,12 +55,12 @@ public class controlplayer : MonoBehaviour
         transform.Rotate(Vector3.forward * rota_hor * Time.deltaTime);
 
         //tourner sur soi-meme
-        if (Input.GetKey(KeyCode.LeftArrow) || (!Input.GetKey(KeyCode.RightArrow) && rota_s < 0f))
+        if (Input.GetKey(RotGauche) || (!Input.GetKey(RotDroite) && rota_s < 0f))
         {
             if (rota_s < r_max)
                 rota_s += r_acceleration;
         }
-        else if (Input.GetKey(KeyCode.RightArrow) || rota_s > 0f)
+        else if (Input.GetKey(RotDroite) || rota_s > 0f)
         {
             if (rota_s > -r_max)
                 rota_s -= r_acceleration;
@@ -60,7 +68,7 @@ public class controlplayer : MonoBehaviour
         transform.Rotate(Vector3.down * rota_s * Time.deltaTime);
 
         //Déplacement vers l'avant
-        if(Input.GetKey(KeyCode.W) && vitesse < v_max)
+        if (Input.GetKey(Avancer) && vitesse < v_max)
         {
             vitesse += v_acceleration;
         }
