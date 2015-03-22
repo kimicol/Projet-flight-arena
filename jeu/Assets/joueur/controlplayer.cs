@@ -10,7 +10,7 @@ public class controlplayer : MonoBehaviour
     private float rota_hor;
     private float rota_ver;
     private float rota_s;
-    private float r_acceleration = 40f;
+    private float r_acceleration = 1f;
 
     private KeyCode Avancer = KeyCode.W;
     private KeyCode RotHaut = KeyCode.UpArrow;
@@ -29,9 +29,9 @@ public class controlplayer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        rota_hor = transform.rotation.x;
-        rota_ver = transform.rotation.z;
-        rota_s = transform.rotation.w;
+        //rota_hor = transform.rotation.x;
+        //rota_ver = transform.rotation.z;
+        //rota_s = transform.rotation.w;
 
         if (Input.GetKey(RotHaut))
         {

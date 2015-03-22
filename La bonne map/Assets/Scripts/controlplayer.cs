@@ -7,11 +7,10 @@ public class controlplayer : MonoBehaviour
     private float vitesse = 0f;
     private float v_acceleration = 0.5f;
 
-    private float r_max = 50f;
-    private float rota_hor = 0f;
-    private float rota_ver = 0f;
-    private float rota_s = 0f;
-    private float r_acceleration = 4f;
+    private float rota_hor;
+    private float rota_ver;
+    private float rota_s;
+    private float r_acceleration = 1f;
 
     private KeyCode Avancer = KeyCode.W;
     private KeyCode RotHaut = KeyCode.UpArrow;
@@ -30,42 +29,42 @@ public class controlplayer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKey(RotHaut) || (!Input.GetKey(RotBas) && rota_ver < 0f))
-        {
-            if(rota_ver < r_max)
-                rota_ver += r_acceleration; 
-        }
-        else if (Input.GetKey(RotBas) || rota_ver > 0f)
-        {
-            if(rota_ver > -r_max)
-                rota_ver -= r_acceleration;
-        }
-        transform.Rotate(Vector3.right * rota_ver * Time.deltaTime);
+        //rota_hor = transform.rotation.x;
+        //rota_ver = transform.rotation.z;
+        //rota_s = transform.rotation.w;
 
-        if (Input.GetKey(PivDroite) || (!Input.GetKey(PivGauche) && rota_hor < 0f))
+        if (Input.GetKey(RotHaut))
         {
-            if(rota_hor < r_max)
-                rota_hor += r_acceleration;
+            rota_ver += r_acceleration; 
         }
-        else if (Input.GetKey(PivGauche) || rota_hor > 0f)
+        if (Input.GetKey(RotBas))
         {
-            if(rota_hor > -r_max)
-                rota_hor -= r_acceleration;
+            rota_ver -= r_acceleration;
         }
-        transform.Rotate(Vector3.forward * rota_hor * Time.deltaTime);
+        //transform.Rotate(Vector3.right * rota_ver * Time.deltaTime);
+
+        if (Input.GetKey(PivDroite))
+        {
+            rota_hor += r_acceleration;
+        }
+        if (Input.GetKey(PivGauche))
+        {
+            rota_hor -= r_acceleration;
+        }
+        //transform.Rotate(Vector3.forward * rota_hor * Time.deltaTime);
 
         //tourner sur soi-meme
-        if (Input.GetKey(RotGauche) || (!Input.GetKey(RotDroite) && rota_s < 0f))
+        if (Input.GetKey(RotGauche))
         {
-            if (rota_s < r_max)
-                rota_s += r_acceleration;
+            rota_s += r_acceleration;
         }
-        else if (Input.GetKey(RotDroite) || rota_s > 0f)
+        if (Input.GetKey(RotDroite))
         {
-            if (rota_s > -r_max)
-                rota_s -= r_acceleration;
+            rota_s -= r_acceleration;
         }
-        transform.Rotate(Vector3.down * rota_s * Time.deltaTime);
+        //transform.Rotate(Vector3.down * rota_s * Time.deltaTime);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(rota_ver, rota_s, rota_hor), Time.deltaTime);
 
         //Déplacement vers l'avant
         if (Input.GetKey(Avancer) && vitesse < v_max)
@@ -79,11 +78,11 @@ public class controlplayer : MonoBehaviour
         if (Input.GetKey(KeyCode.O))
             vitesse -= v_acceleration;
 
-        transform.Translate(Vector3.down * Time.deltaTime * vitesse);
+        transform.Translate(Vector3.forward * Time.deltaTime * vitesse);
 	}
 
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
         rigidbody.velocity = Vector3.zero;
-    }
+    }*/
 }
