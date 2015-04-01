@@ -17,4 +17,13 @@ public class balle : MonoBehaviour {
     {
         transform.Translate(Vector3.forward * Time.deltaTime * 100);
 	}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "vie")
+        {
+            Debug.Log("test2");
+            Destroy(this.gameObject);
+        }
+    }
 }

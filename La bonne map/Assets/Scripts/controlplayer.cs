@@ -43,22 +43,22 @@ public class controlplayer : MonoBehaviour
         }
         //transform.Rotate(Vector3.right * rota_ver * Time.deltaTime);
 
-        if (Input.GetKey(PivDroite))
+        if (Input.GetKey(RotGauche))
         {
             rota_hor += r_acceleration;
         }
-        if (Input.GetKey(PivGauche))
+        if (Input.GetKey(RotDroite))
         {
             rota_hor -= r_acceleration;
         }
         //transform.Rotate(Vector3.forward * rota_hor * Time.deltaTime);
 
         //tourner sur soi-meme
-        if (Input.GetKey(RotGauche))
+        if (Input.GetKey(PivDroite))
         {
             rota_s += r_acceleration;
         }
-        if (Input.GetKey(RotDroite))
+        if (Input.GetKey(PivGauche))
         {
             rota_s -= r_acceleration;
         }
