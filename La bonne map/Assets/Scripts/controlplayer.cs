@@ -29,10 +29,6 @@ public class controlplayer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //rota_hor = transform.rotation.x;
-        //rota_ver = transform.rotation.z;
-        //rota_s = transform.rotation.w;
-
         if (Input.GetKey(RotHaut))
         {
             rota_ver += r_acceleration; 
