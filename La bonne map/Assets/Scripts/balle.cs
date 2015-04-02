@@ -8,6 +8,7 @@ public class balle : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+        this.gameObject.tag = "balle";
         DestroyObject(gameObject, 2);
         audio.Play();
 	}
@@ -17,13 +18,4 @@ public class balle : MonoBehaviour {
     {
         transform.Translate(Vector3.forward * Time.deltaTime * 100);
 	}
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "spaceship3")
-        {
-            Debug.Log("test2");
-            Destroy(this.gameObject);
-        }        
-    }
 }

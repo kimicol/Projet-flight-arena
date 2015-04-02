@@ -20,7 +20,18 @@ public class vie : MonoBehaviour {
         if (pv <= 0 )//&& !anim.isPlaying)
         {
             //anim.Play();
+            //Debug.Log("test2");
             Destroy(this);
+        }
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "balle")
+        {
+            this.pv -= 1;
+            //Debug.Log("test");
+            Destroy(collision.gameObject);
         }
     }
 }
