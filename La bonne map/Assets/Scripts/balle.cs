@@ -20,10 +20,10 @@ public class balle : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "vie")
+        if (collision.gameObject.tag == "spaceship3")
         {
             Debug.Log("test2");
             Destroy(this.gameObject);
-        }
+        }        
     }
 }

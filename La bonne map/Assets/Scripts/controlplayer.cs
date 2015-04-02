@@ -78,6 +78,8 @@ public class controlplayer : MonoBehaviour
         if (Input.GetKey(KeyCode.O))
             vitesse -= v_acceleration;
 
+        rigidbody.velocity = Vector3.zero;
+
         transform.Translate(Vector3.forward * Time.deltaTime * vitesse);
 	}
 
