@@ -33,9 +33,17 @@ public class controlplayer : MonoBehaviour
         {
             rota_ver += r_acceleration; 
         }
+        else if(rota_ver != 0)
+        {
+            rota_ver -= r_acceleration;
+        }
         if (Input.GetKey(RotBas))
         {
             rota_ver -= r_acceleration;
+        }
+        else if (rota_ver != 0)
+        {
+            rota_ver += r_acceleration;
         }
         //transform.Rotate(Vector3.right * rota_ver * Time.deltaTime);
 
@@ -43,9 +51,17 @@ public class controlplayer : MonoBehaviour
         {
             rota_hor += r_acceleration;
         }
+        else if(rota_hor != 0)
+        {
+            rota_hor -= r_acceleration;
+        }
         if (Input.GetKey(RotDroite))
         {
             rota_hor -= r_acceleration;
+        }
+        else if (rota_hor != 0)
+        {
+            rota_hor += r_acceleration;
         }
         //transform.Rotate(Vector3.forward * rota_hor * Time.deltaTime);
 
@@ -54,13 +70,21 @@ public class controlplayer : MonoBehaviour
         {
             rota_s += r_acceleration;
         }
+        else if(rota_s != 0)
+        {
+            rota_s -= r_acceleration;
+        }
         if (Input.GetKey(PivGauche))
         {
             rota_s -= r_acceleration;
         }
+        else if (rota_s != 0)
+        {
+            rota_s += r_acceleration;
+        }
         //transform.Rotate(Vector3.down * rota_s * Time.deltaTime);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(rota_ver, rota_s, rota_hor), Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, transform.rotation * Quaternion.Euler(rota_ver, rota_s, rota_hor), Time.deltaTime);
 
         //Déplacement vers l'avant
         if (Input.GetKey(Avancer) && vitesse < v_max)
