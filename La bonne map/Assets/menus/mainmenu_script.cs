@@ -6,7 +6,8 @@ public class mainmenu_script : MonoBehaviour
     private int choix_menu = 1;
     private float volume = 0.5f;
     public GUISkin skin;
-
+    public Texture vaisseau1;
+    public Texture vaisseau2;
     
 
 	// Use this for initialization
@@ -37,6 +38,9 @@ public class mainmenu_script : MonoBehaviour
             case 2:
                 menu_options();
                 break;
+            case 3:
+                menu_selection();
+                break;
         }
     }
 
@@ -48,7 +52,7 @@ public class mainmenu_script : MonoBehaviour
     {
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 30, 400, 25), "Un joueur"))
         {
-            Application.LoadLevel(1);
+            choix_menu = 3;
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2, 400, 25), "Multijoueur"))
@@ -85,6 +89,24 @@ public class mainmenu_script : MonoBehaviour
         {
             choix_menu = 1;
             return;
+        }
+    }
+
+    void menu_selection()
+    {
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 60, 400, 25), "Retour"))
+        {
+            choix_menu = 1;
+        }
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 200, 200), vaisseau1))
+        {
+            PlayerPrefs.SetInt("vaisseau_joueur", 1);
+            Application.LoadLevel(1);
+        }
+        if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 200, 200), vaisseau2))
+        {
+            PlayerPrefs.SetInt("vaisseau_joueur", 2);
+            Application.LoadLevel(1);
         }
     }
 }
