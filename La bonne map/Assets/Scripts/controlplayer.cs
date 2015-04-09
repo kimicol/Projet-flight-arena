@@ -12,13 +12,13 @@ public class controlplayer : MonoBehaviour
     private float rota_s = 0;
     private float r_acceleration = 1f;
 
-    private KeyCode Avancer = KeyCode.W;
-    private KeyCode RotHaut = KeyCode.UpArrow;
-    private KeyCode RotBas = KeyCode.DownArrow;
-    private KeyCode PivGauche = KeyCode.A;
-    private KeyCode PivDroite = KeyCode.D;
-    private KeyCode RotGauche = KeyCode.LeftArrow;
-    private KeyCode RotDroite = KeyCode.RightArrow;
+    protected bool av = false;
+    protected bool RH = false;
+    protected bool RB = false;
+    protected bool PG = false;
+    protected bool PD = false;
+    protected bool RG = false;
+    protected bool RD = false;
 
 	// Use this for initialization
 	void Start ()
@@ -29,32 +29,37 @@ public class controlplayer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if ((Input.GetKey(RotHaut) || (rota_ver < 0 && !Input.GetKey(RotBas))) && rota_ver < 170f)
+        
+	}
+
+    protected void deplacements()
+    {
+        if ((RH || (rota_ver < 0 && !RB)) && rota_ver < 170f)
         {
-            rota_ver += r_acceleration; 
+            rota_ver += r_acceleration;
         }
-        if ((Input.GetKey(RotBas) || (rota_ver > 0 && !Input.GetKey(RotHaut))) && rota_ver > -170f)
+        if ((RB || (rota_ver > 0 && !RH)) && rota_ver > -170f)
         {
             rota_ver -= r_acceleration;
         }
         //transform.Rotate(Vector3.right * rota_ver * Time.deltaTime);
 
-        if ((Input.GetKey(RotGauche) || (rota_hor < 0 && !Input.GetKey(RotDroite))) && rota_hor < 170f)
+        if ((RG || (rota_hor < 0 && !RD)) && rota_hor < 170f)
         {
             rota_hor += r_acceleration;
         }
-        if ((Input.GetKey(RotDroite) || (rota_hor > 0 && !Input.GetKey(RotGauche))) && rota_hor > -170f)
+        if ((RD || (rota_hor > 0 && !RG)) && rota_hor > -170f)
         {
             rota_hor -= r_acceleration;
         }
         //transform.Rotate(Vector3.forward * rota_hor * Time.deltaTime);
 
         //tourner sur soi-meme
-        if ((Input.GetKey(PivDroite) || (rota_s < 0 && !Input.GetKey(PivGauche))) && rota_s < 170f)
+        if ((PD || (rota_s < 0 && !PG)) && rota_s < 170f)
         {
             rota_s += r_acceleration;
         }
-        if ((Input.GetKey(PivGauche) || (rota_s > 0 && !Input.GetKey(PivDroite))) && rota_s > -170f)
+        if ((PG || (rota_s > 0 && !PD)) && rota_s > -170f)
         {
             rota_s -= r_acceleration;
         }
@@ -63,11 +68,11 @@ public class controlplayer : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, transform.rotation * Quaternion.Euler(rota_ver, rota_s, rota_hor), Time.deltaTime);
 
         //Déplacement vers l'avant
-        if (Input.GetKey(Avancer) && vitesse < v_max)
+        if (av && vitesse < v_max)
         {
             vitesse += v_acceleration;
         }
-        else if(vitesse > 0)
+        else if (vitesse > 0)
         {
             vitesse -= v_acceleration;
         }
@@ -75,7 +80,7 @@ public class controlplayer : MonoBehaviour
         rigidbody.velocity = Vector3.zero;
 
         transform.Translate(Vector3.forward * Time.deltaTime * vitesse);
-	}
+    }
 
     /*void FixedUpdate()
     {

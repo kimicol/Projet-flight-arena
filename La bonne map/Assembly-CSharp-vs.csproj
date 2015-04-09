@@ -51,6 +51,7 @@
      <Compile Include="Assets\RoadTool\Scripts\Road.cs" />
      <Compile Include="Assets\Scripts\balle.cs" />
      <Compile Include="Assets\Scripts\controlplayer.cs" />
+     <Compile Include="Assets\Scripts\inputs.cs" />
      <Compile Include="Assets\Scripts\menu_pause.cs" />
      <Compile Include="Assets\Scripts\tir.cs" />
      <Compile Include="Assets\Scripts\vie.cs" />
