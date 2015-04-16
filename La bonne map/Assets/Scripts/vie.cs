@@ -20,8 +20,8 @@ public class vie : MonoBehaviour {
         if (pv <= 0 )//&& !anim.isPlaying)
         {
             //anim.Play();
-            //Debug.Log("test2");
-            Destroy(this);
+            Debug.Log("test2");
+            DestroyObject(this.gameObject);
         }
     }
 
@@ -30,8 +30,8 @@ public class vie : MonoBehaviour {
         if (collision.gameObject.tag == "balle")
         {
             this.pv -= 1;
-            //Debug.Log("test");
-            Destroy(collision.gameObject);
+            Debug.Log(pv);
+            DestroyObject(collision.gameObject);
         }
     }
 }
