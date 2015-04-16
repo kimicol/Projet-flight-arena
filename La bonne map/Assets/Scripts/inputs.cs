@@ -4,13 +4,13 @@ using System.Collections;
 public class inputs : controlplayer
 {
 
-    private KeyCode Avancer = KeyCode.W;
-    private KeyCode RotHaut = KeyCode.UpArrow;
-    private KeyCode RotBas = KeyCode.DownArrow;
-    private KeyCode PivGauche = KeyCode.A;
-    private KeyCode PivDroite = KeyCode.D;
-    private KeyCode RotGauche = KeyCode.LeftArrow;
-    private KeyCode RotDroite = KeyCode.RightArrow;
+    public KeyCode Avancer = KeyCode.W;
+    public KeyCode RotHaut = KeyCode.UpArrow;
+    public KeyCode RotBas = KeyCode.DownArrow;
+    public KeyCode PivGauche = KeyCode.A;
+    public KeyCode PivDroite = KeyCode.D;
+    public KeyCode RotGauche = KeyCode.LeftArrow;
+    public KeyCode RotDroite = KeyCode.RightArrow;
 
 	// Use this for initialization
 	void Start () 

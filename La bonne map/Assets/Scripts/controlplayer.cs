@@ -5,12 +5,13 @@ public class controlplayer : MonoBehaviour
 {
     public float v_max = 75f;
     private float vitesse = 0f;
-    private float v_acceleration = 0.5f;
+    public float v_acceleration = 0.5f;
 
     private float rota_hor = 0;
     private float rota_ver = 0;
     private float rota_s = 0;
-    private float r_acceleration = 1f;
+    public float r_acceleration = 1f;
+    public float cap = 100f;
 
     protected bool av = false;
     protected bool RH = false;
@@ -34,32 +35,32 @@ public class controlplayer : MonoBehaviour
 
     protected void deplacements()
     {
-        if ((RH || (rota_ver < 0 && !RB)) && rota_ver < 170f)
+        if ((RH || (rota_ver < 0 && !RB)) && rota_ver < cap)
         {
             rota_ver += r_acceleration;
         }
-        if ((RB || (rota_ver > 0 && !RH)) && rota_ver > -170f)
+        if ((RB || (rota_ver > 0 && !RH)) && rota_ver > -cap)
         {
             rota_ver -= r_acceleration;
         }
         //transform.Rotate(Vector3.right * rota_ver * Time.deltaTime);
 
-        if ((RG || (rota_hor < 0 && !RD)) && rota_hor < 170f)
+        if ((RG || (rota_hor < 0 && !RD)) && rota_hor < cap)
         {
             rota_hor += r_acceleration;
         }
-        if ((RD || (rota_hor > 0 && !RG)) && rota_hor > -170f)
+        if ((RD || (rota_hor > 0 && !RG)) && rota_hor > -cap)
         {
             rota_hor -= r_acceleration;
         }
         //transform.Rotate(Vector3.forward * rota_hor * Time.deltaTime);
 
         //tourner sur soi-meme
-        if ((PD || (rota_s < 0 && !PG)) && rota_s < 170f)
+        if ((PD || (rota_s < 0 && !PG)) && rota_s < cap)
         {
             rota_s += r_acceleration;
         }
-        if ((PG || (rota_s > 0 && !PD)) && rota_s > -170f)
+        if ((PG || (rota_s > 0 && !PD)) && rota_s > -cap)
         {
             rota_s -= r_acceleration;
         }
