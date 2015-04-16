@@ -6,6 +6,7 @@ public class tir : MonoBehaviour {
     public Rigidbody projectile;
     public Transform origine;
     public Transform origine2;
+    public KeyCode input = KeyCode.Space;
     private int i;
     //public int force = 10000;
 
@@ -17,7 +18,7 @@ public class tir : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(input))
         {
             //Debug.Log("bla");
             Rigidbody instance;
