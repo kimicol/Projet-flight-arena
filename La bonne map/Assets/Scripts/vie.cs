@@ -26,8 +26,8 @@ public class vie : MonoBehaviour {
         {
             //anim.Play();
             killed = true;
-            //DestroyObject(this.);
-            this.gameObject.SetActive(false);
+            DestroyObject(this.gameObject);
+            //this.gameObject.SetActive(false);
         }
     }
 

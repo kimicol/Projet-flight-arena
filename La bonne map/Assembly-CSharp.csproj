@@ -50,6 +50,7 @@
      <Compile Include="Assets\PlayerMvtTest.cs" />
      <Compile Include="Assets\RoadTool\Scripts\Road.cs" />
      <Compile Include="Assets\Scripts\balle.cs" />
+     <Compile Include="Assets\Scripts\controlcamera.cs" />
      <Compile Include="Assets\Scripts\controlplayer.cs" />
      <Compile Include="Assets\Scripts\inputs.cs" />
      <Compile Include="Assets\Scripts\menu_pause.cs" />
