@@ -11,6 +11,7 @@ public class inputs : controlplayer
     public KeyCode PivDroite = KeyCode.D;
     public KeyCode RotGauche = KeyCode.LeftArrow;
     public KeyCode RotDroite = KeyCode.RightArrow;
+    public KeyCode feu = KeyCode.Space;
 
 	// Use this for initialization
 	void Start () 
@@ -28,6 +29,7 @@ public class inputs : controlplayer
         PD = Input.GetKey(PivDroite);
         RG = Input.GetKey(RotGauche);
         RD = Input.GetKey(RotDroite);
+        fire = Input.GetKey(feu);
 
         deplacements();
 	}

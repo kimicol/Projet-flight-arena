@@ -20,16 +20,19 @@ ModelImporter:
     2300004: Cube_MeshPart2
     2300006: Cube_MeshPart3
     2300008: Cube_MeshPart4
+    2300010: //RootNode
     3300000: Cube_MeshPart0
     3300002: Cube_MeshPart1
     3300004: Cube_MeshPart2
     3300006: Cube_MeshPart3
     3300008: Cube_MeshPart4
+    3300010: //RootNode
     4300000: Cube_MeshPart0
     4300002: Cube_MeshPart1
     4300004: Cube_MeshPart2
     4300006: Cube_MeshPart3
     4300008: Cube_MeshPart4
+    4300010: Cube
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -68,7 +71,7 @@ ModelImporter:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 2
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

@@ -36,7 +36,7 @@ public class vie : MonoBehaviour {
         if (collision.gameObject.tag == "balle")
         {
             this.pv -= 1;
-            Debug.Log(pv);
+            //Debug.Log(pv);
             DestroyObject(collision.gameObject);
         }
     }
