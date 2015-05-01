@@ -49,6 +49,7 @@
      <Compile Include="Assets\Mvtvaisseau.cs" />
      <Compile Include="Assets\PlayerMvtTest.cs" />
      <Compile Include="Assets\RoadTool\Scripts\Road.cs" />
+     <Compile Include="Assets\Scripts\IA.cs" />
      <Compile Include="Assets\Scripts\balle.cs" />
      <Compile Include="Assets\Scripts\controlcamera.cs" />
      <Compile Include="Assets\Scripts\controlplayer.cs" />
