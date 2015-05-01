@@ -7,31 +7,42 @@ using System.Threading;
 public class multi_input : controlplayer 
 {
     public UdpClient client;
-    private bool[] inputs;
-
-    public KeyCode Avancer = KeyCode.W;
-    public KeyCode RotHaut = KeyCode.UpArrow;
-    public KeyCode RotBas = KeyCode.DownArrow;
-    public KeyCode PivGauche = KeyCode.A;
-    public KeyCode PivDroite = KeyCode.D;
-    public KeyCode RotGauche = KeyCode.LeftArrow;
-    public KeyCode RotDroite = KeyCode.RightArrow;
-    public KeyCode feu = KeyCode.Space;
+    string ip;
+    private byte[] toSend;
+    IPEndPoint serverAddress;
 
     void Awake()
     {
-        client = new UdpClient();
+        ip = PlayerPrefs.GetString("IP");
+        serverAddress = new IPEndPoint(IPAddress.Parse(ip), 6000);
+        client = new UdpClient(serverAddress);
     }
 
 	// Use this for initialization
 	void Start ()
     {
-        inputs = new bool[] { false, false, false, false, false, false, false, false };
+        toSend = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0};
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        
+        toSend = client.Receive(ref serverAddress);
+
+        av = toSend[0] == 1;
+        RH = toSend[1] == 1;
+        RB = toSend[2] == 1;
+        PG = toSend[3] == 1;
+        PD = toSend[4] == 1;
+        RG = toSend[5] == 1;
+        RD = toSend[6] == 1;
+        fire = toSend[7] == 1; ;
+
+        deplacements();
 	}
+
+    void OnApplicationQuit()
+    {
+        client.Close();
+    }
 }

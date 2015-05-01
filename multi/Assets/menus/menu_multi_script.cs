@@ -13,7 +13,16 @@ public class menu_multi_script : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-	
+        ip = PlayerPrefs.GetString("IP");
+
+        if (PlayerPrefs.HasKey("IP"))
+        {
+            ip = PlayerPrefs.GetString("IP");
+        }
+        else
+        {
+            PlayerPrefs.SetString("IP", ip);
+        }
 	}
 	
 	// Update is called once per frame
@@ -73,7 +82,18 @@ public class menu_multi_script : MonoBehaviour
         {
             IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(ip), 6000);
             client = new UdpClient(serverAddress);
+            //client.Connect(serverAddress);
+            GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 100, 30), "IP valide");
+            client.Close();
+
+            if(GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 60, 400, 25), "Jouer"))
+            {
+                Application.LoadLevel(1);
+            }
         }
-        catch { }
+        catch 
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 100, 30), "IP invalide");
+        }
     }
 }
