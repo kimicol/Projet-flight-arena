@@ -56,12 +56,14 @@
      <Compile Include="Assets\Scripts\inputs.cs" />
      <Compile Include="Assets\Scripts\menu_pause.cs" />
      <Compile Include="Assets\Scripts\vie.cs" />
+     <Compile Include="Assets\clock_gui.cs" />
+     <Compile Include="Assets\joueur\testGUI.cs" />
      <Compile Include="Assets\menus\decor_menu.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />
-     <None Include="Assets\RoadTool\Example\Texture\Texture Credits.txt" />
+     <None Include="Assets\Example\Texture\Texture Credits.txt" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\RoadTool\README.txt" />
