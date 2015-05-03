@@ -18,7 +18,7 @@ public class testGUI : vie{
 		//Debug.Log ("test pv :" + life);
         GameObject thePlayer = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
         vie john = thePlayer.GetComponent<vie>();
-        Debug.Log(john.VAFANCULO().ToString());
+        //Debug.Log(john.VAFANCULO().ToString());
         life_gui.text = john.VAFANCULO().ToString();
     }
 }

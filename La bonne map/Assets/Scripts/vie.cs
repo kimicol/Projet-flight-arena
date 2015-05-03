@@ -8,9 +8,9 @@ public class vie : MonoBehaviour {
     private bool killed;
     private int frag_limite = 5;
     public bool respawn = true;
-    private Vector3 respawn_point;
+    private Vector3 respawn_position;
+    private Vector3 respawn_lookat = new Vector3(40, 30, 0);
     public AudioClip hitmarker;
-
     public Transform depart;
     public GUISkin skin;
     public Animation anim;
@@ -39,9 +39,11 @@ public class vie : MonoBehaviour {
             {
                 if (frag_limite >1)
                 {
+                    
                     System.Random rnd = new System.Random();
-                    respawn_point.Set(rnd.Next(-120,120),rnd.Next(80),rnd.Next(-120,120));
-                    transform.position = respawn_point;
+                    respawn_position.Set(rnd.Next(-120,120),rnd.Next(80),rnd.Next(-120,120));
+                    transform.position = respawn_position;
+                    transform.rotation = new Quaternion(0, 0, 0, 0);
                     current_life = pv;
                     Debug.Log("frag limite" + frag_limite);
                     frag_limite--;

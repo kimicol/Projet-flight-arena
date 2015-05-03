@@ -16,9 +16,9 @@ public class controlcamera : MonoBehaviour
     {
         if(vaisseau != null)
         {
-            this.transform.rotation = vaisseau.transform.rotation;
             this.transform.position = vaisseau.transform.position;
             this.transform.Translate(new Vector3(0f, 3f, -9f));
+            this.transform.rotation = vaisseau.transform.rotation;
         }
 	}
 }
