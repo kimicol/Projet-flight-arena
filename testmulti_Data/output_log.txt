@@ -15,7 +15,7 @@ Platform assembly: G:\Projet-flight-arena\testmulti_Data\Managed\Assembly-CSharp
 Loading G:\Projet-flight-arena\testmulti_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: G:\Projet-flight-arena\testmulti_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
 Loading G:\Projet-flight-arena\testmulti_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.037 seconds
+- Completed reload, in  0.046 seconds
 desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -27,4 +27,16 @@ The connection request to 10.3.141.104:6000 failed. Are you sure the server can 
 The connection request to 10.3.141.104:6000 failed. Are you sure the server can be connected to?
  
 (Filename:  Line: 650)
+
+UnloadTime: 0.299132 ms
+FormatException: An invalid IP address was specified.
+  at System.Net.IPAddress.Parse (System.String ipString) [0x00000] in <filename unknown>:0 
+  at inputs.Awake () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 401.
+Total: 1.278634 ms (FindLiveObjects: 0.027770 ms CreateObjectMapping: 0.020223 ms MarkObjects: 0.216727 ms  DeleteObjects: 0.658333 ms)
 

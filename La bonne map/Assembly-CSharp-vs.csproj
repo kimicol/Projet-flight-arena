@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\inputs.cs" />
      <Compile Include="Assets\Scripts\menu_pause.cs" />
      <Compile Include="Assets\Scripts\vie.cs" />
+     <Compile Include="Assets\crosshair.cs" />
      <Compile Include="Assets\menus\decor_menu.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
