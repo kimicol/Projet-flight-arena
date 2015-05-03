@@ -3,7 +3,6 @@ using System.Collections;
 
 public class testGUI : vie{
     private GUIText life_gui;
-	private int life =3;
 
 	// Use this for initialization
 	void Start () {
@@ -16,16 +15,10 @@ public class testGUI : vie{
 	}
      void OnGUI()
     {
-		Debug.Log ("test pv :" + life);
-        life_gui.text = life.ToString();
+		//Debug.Log ("test pv :" + life);
+        GameObject thePlayer = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
+        vie john = thePlayer.GetComponent<vie>();
+        Debug.Log(john.VAFANCULO().ToString());
+        life_gui.text = john.VAFANCULO().ToString();
     }
-	void OnTriggerEnter(Collider collision)
-	{
-		if (collision.gameObject.tag == "balle")
-		{
-			this.life --;
-			Debug.Log(pv + " script pv");
-			DestroyObject(collision.gameObject);
-		}
-	}
 }

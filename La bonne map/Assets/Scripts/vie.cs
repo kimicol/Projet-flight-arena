@@ -4,11 +4,15 @@ using System.Collections;
 public class vie : MonoBehaviour {
 
     public int pv = 5;
+    public int current_life;
     private bool killed;
+    public int frag_limite = 5;
+    public bool respawn = true;
+    private Vector3 respawn_point;
 
     public Transform depart;
     public GUISkin skin;
-    //public Animation anim;
+    public Animation anim;
 
     void Start()
     {
@@ -17,16 +21,37 @@ public class vie : MonoBehaviour {
         {
             Debug.Log("test");
         }*/
+        current_life = pv;
         killed = false;
     }
 
     void Update()
     {
-        if (pv <= 0 )//&& !anim.isPlaying)
+        if (current_life<= 0 )//&& !anim.isPlaying)
         {
             //anim.Play();
-            killed = true;
-            DestroyObject(this.gameObject);
+            if (!respawn)
+            {
+                DestroyObject(this.gameObject);
+            }
+            else
+            {
+                if (frag_limite >1)
+                {
+                    System.Random rnd = new System.Random();
+                    respawn_point.Set(rnd.Next(-120,120),rnd.Next(80),rnd.Next(-120,120));
+                    transform.position = respawn_point;
+                    current_life = pv;
+                    Debug.Log("frag limite" + frag_limite);
+                    frag_limite--;
+                }
+                else
+                {
+                    Debug.Log("meurs");
+                    DestroyObject(this.gameObject);
+                    killed = true;
+                }         
+            }
             //this.gameObject.SetActive(false);
         }
     }
@@ -35,15 +60,15 @@ public class vie : MonoBehaviour {
     {
         if (collision.gameObject.tag == "balle")
         {
-            this.pv -= 1;
-            //Debug.Log(pv + " script pv");
-            DestroyObject(collision.gameObject);
+            this.current_life -= 1;
+            //Debug.Log(current_life + " script pv");
+           // DestroyObject(collision.gameObject);
         }
     }
 
     void OnGUI()
     {
-		/*
+		
         if(skin != null)
             skin.label.fontSize = 70;
         GUI.skin = skin;
@@ -60,7 +85,11 @@ public class vie : MonoBehaviour {
                 Application.LoadLevel(0);
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Quitter le jeu"))
                 Application.Quit();
-                */
-        //}
+                
+        }
+    }
+    public int VAFANCULO()
+    {
+        return this.current_life;
     }
 }
