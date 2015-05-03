@@ -6,7 +6,7 @@ public class vie : MonoBehaviour {
     public int pv = 5;
     public int current_life;
     private bool killed;
-    public int frag_limite = 5;
+    private int frag_limite = 5;
     public bool respawn = true;
     private Vector3 respawn_point;
 

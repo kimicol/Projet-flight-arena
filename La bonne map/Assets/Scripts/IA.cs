@@ -16,27 +16,29 @@ public class IA : controlplayer
 
         if(gauche.detectCollisions)
         {
-
+            PD = true;
         }
         else if(droite.detectCollisions)
         {
-
+            PG = true;
         }
         else//mettre a false
         {
-
+            PD = false;
+            PG = false;
         }
         if(haut.detectCollisions)
         {
-
+            RB = true;
         }
         else if(bas.detectCollisions)
         {
-
+            RH = true;
         }
         else//mettre a false
         {
-
+            RB = false;
+            RH = false;
         }
 
         deplacements();
