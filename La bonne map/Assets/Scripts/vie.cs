@@ -6,10 +6,9 @@ public class vie : MonoBehaviour {
     public int pv = 5;
     public int current_life;
     private bool killed;
-    private int frag_limite = 5;
+    private int frag_limite = 20;
     public bool respawn = true;
     private Vector3 respawn_position;
-    private Vector3 respawn_lookat = new Vector3(40, 30, 0);
     public AudioClip hitmarker;
     public Transform depart;
     public GUISkin skin;
@@ -41,16 +40,15 @@ public class vie : MonoBehaviour {
                 {
                     
                     System.Random rnd = new System.Random();
+                    transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     respawn_position.Set(rnd.Next(-120,120),rnd.Next(80),rnd.Next(-120,120));
                     transform.position = respawn_position;
-                    transform.rotation = new Quaternion(0, 0, 0, 0);
                     current_life = pv;
-                    Debug.Log("frag limite" + frag_limite);
                     frag_limite--;
                 }
                 else
                 {
-                    Debug.Log("meurs");
+                    frag_limite--;
                     DestroyObject(this.gameObject);
                     killed = true;
                 }         
