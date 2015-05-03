@@ -160,7 +160,7 @@ public class mainmenu_script : MonoBehaviour
     {
         GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), "IP de l'hébergeur : ");
 
-        ip = GUI.TextField(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 200, 40), ip, 10);
+        ip = GUI.TextField(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 300, 40), ip, 15);
 
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
