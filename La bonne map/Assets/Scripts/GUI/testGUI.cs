@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class testGUI : MonoBehaviour {
+public class testGUI : vie{
     private GUIText life_gui;
-    public int nb_pv; // il faudrait que cette valeur soit egale au nombre de pv du vaisseau (du script vie.cs par ex ) pour que j'execute ensuite le OnGUI. gl hf
-
+	private int life =3;
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +14,18 @@ public class testGUI : MonoBehaviour {
 	void Update () {
 
 	}
-    private void OnGUI()
+     void OnGUI()
     {
-        //life_gui.text = nb_pv.ToString();
+		Debug.Log ("test pv :" + life);
+        life_gui.text = life.ToString();
     }
+	void OnTriggerEnter(Collider collision)
+	{
+		if (collision.gameObject.tag == "balle")
+		{
+			this.life --;
+			Debug.Log(pv + " script pv");
+			DestroyObject(collision.gameObject);
+		}
+	}
 }

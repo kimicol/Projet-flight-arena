@@ -3,7 +3,7 @@ using System.Collections;
 
 public class vie : MonoBehaviour {
 
-    private int pv = 5;
+    public int pv = 5;
     private bool killed;
 
     public Transform depart;
@@ -36,13 +36,14 @@ public class vie : MonoBehaviour {
         if (collision.gameObject.tag == "balle")
         {
             this.pv -= 1;
-            //Debug.Log(pv);
+            //Debug.Log(pv + " script pv");
             DestroyObject(collision.gameObject);
         }
     }
 
     void OnGUI()
     {
+		/*
         if(skin != null)
             skin.label.fontSize = 70;
         GUI.skin = skin;
@@ -59,6 +60,7 @@ public class vie : MonoBehaviour {
                 Application.LoadLevel(0);
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Quitter le jeu"))
                 Application.Quit();
-        }
+                */
+        //}
     }
 }
