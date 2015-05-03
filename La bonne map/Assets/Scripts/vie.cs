@@ -9,6 +9,7 @@ public class vie : MonoBehaviour {
     private int frag_limite = 5;
     public bool respawn = true;
     private Vector3 respawn_point;
+    public AudioClip hitmarker;
 
     public Transform depart;
     public GUISkin skin;
@@ -61,6 +62,7 @@ public class vie : MonoBehaviour {
         if (collision.gameObject.tag == "balle")
         {
             this.current_life -= 1;
+            audio.PlayOneShot(hitmarker);
             //Debug.Log(current_life + " script pv");
            // DestroyObject(collision.gameObject);
         }
