@@ -182,7 +182,7 @@ public class mainmenu_script : MonoBehaviour
         {
             if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Jouer"))
             {
-                // A TERMINER
+                Application.LoadLevel(1);
             }
 
             if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
@@ -217,5 +217,10 @@ public class mainmenu_script : MonoBehaviour
     void OnPlayerDisconnected()
     {
         nb_player--;
+    }
+
+    void OnConnectedToServer()
+    {
+        choix_menu = 7;
     }
 }
