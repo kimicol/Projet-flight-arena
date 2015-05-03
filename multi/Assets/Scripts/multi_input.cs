@@ -7,9 +7,9 @@ using System.Threading;
 public class multi_input : controlplayer 
 {
     public UdpClient client;
-    string ip;
+    private string ip;
     private byte[] toSend;
-    IPEndPoint serverAddress;
+    private IPEndPoint serverAddress;
 
     void Awake()
     {

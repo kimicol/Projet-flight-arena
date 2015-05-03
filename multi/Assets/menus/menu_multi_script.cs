@@ -1,28 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Threading;
-using System.Net;
-using System.Net.Sockets;
 
 public class menu_multi_script : MonoBehaviour 
 {
     private int choix_menu = 1;
-    public UdpClient client;
     private string ip = "";
+    private int port = 6000;
 
 	// Use this for initialization
 	void Start () 
     {
-        ip = PlayerPrefs.GetString("IP");
-
-        if (PlayerPrefs.HasKey("IP"))
-        {
-            ip = PlayerPrefs.GetString("IP");
-        }
-        else
-        {
-            PlayerPrefs.SetString("IP", ip);
-        }
+        
 	}
 	
 	// Update is called once per frame
@@ -39,7 +27,7 @@ public class menu_multi_script : MonoBehaviour
                 menu_multi();
                 break;
             case 2:
-                heberger_multi();
+                LaunchServer();
                 break;
             case 3:
                 rejoindre_multi();
@@ -65,11 +53,9 @@ public class menu_multi_script : MonoBehaviour
         }
     }
 
-    void heberger_multi()
+    void LaunchServer()
     {
-        IPHostEntry ip = Dns.GetHostEntry(Dns.GetHostName());
-        
-        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 50), "Votre IP : " + ip.AddressList[0].ToString());
+        Network.InitializeServer(2, port, !Network.HavePublicAddress());
     }
 
     void rejoindre_multi()
@@ -77,23 +63,5 @@ public class menu_multi_script : MonoBehaviour
         GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), "IP de l'hébergeur : ");
         
         ip = GUI.TextField(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 100, 40), ip, 10);
-
-        try
-        {
-            IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse(ip), 6000);
-            client = new UdpClient(serverAddress);
-            //client.Connect(serverAddress);
-            GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 100, 30), "IP valide");
-            client.Close();
-
-            if(GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 60, 400, 25), "Jouer"))
-            {
-                Application.LoadLevel(1);
-            }
-        }
-        catch 
-        {
-            GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 100, 30), "IP invalide");
-        }
     }
 }
