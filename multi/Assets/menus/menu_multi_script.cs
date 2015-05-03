@@ -6,18 +6,7 @@ public class menu_multi_script : MonoBehaviour
     private int choix_menu = 1;
     private string ip = "";
     private int port = 6000;
-
-	// Use this for initialization
-	void Start () 
-    {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	
-	}
+    private int nb_player;
 
     void OnGUI()
     {
@@ -31,6 +20,9 @@ public class menu_multi_script : MonoBehaviour
                 break;
             case 3:
                 rejoindre_multi();
+                break;
+            case 4:
+                menu_serveur();
                 break;
         }
     }
@@ -63,5 +55,57 @@ public class menu_multi_script : MonoBehaviour
         GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), "IP de l'hébergeur : ");
         
         ip = GUI.TextField(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 100, 40), ip, 10);
+
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
+        {
+            Network.Connect(ip, port);
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
+            choix_menu = 1;
+    }
+
+    void menu_serveur()
+    {
+        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), "Nombre de joueurs : " + nb_player);
+
+        if(Network.isServer)
+        {
+            if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Jouer"))
+            {
+                
+            }
+
+            if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
+            {
+                Network.Disconnect();
+                choix_menu = 1;
+            }
+        }
+        else
+        {
+            if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
+            {
+                Network.Disconnect();
+                choix_menu = 1;
+            }
+        }
+    }
+
+    void OnServerInitialized()
+    {
+        choix_menu = 4;
+        nb_player = 1;
+    }
+
+    void OnPlayerConnected()
+    {
+        nb_player++;
+    }
+
+    void OnPlayerDisconnected()
+    {
+        nb_player--;
     }
 }
