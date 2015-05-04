@@ -61,7 +61,10 @@ public class multi_setting : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
         {
             Network.Connect(ip, port);
-            System.Threading.Thread.Sleep(4000);
+            //System.Threading.Thread.Sleep(4000);
+            for (int i = 0; i < 10000; i++)
+                continue;
+
             menu = 3;
             nouveau_joueur();
         }
@@ -90,7 +93,7 @@ public class multi_setting : MonoBehaviour
         System.Random rnd = new System.Random();
         pos.Set(rnd.Next(-100, 100), rnd.Next(80), rnd.Next(-100, 100));
 
-        Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
+        Transform vaisseau =  (Transform)Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
 
         this.camera.enabled = false;
         //vaisseau.camera.enabled = true;
