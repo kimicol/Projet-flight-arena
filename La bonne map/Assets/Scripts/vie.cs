@@ -10,6 +10,7 @@ public class vie : MonoBehaviour
     private int frag_limite = 1;
     public bool respawn = true;
     private Vector3 respawn_position;
+    public GameObject winner;
     public AudioClip hitmarker;
     public Transform depart;
     public GUISkin skin;
@@ -51,7 +52,7 @@ public class vie : MonoBehaviour
                 {
                     frag_limite--;
                     DestroyObject(this.gameObject);
-                    GameObject.Find("gameoverCAM").camera.depth = 2;
+                    gameover();
                     killed = true;
                 }
             }
@@ -95,5 +96,15 @@ public class vie : MonoBehaviour
     public int VAFANCULO()
     {
         return this.current_life;
+    }
+    public void gameover ()
+    {
+        GameObject.Find("gameoverCAM").camera.depth = 2;
+        winner = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
+        if (!winner.activeInHierarchy)
+        {
+            //gameoverscript.launch("PLAYER 2 WIN")
+        }
+        
     }
 }
