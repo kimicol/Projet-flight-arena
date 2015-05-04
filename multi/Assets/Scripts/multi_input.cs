@@ -19,7 +19,7 @@ public class multi_input : controlplayer
 
     void Awake()
     {
-        enabled = networkView.isMine;
+        enabled = !networkView.isMine;
     }
 
 	// Use this for initialization
@@ -32,7 +32,7 @@ public class multi_input : controlplayer
 	// Update is called once per frame
 	void Update () 
     {
-        if (networkView.isMine)
+        if (!networkView.isMine)
         {
             av = Input.GetKey(Avancer);
             RH = Input.GetKey(RotHaut);
@@ -89,5 +89,10 @@ public class multi_input : controlplayer
             flux.Serialize(ref pos); //"Decode" it and receive it
             transform.position = pos;
         }
+    }
+
+    void OnDisconnectedFromServer()
+    {
+        Destroy(this.gameObject);
     }
 }
