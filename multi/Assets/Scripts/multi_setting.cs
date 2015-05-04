@@ -64,6 +64,7 @@ public class multi_setting : MonoBehaviour
             {
                 menu = 3;
             }
+            menu = 3;
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
