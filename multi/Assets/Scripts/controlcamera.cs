@@ -6,10 +6,15 @@ public class controlcamera : MonoBehaviour
 {
     public Transform vaisseau;
 
+    void Awake()
+    {
+        camera.enabled = networkView.isMine;
+    }
+
 	// Use this for initialization
 	void Start ()
     {
-	
+
 	}
 	
 	// Update is called once per frame
