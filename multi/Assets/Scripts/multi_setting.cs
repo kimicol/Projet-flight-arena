@@ -38,11 +38,11 @@ public class multi_setting : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width/2, Screen.height/2, 300, 30), "Héberger"))
         {
             Network.InitializeServer(4, 25000, !Network.HavePublicAddress());
-            if(Network.peerType == NetworkPeerType.Server)
-            {
+            //if(Network.peerType == NetworkPeerType.Server)
+            //{
                 menu = 3;
                 nouveau_joueur();
-            }
+            //}
         }
 
         if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 30, 300, 30), "Rejoindre"))
@@ -63,14 +63,7 @@ public class multi_setting : MonoBehaviour
             Network.Connect(ip, port);
             //System.Threading.Thread.Sleep(4000);
             menu = 3;
-            Vector3 pos = Vector3.zero;
-
-            System.Random rnd = new System.Random();
-            pos.Set(rnd.Next(-100, 100), rnd.Next(80), rnd.Next(-100, 100));
-
-            Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
-
-            this.camera.enabled = false;
+            nouveau_joueur();
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
@@ -95,7 +88,7 @@ public class multi_setting : MonoBehaviour
         Vector3 pos = Vector3.zero;
 
         System.Random rnd = new System.Random();
-        pos.Set(rnd.Next(-100, 100), rnd.Next(80), rnd.Next(-100, 100));
+        pos.Set(rnd.Next(-100, 100), rnd.Next(70), rnd.Next(-100, 100));
 
         Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
 
