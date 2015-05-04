@@ -32,7 +32,7 @@ public class multi_input : controlplayer
 	// Update is called once per frame
 	void Update () 
     {
-        if (networkView.isMine)
+        if (!networkView.isMine)
         {
             av = Input.GetKey(Avancer);
             RH = Input.GetKey(RotHaut);
