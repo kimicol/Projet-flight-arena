@@ -12,13 +12,13 @@ public class controlcamera : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () 
+    void Update()
     {
-        if(vaisseau != null)
+        if (vaisseau != null)
         {
             this.transform.position = vaisseau.transform.position;
             this.transform.Translate(new Vector3(0f, 3f, -9f));
             this.transform.rotation = vaisseau.transform.rotation;
         }
-	}
+    }
 }
