@@ -32,14 +32,17 @@ public class multi_input : controlplayer
 	// Update is called once per frame
 	void Update () 
     {
-        av = Input.GetKey(Avancer);
-        RH = Input.GetKey(RotHaut);
-        RB = Input.GetKey(RotBas);
-        PG = Input.GetKey(PivGauche);
-        PD = Input.GetKey(PivDroite);
-        RG = Input.GetKey(RotGauche);
-        RD = Input.GetKey(RotDroite);
-        fire = Input.GetKey(feu);
+        if (networkView.isMine)
+        {
+            av = Input.GetKey(Avancer);
+            RH = Input.GetKey(RotHaut);
+            RB = Input.GetKey(RotBas);
+            PG = Input.GetKey(PivGauche);
+            PD = Input.GetKey(PivDroite);
+            RG = Input.GetKey(RotGauche);
+            RD = Input.GetKey(RotDroite);
+            fire = Input.GetKey(feu);
+        }
 
         deplacements();
 
