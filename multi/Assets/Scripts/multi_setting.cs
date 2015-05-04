@@ -60,12 +60,15 @@ public class multi_setting : MonoBehaviour
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
         {
-            Network.Connect(ip, port);
-            if(Network.peerType == NetworkPeerType.Server)
+            try
             {
+                Network.Connect(ip, port);
                 menu = 3;
             }
-            //menu = 3;
+            catch
+            {
+
+            }
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
