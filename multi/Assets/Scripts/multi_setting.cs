@@ -61,8 +61,9 @@ public class multi_setting : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
         {
             Network.Connect(ip, port);
+            System.Threading.Thread.Sleep(4000);
             menu = 3;
-            //nouveau_joueur();
+            nouveau_joueur();
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
@@ -75,11 +76,12 @@ public class multi_setting : MonoBehaviour
         nouveau_joueur();
     }
     */
-
+    /*
     void OnConnectedToServer()
     {
         nouveau_joueur();
     }
+     */
 
     void nouveau_joueur()
     {
