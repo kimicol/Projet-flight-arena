@@ -74,6 +74,7 @@ public class mainmenu_script : MonoBehaviour
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2, 400, 25), "Multijoueur"))
         {
+            Application.LoadLevel(1);
             choix_menu = 4;
         }
 
