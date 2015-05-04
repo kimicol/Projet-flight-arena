@@ -47,10 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Mvtvaisseau.cs" />
-     <Compile Include="Assets\PlayerMvtTest.cs" />
+     <Compile Include="Assets\Scripts\GUI\GUIGameOverScript.cs" />
      <Compile Include="Assets\Scripts\GUI\clock_gui.cs" />
+     <Compile Include="Assets\Scripts\GUI\player2gui_life.cs" />
      <Compile Include="Assets\Scripts\GUI\testGUI.cs" />
      <Compile Include="Assets\Scripts\IA.cs" />
+     <Compile Include="Assets\Scripts\PlayerMvtTest.cs" />
      <Compile Include="Assets\Scripts\Scripts\Road.cs" />
      <Compile Include="Assets\Scripts\balle.cs" />
      <Compile Include="Assets\Scripts\controlcamera.cs" />
@@ -60,7 +62,6 @@
      <Compile Include="Assets\Scripts\vie.cs" />
      <Compile Include="Assets\menus\decor_menu.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
-     <Compile Include="Assets\player2gui_life.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Projectors\Sources\Shaders\Projector Multiply.shader" />

@@ -95,4 +95,8 @@ public class vie : MonoBehaviour
     {
         return this.current_life;
     }
+    public void game_over()
+    {
+
+    }
 }
