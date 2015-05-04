@@ -68,7 +68,7 @@ public class multi_setting : MonoBehaviour
             }
             catch
             {
-
+                Debug.Log("NOOO");
             }
         }
 
