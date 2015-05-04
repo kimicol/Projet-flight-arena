@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class testGUI : vie
+public class player2gui_life : vie
 {
     private GUIText life_gui;
     private GameObject thePlayer;
@@ -19,7 +19,7 @@ public class testGUI : vie
     void OnGUI()
     {
         //Debug.Log ("test pv :" + life);
-        thePlayer = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
+        thePlayer = GameObject.Find("le him is le player 2");
         vie bob = thePlayer.GetComponent<vie>();
         life_gui.text = bob.VAFANCULO().ToString();
         if (bob.VAFANCULO() < 1)
