@@ -7,7 +7,7 @@ public class vie : MonoBehaviour
     public int pv = 5;
     public int current_life;
     private bool killed;
-    private int frag_limite = 3;
+    private int frag_limite = 1;
     public bool respawn = true;
     private Vector3 respawn_position;
     public AudioClip hitmarker;
@@ -51,6 +51,7 @@ public class vie : MonoBehaviour
                 {
                     frag_limite--;
                     DestroyObject(this.gameObject);
+                    GameObject.Find("gameoverCAM").camera.depth = 2;
                     killed = true;
                 }
             }
@@ -94,9 +95,5 @@ public class vie : MonoBehaviour
     public int VAFANCULO()
     {
         return this.current_life;
-    }
-    public void game_over()
-    {
-
     }
 }

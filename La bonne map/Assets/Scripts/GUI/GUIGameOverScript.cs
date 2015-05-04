@@ -12,4 +12,8 @@ public class GameOverScript : MonoBehaviour {
 	void Update () {
 	
 	}
+    public static void gameover ()
+    {
+       // camera.depth = 2;
+    }
 }
