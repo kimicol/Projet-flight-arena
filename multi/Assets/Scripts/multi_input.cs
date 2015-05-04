@@ -8,6 +8,20 @@ public class multi_input : controlplayer
     float distance = 0.05f;
     float angle = 0.05f;
 
+    public KeyCode Avancer = KeyCode.W;
+    public KeyCode RotHaut = KeyCode.UpArrow;
+    public KeyCode RotBas = KeyCode.DownArrow;
+    public KeyCode PivGauche = KeyCode.A;
+    public KeyCode PivDroite = KeyCode.D;
+    public KeyCode RotGauche = KeyCode.LeftArrow;
+    public KeyCode RotDroite = KeyCode.RightArrow;
+    public KeyCode feu = KeyCode.Space;
+
+    void Awake()
+    {
+        enabled = networkView.isMine;
+    }
+
 	// Use this for initialization
 	void Start ()
     {
@@ -18,6 +32,15 @@ public class multi_input : controlplayer
 	// Update is called once per frame
 	void Update () 
     {
+        av = Input.GetKey(Avancer);
+        RH = Input.GetKey(RotHaut);
+        RB = Input.GetKey(RotBas);
+        PG = Input.GetKey(PivGauche);
+        PD = Input.GetKey(PivDroite);
+        RG = Input.GetKey(RotGauche);
+        RD = Input.GetKey(RotDroite);
+        fire = Input.GetKey(feu);
+
         deplacements();
 
         if(Vector3.Distance(last_pos, transform.position) > distance)
@@ -48,5 +71,20 @@ public class multi_input : controlplayer
     void SetRot(Quaternion newRot)
     {
         transform.rotation = newRot;
+    }
+
+    void OnSerializeNetworkView(BitStream flux, NetworkMessageInfo info)
+    {
+        if (flux.isWriting)
+        {
+            Vector3 pos = transform.position;
+            flux.Serialize(ref pos);
+        }
+        else
+        {
+            Vector3 pos = Vector3.zero;
+            flux.Serialize(ref pos); //"Decode" it and receive it
+            transform.position = pos;
+        }
     }
 }

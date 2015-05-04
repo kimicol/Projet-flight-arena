@@ -6,6 +6,7 @@ public class multi_setting : MonoBehaviour
     private int menu;
     private string ip = "";
     private int port = 25000;
+    public Transform prefab;
 
 	// Use this for initialization
 	void Start () 
@@ -65,5 +66,21 @@ public class multi_setting : MonoBehaviour
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
             menu = 1;
+    }
+
+    void OnServerInitialized()
+    {
+        nouveau_joueur();
+    }
+
+    void OnConnectedToServer()
+    {
+        nouveau_joueur();
+    }
+
+    void nouveau_joueur()
+    {
+        //A TERMINER
+        Network.Instantiate(prefab, , ,0);
     }
 }

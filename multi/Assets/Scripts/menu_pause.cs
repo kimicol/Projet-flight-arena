@@ -27,10 +27,17 @@ public class menu_pause : MonoBehaviour {
 
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Retour au jeu"))
                 paused = mise_en_pause();
+
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Retour au menu"))
+            {
+                Network.Disconnect();
                 Application.LoadLevel(0);
+            }
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Quitter le jeu"))
+            {
+                Network.Disconnect();
                 Application.Quit();
+            }
         }
     }
 
