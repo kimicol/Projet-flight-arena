@@ -14,7 +14,7 @@ public class controlcamera : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        if(vaisseau != null)
+        if (vaisseau != null)
         {
             this.transform.rotation = vaisseau.transform.rotation;
             this.transform.position = vaisseau.transform.position;

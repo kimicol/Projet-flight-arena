@@ -8,6 +8,8 @@ public class multi_setting : MonoBehaviour
     private int port = 25000;
     public Transform prefab;
 
+    public Transform vaisseau;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -17,7 +19,7 @@ public class multi_setting : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-	
+
 	}
 
     void OnGUI()
@@ -85,6 +87,9 @@ public class multi_setting : MonoBehaviour
         System.Random rnd = new System.Random();
         pos.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
 
-        Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
+        vaisseau = (Transform)Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
+
+        this.camera.enabled = false;
+        vaisseau.camera.enabled = true;
     }
 }

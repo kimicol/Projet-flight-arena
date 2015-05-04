@@ -4,7 +4,7 @@ using System.Collections;
 public class controlplayer : MonoBehaviour 
 {
     //DEPLACEMENTS
-    public float v_max = 75f;
+    public float v_max = 40f;
     private float vitesse = 0f;
     public float v_acceleration = 0.5f;
 
