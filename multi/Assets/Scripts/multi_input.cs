@@ -19,7 +19,7 @@ public class multi_input : controlplayer
 
     void Awake()
     {
-        //enabled = !networkView.isMine;
+        //enabled = networkView.isMine;
     }
 
 	// Use this for initialization
@@ -32,7 +32,7 @@ public class multi_input : controlplayer
 	// Update is called once per frame
 	void Update () 
     {
-        if (!networkView.isMine)
+        if (networkView.isMine)
         {
             av = Input.GetKey(Avancer);
             RH = Input.GetKey(RotHaut);
@@ -42,24 +42,21 @@ public class multi_input : controlplayer
             RG = Input.GetKey(RotGauche);
             RD = Input.GetKey(RotDroite);
             fire = Input.GetKey(feu);
-            deplacements();
-        }
-        else
-        {
-            deplacements();
         }
 
-        //if(Vector3.Distance(last_pos, transform.position) > distance)
-        //{
+        deplacements();
+
+        if(Vector3.Distance(last_pos, transform.position) > distance)
+        {
             last_pos = transform.position;
             networkView.RPC("SetPos", RPCMode.Others, transform.position);
-        //}
+        }
 
-        //if (Quaternion.Angle(last_rot, transform.rotation) > angle)
-        //{
+        if (Quaternion.Angle(last_rot, transform.rotation) > angle)
+        {
             last_rot = transform.rotation;
             networkView.RPC("SetRot", RPCMode.Others, transform.rotation);
-        //}
+        }
 	}
 
     void OnApplicationQuit()
