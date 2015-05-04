@@ -3,10 +3,10 @@ using System.Collections;
 
 public class IA : controlplayer
 {
-    public Rigidbody haut;
-    public Rigidbody bas;
-    public Rigidbody gauche;
-    public Rigidbody droite;
+    public ia_collid gauche;
+    public ia_collid droite;
+    public ia_collid haut;
+    public ia_collid bas;
 	
 	// Update is called once per frame
 	void Update ()
@@ -14,11 +14,11 @@ public class IA : controlplayer
         av = true;
         fire = true;
 
-        if(gauche.detectCollisions)
+        if(gauche.col)
         {
             PD = true;
         }
-        else if(droite.detectCollisions)
+        else if(droite.col)
         {
             PG = true;
         }
@@ -27,11 +27,11 @@ public class IA : controlplayer
             PD = false;
             PG = false;
         }
-        if(haut.detectCollisions)
+        if(haut.col)
         {
             RB = true;
         }
-        else if(bas.detectCollisions)
+        else if(bas.col)
         {
             RH = true;
         }
