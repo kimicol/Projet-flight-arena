@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Mvtvaisseau.cs" />
-     <Compile Include="Assets\Scripts\GUI\GUIGameOverScript.cs" />
      <Compile Include="Assets\Scripts\GUI\clock_gui.cs" />
      <Compile Include="Assets\Scripts\GUI\player2gui_life.cs" />
      <Compile Include="Assets\Scripts\GUI\testGUI.cs" />
