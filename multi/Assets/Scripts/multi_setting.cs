@@ -7,7 +7,6 @@ public class multi_setting : MonoBehaviour
     private string ip = "";
     private int port = 25000;
     public Transform prefab;
-
     public Transform vaisseau;
 
 	// Use this for initialization
@@ -42,7 +41,6 @@ public class multi_setting : MonoBehaviour
             Network.InitializeServer(4, 25000, !Network.HavePublicAddress());
             if(Network.peerType == NetworkPeerType.Server)
             {
-                nouveau_joueur();
                 menu = 3;
             }
         }
@@ -63,7 +61,7 @@ public class multi_setting : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
         {
             Network.Connect(ip, port);
-            if(Network.peerType == NetworkPeerType.Connecting)
+            if(Network.peerType == NetworkPeerType.Client)
             {
                 menu = 3;
             }
@@ -76,7 +74,7 @@ public class multi_setting : MonoBehaviour
 
     void OnServerInitialized()
     {
-        //nouveau_joueur();
+        nouveau_joueur();
     }
 
     void OnConnectedToServer()
@@ -94,6 +92,6 @@ public class multi_setting : MonoBehaviour
         vaisseau = (Transform)Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
 
         this.camera.enabled = false;
-        vaisseau.camera.enabled = true;
+        //vaisseau.camera.enabled = true;
     }
 }
