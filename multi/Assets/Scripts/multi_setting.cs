@@ -41,7 +41,10 @@ public class multi_setting : MonoBehaviour
         {
             Network.InitializeServer(4, 25000, !Network.HavePublicAddress());
             if(Network.peerType == NetworkPeerType.Server)
+            {
+                nouveau_joueur();
                 menu = 3;
+            }
         }
 
         if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 30, 300, 30), "Rejoindre"))
@@ -60,11 +63,11 @@ public class multi_setting : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
         {
             Network.Connect(ip, port);
-            if(Network.peerType == NetworkPeerType.Client)
+            if(Network.peerType == NetworkPeerType.Connecting)
             {
                 menu = 3;
             }
-            menu = 3;
+            //menu = 3;
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
@@ -73,7 +76,7 @@ public class multi_setting : MonoBehaviour
 
     void OnServerInitialized()
     {
-        nouveau_joueur();
+        //nouveau_joueur();
     }
 
     void OnConnectedToServer()
@@ -86,7 +89,7 @@ public class multi_setting : MonoBehaviour
         Vector3 pos = Vector3.zero;
 
         System.Random rnd = new System.Random();
-        pos.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
+        pos.Set(rnd.Next(-100, 100), rnd.Next(80), rnd.Next(-100, 100));
 
         vaisseau = (Transform)Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
 
