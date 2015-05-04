@@ -80,7 +80,11 @@ public class multi_setting : MonoBehaviour
 
     void nouveau_joueur()
     {
-        //A TERMINER
-        Network.Instantiate(prefab, , ,0);
+        Vector3 pos = Vector3.zero;
+
+        System.Random rnd = new System.Random();
+        pos.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
+
+        Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
     }
 }
