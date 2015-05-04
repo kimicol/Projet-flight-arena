@@ -5,8 +5,8 @@ public class multi_input : controlplayer
 {
     Vector3 last_pos;
     Quaternion last_rot;
-    float distance = 0.05f;
-    float angle = 0.05f;
+    float distance = 0.1f;
+    float angle = 0.1f;
 
     public KeyCode Avancer = KeyCode.W;
     public KeyCode RotHaut = KeyCode.UpArrow;
