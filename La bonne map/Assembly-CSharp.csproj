@@ -56,7 +56,8 @@
      <Compile Include="Assets\Scripts\balle.cs" />
      <Compile Include="Assets\Scripts\controlcamera.cs" />
      <Compile Include="Assets\Scripts\controlplayer.cs" />
-     <Compile Include="Assets\Scripts\gameoverscript.cs" />
+     <Compile Include="Assets\Scripts\flamme_script.cs" />
+     <Compile Include="Assets\Scripts\flammeplayer2.cs" />
      <Compile Include="Assets\Scripts\ia_collid.cs" />
      <Compile Include="Assets\Scripts\inputs.cs" />
      <Compile Include="Assets\Scripts\menu_pause.cs" />
