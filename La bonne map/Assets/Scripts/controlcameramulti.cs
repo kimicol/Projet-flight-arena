@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Net;
 
-public class controlcamera : MonoBehaviour
+public class controlcameramulti : MonoBehaviour
 {
     public Transform vaisseau;
 
