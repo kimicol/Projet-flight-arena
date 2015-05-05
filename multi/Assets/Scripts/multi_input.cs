@@ -20,6 +20,7 @@ public class multi_input : controlplayer
     void Awake()
     {
         //enabled = networkView.isMine;
+        rigidbody.isKinematic = !networkView.isMine;
     }
 
 	// Use this for initialization
@@ -42,20 +43,20 @@ public class multi_input : controlplayer
             RG = Input.GetKey(RotGauche);
             RD = Input.GetKey(RotDroite);
             fire = Input.GetKey(feu);
-        }
 
-        deplacements();
+            deplacements();
 
-        if(Vector3.Distance(last_pos, transform.position) > distance)
-        {
-            last_pos = transform.position;
-            networkView.RPC("SetPos", RPCMode.Others, transform.position);
-        }
+            if (Vector3.Distance(last_pos, transform.position) > distance)
+            {
+                last_pos = transform.position;
+                networkView.RPC("SetPos", RPCMode.Others, transform.position);
+            }
 
-        if (Quaternion.Angle(last_rot, transform.rotation) > angle)
-        {
-            last_rot = transform.rotation;
-            networkView.RPC("SetRot", RPCMode.Others, transform.rotation);
+            if (Quaternion.Angle(last_rot, transform.rotation) > angle)
+            {
+                last_rot = transform.rotation;
+                networkView.RPC("SetRot", RPCMode.Others, transform.rotation);
+            }
         }
 	}
 

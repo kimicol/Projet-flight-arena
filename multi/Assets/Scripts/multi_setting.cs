@@ -39,11 +39,11 @@ public class multi_setting : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width/2, Screen.height/2, 300, 30), "Héberger"))
         {
             Network.InitializeServer(4, 25000, true);
-            //if(Network.peerType == NetworkPeerType.Server)
-            //{
-            menu = 3;
-            nouveau_joueur();
-            //}
+            if (Network.peerType == NetworkPeerType.Server)
+            {
+                menu = 3;
+                nouveau_joueur();
+            }
         }
 
         if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 30, 300, 30), "Rejoindre"))
