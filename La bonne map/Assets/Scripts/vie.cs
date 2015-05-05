@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Threading;
 
 public class vie : MonoBehaviour
 {
@@ -7,11 +9,12 @@ public class vie : MonoBehaviour
     public int pv = 5;
     public int current_life;
     private bool killed;
-    public int frag_limite = 1;
+    private int frag_limite = 3;
     public bool respawn = true;
     private Vector3 respawn_position;
     public GameObject winner;
     private GameObject thePlayer;
+    private GameObject cube0;
     public AudioClip hitmarker;
     public GUIText thewinnergui;
     public Transform depart;
@@ -20,6 +23,7 @@ public class vie : MonoBehaviour
 
     void Start()
     {
+        //Cube_MeshPart0
         /*anim = gameObject.GetComponent<Animation>();
         if(anim == null)
         {
@@ -44,10 +48,21 @@ public class vie : MonoBehaviour
                 {
 
                     System.Random rnd = new System.Random();
+                  //  inputs bob = this.gameObject.GetComponent<inputs>();
+                  //  bob.enabled = false;
+                    /*cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart0");
+                    cube0.renderer.enabled = false;
+                    cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart1");
+                    cube0.renderer.enabled = false;*/
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     respawn_position.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
                     transform.position = respawn_position;
                     current_life = pv;
+            /*        cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart0");
+                    cube0.renderer.enabled = true;
+                    cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart1");
+                    cube0.renderer.enabled = true;
+                    bob.enabled = true;*/
                     frag_limite--;
                 }
                 else
