@@ -5,6 +5,7 @@ public class mainmenu_script : MonoBehaviour
 {
     private int choix_menu = 1;
     private float volume = 0.5f;
+    private int player = 1;
     public GUISkin skin;
     public Texture vaisseau1;
     public Texture vaisseau2;
@@ -24,6 +25,17 @@ public class mainmenu_script : MonoBehaviour
         {
             PlayerPrefs.SetFloat("Volume", volume);
         }
+
+        player = PlayerPrefs.GetInt("player", player);
+
+        if(PlayerPrefs.HasKey("player"))
+        {
+            player = PlayerPrefs.GetInt("player", player);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("player", player);
+        }
 	}
 
     void OnGUI()
@@ -40,6 +52,9 @@ public class mainmenu_script : MonoBehaviour
                 break;
             case 3:
                 menu_selection();
+                break;
+            case 4:
+                menu_inputs();
                 break;
         }
     }
@@ -79,34 +94,62 @@ public class mainmenu_script : MonoBehaviour
     void menu_options()
     {
         //Gestion du son
-        volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 100, 30), volume, 0.0f, 1.0f);
-        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), ("Volume : " + (int)(10*volume)));
+        volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 40, 100, 30), volume, 0.0f, 1.0f);
+        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 80, 100, 30), ("Volume : " + (int)(10*volume)));
 
         AudioListener.volume = volume;
         PlayerPrefs.SetFloat("Volume", volume);
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 60, 400, 25), "Retour"))
+        //gestion de la qualite de l'image
+        GUI.Label(new Rect(Screen.width / 6, Screen.height / 2, 200, 30), "Qualité de l'image :" );
+
+        for (int i = 0; i < QualitySettings.names.Length; i++)
+        {
+            if (GUI.Button(new Rect(10 * (i + 1) + i * (Screen.width / QualitySettings.names.Length - 10), Screen.height / 2 + 40, Screen.width / QualitySettings.names.Length - (QualitySettings.names.Length + 1) * 10, 30), QualitySettings.names[i]))
+            {
+                QualitySettings.SetQualityLevel(i, true);
+            }
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Clavier"))
         {
             choix_menu = 1;
+            return;
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
+        {
+            choix_menu = 4;
             return;
         }
     }
 
     void menu_selection()
     {
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 60, 400, 25), "Retour"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
         {
             choix_menu = 1;
         }
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 200, 200), vaisseau1))
         {
-            PlayerPrefs.SetInt("vaisseau_joueur", 1);
+            PlayerPrefs.SetInt("player", 1);
             Application.LoadLevel(1);
         }
         if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 200, 200), vaisseau2))
         {
-            PlayerPrefs.SetInt("vaisseau_joueur", 2);
+            PlayerPrefs.SetInt("player", 2);
             Application.LoadLevel(1);
+        }
+    }
+
+    void menu_inputs()
+    {
+        
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
+        {
+            choix_menu = 2;
+            return;
         }
     }
 }
