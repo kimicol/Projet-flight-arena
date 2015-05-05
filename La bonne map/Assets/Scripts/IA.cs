@@ -11,30 +11,35 @@ public class IA : controlplayer
 	// Update is called once per frame
 	void Update ()
     {
-        av = true;
+        
         fire = true;
 
         if(gauche.col)
         {
             PD = true;
+            av = false;
         }
         else if(droite.col)
         {
             PG = true;
+            av = false;
         }
         else//mettre a false
         {
             PG = false;
             PD = false;
+            av = true;
         }
 
         if(haut.col)
         {
             RH = true;
+            av = false;
         }
         else if(bas.col)
         {
             RB = true;
+            av = false;
         }
         else//mettre a false
         {
