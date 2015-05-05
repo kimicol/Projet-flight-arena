@@ -10,7 +10,9 @@
 \contentsline {subsection}{\numberline {2.2.1}Diff\IeC {\'e}rents probl\IeC {\`e}mes rencontr\IeC {\'e}s}{3}
 \contentsline {subsection}{\numberline {2.2.2}Ce que Vincent doit faire pour la seconde soutenance}{3}
 \contentsline {section}{\numberline {2.3}Arthur Remaud}{3}
-\contentsline {subsection}{\numberline {2.3.1}Multijoueur}{3}
+\contentsline {subsection}{\numberline {2.3.1}Multijoueur en r\IeC {\'e}seau}{3}
 \contentsline {subsection}{\numberline {2.3.2}Quaternions}{4}
-\contentsline {subsection}{\numberline {2.3.3}Ce qu'Arthur doit faire pour la prochaine soutenance}{4}
-\contentsline {chapter}{\numberline {3}Pour la prochaine soutenance}{5}
+\contentsline {subsection}{\numberline {2.3.3}Intelligence artificielle}{4}
+\contentsline {subsection}{\numberline {2.3.4}Menus}{4}
+\contentsline {subsection}{\numberline {2.3.5}Ce qu'Arthur doit faire pour la prochaine soutenance}{5}
+\contentsline {chapter}{\numberline {3}Pour la prochaine soutenance}{6}
