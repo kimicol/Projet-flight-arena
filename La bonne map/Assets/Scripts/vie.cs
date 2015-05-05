@@ -50,10 +50,13 @@ public class vie : MonoBehaviour
                     System.Random rnd = new System.Random();
                   //  inputs bob = this.gameObject.GetComponent<inputs>();
                   //  bob.enabled = false;
-                    /*cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart0");
-                    cube0.renderer.enabled = false;
+                   /* cube0.renderer.enabled = false;
                     cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart1");
                     cube0.renderer.enabled = false;*/
+                    cube0 = GameObject.Find("Cube_MeshPart0");
+                    cube0.GetComponent<MeshRenderer>().enabled = false;
+                    cube0 = GameObject.Find("Cube_MeshPart1");
+                    cube0.GetComponent<MeshRenderer>().enabled = false;
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     respawn_position.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
                     transform.position = respawn_position;
@@ -63,6 +66,7 @@ public class vie : MonoBehaviour
                     cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart1");
                     cube0.renderer.enabled = true;
                     bob.enabled = true;*/
+                   // GetComponent<MeshRenderer>().enabled = true; 
                     frag_limite--;
                 }
                 else
