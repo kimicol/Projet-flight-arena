@@ -9,6 +9,7 @@ public class mainmenu_script : MonoBehaviour
     public GUISkin skin;
     public Texture vaisseau1;
     public Texture vaisseau2;
+    private int load_after = 0;
     
 
 	// Use this for initialization
@@ -56,6 +57,12 @@ public class mainmenu_script : MonoBehaviour
             case 4:
                 menu_inputs();
                 break;
+            case 5:
+                menu_type_multi();
+                break;
+            case 6:
+                chargement_jeu();
+                break;
         }
     }
 
@@ -67,19 +74,19 @@ public class mainmenu_script : MonoBehaviour
     {
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 30, 400, 25), "Un joueur"))
         {
+            load_after = 1;
             choix_menu = 3;
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2, 400, 25), "Multijoueur"))
         {
-            // A MODIFIER
-            Application.Quit();
+            choix_menu = 5;
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 400, 25), "Options"))
         {
             choix_menu = 2;
-            return;
+            //return;
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 60, 400, 25), "Quitter"))
@@ -113,13 +120,13 @@ public class mainmenu_script : MonoBehaviour
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Clavier"))
         {
-            choix_menu = 1;
+            choix_menu = 4;
             return;
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
         {
-            choix_menu = 4;
+            choix_menu = 1;
             return;
         }
     }
@@ -133,12 +140,12 @@ public class mainmenu_script : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 200, 200), vaisseau1))
         {
             PlayerPrefs.SetInt("player", 1);
-            Application.LoadLevel(1);
+            choix_menu = 6;
         }
         if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 200, 200), vaisseau2))
         {
             PlayerPrefs.SetInt("player", 2);
-            Application.LoadLevel(1);
+            choix_menu = 6;
         }
     }
 
@@ -150,6 +157,49 @@ public class mainmenu_script : MonoBehaviour
         {
             choix_menu = 2;
             return;
+        }
+    }
+
+    void menu_type_multi()
+    {
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 50, 400, 25), "2 joueurs, écran séparé"))
+        {
+            // A TERMINER
+            load_after = 2;
+            choix_menu = 6;
+            Application.Quit();
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2, 400, 25), "Multijoueur en LAN"))
+        {
+            // A TERMINER
+            load_after = 3;
+            choix_menu = 6;
+            Application.Quit();
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 50, 400, 25), "Retour"))
+        {
+            choix_menu = 1;
+        }
+    }
+
+    void chargement_jeu()
+    {
+        switch(load_after)
+        {
+            case 0:
+                choix_menu = 1;
+                break;
+            case 1:
+                Application.LoadLevel(1);
+                break;
+            case 2:
+                Application.LoadLevel(2);
+                break;
+            case 3:
+                Application.LoadLevel(3);
+                break;
         }
     }
 }
