@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ia_collid : MonoBehaviour {
-
+public class ia_collid : MonoBehaviour 
+{
     public bool col = false;
 
 	// Use this for initialization
@@ -23,6 +23,16 @@ public class ia_collid : MonoBehaviour {
     }
 
     void OnCollisionExit(Collision colli)
+    {
+        col = false;
+    }
+
+    void OnTriggerEnter(Collider colli)
+    {
+        col = true;
+    }
+
+    void OnTriggerExit(Collider colli)
     {
         col = false;
     }

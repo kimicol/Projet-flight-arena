@@ -24,16 +24,17 @@ public class IA : controlplayer
         }
         else//mettre a false
         {
-            PD = false;
             PG = false;
+            PD = false;
         }
+
         if(haut.col)
         {
-            RB = true;
+            RH = true;
         }
         else if(bas.col)
         {
-            RH = true;
+            RB = true;
         }
         else//mettre a false
         {
