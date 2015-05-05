@@ -11,13 +11,16 @@ public class vie : MonoBehaviour
     private bool killed;
     private int frag_limite = 3;
     public bool respawn = true;
+    public bool ok = false;
     private Vector3 respawn_position;
     public GameObject winner;
     private GameObject thePlayer;
-    private GameObject cube0;
+    private GameObject crosshair;
+    private MeshRenderer cube0;
     public AudioClip hitmarker;
     public GUIText thewinnergui;
     public Transform depart;
+    private Transform selected;
     public GUISkin skin;
     public Animation anim;
 
@@ -48,26 +51,33 @@ public class vie : MonoBehaviour
                 {
 
                     System.Random rnd = new System.Random();
-                  //  inputs bob = this.gameObject.GetComponent<inputs>();
-                  //  bob.enabled = false;
-                   /* cube0.renderer.enabled = false;
-                    cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart1");
-                    cube0.renderer.enabled = false;*/
-                    cube0 = GameObject.Find("Cube_MeshPart0");
-                    cube0.GetComponent<MeshRenderer>().enabled = false;
-                    cube0 = GameObject.Find("Cube_MeshPart1");
-                    cube0.GetComponent<MeshRenderer>().enabled = false;
+                    transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
+                    inputs bob = this.gameObject.GetComponent<inputs>();
+                    bob.enabled = false;
+                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>()[0];
+                    cube0.renderer.enabled = false;
+                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>()[1];
+                    cube0.renderer.enabled = false;
+                    crosshair = GameObject.Find("crosshair");
+                    crosshair.guiTexture.enabled = false;
+                    StartCoroutine(W8M8());
+                    if (!ok)
+                    {
+                        return;
+                    }
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     respawn_position.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
                     transform.position = respawn_position;
+                    transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     current_life = pv;
-            /*        cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart0");
+                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>()[0];
                     cube0.renderer.enabled = true;
-                    cube0 = GameObject.FindGameObjectWithTag("Cube_MeshPart1");
+                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>()[1];
                     cube0.renderer.enabled = true;
-                    bob.enabled = true;*/
-                   // GetComponent<MeshRenderer>().enabled = true; 
+                    crosshair.guiTexture.enabled = true;
+                    bob.enabled = true;
                     frag_limite--;
+                    ok = false;
                 }
                 else
                 {
@@ -90,6 +100,7 @@ public class vie : MonoBehaviour
             //Debug.Log(current_life + " script pv");
             // DestroyObject(collision.gameObject);
         }
+        ok = false;
     }
 
     void OnGUI()
@@ -133,5 +144,10 @@ public class vie : MonoBehaviour
             thePlayer.guiText.text = ("PLAYER 1 WIN");
         }
         
+    }
+    IEnumerator W8M8()
+    {
+        yield return new WaitForSeconds(2.0f);
+        ok = true;
     }
 }
