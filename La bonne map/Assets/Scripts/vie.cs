@@ -7,11 +7,13 @@ public class vie : MonoBehaviour
     public int pv = 5;
     public int current_life;
     private bool killed;
-    private int frag_limite = 1;
+    public int frag_limite = 1;
     public bool respawn = true;
     private Vector3 respawn_position;
     public GameObject winner;
+    private GameObject thePlayer;
     public AudioClip hitmarker;
+    public GUIText thewinnergui;
     public Transform depart;
     public GUISkin skin;
     public Animation anim;
@@ -101,9 +103,15 @@ public class vie : MonoBehaviour
     {
         GameObject.Find("gameoverCAM").camera.depth = 2;
         winner = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
-        if (!winner.activeInHierarchy)
+        vie bob = winner.GetComponent<vie>();
+        thePlayer = GameObject.Find("GameWinner_GUI");
+        if (bob.frag_limite<1)
         {
-            //gameoverscript.launch("PLAYER 2 WIN")
+            thePlayer.guiText.text = ("PLAYER 2 WIN");
+        }
+        else
+        {
+            thePlayer.guiText.text = ("PLAYER 1 WIN");
         }
         
     }
