@@ -106,7 +106,7 @@ La prochaine étape fut d'implémenter la portance. Ceci signifie aussi qu'il fa
 \subsection{Interface Graphique  Utilisateur}
 
 \subsubsection{Cibleur}
- Pour des raisons de gameplay, les missiles du vaisseau ne se dirigent pas tous vers le meme point mais recouvrent un petite zone. Nous affichons donc, pour aider le joueur, cette zone sur l'écran. Cette zone est délimitée par quatre rectangles blancs. Pour faciliter les manipulations, ces quatre rectangles ont des coordonnées pour que tous bougent quand l'un bouge. \\
+ Pour des raisons de gameplay, les missiles du vaisseau ne se dirigent pas tous vers le même point mais recouvrent un petite zone. Nous affichons donc, pour aider le joueur, cette zone sur l'écran. Cette zone est délimitée par quatre rectangles blancs. Pour faciliter les manipulations, ces quatre rectangles ont des coordonnées pour que tous bougent quand l'un bouge. \\
 
 \begin{center}
 \includegraphics[height=6cm, width=9cm]{Capture_rebut.PNG}
@@ -118,13 +118,13 @@ Nous avons implémentes un une horloge qui limite le temps de jeu. Lorsque que l
 \subsection{Réapparition des vaisseaux}  
 Faire réapparaitre les vaisseaux sur des points prédéfinis présente un grand avantage car le vaisseau ne sera jamais dans un mur ou en dehors des limites de la carte. Cependant cela veut dire que le joueur est capable de créer des boucles de réapparitions de manière a tuer son adversaire des qu'il réapparait.Nous avons donc choisis de faire réapparaitre les vaisseaux aléatoirement en gérant les cas ou ils seraient en dehors des limites et les cas ou ils réapparaissent dans un objet.\\
 
-De plus, pour vraiment donner l'impression que le vaisseau a disparu, le script désactive l'émetteur de particule produisant les flammes du vaisseaux. Nous immobilisons aussi le vaisseau. Pour cela, le script désactivait d'abord le \textit{gameobject} du vaisseaux. Cette solution qui semble facile présente en réalité beaucoup de désavantages : les valeurs de mouvements et de rotations sont conservées ce qui veut dire que le vaisseau ne réapparait pas en étant immobile. De plus, nous avons ajouté le script de réapparition au vaisseau, ce qui veut dire que désactiver le \textit{gameobject} vaisseau désactive aussi le script de réapparition.\\
+De plus, pour vraiment donner l'impression que le vaisseau a disparu, le script désactive l'émetteur de particule produisant les flammes du vaisseaux. Nous immobilisons aussi le vaisseau. Pour cela, le script désactivait d'abord le \textit{gameobject} du vaisseau. Cette solution qui semble facile présente en réalité beaucoup de désavantages : les valeurs de mouvements et de rotations sont conservées ce qui veut dire que le vaisseau ne réapparait pas en étant immobile. De plus, nous avons ajouté le script de réapparition au vaisseau, ce qui veut dire que désactiver le \textit{gameobject} vaisseau désactive aussi le script de réapparition.\\
 
  La solution que nous avons choisi est la suivante : nous immobilisons dans un premier temps le vaisseau en réinitialisant ses valeurs de rotations et de vitesses. Le script  rend ensuite le vaisseau invisible en désactivant les \textit{mesh rendert} de ses différents composants et en désactivant les collisions. Après un (très) court temps d'attente, le vaisseau réapparait sur une autre position et retrouve une valeur de points de vie prédéfinie.\\
 
 \subsection{Portage du jeu}
 
-Le jeu fut d'abord développe pour la partie écran scinde, ce qui veut dire que les scripts fonctionnaient par exemple en supposant que l'on sait d'avance combien de vaisseaux sont présents, qu'ils ont tous le même émetteur de particules  ou le même nombre de \textit{mesh}. Lors de la création de la partie multijoueur, il devint nécessaire que les scripts puissent fonctionner sans ces contraintes. Le défi fut que chaque fonctions tiennent sur le même script respectif, donc que l'on ait pas a créer un script par vaisseau.\\
+Le jeu fut d'abord développé pour la partie écran scindé, ce qui veut dire que les scripts fonctionnaient par exemple en supposant que l'on sait d'avance combien de vaisseaux sont présents, qu'ils ont tous le même émetteur de particules  ou le même nombre de \textit{mesh}. Lors de la création de la partie multijoueur, il devint nécessaire que les scripts puissent fonctionner sans ces contraintes. Le défi fut que chaque fonctions tiennent sur le même script respectif, donc que l'on n'ait pas à créer un script par vaisseau.\\
 
 
 \subsection{Ce que Guillaume doit faire pour la soutenance finale}
@@ -238,15 +238,19 @@ Si des modifications doivent être apportées au script ou surtout au multijoueu
 En cas de retard, il pourra aider dans l'élaboration des cartes, pour placer les bâtiments et faire un peu de gameplay.
 
 \chapter{Pour la prochaine soutenance}
-Pour la dernière soutenance, le projet devra être fini. Nous allons nous concentrer sur l'intelligence artificielle qui est en retard pour qu'elle soit le plus opérationnelle possible. Elle ne se contentera plus de se déplacer aléatoirement parmi les immeubles, mais attaquera les ennemis et essayera de survivre sous les tirs ennemis.\\
+Pour la dernière soutenance, le projet devra être fini.\\
 
-Il y aura aussi du contenu supplémentaire, notamment des cartes avec de nouveaux batiments qui pourront ajouter du gameplay comme des éoliennes ou d'autres sortent de bâtiments mouvants qui obligent les joueurs à slalomer encore plus. Il pourra y avoir aussi des vaisseaux non-joueurs, qui sont juste d'autres obstacles mobiles.\\
+ Nous allons nous concentrer sur l'intelligence artificielle qui est en retard pour qu'elle soit le plus opérationnelle possible. Elle ne se contentera plus de se déplacer aléatoirement parmi les immeubles, mais attaquera les ennemis et essayera de survivre sous les tirs ennemis. On pourra aussi en rajouter dans les autres modes de jeu, nous voulons parler ici du multijoueur.\\
+
+Il y aura aussi du contenu supplémentaire, notamment des cartes avec de nouveaux bâtiments qui pourront ajouter du gameplay comme des éoliennes ou d'autres sortent de bâtiments mouvants qui obligent les joueurs à slalomer encore plus. Il pourra y avoir aussi des vaisseaux non-joueurs, qui sont juste d'autres obstacles mobiles.
+
+Le menu sera adapté en conséquence pour que le joueur choisisse sa carte avant de jouer, sans doute assez similaire au système de choix de vaisseau qui existe actuellement.\\
 
 Toutes les nouveautés seront jouables en multijoueur, que ce soit sur le mode écran séparé ou le mode réseau LAN. Nous essayeront aussi de rajouté le contrôle à la manette, pour les joueurs qui se sentent plus à l'aise avec que sur clavier, et surtout pour éviter de se gêner en écran partagé.\\
 
-Tout le contenu sera disponible sur le site internet, en ligne.Celui-ci sera achevé, avec le projet disponible dans son intégralité. On pourra suivre l'évolution du jeu au fur et à mesure avec le contenu ajouté, et des renseignement sur tout ce qui tourne autour : les développeurs, les partenaires \dots \\
+Tout le contenu sera disponible en téléchargement sur le site internet, en ligne. Celui-ci sera achevé, avec le projet disponible dans son intégralité. On pourra suivre l'évolution du jeu au fur et à mesure avec le contenu ajouté, et des renseignement sur tout ce qui tourne autour : les développeurs, les partenaires \dots \\
 
-Le jeu sera fournit avec une installation sur CD-ROM, avec une boite prévue à cette effet. \\ \\ \\ \\
+Le jeu sera fournit avec une installation sur CD-ROM, avec une boite prévue à cette effet. \\ \\ \\ \\ \\
 
 \begin{center}
 \includegraphics[height=4cm, width=4cm]{vaisseux_petit.png}
