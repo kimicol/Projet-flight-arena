@@ -9,11 +9,12 @@
 \contentsline {subsection}{\numberline {2.1.1}Ce que Guillaume doit faire pour la soutenance finale}{3}
 \contentsline {section}{\numberline {2.2}Vincent Rospini-Clerici}{3}
 \contentsline {subsection}{\numberline {2.2.1}Cr\IeC {\'e}ation de nouveaux vaisseaux}{3}
-\contentsline {subsection}{\numberline {2.2.2}Cr\IeC {\'e}ation du site internet}{3}
-\contentsline {subsection}{\numberline {2.2.3}Ce que Vincent doit faire pour la soutenance finale}{4}
+\contentsline {subsection}{\numberline {2.2.2}Ajout des particules des vaisseaux}{3}
+\contentsline {subsection}{\numberline {2.2.3}Cr\IeC {\'e}ation du site internet}{4}
+\contentsline {subsection}{\numberline {2.2.4}Ce que Vincent doit faire pour la soutenance finale}{4}
 \contentsline {section}{\numberline {2.3}Arthur Remaud}{4}
 \contentsline {subsection}{\numberline {2.3.1}Multijoueur en r\IeC {\'e}seau}{4}
-\contentsline {subsection}{\numberline {2.3.2}Quaternions}{4}
+\contentsline {subsection}{\numberline {2.3.2}Quaternions}{5}
 \contentsline {subsection}{\numberline {2.3.3}Intelligence artificielle}{5}
 \contentsline {subsection}{\numberline {2.3.4}Menus}{6}
 \contentsline {subsection}{\numberline {2.3.5}Ce qu'Arthur doit faire pour la soutenance finale}{6}
