@@ -19,7 +19,14 @@ public class testGUI : vie
     void OnGUI()
     {
         //Debug.Log ("test pv :" + life);
-        thePlayer = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
+        try
+        {
+            thePlayer = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
+        }
+        catch
+        {
+            thePlayer = GameObject.Find("vaisseau1");
+        }      
         vie bob = thePlayer.GetComponent<vie>();
         life_gui.text = bob.VAFANCULO().ToString();
         if (bob.VAFANCULO() < 1)
