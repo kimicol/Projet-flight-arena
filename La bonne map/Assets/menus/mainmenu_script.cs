@@ -167,7 +167,7 @@ public class mainmenu_script : MonoBehaviour
             // A TERMINER
             load_after = 2;
             choix_menu = 6;
-            Application.Quit();
+            //Application.Quit();
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2, 400, 25), "Multijoueur en LAN"))
@@ -175,7 +175,7 @@ public class mainmenu_script : MonoBehaviour
             // A TERMINER
             load_after = 3;
             choix_menu = 6;
-            Application.Quit();
+            //Application.Quit();
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 50, 400, 25), "Retour"))
