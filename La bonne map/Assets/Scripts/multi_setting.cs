@@ -6,7 +6,10 @@ public class multi_setting : MonoBehaviour
     private int menu;
     private string ip = "";
     private int port = 25000;
+<<<<<<< HEAD
     private int choix_vaisseau = 2;
+=======
+>>>>>>> origin/master
     public GameObject prefab1;
     public GameObject prefab2;
     public GameObject prefab3;
@@ -17,16 +20,6 @@ public class multi_setting : MonoBehaviour
 	void Start () 
     {
         menu = 1;
-        choix_vaisseau = PlayerPrefs.GetInt("player", choix_vaisseau);
-
-        if (PlayerPrefs.HasKey("player"))
-        {
-            choix_vaisseau = PlayerPrefs.GetInt("player", choix_vaisseau);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("player", choix_vaisseau);
-        }
 	}
 	
 	// Update is called once per frame
@@ -110,7 +103,7 @@ public class multi_setting : MonoBehaviour
         System.Random rnd = new System.Random();
         pos.Set(rnd.Next(-100, 100), rnd.Next(70), rnd.Next(-100, 100));
         //Debug.Log(Network.peerType);
-        switch(choix_vaisseau)
+     /*   switch()
         {
             case 1:
                 vaisseau = (GameObject)Network.Instantiate(prefab1, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
@@ -118,10 +111,10 @@ public class multi_setting : MonoBehaviour
             case 2:
                 vaisseau = (GameObject)Network.Instantiate(prefab2, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
                 break;
-            case 3:
+            case 2:
                 vaisseau = (GameObject)Network.Instantiate(prefab3, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
                 break;
-        }
+        }*/
 
         this.camera.enabled = false;
         //vaisseau.camera.enabled = true;
