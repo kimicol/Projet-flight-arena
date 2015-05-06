@@ -100,7 +100,7 @@ public class multi_setting : MonoBehaviour
 
     void OnDisconnectedFromServer(NetworkDisconnection info)
     {
-        Network.Destroy(vaisseau.GetComponent<NetworkView>().gameObject);
+        Network.Destroy(vaisseau);
     }
 
     void nouveau_joueur()
