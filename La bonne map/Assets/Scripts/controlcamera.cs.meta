@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 7ec6e5d8bd3fa8248b66dfdda858fda8
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - vaisseau: {instanceID: 0}
+  - vie_restante: {instanceID: 0}
+  - sk: {fileID: 11400000, guid: 6d2816dd4acd8da49827098cf4cf924d, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

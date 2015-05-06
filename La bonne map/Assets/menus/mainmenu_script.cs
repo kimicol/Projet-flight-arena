@@ -186,6 +186,8 @@ public class mainmenu_script : MonoBehaviour
 
     void chargement_jeu()
     {
+        GUI.Label(new Rect(Screen.width / 2 - 30, Screen.height / 2 - 15, 60, 30), "Chargements ...");
+
         switch(load_after)
         {
             case 1:
