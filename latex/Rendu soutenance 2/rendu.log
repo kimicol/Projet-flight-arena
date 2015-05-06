@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  6 MAY 2015 23:57
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  7 MAY 2015 00:09
 entering extended mode
 **rendu.tex
 ("F:\epita\Projet-flight-arena\latex\Rendu soutenance 2\rendu.tex"
@@ -575,78 +575,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--73
 [4]
 Partie 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 82--84
 
  []
 
-<sharknado.png, id=24, 260.47313pt x 158.84344pt>
-File: sharknado.png Graphic file (type png)
- <use sharknado.png>
-<vaisseaumilitaire.png, id=26, 395.97937pt x 335.75438pt>
-File: vaisseaumilitaire.png Graphic file (type png)
 
-<use vaisseaumilitaire.png>
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
 [5
 
- <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/sharknado.png> <F:/epit
-a/Projet-flight-arena/latex/Rendu soutenance 2/vaisseaumilitaire.png>]
-<vaisseau_bouge.png, id=32, 588.69937pt x 330.48468pt>
-File: vaisseau_bouge.png Graphic file (type png)
-
-<use vaisseau_bouge.png>
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+]
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
-
- []
-
-<site.png, id=33, 1251.92719pt x 705.38531pt>
-File: site.png Graphic file (type png)
- <use site.png> [6 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/vaiss
-eau_bouge.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
+
+ []
+
+[6] <Capture_rebut.PNG, id=31, 488.57532pt x 272.51813pt>
+File: Capture_rebut.PNG Graphic file (type png)
+
+<use Capture_rebut.PNG>
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-
- []
-
-[7 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/site.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+[7 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/Capture_rebut.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
@@ -655,69 +664,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
+[8] <sharknado.png, id=40, 260.47313pt x 158.84344pt>
+File: sharknado.png Graphic file (type png)
+ <use sharknado.png>
+<vaisseaumilitaire.png, id=41, 395.97937pt x 335.75438pt>
+File: vaisseaumilitaire.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
-
- []
-
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
-
-Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
-(frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
-(frenchb.ldf)                Degrees used on input line 141.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+<use vaisseaumilitaire.png>
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
+<vaisseau_bouge.png, id=42, 588.69937pt x 330.48468pt>
+File: vaisseau_bouge.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-
+<use vaisseau_bouge.png>
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+[9 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/sharknado.png> <F:/ep
+ita/Projet-flight-arena/latex/Rendu soutenance 2/vaisseaumilitaire.png> <F:/epi
+ta/Projet-flight-arena/latex/Rendu soutenance 2/vaisseau_bouge.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+<site.png, id=49, 1251.92719pt x 705.38531pt>
+File: site.png Graphic file (type png)
+ <use site.png>
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+
+ []
+
+[10 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/site.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
-
- []
-
-<menu_option.jpg, id=49, 962.84718pt x 601.4972pt>
-File: menu_option.jpg Graphic file (type jpg)
- <use menu_option.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
-
- []
-
-<menu_selection.jpg, id=50, 965.85844pt x 604.50844pt>
-File: menu_selection.jpg Graphic file (type jpg)
-
-<use menu_selection.jpg> [10 <F:/epita/Projet-flight-arena/latex/Rendu soutenan
-ce 2/menu_option.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--172
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
@@ -726,16 +722,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
-[11 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/menu_selection.jpg>]
 
 Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
-[12]
-Partie 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
@@ -750,14 +748,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--188
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
-
- []
+Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
+(frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
+(frenchb.ldf)                Degrees used on input line 189.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 189--190
@@ -765,25 +758,114 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
-<vaisseux_petit.png, id=61, 513.92pt x 513.92pt>
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+<menu_option.jpg, id=61, 962.84718pt x 601.4972pt>
+File: menu_option.jpg Graphic file (type jpg)
+ <use menu_option.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+[13 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/menu_option.jpg>]
+<menu_selection.jpg, id=65, 965.85844pt x 604.50844pt>
+File: menu_selection.jpg Graphic file (type jpg)
+
+<use menu_selection.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+
+ []
+
+[14 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/menu_selection.jpg>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+[15]
+Partie 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+<vaisseux_petit.png, id=72, 513.92pt x 513.92pt>
 File: vaisseux_petit.png Graphic file (type png)
  <use vaisseux_petit.png>
-[13
+[16
 
  <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/vaisseux_petit.png>] ("
 F:\epita\Projet-flight-arena\latex\Rendu soutenance 2\rendu.aux") ) 
 Here is how much of TeX's memory you used:
- 3343 strings out of 494053
- 41623 string characters out of 3148603
- 97515 words of memory out of 3000000
- 6544 multiletter control sequences out of 15000+200000
+ 3349 strings out of 494053
+ 41731 string characters out of 3148603
+ 98515 words of memory out of 3000000
+ 6548 multiletter control sequences out of 15000+200000
  72556 words of font info for 66 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,11n,43p,763b,275s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,10n,43p,904b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program 
 Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/font
 s/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
@@ -792,9 +874,9 @@ Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.
 pfb>
-Output written on rendu.pdf (14 pages, 1096602 bytes).
+Output written on rendu.pdf (17 pages, 1485325 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
+ 101 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

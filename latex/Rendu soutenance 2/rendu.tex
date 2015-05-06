@@ -78,7 +78,55 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 
 \section{Guillaume Rebut}
 
+\subsection{Écran Partagée} 
+ Parce-que de moins en moins de jeu proposent un écran partage (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la mains, nous avons décidé de créer un multijoueur en écran scinde.
+Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis et U/J pour le tangage. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pave numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage. \\
+
+\subsection{Premier mode de jeu} : Le premier mode de jeu est un match a mort chacun pour soi. Le joueur gagne quand un vaisseau ennemi explose ou si il a le plus de points de vie après la fin du temps imparti.\\
+ 
+\subsection{Son} 
+ Nous avons ajoute un court bruit qui se joue lorsque un joueur touche un vaisseau ennemi. pour aider le joueur. En effet, cela permet au joueur de déduire les points de vies restants de son adversaire et réagir en fonction.\\
+
+\subsection{Mouvement}
+Suite aux recommandations des évaluateurs, nous avons décidés de rendre le contrôle du vaisseau moins "arcade". Pour cela, en plus de l'ajout de quaternion, nous avons souhaites rendre les déplacements du vaisseau réaliste. En effet, lorsque l'utilisateur ne fait pas avancer le vaisseau, ce dernier s'immobilise rapidement dans les airs. Pour résoudre ce problème, nous avons décidé d'implémenter les vrais équations de mouvements des avions.\\
+
+ L'équation qui nous intéresse le plus est la suivante : R = 1/2 Cx  p S v.v . Soit la résistance de l'air est égale a la moitie de la surface du vaisseau fois la constante de trainée fois la masse volumique de l'air fois la vitesse au carré, ce que nous avons simplifié par la vitesse au carre fois une constante. Lors des premiers essais, la vitesse était calculée en soustrayant la force de frottement a l'accélération. Cette méthode donnait des résultats satisfaisant car les mouvements était fluide et le vaisseau ne s'arrêtait jamais. Cependant, pour une raison indéterminée, si le joueur décidait de ne pas avancer après avoir réapparu, le vaisseau avait une vitesse négative qui devenait très importante très rapidement et sortait le vaisseau des limites de unity.\\
+
+Le problème disparu lorsque nous utilisions \textit{Transform.translate} qui prend en paramètre un vector 3. Nous avons ensuite implémentés une option permettant au joueur de freiner. Cette option retrancher une valeur fixe a la vitesse tant que celle ci était positive. Cependant, malgré toute les précautions prises, notre problème de vitesse négative est réapparus . La solution prise fut d'augmenter la valeur de la force de frottement.\\
+
+La prochaine étape fut d'implémenter la portance. Ceci signifie aussi qu'il fallait implémenter la gravité. Nous avons du pour cela passer d'une modification de la vitesse grâce a \textit{Transform.translate} a une modification de la vélocité du \textit{rigidbody} du vaisseau. Cependant, l'implémentation de la portance implique une force relative au monde et non au vaisseau. Cette étape ne fut pas d'une grande difficulté mais l'ordre de grandeur des valeurs est différente que celle du référentielle vaisseau. Ce détail nous a empêché de trouve la valeur exacte de manière a ce qui le vaisseau vole en ligne droite lorsqu'il est parallèle au sol, ce qui veut dire que le joueur est tout le temps oblige de compenser cette force, ce qui devient vite ennuyant. Nous avons finalement décider d'enlever les frottements ainsi que la possibilité de freiner.\\
+
+\subsection{Interface Graphique  Utilisateur}
+
+\subsubsection{Cibleur}
+ Pour des raisons de gameplay, les missiles du vaisseau ne se dirigent pas tous vers le meme point mais recouvrent un petite zone. Nous affichons donc, pour aider le joueur, cette zone sur l'écran. Cette zone est délimitée par quatre rectangles blancs. Pour faciliter les manipulations, ces quatre rectangles ont des coordonnées pour que tous bougent quand l'un bouge. \\
+
+\begin{center}
+\includegraphics[height=6cm, width=9cm]{Capture_rebut.PNG}
+\end{center}
+
+\subsubsection{Horloge}
+Nous avons implémentes un une horloge qui limite le temps de jeu. Lorsque que le temps imparti est dépassé, la partie s'arrête, et le vainqueur est détermine de la manière suivante : un frag vaut 1 point, une mort -0.5 point et le joueur gagnant est affiche a l'écran. En cas d'égalité, le jeu indique que les joueurs ont fait match nul.\\
+
+\subsection{Réapparition des vaisseaux}  
+Faire réapparaitre les vaisseaux sur des points prédéfinis présente un grand avantage car le vaisseau ne sera jamais dans un mur ou en dehors des limites de la carte. Cependant cela veut dire que le joueur est capable de créer des boucles de réapparitions de manière a tuer son adversaire des qu'il réapparait.Nous avons donc choisis de faire réapparaitre les vaisseaux aléatoirement en gérant les cas ou ils seraient en dehors des limites et les cas ou ils réapparaissent dans un objet.\\
+
+De plus, pour vraiment donner l'impression que le vaisseau a disparu, le script désactive l'émetteur de particule produisant les flammes du vaisseaux. Nous immobilisons aussi le vaisseau. Pour cela, le script désactivait d'abord le \textit{gameobject} du vaisseaux. Cette solution qui semble facile présente en réalité beaucoup de désavantages : les valeurs de mouvements et de rotations sont conservées ce qui veut dire que le vaisseau ne réapparait pas en étant immobile. De plus, nous avons ajouté le script de réapparition au vaisseau, ce qui veut dire que désactiver le \textit{gameobject} vaisseau désactive aussi le script de réapparition.\\
+
+ La solution que nous avons choisi est la suivante : nous immobilisons dans un premier temps le vaisseau en réinitialisant ses valeurs de rotations et de vitesses. Le script  rend ensuite le vaisseau invisible en désactivant les \textit{mesh rendert} de ses différents composants et en désactivant les collisions. Après un (très) court temps d'attente, le vaisseau réapparait sur une autre position et retrouve une valeur de points de vie prédéfinie.\\
+
+\subsection{Portage du jeu}
+
+Le jeu fut d'abord développe pour la partie écran scinde, ce qui veut dire que les scripts fonctionnaient par exemple en supposant que l'on sait d'avance combien de vaisseaux sont présents, qu'ils ont tous le même émetteur de particules  ou le même nombre de \textit{mesh}. Lors de la création de la partie multijoueur, il devint nécessaire que les scripts puissent fonctionner sans ces contraintes. Le défi fut que chaque fonctions tiennent sur le même script respectif, donc que l'on ait pas a créer un script par vaisseau.\\
+
+
 \subsection{Ce que Guillaume doit faire pour la soutenance finale}
+
+Le plus important est de finir la deuxième carte en cours de développement. Cette carte sera plus grande que la première pour permettre une meilleur visibilité mais aussi pour permettre de plus grandes manœuvres. Une troisième carte sera aussi finie et servira de  carte d'entrainement pour les débutants : ils seront d'abord initiés au différents mouvements du vaisseau, passeront des exercices leur demandant de slalomer entre des obstacles, s'entraineront a tirer sur des cibles immobiles puis mouvantes. Cette carte proposera aussi de jouer contre une intelligence artificielle.\\
+
+Le jeu proposera plusieurs modes de jeu : celui en développement, un match a mort par équipe, ainsi que d'autres modes de jeu se basant sur des objectifs (par exemple capture du drapeau, contrôle de territoire, roi de la colline, infection,etc).\\
+
+Le jeu proposera aussi plus d'options de jeu une interface graphique utilisateurs plus poussée et une intelligence artificielle amélioré.\\
 
 \section{Vincent Rospini-Clerici}
 
