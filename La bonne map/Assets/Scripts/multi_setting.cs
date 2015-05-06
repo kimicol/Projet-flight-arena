@@ -7,6 +7,7 @@ public class multi_setting : MonoBehaviour
     private string ip = "";
     private int port = 25000;
     public GameObject prefab;
+    private GameObject vaisseau;
     private bool b = true;
 
 	// Use this for initialization
@@ -42,7 +43,7 @@ public class multi_setting : MonoBehaviour
             if (Network.peerType == NetworkPeerType.Server)
             {
                 menu = 3;
-                nouveau_joueur();
+                //nouveau_joueur();
             }
         }
 
@@ -73,12 +74,10 @@ public class multi_setting : MonoBehaviour
             menu = 1;
     }
 
-    /*
     void OnServerInitialized()
     {
         nouveau_joueur();
     }
-    */
 
     void OnConnectedToServer()
     {
@@ -86,6 +85,10 @@ public class multi_setting : MonoBehaviour
         nouveau_joueur();
     }
 
+    void OnDisconnectedFromServer(NetworkDisconnection info)
+    {
+        Network.Destroy(vaisseau);
+    }
 
     void nouveau_joueur()
     {
@@ -94,7 +97,7 @@ public class multi_setting : MonoBehaviour
         System.Random rnd = new System.Random();
         pos.Set(rnd.Next(-100, 100), rnd.Next(70), rnd.Next(-100, 100));
         //Debug.Log(Network.peerType);
-        Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
+        vaisseau = (GameObject)Network.Instantiate(prefab, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
 
         this.camera.enabled = false;
         //vaisseau.camera.enabled = true;

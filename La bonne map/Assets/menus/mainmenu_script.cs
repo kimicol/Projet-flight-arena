@@ -192,12 +192,15 @@ public class mainmenu_script : MonoBehaviour
                 choix_menu = 1;
                 break;
             case 1:
+                //un joueur
                 Application.LoadLevel(1);
                 break;
             case 2:
+                //ecran spilte
                 Application.LoadLevel(2);
                 break;
             case 3:
+                //multi reseau
                 Application.LoadLevel(3);
                 break;
         }
