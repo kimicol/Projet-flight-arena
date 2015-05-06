@@ -8,7 +8,7 @@ public class clock_gui : MonoBehaviour {
     private GameObject winner;
     private float startTime;
     private int time_text;
-    public int limite_temps = 20; // en secondes |
+    public int limite_temps = 120; // en secondes |
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +17,7 @@ public class clock_gui : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
         if ((limite_temps - Convert.ToInt32(Time.time - startTime)) <1)
         {
         winner = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
@@ -41,10 +42,10 @@ public class clock_gui : MonoBehaviour {
         }
         }
 	}
-    private void OnGui()
+    private void OnGUI()
     {
         time_text =limite_temps - Convert.ToInt32(Time.time - startTime);
-        gui_timer.text = time_text / 60 + ":" + time_text % 60;
+        gui_timer.text = (time_text / 60 + ":" + time_text % 60);
     }
     private void Awake()
     {

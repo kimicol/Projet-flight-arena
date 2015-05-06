@@ -99,7 +99,7 @@ public class multi_setting : MonoBehaviour
         System.Random rnd = new System.Random();
         pos.Set(rnd.Next(-100, 100), rnd.Next(70), rnd.Next(-100, 100));
         //Debug.Log(Network.peerType);
-        switch()
+     /*   switch()
         {
             case 1:
                 vaisseau = (GameObject)Network.Instantiate(prefab1, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
@@ -110,7 +110,7 @@ public class multi_setting : MonoBehaviour
             case 2:
                 vaisseau = (GameObject)Network.Instantiate(prefab3, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
                 break;
-        }
+        }*/
 
         this.camera.enabled = false;
         //vaisseau.camera.enabled = true;
