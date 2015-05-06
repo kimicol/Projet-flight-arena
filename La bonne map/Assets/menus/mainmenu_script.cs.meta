@@ -7,6 +7,7 @@ MonoImporter:
   - vaisseau1: {fileID: 2800000, guid: 7d24fba5a5d59b54d900f1cd60ff67e1, type: 3}
   - vaisseau2: {fileID: 2800000, guid: 7cebeaa81e7441345b0f9db0475679ad, type: 3}
   - vaisseau3: {fileID: 2800000, guid: 31d4d0226f61eec42adb760baf6a2a09, type: 3}
+  - logo: {fileID: 2800000, guid: f122936174a4a5c4aa822cc618612732, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

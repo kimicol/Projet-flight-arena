@@ -10,6 +10,7 @@ public class mainmenu_script : MonoBehaviour
     public Texture vaisseau1;
     public Texture vaisseau2;
     public Texture vaisseau3;
+	public Texture logo;
     private int load_after = 0;
     
 
@@ -44,6 +45,7 @@ public class mainmenu_script : MonoBehaviour
     {
         GUI.skin = skin;
         GUI.TextArea(new Rect(Screen.width / 3, Screen.height / 5, Screen.width*3/4, Screen.height / 5), "Flight Arena");
+		GUI.DrawTexture (new Rect (Screen.width - 150, Screen.height - 150, 150, 150), logo);
         switch(choix_menu)
         {
             case 1:
