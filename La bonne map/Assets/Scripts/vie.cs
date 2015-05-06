@@ -9,7 +9,7 @@ public class vie : MonoBehaviour
     public int pv = 5;
     public int current_life;
     private bool killed;
-    private int frag_limite = 3;
+    public int frag_limite = 3;
     public bool respawn = true;
     public bool ok = false;
     private Vector3 respawn_position;
@@ -98,7 +98,6 @@ public class vie : MonoBehaviour
             this.current_life -= 1;
             audio.PlayOneShot(hitmarker);
             //Debug.Log(current_life + " script pv");
-            // DestroyObject(collision.gameObject);
         }
         ok = false;
     }
@@ -142,8 +141,13 @@ public class vie : MonoBehaviour
         else
         {
             thePlayer.guiText.text = ("PLAYER 1 WIN");
-        }
-        
+        }       
+    }
+    public void gameover(string vainc)
+    {
+        GameObject.Find("gameoverCAM").camera.depth = 2;
+        GameObject.Find("GameWinner_GUI").guiText.text = (vainc);
+
     }
     IEnumerator W8M8()
     {
