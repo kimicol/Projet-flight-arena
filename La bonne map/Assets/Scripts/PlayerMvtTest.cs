@@ -41,7 +41,7 @@ public class PlayerMvtTest : MonoBehaviour
     protected void deplacements()
     {
         cfrott = acell_max / (v_maxtest * v_maxtest);
-        Debug.Log("val cfrott :" + cfrott + " val aceel_max :" + acell_max + " val v_maxtest :" + v_maxtest);
+        Debug.Log("val cfrott :" + cfrott + " val acell_max :" + acell_max + " val v_maxtest :" + v_maxtest);
         frottement = cfrott * john.z * john.z; // cap frot 2 cap vit 1.41
         if (av)
         {
