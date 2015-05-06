@@ -12,14 +12,14 @@
 \contentsline {subsection}{\numberline {3.1.1}Ce que Guillaume doit faire pour la soutenance finale}{5}
 \contentsline {section}{\numberline {3.2}Vincent Rospini-Clerici}{5}
 \contentsline {subsection}{\numberline {3.2.1}Cr\IeC {\'e}ation de nouveaux vaisseaux}{5}
-\contentsline {subsection}{\numberline {3.2.2}Ajout des particules des vaisseaux}{5}
+\contentsline {subsection}{\numberline {3.2.2}Ajout des particules des vaisseaux}{6}
 \contentsline {subsection}{\numberline {3.2.3}Cr\IeC {\'e}ation du site internet}{6}
 \contentsline {subsection}{\numberline {3.2.4}Cr\IeC {\'e}ation d'une musique originale}{6}
-\contentsline {subsection}{\numberline {3.2.5}Ce que Vincent doit faire pour la soutenance finale}{6}
+\contentsline {subsection}{\numberline {3.2.5}Ce que Vincent doit faire pour la soutenance finale}{7}
 \contentsline {section}{\numberline {3.3}Arthur Remaud}{7}
 \contentsline {subsection}{\numberline {3.3.1}Multijoueur en r\IeC {\'e}seau}{7}
 \contentsline {subsection}{\numberline {3.3.2}Quaternions}{8}
 \contentsline {subsection}{\numberline {3.3.3}Intelligence artificielle}{8}
 \contentsline {subsection}{\numberline {3.3.4}Menus}{9}
 \contentsline {subsection}{\numberline {3.3.5}Ce qu'Arthur doit faire pour la soutenance finale}{10}
-\contentsline {chapter}{\numberline {4}Pour la prochaine soutenance}{11}
+\contentsline {chapter}{\numberline {4}Pour la prochaine soutenance}{12}

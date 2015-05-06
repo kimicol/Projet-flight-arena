@@ -83,6 +83,12 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 \subsection{Création de nouveaux vaisseaux}
 Dans le soucis d'ajouter du contenu, deux nouveaux vaisseaux ont été créés sur Blender et textures sur Photoshop. Il s'agit tout d'abord d'un vaisseau qui ferait penser à un jet militaire tout droit venu du futur. L'autre est inspiré du P40, un avion militaire américain utilisé durant la seconde guerre mondiale et auquel Vincent a rajouté des nacelles de missiles et des réacteurs pour lui donner un air à la fois futuriste et ancien. Deux textures ont été crées pour ce dernier vaisseau mais nous nous servirons pour le moment d'une seule d'entre elle pour la première soutenance.\\
 
+\begin{center}
+\includegraphics[height=3cm, width=5cm]{sharknado.png}
+\includegraphics[height=3.5cm, width=5.5cm]{vaisseaumilitaire.png}
+\end{center}
+
+
 \subsection{Ajout des particules des vaisseaux}
 Les flammes sortant des réacteurs des vaisseaux ont été rajoutes par le biais de la création de particules qu'offre Unity. Tout d'abord, Vincent a rajouté des éléments de particules pour créer juste des flammes sortant des réacteurs, mais le groupe s'est mis d'accord pour que les réacteurs laissent une trainée après le passage du vaisseau. Cependant, les particules étant contenu dans le \textit{gameobject} du vaisseau, les flammes tournaient lorsque le vaisseau tournait, au lieu de simplement suivre sa trajectoire. Nous avons après quelques recherches sur internet nous avons trouve le paramètre permettant de le faire. Il s'agissait de définir l'espace de simulation au niveau monde et non au niveau de l'objet.\\
 
