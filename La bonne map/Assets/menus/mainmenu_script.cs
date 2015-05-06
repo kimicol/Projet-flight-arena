@@ -140,7 +140,7 @@ public class mainmenu_script : MonoBehaviour
         {
             choix_menu = 1;
         }
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 200), vaisseau1))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 150), vaisseau1))
         {
             PlayerPrefs.SetInt("player", 1);
             choix_menu = 6;

@@ -28,12 +28,6 @@ public class multi_setting : MonoBehaviour
             PlayerPrefs.SetInt("player", choix_vaisseau);
         }
 	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-
-	}
 
     void OnGUI()
     {
@@ -115,7 +109,8 @@ public class multi_setting : MonoBehaviour
         Vector3 pos = Vector3.zero;
 
         System.Random rnd = new System.Random();
-        pos.Set(rnd.Next(-100, 100), rnd.Next(70), rnd.Next(-100, 100));
+        pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+        //pos.Set(50, 0, 0);
         //Debug.Log(Network.peerType);
         switch(choix_vaisseau)
         {
