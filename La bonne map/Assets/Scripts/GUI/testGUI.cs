@@ -4,7 +4,7 @@ using System.Collections;
 public class testGUI : vie
 {
     private GUIText life_gui;
-    private GameObject thePlayer;
+    private GameObject Player;
 
     // Use this for initialization
     void Start()
@@ -21,13 +21,13 @@ public class testGUI : vie
         //Debug.Log ("test pv :" + life);
         try
         {
-            thePlayer = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
+            Player = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
         }
         catch
         {
-            thePlayer = GameObject.Find("vaisseau1");
+            Player = GameObject.Find("vaisseau1");
         }      
-        vie bob = thePlayer.GetComponent<vie>();
+        vie bob = Player.GetComponent<vie>();
         life_gui.text = bob.VAFANCULO().ToString();
         if (bob.VAFANCULO() < 1)
         {
