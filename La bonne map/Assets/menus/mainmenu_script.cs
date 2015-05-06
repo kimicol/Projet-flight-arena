@@ -9,6 +9,7 @@ public class mainmenu_script : MonoBehaviour
     public GUISkin skin;
     public Texture vaisseau1;
     public Texture vaisseau2;
+    public Texture vaisseau3;
     private int load_after = 0;
     
 
@@ -137,14 +138,19 @@ public class mainmenu_script : MonoBehaviour
         {
             choix_menu = 1;
         }
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 200, 200), vaisseau1))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 200), vaisseau1))
         {
             PlayerPrefs.SetInt("player", 1);
             choix_menu = 6;
         }
-        if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 200, 200), vaisseau2))
+        if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 150, 150), vaisseau2))
         {
             PlayerPrefs.SetInt("player", 2);
+            choix_menu = 6;
+        }
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 150, 150), vaisseau3))
+        {
+            PlayerPrefs.SetInt("player", 3);
             choix_menu = 6;
         }
     }
