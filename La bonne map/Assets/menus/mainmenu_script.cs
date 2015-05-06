@@ -188,9 +188,6 @@ public class mainmenu_script : MonoBehaviour
     {
         switch(load_after)
         {
-            case 0:
-                choix_menu = 1;
-                break;
             case 1:
                 //un joueur
                 Application.LoadLevel(1);

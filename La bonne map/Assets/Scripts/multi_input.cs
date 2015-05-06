@@ -91,14 +91,4 @@ public class multi_input : controlplayer
             transform.position = pos;
         }
     }
-
-    void OnDisconnectedFromServer()
-    {
-        Destroy(this);
-    }
-
-    void OnDestroy()
-    {
-        Destroy(this);
-    }
 }

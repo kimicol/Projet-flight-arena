@@ -6,7 +6,7 @@ public class multi_setting : MonoBehaviour
     private int menu;
     private string ip = "";
     private int port = 25000;
-    private int choix_vaisseau = 1;
+    private int choix_vaisseau = 2;
     public GameObject prefab1;
     public GameObject prefab2;
     public GameObject prefab3;
@@ -56,7 +56,7 @@ public class multi_setting : MonoBehaviour
             if (Network.peerType == NetworkPeerType.Server)
             {
                 menu = 3;
-                //nouveau_joueur();
+                nouveau_joueur();
             }
         }
 
@@ -79,7 +79,7 @@ public class multi_setting : MonoBehaviour
             if (Network.peerType == NetworkPeerType.Client)
             {
                 menu = 3;
-                nouveau_joueur();
+                //nouveau_joueur();
             }
         }
 
