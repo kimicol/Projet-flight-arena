@@ -40,7 +40,9 @@ chef de projet : Arthur \bsc{Remaud}}
 
 \chapter{Rappel de la première soutenance}
 
-A la première soutenance, nous avions présenté une première carte de jeu de base avec un vaisseau déjà fini. Il y avait les déplacements et les tirs du joueur intégrés aux contrôles. Nous avions donc déjà les bases du gameplay, et la physique était bien avancée.\\
+A la première soutenance, nous avions présenté une première carte de jeu de base. Il y avait plusieurs vaisseaux faits avec Blender, mais un seul était réellement fini.\\
+
+ Il y avait les déplacements et les tirs du joueur intégrés aux contrôles en utilisant les fonctions \textit{Rotate}, \textit{Translate} et \textit{Instanciate}. Nous avions donc déjà les bases du gameplay, et la physique était bien avancée : les collisions étaient déjà intégrées et le terrain était délimité.\\
 
 Le menu contenait déjà les principaux onglets : jouer, multijoueur, options, quitter. Cependant, certains n'aboutissaient sur rien car le contenu n'avait pas été fait (le multijoueur surtout), mais le menu option avait été entamé avec la gestion du volume qui était conservé en mémoire même après avoir fermé le jeu.\\
 
@@ -127,6 +129,8 @@ Les règles du jeu sont les mêmes que dans le mode un joueur ou écran séparé
 
 Le principal problème fut qu'au départ, les joueurs contrôlaient le vaisseau de l'autre joueur et donc devait regarder sur l'autre écran pour jouer. De plus, à trois joueurs, les deux premiers connectés voyaient un seul et même vaisseau qu'il contrôlaient tous les deux pendant que le troisième joueur en pilotait un autre. Le dernier vaisseau quant à lui n'était contrôlé par personne et restait immobile. Au final, ce problème venait de l'assignation des caméras et des scripts aux joueurs lorsqu'ils instanciaient un nouveau vaisseau en arrivant.\\
 
+Au début, nous n'arrivions pas à faire disparaitre le vaisseau d'un joueur lorsqu'il se déconnectait de la partie en ligne. En effet la fonction \textit{Network.Destroy()} ne s'appliquait pas au \textit{prefab} tout entier car il ne contenait pas de \textit{networkView}. Finalement, nous avons intégré cette fonction dans les scripts qui contrôle les déplacements du vaisseau et de la caméra.\\
+
 Lorsque l'on démarre le mode réseau, l'antivirus des ordinateurs peut bloquer le jeu, ou tout au moins demander l'autorisation à l'utilisateur de laisser libre la connexion. Cela n'est pas une très grande gêne car une fois que l'on désactive les pare-feu, tout revient dans l'ordre, mais nous ne savons pas comment la supprimer définitivement. Cela ne nous empêche cependant pas de jouer.\\
 
 \subsection{Quaternions}
@@ -160,14 +164,18 @@ Il a aussi fait en sorte que le joueur puisse choisir le vaisseau qu'il veut pil
 \includegraphics[height=7cm, width=12cm]{menu_selection.jpg}
 \end{center}
 
+Pour pouvoir changer de vaisseau au démarrage d'une scène, il a fallu mettre les trois vaisseaux dans des \textit{prefab} que l'on instancie juste à l'arrivée dans la scène. Cependant, nous avons remarqué que lors de l'exportation des modèles depuis Blender vers Unity, la rotation de l'objet était modifiée ce qui faisait que l'on voyait le dessous du vaisseau 2 et le côté du vaisseau 3. Nous avons alors recherché sur internet pour voir que lors de l'exportation en format \textit{fbx}, il fallait choisir les axes pour définir l'avant et le haut de l'objet. Ainsi tout se remettait à l'endroit et le vaisseau était vu correctement.
+
+Pour pouvoir définir quel vaisseau devait être instancié au démarrage, nous avons utilisé un entier stocké dans un \textit{PlayerPrefs} qui est défini dans la scène du menu puis récupéré dans les scènes de jeu.\\
+
 Au départ, nous voulions faire en sorte que le joueur puisse choisir la répartition des touches de son clavier s'il voulait changer ses commandes pour être plus à l'aise. Cependant, nous ignorons totalement comment le faire et Arthur n'a rien trouvé sur internet pour le faire, même dans la documentation de Unity. Nous avons donc abandonné cette idée, comme nous l'avons dit dans la partie de retard.\\
 
 Il a aussi été rajouté le texte "Chargement..." lors du chargement d'une partie, pour que le joueur comprenne qu'il doit attendre, alors qu'avant il n'y avait aucune indication. Ce n'est qu'un détail mais il a son importance.\\
 
 \subsection{Ce qu'Arthur doit faire pour la soutenance finale}
-Pour la dernière soutenance, Arthur va surtout s'occuper de compléter et de terminer l'intelligence artificielle. Elle doit pouvoir rechercher un minimum l'adversaire, voire même esquiver les attaques. Si le temps le permet, il pourra éventuellement faire plusieurs "attitudes" aux vaisseaux gérés par l'ordinateur : plus agressif, plus prudent \dots  etc. Cela les rendrait moins prévisible et plus réaliste, dans le sens plus humain.\\
+Pour la dernière soutenance, Arthur va surtout s'occuper de compléter et de terminer l'intelligence artificielle. Elle doit pouvoir rechercher un minimum l'adversaire, voire même esquiver les attaques. Le but est qu'elle soit le plus générique pour ne pas avoir besoin de la modifier pour chaque nouvelle carte. Nous ne voulons pas créer de points sur la carte tel que l'intelligence artificielle se déplace de l'un à l'autre. Si le temps le permet, il pourra éventuellement faire plusieurs "attitudes" aux vaisseaux gérés par l'ordinateur : plus agressif, plus prudent \dots  etc. Cela les rendrait moins prévisible et plus réaliste, dans le sens plus humain.\\
 
-Si des modifications doivent être apportées au script ou surtout au multijoueur, c'est lui qui s'en chargera, ou au moins qui aidera vu que c'est lui qui s'en ait chargé pour l'instant.\\
+Si des modifications doivent être apportées au script ou surtout au multijoueur, c'est lui qui s'en chargera, ou au moins qui aidera vu que c'est lui qui s'en ait chargé pour l'instant. Cela peut être l'ajout de vaisseaux dans les menus et au démarrage des scènes, des ajouts de missiles \dots etc.\\
 
 En cas de retard, il pourra aider dans l'élaboration des cartes, pour placer les bâtiments et faire un peu de gameplay.
 
@@ -176,7 +184,9 @@ Pour la dernière soutenance, le projet devra être fini. Nous allons nous conce
 
 Il y aura aussi du contenu supplémentaire, notamment des cartes, et tout le contenu sera disponible sur le site internet, en ligne.\\
 
-Le jeu sera fournit avec une installation sur CD-ROM, avec une boite prévue à cette effet.\\ \\ \\ \\ \\ \\ \\
+Le site internet sera achevé, avec le projet disponible dans son intégralité. On pourra suivre l'évolution du jeu au fur et à mesure avec le contenu ajouté, et des renseignement sur tout ce qui tourne autour : les développeurs, les partenaires \dots \\
+
+Le jeu sera fournit avec une installation sur CD-ROM, avec une boite prévue à cette effet. \\  \\ \\ \\
 
 \begin{center}
 \includegraphics[height=4cm, width=4cm]{vaisseux_petit.png}

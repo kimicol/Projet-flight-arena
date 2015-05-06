@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.11)  6 MAY 2015 23:11
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  6 MAY 2015 23:57
 entering extended mode
 **rendu.tex
-("F:\projet git\Projet-flight-arena\latex\Rendu soutenance 2\rendu.tex"
+("F:\epita\Projet-flight-arena\latex\Rendu soutenance 2\rendu.tex"
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -433,7 +433,7 @@ File: pdftex.def 2011/01/28 v0.05d Graphics/color for pdfTeX
 \f@ncyO@olf=\skip53
 \f@ncyO@orf=\skip54
 )
-("F:\projet git\Projet-flight-arena\latex\Rendu soutenance 2\rendu.aux")
+("F:\epita\Projet-flight-arena\latex\Rendu soutenance 2\rendu.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
@@ -455,7 +455,7 @@ LaTeX Info: Redefining \degres on input line 33.
 LaTeX Info: Redefining \dots on input line 33.
 LaTeX Info: Redefining \up on input line 33.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(C:\Users\epita\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count104
 \scratchdimen=\dimen117
@@ -512,8 +512,8 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 35.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-("F:\projet git\Projet-flight-arena\latex\Rendu soutenance 2\rendu.toc"
+{C:/Users/epita/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+("F:\epita\Projet-flight-arena\latex\Rendu soutenance 2\rendu.toc"
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -522,8 +522,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 4.
 )
 \tf@toc=\write3
-
-[1
+ [1
 
 ]
 Partie 1.
@@ -542,64 +541,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
 [2
 
 ]
 Partie 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
 [4]
 Partie 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
-<sharknado.png, id=23, 260.47313pt x 158.84344pt>
+<sharknado.png, id=24, 260.47313pt x 158.84344pt>
 File: sharknado.png Graphic file (type png)
  <use sharknado.png>
-<vaisseaumilitaire.png, id=25, 395.97937pt x 335.75438pt>
+<vaisseaumilitaire.png, id=26, 395.97937pt x 335.75438pt>
 File: vaisseaumilitaire.png Graphic file (type png)
 
 <use vaisseaumilitaire.png>
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 [5
 
- <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/sharknado.png> <F:
-/projet git/Projet-flight-arena/latex/Rendu soutenance 2/vaisseaumilitaire.png>
-] <vaisseau_bouge.png, id=31, 588.69937pt x 330.48468pt>
+ <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/sharknado.png> <F:/epit
+a/Projet-flight-arena/latex/Rendu soutenance 2/vaisseaumilitaire.png>]
+<vaisseau_bouge.png, id=32, 588.69937pt x 330.48468pt>
 File: vaisseau_bouge.png Graphic file (type png)
 
 <use vaisseau_bouge.png>
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
@@ -608,30 +607,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-<site.png, id=32, 1251.92719pt x 705.38531pt>
-File: site.png Graphic file (type png)
- <use site.png> [6 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/
-vaisseau_bouge.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-
+<site.png, id=33, 1251.92719pt x 705.38531pt>
+File: site.png Graphic file (type png)
+ <use site.png> [6 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/vaiss
+eau_bouge.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
-[7 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/site.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
-
+[7 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/site.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
@@ -647,25 +646,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
-
-[8]
-
-Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
-(frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
-(frenchb.ldf)                Degrees used on input line 137.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
+(frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
+(frenchb.ldf)                Degrees used on input line 141.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 141--142
@@ -678,120 +681,120 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--146
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
-
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-[9] <menu_option.jpg, id=49, 962.84718pt x 601.4972pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+<menu_option.jpg, id=49, 962.84718pt x 601.4972pt>
 File: menu_option.jpg Graphic file (type jpg)
  <use menu_option.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
 <menu_selection.jpg, id=50, 965.85844pt x 604.50844pt>
 File: menu_selection.jpg Graphic file (type jpg)
 
-<use menu_selection.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
-
- []
-
-[10 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/menu_option.jpg
-> <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/menu_selection.jp
-g>]
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
+<use menu_selection.jpg> [10 <F:/epita/Projet-flight-arena/latex/Rendu soutenan
+ce 2/menu_option.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-[11]
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+
+ []
+
+[11 <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/menu_selection.jpg>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+[12]
 Partie 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-
- []
-
-<vaisseux_petit.png, id=57, 513.92pt x 513.92pt>
+<vaisseux_petit.png, id=61, 513.92pt x 513.92pt>
 File: vaisseux_petit.png Graphic file (type png)
  <use vaisseux_petit.png>
-[12
+[13
 
- <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/vaisseux_petit.png
->] ("F:\projet git\Projet-flight-arena\latex\Rendu soutenance 2\rendu.aux") ) 
+ <F:/epita/Projet-flight-arena/latex/Rendu soutenance 2/vaisseux_petit.png>] ("
+F:\epita\Projet-flight-arena\latex\Rendu soutenance 2\rendu.aux") ) 
 Here is how much of TeX's memory you used:
  3343 strings out of 494053
- 41626 string characters out of 3148603
- 98515 words of memory out of 3000000
+ 41623 string characters out of 3148603
+ 97515 words of memory out of 3000000
  6544 multiletter control sequences out of 15000+200000
  72556 words of font info for 66 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  27i,11n,43p,763b,275s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C
-:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-lm/lmri10.pfb>
-Output written on rendu.pdf (13 pages, 1092787 bytes).
+{C:/Program 
+Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/font
+s/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
+/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.
+pfb>
+Output written on rendu.pdf (14 pages, 1096602 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
