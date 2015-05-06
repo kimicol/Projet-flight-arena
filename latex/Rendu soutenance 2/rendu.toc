@@ -17,7 +17,7 @@
 \contentsline {section}{\numberline {2.3}Arthur Remaud}{5}
 \contentsline {subsection}{\numberline {2.3.1}Multijoueur en r\IeC {\'e}seau}{5}
 \contentsline {subsection}{\numberline {2.3.2}Quaternions}{6}
-\contentsline {subsection}{\numberline {2.3.3}Intelligence artificielle}{6}
+\contentsline {subsection}{\numberline {2.3.3}Intelligence artificielle}{7}
 \contentsline {subsection}{\numberline {2.3.4}Menus}{7}
-\contentsline {subsection}{\numberline {2.3.5}Ce qu'Arthur doit faire pour la soutenance finale}{7}
-\contentsline {chapter}{\numberline {3}Pour la prochaine soutenance}{8}
+\contentsline {subsection}{\numberline {2.3.5}Ce qu'Arthur doit faire pour la soutenance finale}{8}
+\contentsline {chapter}{\numberline {3}Pour la prochaine soutenance}{9}
