@@ -18,7 +18,6 @@ public class vie : MonoBehaviour
     private GameObject crosshair;
     private MeshRenderer cube0;
     public AudioClip hitmarker;
-    public GUIText thewinnergui;
     public Transform depart;
     private Transform selected;
     public GUISkin skin;
@@ -87,7 +86,6 @@ public class vie : MonoBehaviour
                     killed = true;
                 }
             }
-            //this.gameObject.SetActive(false);
         }
     }
 
@@ -132,6 +130,8 @@ public class vie : MonoBehaviour
     {
         GameObject.Find("gameoverCAM").camera.depth = 2;
         winner = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
+        thePlayer = GameObject.Find("gameoverGUI");
+        thePlayer.guiText.text = ("GAME OVER");
         vie bob = winner.GetComponent<vie>();
         thePlayer = GameObject.Find("GameWinner_GUI");
         if (bob.frag_limite<1)

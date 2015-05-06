@@ -22,7 +22,7 @@ public class controlcamera : MonoBehaviour
     }
 	
 	// Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (vaisseau != null)
         {

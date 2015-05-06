@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Mvtvaisseau.cs" />
-     <Compile Include="Assets\Scripts\GUI\affichage_vie1.cs" />
+     <Compile Include="Assets\Scripts\GUI\affichage_vie.cs" />
      <Compile Include="Assets\Scripts\GUI\clock_gui.cs" />
      <Compile Include="Assets\Scripts\GUI\player2gui_life.cs" />
      <Compile Include="Assets\Scripts\GUI\testGUI.cs" />
