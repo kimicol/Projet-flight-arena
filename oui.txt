@@ -1,0 +1,33 @@
+
+
+
+\subsection{Écran Partagée} 
+ Parce-que de moins en moins de jeu proposent un écran partage (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la mains, nous avons décidé de créer un multijoueur en écran scinde.
+Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis et U/J pour le tangage. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pave numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage. \\
+
+\subsection{Premier mode de jeu} : Le premier mode de jeu est un match a mort chacun pour soi. Le joueur gagne quand un vaisseau ennemi explose ou si il a le plus de points de vie après la fin du temps imparti.\\
+ 
+\subsection{Son} 
+ Nous avons ajoute un court bruit qui se joue lorsque un joueur touche un vaisseau ennemi. pour aider le joueur. En effet, cela permet au joueur de déduire les points de vies restants de son adversaire et reagir en fonction.\\
+
+mvt
+
+challenge : réussir a gérer en un script les différents vaisseaux et leurs composants
+fix bug lors des portages : vaisseaux se tire dessus clock qui merde + résolution multi
+son par les vaisseaux différents solo/split multi.
+fix apparition game over avec écran debut multi.
+
+
+\subsection{Interface Graphique  Utilisateur}
+\subsubsection{Cibleur}
+ Pour des raisons de gameplay, les missiles du vaisseau ne se dirigent pas tous vers le meme point mais recouvrent un petite zone. Nous affichons donc, pour aider le joueur, cette zone sur l'écran. Cette zone est délimitée par quatre rectangles blancs. Pour faciliter les manipulations, ces quatre rectangles ont des coordonnées pour que tous bougent quand l'un bouge. \\
+
+\subsubsection{Horloge}
+Nous avons implémentes un une horloge qui limite le temps de jeu. Lorsque que le temps imparti est dépassé, la partie s'arrête, et le vainqueur est détermine de la manière suivante : un frag vaut 1 point, une mort -0.5 point et le joueur gagnant est affiche a l'écran. En cas d'égalité, le jeu indique que les joueurs ont fait match nul.
+
+\subsection{Réapparition des vaisseaux}  
+Faire réapparaitre les vaisseaux sur des points prédéfinis présente un grand avantage car le vaisseau ne sera jamais dans un mur ou en dehors des limites de la carte. Cependant cela veut dire que le joueur est capable de créer des boucles de réapparitions de manière a tuer son adversaire des qu'il réapparait.Nous avons donc choisis de faire réapparaitre les vaisseaux aléatoirement en gérant les cas ou ils seraient en dehors des limites et les cas ou ils réapparaissent dans un objet.
+
+De plus, pour vraiment donner l'impression que le vaisseau a disparu, le script désactive l'émetteur de particule produisant les flammes du vaisseaux. Nous immobilisons aussi le vaisseau. Pour cela, le script désactivait d'abord le \textit{gameobject} du vaisseaux. Cette solution qui semble facile présente en réalité beaucoup de désavantages : les valeurs de mouvements et de rotations sont conservées ce qui veut dire que le vaisseau ne réapparait pas en étant immobile. De plus, nous avons ajouté le script de réapparition au vaisseau, ce qui veut dire que désactiver le \textit{gameobject} vaisseau désactive aussi le script de réapparition.
+
+ La solution que nous avons choisi est la suivante : nous immobilisons dans un premier temps le vaisseau en réinitialisant ses valeurs de rotations et de vitesses. Le script  rend ensuite le vaisseau invisible en désactivant les \textit{mesh rendert} de ses différents composants et en désactivant les collisions. Après un (très) court temps d'attente, le vaisseau réapparait sur une autre position et retrouve une valeur de points de vie prédéfinie.\\
