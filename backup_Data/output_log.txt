@@ -19,23 +19,15 @@ Loading G:\Projet-flight-arena\backup_Data\Managed\Assembly-UnityScript-firstpas
 desktop: 1680x1050 59Hz; virtual: 1680x1050 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1783)
+UnloadTime: 0.290678 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-UnloadTime: 0.271963 ms
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 464.
+Total: 1.105362 ms (FindLiveObjects: 0.023544 ms CreateObjectMapping: 0.009357 ms MarkObjects: 0.127379 ms  DeleteObjects: 0.574112 ms)
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 527.
-Total: 1.191691 ms (FindLiveObjects: 0.020223 ms CreateObjectMapping: 0.009055 ms MarkObjects: 0.147301 ms  DeleteObjects: 0.643537 ms)
+UnloadTime: 0.856339 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-The referenced script on this Behaviour is missing!
- 
-(Filename:  Line: 1783)
-
-UnloadTime: 0.869016 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 524.
-Total: 0.754315 ms (FindLiveObjects: 0.020827 ms CreateObjectMapping: 0.009055 ms MarkObjects: 0.144584 ms  DeleteObjects: 0.259588 ms)
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 461.
+Total: 0.796271 ms (FindLiveObjects: 0.015997 ms CreateObjectMapping: 0.008753 ms MarkObjects: 0.146999 ms  DeleteObjects: 0.286754 ms)
 
