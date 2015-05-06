@@ -40,11 +40,12 @@ public class multi_setting : MonoBehaviour
         switch(menu)
         {
             case 1:
-                select_connexion();
-                break;
-            case 2:
                 menu_rejoindre();
                 break;
+            case 2:
+                select_connexion();
+                break;
+                
         }
     }
 
