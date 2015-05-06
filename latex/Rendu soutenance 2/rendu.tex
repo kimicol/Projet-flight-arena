@@ -57,37 +57,45 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 
 \section{Guillaume Rebut}
 
-\subsection{Ce que Guillaume doit faire pour la seconde soutenance}
+\subsection{Ce que Guillaume doit faire pour la soutenance finale}
 
 \section{Vincent Rospini-Clerici}
 
-\subsection{Différents problèmes rencontrés}
+\subsection{Création de nouveaux vaisseaux}
+Dans le soucis d'ajouter du contenu, deux nouveaux vaisseaux ont été créés sur Blender et textures sur Photoshop. Il s'agit tout d'abord d'un vaisseau qui ferait penser a un avion militaire tout droit venu du futur. L'autre est inspiré du P40, un avion militaire américain utilisé durant la seconde guerre mondiale et auquel Vincent a rajouté des nacelles de missiles et des réacteurs pour lui donner un air à la fois futuriste et ancien. Deux textures ont été crées pour ce dernier vaisseau mais nous nous servirons pour le moment d'une seule d'entre elle pour la première soutenance.
 
-\subsection{Ce que Vincent doit faire pour la seconde soutenance}
+\subsection{Ajout des particules des vaisseaux}
+
+\subsection{Création du site internet}
+Vincent s'est occupé de la création du site internet en vue de la seconde soutenance. Il a décidé de créer le site en langage \textit{HTML} par le biais des logiciels d'adobe, Photoshop et DreamWeaver. Ce dernier est un logiciel permettant d'à la fois modifier directement le code du site et de s'occuper de son coté graphique plus aisément.Il a voulu créer un site avec un design sombre qui rappellerait un ciel étoilé avec de nombreuses images des vaisseaux crées afin de le rendre attirant. Les pages du site ont été désignés sur Photoshop avec des images crées spécialement pour le fond d'écran et pour embellir les pages du site. Le site est prévu pour avoir toutes ses pages traduites en anglais et en français en cliquant simplement sur le drapeau correspondant a la langue voulue. Le site contiendra une page d'accueil,une page pour présenter le jeu, une pour présenter l'équipe et une pour que les visiteurs puissent avoir accès au cahier des charges, a l'exécutable du jeu, et peut-être a d'autres contenus à venir.
+
+\subsection{Ce que Vincent doit faire pour la soutenance finale}
 
 \section{Arthur Remaud}
 
 \subsection{Multijoueur en réseau}
 Pendant cette période, Arthur a surtout travaillé sur le multijoueur. Il a d'abord essayé de faire un protocole UDP pour relier en LAN (Local Area Network) en s'inspirant du TP que nous avions fait dans les cours habituels lorsque nous avions travaillé sur le protocole TCP, avant de se rendre compte qu'il existait la classe \textit{Network} sur Unity qui simplifie grandement l'élaboration d'un mode multijoueur sur un jeu. Plusieurs tutoriels existent à ce sujet sur internet, Arthur s'en est donc inspiré pour faire un réseau.\\
 
-Maintenant, le joueur peut choisir d'héberger une partie en LAN ou de rejoindre une partie déjà existante. S'il crée sa propre partie, il s'affiche alors dans un coin son adresse IP locale pour qu'il puisse la donner aux joueurs souhaitant le rejoindre. Ces derniers doivent d'abord saisir l'adresse IP pour rejoindre une partie, et ensuite leur vaisseau apparait dans la partie pour commencer à jouer.
+Maintenant, le joueur peut choisir d'héberger une partie en LAN ou de rejoindre une partie déjà existante. S'il crée sa propre partie, il s'affiche alors dans un coin son adresse IP locale pour qu'il puisse la donner aux joueurs souhaitant le rejoindre. Ces derniers doivent d'abord saisir l'adresse IP pour rejoindre une partie, et ensuite leur vaisseau apparait dans la partie pour commencer à jouer. Cette technique existait pour certains jeux comme \textit{Age of Empire I} pour pouvoir jouer en LAN.\\
 
-Les règles du jeu sont les mêmes que dans le mode un joueur.\\
+Les règles du jeu sont les mêmes que dans le mode un joueur ou écran séparé.\\
 
 Le principal problème fut qu'au départ, les joueurs contrôlaient le vaisseau de l'autre joueur et donc devait regarder sur l'autre écran pour jouer. De plus, à trois joueurs, les deux premiers connectés voyaient un seul et même vaisseau qu'il contrôlaient tous les deux pendant que le troisième joueur en pilotait un autre. Le dernier vaisseau quant à lui n'était contrôlé par personne et restait immobile. Au final, ce problème venait de l'assignation des caméras et des scripts aux joueurs lorsqu'ils instanciaient un nouveau vaisseau en arrivant.\\
 
 \subsection{Quaternions}
 Il nous avait été demandé lors de la dernière soutenance de modifier les déplacements des vaisseaux en rajoutant des quaternions pour faire les rotations des vaisseaux. Comme c'était Arthur qui s'était chargé des mouvements à la base, c'est lui qui a modifié le code pour mettre à la place des quaternions. Maintenant, les mouvements sont plus réalistes grâce à l'inertie mais cela rend le jeu un peu plus difficile.\\
 
-Nous n'avions pas utilisé cette technique plus tôt car elle laissait les forces de collisions sur le vaisseau qui le faisaient déplacer après avoir touché un immeuble. Nous avons remédié à ce problème en mettant à zéro les déplacements du vaisseau dans la fonction \textit{Update} si le joueur ne bouge pas.\\
+Nous n'avions pas utilisé cette technique plus tôt car elle laissait les forces de collisions sur le vaisseau qui le faisaient déplacer après avoir touché un immeuble. En effet le \textit{rigidbody} du vaisseau conservait les collisions subies et donc le rebondissement du vaisseau sur les objets. Dès que le joueur touchait un immeuble, le vaisseau rebondissait et cette force ne s'annulait que très lentement. Nous avons remédié à ce problème en mettant à zéro les déplacements du vaisseau dans la fonction \textit{Update} si le joueur ne bouge pas.\\
 
-Parfois, lorsque le vaisseau tournaient longtemps sur lui-même, il se mettait soudainement à partie dans l'autre sens avant de repartir de la rotation voulue. En effet le quaternion dépassait les 180\textdegree  et donc la rotation s'inversait. En ajoutant un maximum à l'accélération, on a pu régler facilement ce petit imprévu.\\
+Parfois, lorsque le vaisseau tournaient longtemps sur lui-même, il se mettait soudainement à partie dans l'autre sens avant de repartir de la rotation voulue. En effet le quaternion dépassait les 180\textdegree  et donc la rotation s'inversait. En ajoutant un maximum à l'accélération, on a pu régler facilement ce petit imprévu qui rendait le pilotage imprévisible.\\
 
 \subsection{Intelligence artificielle}
 
 Arthur a commencé à faire une intelligence artificielle pour pouvoir jouer contre des vaisseaux contrôlés par l'ordinateur. Pour le début nous voulions faire un algorithme de \textit{pathfiding}. C'est un algorithme qui permet de calculer la trajectoire la plus courte d'un point A à un point B en évitant les obstacles, et donc permet à une intelligence artificielle de se déplacer facilement. Cependant la 3D nous a posé problème, car on ne peut représenter facilement le terrain sous forme de tableau. Il faudrait utiliser un graphe, mais non seulement nous ne savons pas comment le faire, mais en plus il faudrait en faire un différent pour chaque carte, et nous n'avons pas eu le temps.\\
 
-Nous avons donc opté pour une autre technique : devant le vaisseau, nous avons rajouté des cylindres invisibles qui détectent des collisions avec les murs. Lorsque cela se produit, le vaisseau ralentit puis tourne en conséquence pour ne pas rentrer dans l'obstacle. Le vaisseau circule donc entre les bâtiments qu'il détecte et évite. Nous avons remarqué que cela ne fonctionnait pas pour les objets qui avait pour \textit{collider} un\textit{ Mesh Collider}. Nous avons donc rajouté des \textit{Box Collider} à tous les bâtiments et aux limites invisibles du jeu pour qu'il ne fonce pas dedans, tout en veillant à ce qu'il ne crée pas de collision avec les autres vaisseaux.\\
+Nous avons donc opté pour une autre technique : devant le vaisseau, nous avons rajouté des cylindres invisibles qui détectent des collisions avec les murs. Lorsque cela se produit, le vaisseau ralentit puis tourne en conséquence pour ne pas rentrer dans l'obstacle. Il y a quatre cylindre : un pour la gauche, un pour la droite, un pour le haut et un pour le bas. Ils sont placés de manière conique pour mieux détecter les immeubles. Le vaisseau circule donc entre les bâtiments qu'il détecte et évite. Nous avons remarqué que cela ne fonctionnait pas pour les objets qui avait pour \textit{collider} un\textit{ Mesh Collider}. Nous avons donc rajouté des \textit{Box Collider} à tous les bâtiments et aux limites invisibles du jeu pour qu'il ne fonce pas dedans, tout en veillant à ce qu'il ne crée pas de collision avec les autres vaisseaux.\\
+
+Cette intelligence artificielle n'est pas encore optimale : elle se prend toujours des bâtiments et surtout elle ne cherche pas le joueur adverse pour le battre. Elle se contente de tirer en continue droit devant elle pendant qu'elle se déplace.\\
 
 \subsection{Menus}
 
@@ -97,7 +105,7 @@ Il a aussi fait en sorte que le joueur puisse choisir le vaisseau qu'il veut pil
 
 Au départ, nous voulions faire en sorte que le joueur puisse choisir la répartition des touches de son clavier s'il voulait changer ses commandes pour être plus à l'aise. Cependant, nous ignorons totalement comment le faire et Arthur n'a rien trouvé sur internet pour le faire, même dans la documentation de Unity. Nous avons donc abandonné cette idée, comme nous l'avons dit dans la partie de retard.\\
 
-\subsection{Ce qu'Arthur doit faire pour la prochaine soutenance}
+\subsection{Ce qu'Arthur doit faire pour la soutenance finale}
 
 \chapter{Pour la prochaine soutenance}
 

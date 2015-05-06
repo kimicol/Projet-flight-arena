@@ -4,15 +4,15 @@ using System.Collections;
 public class controlplayer : MonoBehaviour 
 {
     //DEPLACEMENTS
-    public float v_max = 75f;
+    public float v_max = 40f;
     private float vitesse = 0f;
     public float v_acceleration = 0.5f;
 
     private float rota_hor = 0;
     private float rota_ver = 0;
     private float rota_s = 0;
-    public float r_acceleration = 1f;
-    public float cap = 100f;
+    public float r_acceleration = 3f;
+    public float cap = 60f;
 
     protected bool av = false;
     protected bool RH = false;
