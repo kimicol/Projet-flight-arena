@@ -166,7 +166,7 @@ public class mainmenu_script : MonoBehaviour
         {
             // A TERMINER
             load_after = 2;
-            choix_menu = 6;
+            choix_menu = 3;
             //Application.Quit();
         }
 
@@ -174,7 +174,7 @@ public class mainmenu_script : MonoBehaviour
         {
             // A TERMINER
             load_after = 3;
-            choix_menu = 6;
+            choix_menu = 3;
             //Application.Quit();
         }
 
