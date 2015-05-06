@@ -5,7 +5,6 @@ using System.Threading;
 
 public class vie : MonoBehaviour
 {
-
     public int pv = 5;
     public int current_life;
     private bool killed;

@@ -4,7 +4,6 @@ using System.Collections;
 public class controlcamera : MonoBehaviour
 {
     public Transform vaisseau;
-    private int type_vaisseau;
     public vie vie_restante;
     public GUISkin sk;
 
@@ -12,7 +11,6 @@ public class controlcamera : MonoBehaviour
 	void Start ()
     {
         vie_restante = vaisseau.GetComponents<vie>()[0];
-        type_vaisseau = vie_restante.type_vaisseau;
 	}
 
     void OnGUI()
@@ -26,10 +24,6 @@ public class controlcamera : MonoBehaviour
     {
         if (vaisseau != null)
         {
-            switch()
-            {
-
-            }
             this.transform.position = vaisseau.transform.position;
             this.transform.Translate(new Vector3(0f, 3f, -9f));
             this.transform.rotation = vaisseau.transform.rotation;
