@@ -7,6 +7,8 @@ public class clock_gui : MonoBehaviour {
     private GUIText gui_timer;
     private GameObject winner;
     private float startTime;
+    private int stop = 1;
+    public AudioClip endgame_sound;
     private int time_text;
     public int limite_temps = 120; // en secondes |
 
@@ -20,6 +22,18 @@ public class clock_gui : MonoBehaviour {
         
         if ((limite_temps - Convert.ToInt32(Time.time - startTime)) <1)
         {
+            try
+            {
+                stop = 1 / stop;
+                GameObject steveGameObject = GameObject.Find("player 1 cam");
+                AudioSource shut = steveGameObject.GetComponent<AudioSource>();
+                shut.audio.clip = endgame_sound;
+                shut.PlayOneShot(endgame_sound);
+                stop--;
+
+            }
+            catch
+            { }
         winner = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
         vie bob = winner.GetComponent<vie>();
         int stockage = bob.frag_limite;

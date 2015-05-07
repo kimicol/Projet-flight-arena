@@ -18,6 +18,7 @@ public class vie : MonoBehaviour
     private GameObject crosshair;
     private MeshRenderer cube0;
     public AudioClip hitmarker;
+    public AudioClip endgame_sound;
     public Transform depart;
     private Transform selected;
     public GUISkin skin;
@@ -81,6 +82,16 @@ public class vie : MonoBehaviour
                 {
                     frag_limite--;
                     DestroyObject(this.gameObject);
+                    try
+                    {
+                        GameObject steveGameObject = GameObject.Find("player 1 cam");
+                        AudioSource shut = steveGameObject.GetComponent<AudioSource>();
+                        shut.audio.clip = endgame_sound;
+                        shut.PlayOneShot(endgame_sound);
+                    }
+                    catch
+                    { Debug.Log("hue"); }
+                    Debug.Log("son");
                     gameover();
                     killed = true;
                 }
@@ -167,7 +178,6 @@ public class vie : MonoBehaviour
     }
     IEnumerator postgameover()
     {
-        Debug.Log("hua");
         yield return new WaitForSeconds(5.0f);
         affiche = true;
         Application.LoadLevel(0);
