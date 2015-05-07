@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.11)  7 MAY 2015 11:07
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.11)  7 MAY 2015 11:36
 entering extended mode
 **rendu.tex
 ("F:\projet git\Projet-flight-arena\latex\Rendu soutenance 2\rendu.tex"
@@ -538,6 +538,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
 <carte.jpg, id=18, 740.7675pt x 467.49657pt>
 File: carte.jpg Graphic file (type jpg)
  <use carte.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
@@ -545,6 +550,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
 [3
 
  <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/carte.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
+
+ []
+
 [4]
 Partie 2.
 
@@ -718,12 +727,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--174
 File: site.png Graphic file (type png)
  <use site.png> [12 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2
 /vaisseau_bouge.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
  []
 
@@ -732,35 +741,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
 [13 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/site.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 <lan.jpg, id=67, 800.23969pt x 538.26094pt>
 File: lan.jpg Graphic file (type jpg)
- <use lan.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+ <use lan.jpg> [14]
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
-
- []
-
-[14 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/lan.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
@@ -775,60 +789,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 213--214
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
+
+[15 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/lan.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
 Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
 (frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
-(frenchb.ldf)                Degrees used on input line 215.
+(frenchb.ldf)                Degrees used on input line 220.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
-[15] <ia.jpg, id=74, 504.38437pt x 299.61937pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+
+ []
+
+<ia.jpg, id=74, 504.38437pt x 299.61937pt>
 File: ia.jpg Graphic file (type jpg)
- <use ia.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+ <use ia.jpg> [16]
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
-[16 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/ia.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
 <menu_option.jpg, id=78, 962.84718pt x 601.4972pt>
 File: menu_option.jpg Graphic file (type jpg)
  <use menu_option.jpg>
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+[17 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/ia.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
-<menu_selection.jpg, id=79, 965.85844pt x 604.50844pt>
+<menu_selection.jpg, id=82, 965.85844pt x 604.50844pt>
 File: menu_selection.jpg Graphic file (type jpg)
 
-<use menu_selection.jpg> [17 <F:/projet git/Projet-flight-arena/latex/Rendu sou
-tenance 2/menu_option.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+<use menu_selection.jpg> [18 <F:/projet git/Projet-flight-arena/latex/Rendu sou
+tenance 2/menu_option.jpg> <F:/projet git/Projet-flight-arena/latex/Rendu soute
+nance 2/menu_selection.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 
  []
 
@@ -837,73 +853,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
 
-[18 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/menu_selection.
-jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 [19]
 Partie 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
+Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
 [20
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
@@ -928,7 +953,7 @@ sc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/lm/lmri10.pfb>
-Output written on rendu.pdf (22 pages, 2492283 bytes).
+Output written on rendu.pdf (22 pages, 2492864 bytes).
 PDF statistics:
  122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
