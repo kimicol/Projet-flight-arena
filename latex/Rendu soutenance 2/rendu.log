@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.11)  7 MAY 2015 11:04
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.11)  7 MAY 2015 11:07
 entering extended mode
 **rendu.tex
 ("F:\projet git\Projet-flight-arena\latex\Rendu soutenance 2\rendu.tex"
@@ -525,18 +525,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ])
 \tf@toc=\write3
- <vaisseaumilitaire.PNG, id=14, 395.97937pt x 335.75438pt>
-File: vaisseaumilitaire.PNG Graphic file (type png)
-
-<use vaisseaumilitaire.PNG> [2 <F:/projet git/Projet-flight-arena/latex/Rendu s
-outenance 2/vaisseaumilitaire.PNG>]
+ <MRCUBE.PNG, id=14, 609.77812pt x 537.50812pt>
+File: MRCUBE.PNG Graphic file (type png)
+ <use MRCUBE.PNG> [2 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 
+2/MRCUBE.PNG (PNG copy)>]
 Partie 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<carte.jpg, id=20, 740.7675pt x 467.49657pt>
+<carte.jpg, id=18, 740.7675pt x 467.49657pt>
 File: carte.jpg Graphic file (type jpg)
  <use carte.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 54--55
@@ -597,7 +596,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--99
 
  []
 
-<split.jpg, id=35, 965.85844pt x 606.01407pt>
+<split.jpg, id=33, 965.85844pt x 606.01407pt>
 File: split.jpg Graphic file (type jpg)
  <use split.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
@@ -636,7 +635,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
-<Capture_rebut.PNG, id=42, 488.57532pt x 272.51813pt>
+<Capture_rebut.PNG, id=40, 488.57532pt x 272.51813pt>
 File: Capture_rebut.PNG Graphic file (type png)
  <use Capture_rebut.PNG>
 Underfull \hbox (badness 10000) in paragraph at lines 128--129
@@ -684,10 +683,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--154
 
  []
 
-<sharknado.png, id=50, 260.47313pt x 158.84344pt>
+<sharknado.png, id=49, 260.47313pt x 158.84344pt>
 File: sharknado.png Graphic file (type png)
  <use sharknado.png>
-<vaisseaumilitaire.png, id=51, 395.97937pt x 335.75438pt>
+<vaisseaumilitaire.png, id=50, 395.97937pt x 335.75438pt>
 File: vaisseaumilitaire.png Graphic file (type png)
 
 <use vaisseaumilitaire.png>
@@ -695,7 +694,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
  []
 
-<vaisseau_bouge.png, id=52, 588.69937pt x 330.48468pt>
+<vaisseau_bouge.png, id=51, 588.69937pt x 330.48468pt>
 File: vaisseau_bouge.png Graphic file (type png)
 
 <use vaisseau_bouge.png> [11 <F:/projet git/Projet-flight-arena/latex/Rendu sou
@@ -715,7 +714,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-<site.png, id=58, 1251.92719pt x 705.38531pt>
+<site.png, id=57, 1251.92719pt x 705.38531pt>
 File: site.png Graphic file (type png)
  <use site.png> [12 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2
 /vaisseau_bouge.png>]
@@ -743,7 +742,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
  []
 
-<lan.jpg, id=68, 800.23969pt x 538.26094pt>
+<lan.jpg, id=67, 800.23969pt x 538.26094pt>
 File: lan.jpg Graphic file (type jpg)
  <use lan.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 202--203
@@ -790,7 +789,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
-[15] <ia.jpg, id=75, 504.38437pt x 299.61937pt>
+[15] <ia.jpg, id=74, 504.38437pt x 299.61937pt>
 File: ia.jpg Graphic file (type jpg)
  <use ia.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 227--228
@@ -807,14 +806,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-<menu_option.jpg, id=79, 962.84718pt x 601.4972pt>
+<menu_option.jpg, id=78, 962.84718pt x 601.4972pt>
 File: menu_option.jpg Graphic file (type jpg)
  <use menu_option.jpg>
 Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
-<menu_selection.jpg, id=80, 965.85844pt x 604.50844pt>
+<menu_selection.jpg, id=79, 965.85844pt x 604.50844pt>
 File: menu_selection.jpg Graphic file (type jpg)
 
 <use menu_selection.jpg> [17 <F:/projet git/Projet-flight-arena/latex/Rendu sou
@@ -908,15 +907,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
-<vaisseux_petit.png, id=94, 513.92pt x 513.92pt>
+<vaisseux_petit.png, id=93, 513.92pt x 513.92pt>
 File: vaisseux_petit.png Graphic file (type png)
  <use vaisseux_petit.png>
 [21 <F:/projet git/Projet-flight-arena/latex/Rendu soutenance 2/vaisseux_petit.
 png>] ("F:\projet git\Projet-flight-arena\latex\Rendu soutenance 2\rendu.aux") 
 ) 
 Here is how much of TeX's memory you used:
- 3372 strings out of 494053
- 42067 string characters out of 3148603
+ 3373 strings out of 494053
+ 42029 string characters out of 3148603
  98515 words of memory out of 3000000
  6568 multiletter control sequences out of 15000+200000
  72556 words of font info for 66 fonts, out of 3000000 for 9000
@@ -929,9 +928,9 @@ sc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/lm/lmri10.pfb>
-Output written on rendu.pdf (22 pages, 2359223 bytes).
+Output written on rendu.pdf (22 pages, 2492283 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
+ 122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
