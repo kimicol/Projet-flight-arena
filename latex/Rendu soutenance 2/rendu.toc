@@ -1,35 +1,35 @@
 \select@language {french}
 \contentsline {chapter}{\numberline {1}Rappel de la premi\IeC {\`e}re soutenance}{3}
-\contentsline {chapter}{\numberline {2}Retard/Avance par rapport au cahier des charges}{4}
-\contentsline {section}{\numberline {2.1}Pr\IeC {\'e}visions}{4}
-\contentsline {section}{\numberline {2.2}Retard}{4}
-\contentsline {subsection}{\numberline {2.2.1}Intelligence artificielle}{4}
-\contentsline {subsection}{\numberline {2.2.2}Cartes}{5}
-\contentsline {subsection}{\numberline {2.2.3}Option changer de touches de commande}{5}
-\contentsline {section}{\numberline {2.3}Avance}{5}
-\contentsline {subsection}{\numberline {2.3.1}Multijoueur}{5}
-\contentsline {chapter}{\numberline {3}Travail par membre}{6}
-\contentsline {section}{\numberline {3.1}Guillaume Rebut}{6}
-\contentsline {subsection}{\numberline {3.1.1}\IeC {\'E}cran Partag\IeC {\'e}e}{6}
-\contentsline {subsection}{\numberline {3.1.2}Premier mode de jeu}{6}
-\contentsline {subsection}{\numberline {3.1.3}Son}{6}
-\contentsline {subsection}{\numberline {3.1.4}Mouvement}{7}
-\contentsline {subsection}{\numberline {3.1.5}Interface Graphique Utilisateur}{7}
-\contentsline {subsubsection}{Cibleur}{7}
-\contentsline {subsubsection}{Horloge}{8}
-\contentsline {subsection}{\numberline {3.1.6}R\IeC {\'e}apparition des vaisseaux}{8}
-\contentsline {subsection}{\numberline {3.1.7}Portage du jeu}{9}
-\contentsline {subsection}{\numberline {3.1.8}Ce que Guillaume doit faire pour la soutenance finale}{9}
-\contentsline {section}{\numberline {3.2}Vincent Rospini-Clerici}{9}
-\contentsline {subsection}{\numberline {3.2.1}Cr\IeC {\'e}ation de nouveaux vaisseaux}{9}
-\contentsline {subsection}{\numberline {3.2.2}Ajout des particules des vaisseaux}{10}
-\contentsline {subsection}{\numberline {3.2.3}Cr\IeC {\'e}ation du site internet}{11}
-\contentsline {subsection}{\numberline {3.2.4}Cr\IeC {\'e}ation d'une musique originale}{11}
-\contentsline {subsection}{\numberline {3.2.5}Ce que Vincent doit faire pour la soutenance finale}{12}
-\contentsline {section}{\numberline {3.3}Arthur Remaud}{12}
-\contentsline {subsection}{\numberline {3.3.1}Multijoueur en r\IeC {\'e}seau}{12}
-\contentsline {subsection}{\numberline {3.3.2}Quaternions}{13}
-\contentsline {subsection}{\numberline {3.3.3}Intelligence artificielle}{14}
-\contentsline {subsection}{\numberline {3.3.4}Menus}{14}
-\contentsline {subsection}{\numberline {3.3.5}Ce qu'Arthur doit faire pour la soutenance finale}{16}
-\contentsline {chapter}{\numberline {4}Pour la prochaine soutenance}{17}
+\contentsline {chapter}{\numberline {2}Retard/Avance par rapport au cahier des charges}{5}
+\contentsline {section}{\numberline {2.1}Pr\IeC {\'e}visions}{5}
+\contentsline {section}{\numberline {2.2}Retard}{5}
+\contentsline {subsection}{\numberline {2.2.1}Intelligence artificielle}{5}
+\contentsline {subsection}{\numberline {2.2.2}Cartes}{6}
+\contentsline {subsection}{\numberline {2.2.3}Option changer de touches de commande}{6}
+\contentsline {section}{\numberline {2.3}Avance}{6}
+\contentsline {subsection}{\numberline {2.3.1}Multijoueur}{6}
+\contentsline {chapter}{\numberline {3}Travail par membre}{7}
+\contentsline {section}{\numberline {3.1}Guillaume Rebut}{7}
+\contentsline {subsection}{\numberline {3.1.1}\IeC {\'E}cran Partag\IeC {\'e}e}{7}
+\contentsline {subsection}{\numberline {3.1.2}Premier mode de jeu}{8}
+\contentsline {subsection}{\numberline {3.1.3}Son}{8}
+\contentsline {subsection}{\numberline {3.1.4}Mouvement}{8}
+\contentsline {subsection}{\numberline {3.1.5}Interface Graphique Utilisateur}{9}
+\contentsline {subsubsection}{Cibleur}{9}
+\contentsline {subsubsection}{Horloge}{9}
+\contentsline {subsection}{\numberline {3.1.6}R\IeC {\'e}apparition des vaisseaux}{9}
+\contentsline {subsection}{\numberline {3.1.7}Portage du jeu}{10}
+\contentsline {subsection}{\numberline {3.1.8}Ce que Guillaume doit faire pour la soutenance finale}{10}
+\contentsline {section}{\numberline {3.2}Vincent Rospini-Clerici}{12}
+\contentsline {subsection}{\numberline {3.2.1}Cr\IeC {\'e}ation de nouveaux vaisseaux}{12}
+\contentsline {subsection}{\numberline {3.2.2}Ajout des particules des vaisseaux}{12}
+\contentsline {subsection}{\numberline {3.2.3}Cr\IeC {\'e}ation du site internet}{13}
+\contentsline {subsection}{\numberline {3.2.4}Cr\IeC {\'e}ation d'une musique originale}{13}
+\contentsline {subsection}{\numberline {3.2.5}Ce que Vincent doit faire pour la soutenance finale}{14}
+\contentsline {section}{\numberline {3.3}Arthur Remaud}{15}
+\contentsline {subsection}{\numberline {3.3.1}Multijoueur en r\IeC {\'e}seau}{15}
+\contentsline {subsection}{\numberline {3.3.2}Quaternions}{16}
+\contentsline {subsection}{\numberline {3.3.3}Intelligence artificielle}{16}
+\contentsline {subsection}{\numberline {3.3.4}Menus}{18}
+\contentsline {subsection}{\numberline {3.3.5}Ce qu'Arthur doit faire pour la soutenance finale}{19}
+\contentsline {chapter}{\numberline {4}Pour la prochaine soutenance}{20}
