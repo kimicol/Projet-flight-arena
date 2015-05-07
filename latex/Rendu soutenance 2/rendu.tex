@@ -49,7 +49,7 @@ A la première soutenance, nous avions présenté une première carte avec d’o
 \includegraphics[height=6cm, width=10cm]{carte.jpg}
 \end{center}
 
-Il y avait les déplacements et les tirs du joueur intégrés aux contrôles en utilisant les fonctions \textit{Rotate}, \textit{Translate} et \textit{Instanciate}. Nous avions donc déjà les bases du gameplay et la physique était bien avancée : les collisions étaient déjà intégrées et le terrain était délimité. La vie du vaisseau n’était pas encore implémentée dans le jeu.La pause avait été aussi insérée dans le jeu, que ce soit pour aller dans les options, pour revenir au menu ou pour quitter le jeu. \\
+Il y avait les déplacements et les tirs du joueur intégrés aux contrôles en utilisant les fonctions \textit{Rotate}, \textit{Translate} et \textit{Instanciate}. Nous avions donc déjà les bases du gameplay et la physique était bien avancée : les collisions étaient déjà intégrées et le terrain était délimité. La vie du vaisseau n’était pas encore implémentée dans le jeu. La pause avait été aussi insérée dans le jeu, que ce soit pour aller dans les options, pour revenir au menu ou pour quitter le jeu. \\
 
 Le menu contenait déjà les principaux onglets : jouer, multijoueur, options, quitter. La musique du menu avait été choisie pour être celle du thème de \textit{Captain America}. Cependant, certains boutons n'aboutissaient sur rien car le contenu n'avait pas été fait (le multijoueur surtout), mais le menu option avait été entamé avec la gestion du volume de la musique et des bruitages qui était conservé en mémoire même après avoir fermé le jeu grâce à la classe \textit{PlayerPrefs}.\\
 
@@ -95,7 +95,7 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 
 \subsection{Écran Partagée} 
  Parce que de moins en moins de jeu proposent un écran partagé (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la mains, nous avons décidé de créer un multijoueur en écran scindé.
-Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis et U/J pour le tangage. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pave numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage. \\
+Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis et U/J pour le tangage. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pavé numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage. \\
 
 \begin{center}
 \includegraphics[height=5cm, width=9cm]{split.jpg}
@@ -109,11 +109,11 @@ Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/
 \subsection{Mouvement}
 Suite aux recommandations des évaluateurs, nous avons décidés de rendre le contrôle du vaisseau moins "arcade". Pour cela, en plus de l'ajout de quaternion, nous avons souhaités rendre les déplacements du vaisseau réaliste. En effet, lorsque l'utilisateur ne fait pas avancer le vaisseau, ce dernier s'immobilise rapidement dans les airs. Pour résoudre ce problème, nous avons décidé d'implémenter les vrais équations de mouvements des avions.\\
 
- L'équation qui nous intéresse le plus est la suivante : R = 1/2 Cx  p S v.v . Soit la résistance de l'air est égale a la moitie de la surface du vaisseau fois la constante de trainée fois la masse volumique de l'air fois la vitesse au carré, ce que nous avons simplifié par la vitesse au carre fois une constante. Lors des premiers essais, la vitesse était calculée en soustrayant la force de frottement a l'accélération. Cette méthode donnait des résultats satisfaisant car les mouvements était fluide et le vaisseau ne s'arrêtait jamais. Cependant, pour une raison indéterminée, si le joueur décidait de ne pas avancer après avoir réapparu, le vaisseau avait une vitesse négative qui devenait très importante très rapidement et sortait le vaisseau des limites de unity.\\
+ L'équation qui nous intéresse le plus est la suivante : R = 1/2 Cx  p S v.v . Soit la résistance de l'air est égale à la moitié de la surface du vaisseau fois la constante de trainée fois la masse volumique de l'air fois la vitesse au carré, ce que nous avons simplifié par la vitesse au carre fois une constante. Lors des premiers essais, la vitesse était calculée en soustrayant la force de frottement a l'accélération. Cette méthode donnait des résultats satisfaisant car les mouvements était fluide et le vaisseau ne s'arrêtait jamais. Cependant, pour une raison indéterminée, si le joueur décidait de ne pas avancer après avoir réapparu, le vaisseau avait une vitesse négative qui devenait très importante très rapidement et sortait le vaisseau des limites de unity.\\
 
-Le problème disparu lorsque nous utilisions \textit{Transform.translate} qui prend en paramètre un vector 3. Nous avons ensuite implémentés une option permettant au joueur de freiner. Cette option retrancher une valeur fixe a la vitesse tant que celle ci était positive. Cependant, malgré toute les précautions prises, notre problème de vitesse négative est réapparus . La solution prise fut d'augmenter la valeur de la force de frottement.\\
+Le problème disparu lorsque nous utilisions \textit{Transform.translate} qui prend en paramètre un vector 3. Nous avons ensuite implémentés une option permettant au joueur de freiner. Cette option retrancher une valeur fixe a la vitesse tant que celle-ci était positive. Cependant, malgré toute les précautions prises, notre problème de vitesse négative est réapparus . La solution prise fut d'augmenter la valeur de la force de frottement.\\
 
-La prochaine étape fut d'implémenter la portance. Ceci signifie aussi qu'il fallait implémenter la gravité. Nous avons du pour cela passer d'une modification de la vitesse grâce a \textit{Transform.translate} a une modification de la vélocité du \textit{rigidbody} du vaisseau. Cependant, l'implémentation de la portance implique une force relative au monde et non au vaisseau. Cette étape ne fut pas d'une grande difficulté mais l'ordre de grandeur des valeurs est différente que celle du référentielle vaisseau. Ce détail nous a empêché de trouve la valeur exacte de manière a ce qui le vaisseau vole en ligne droite lorsqu'il est parallèle au sol, ce qui veut dire que le joueur est tout le temps oblige de compenser cette force, ce qui devient vite ennuyant. Nous avons finalement décider d'enlever les frottements ainsi que la possibilité de freiner.\\
+La prochaine étape fut d'implémenter la portance. Ceci signifie aussi qu'il fallait implémenter la gravité. Nous avons dû pour cela passer d'une modification de la vitesse grâce a \textit{Transform.translate} a une modification de la vélocité du \textit{rigidbody} du vaisseau. Cependant, l'implémentation de la portance implique une force relative au monde et non au vaisseau. Cette étape ne fut pas d'une grande difficulté mais l'ordre de grandeur des valeurs est différente que celle du référentielle vaisseau. Ce détail nous a empêché de trouve la valeur exacte de manière à ce qui le vaisseau vole en ligne droite lorsqu'il est parallèle au sol, ce qui veut dire que le joueur est tout le temps oblige de compenser cette force, ce qui devient vite ennuyant. Nous avons finalement décidé d'enlever les frottements ainsi que la possibilité de freiner.\\
 
 \subsection{Interface Graphique  Utilisateur}
 
@@ -125,10 +125,10 @@ La prochaine étape fut d'implémenter la portance. Ceci signifie aussi qu'il fa
 \end{center}
 
 \subsubsection{Horloge}
-Nous avons implémentes un une horloge qui limite le temps de jeu. Lorsque que le temps imparti est dépassé, la partie s'arrête, et le vainqueur est détermine de la manière suivante : un frag vaut 1 point, une mort -0.5 point et le joueur gagnant est affiche a l'écran. En cas d'égalité, le jeu indique que les joueurs ont fait match nul.\\
+Nous avons implémentes un une horloge qui limite le temps de jeu. Lorsque que le temps imparti est dépassé, la partie s'arrête, et le vainqueur est détermine de la manière suivante : un frag vaut 1 point, une mort -0.5 point et le joueur gagnant est affiche à l'écran. En cas d'égalité, le jeu indique que les joueurs ont fait match nul.\\
 
 \subsection{Réapparition des vaisseaux}  
-Faire réapparaitre les vaisseaux sur des points prédéfinis présente un grand avantage car le vaisseau ne sera jamais dans un mur ou en dehors des limites de la carte. Cependant cela veut dire que le joueur est capable de créer des boucles de réapparitions de manière a tuer son adversaire des qu'il réapparait.Nous avons donc choisis de faire réapparaitre les vaisseaux aléatoirement en gérant les cas ou ils seraient en dehors des limites et les cas ou ils réapparaissent dans un objet.\\
+Faire réapparaitre les vaisseaux sur des points prédéfinis présente un grand avantage car le vaisseau ne sera jamais dans un mur ou en dehors des limites de la carte. Cependant cela veut dire que le joueur est capable de créer des boucles de réapparitions de manière à tuer son adversaire dès qu'il réapparait.Nous avons donc choisis de faire réapparaitre les vaisseaux aléatoirement en gérant les cas où ils seraient en dehors des limites et les cas où ils réapparaissent dans un objet.\\
 
 De plus, pour vraiment donner l'impression que le vaisseau a disparu, le script désactive l'émetteur de particule produisant les flammes du vaisseaux. Nous immobilisons aussi le vaisseau. Pour cela, le script désactivait d'abord le \textit{gameobject} du vaisseau. Cette solution qui semble facile présente en réalité beaucoup de désavantages : les valeurs de mouvements et de rotations sont conservées ce qui veut dire que le vaisseau ne réapparait pas en étant immobile. De plus, nous avons ajouté le script de réapparition au vaisseau, ce qui veut dire que désactiver le \textit{gameobject} vaisseau désactive aussi le script de réapparition.\\
 
@@ -141,9 +141,9 @@ Le jeu fut d'abord développé pour la partie écran scindé, ce qui veut dire q
 
 \subsection{Ce que Guillaume doit faire pour la soutenance finale}
 
-Le plus important est de finir la deuxième carte en cours de développement. Cette carte sera plus grande que la première pour permettre une meilleur visibilité mais aussi pour permettre de plus grandes manœuvres. Une troisième carte sera aussi finie et servira de  carte d'entrainement pour les débutants : ils seront d'abord initiés au différents mouvements du vaisseau, passeront des exercices leur demandant de slalomer entre des obstacles, s'entraineront a tirer sur des cibles immobiles puis mouvantes. Cette carte proposera aussi de jouer contre une intelligence artificielle.\\
+Le plus important est de finir la deuxième carte en cours de développement. Cette carte sera plus grande que la première pour permettre une meilleure visibilité mais aussi pour permettre de plus grandes manœuvres. Une troisième carte sera aussi finie et servira de  carte d'entrainement pour les débutants : ils seront d'abord initiés au différents mouvements du vaisseau, passeront des exercices leur demandant de slalomer entre des obstacles, s'entraineront à tirer sur des cibles immobiles puis mouvantes. Cette carte proposera aussi de jouer contre une intelligence artificielle.\\
 
-Le jeu proposera plusieurs modes de jeu : celui en développement, un match a mort par équipe, ainsi que d'autres modes de jeu se basant sur des objectifs (par exemple capture du drapeau, contrôle de territoire, roi de la colline, infection,etc).\\
+Le jeu proposera plusieurs modes de jeu : celui en développement, un match à mort par équipe, ainsi que d'autres modes de jeu se basant sur des objectifs (par exemple capture du drapeau, contrôle de territoire, roi de la colline, infection,etc).\\
 
 Le jeu proposera aussi plus d'options de jeu une interface graphique utilisateurs plus poussée et une intelligence artificielle amélioré.\\
 
@@ -152,7 +152,7 @@ Le jeu proposera aussi plus d'options de jeu une interface graphique utilisateur
 \section{Vincent Rospini-Clerici}
 
 \subsection{Création de nouveaux vaisseaux}
-Dans le soucis d'ajouter du contenu, deux nouveaux vaisseaux ont été créés sur Blender et textures sur Photoshop. Il s'agit tout d'abord d'un vaisseau qui ferait penser à un jet militaire tout droit venu du futur. L'autre est inspiré du P40, un avion militaire américain utilisé durant la seconde guerre mondiale et auquel Vincent a rajouté des nacelles de missiles et des réacteurs pour lui donner un air à la fois futuriste et ancien. Deux textures ont été crées pour ce dernier vaisseau mais nous nous servirons pour le moment d'une seule d'entre elle pour la première soutenance.\\
+Dans le souci d'ajouter du contenu, deux nouveaux vaisseaux ont été créés sur Blender et textures sur Photoshop. Il s'agit tout d'abord d'un vaisseau qui ferait penser à un jet militaire tout droit venu du futur. L'autre est inspiré du P40, un avion militaire américain utilisé durant la seconde guerre mondiale et auquel Vincent a rajouté des nacelles de missiles et des réacteurs pour lui donner un air à la fois futuriste et ancien. Deux textures ont été créées pour ce dernier vaisseau mais nous nous servirons pour le moment d'une seule d'entre elle pour la première soutenance.\\
 
 \begin{center}
 \includegraphics[height=3cm, width=5cm]{sharknado.png}
@@ -161,7 +161,7 @@ Dans le soucis d'ajouter du contenu, deux nouveaux vaisseaux ont été créés s
 
 
 \subsection{Ajout des particules des vaisseaux}
-Les flammes sortant des réacteurs des vaisseaux ont été rajoutes par le biais de la création de particules qu'offre Unity. Tout d'abord, Vincent a rajouté des éléments de particules pour créer juste des flammes sortant des réacteurs, mais le groupe s'est mis d'accord pour que les réacteurs laissent une trainée après le passage du vaisseau. Cependant, les particules étant contenu dans le \textit{gameobject} du vaisseau, les flammes tournaient lorsque le vaisseau tournait, au lieu de simplement suivre sa trajectoire. Nous avons après quelques recherches sur internet nous avons trouve le paramètre permettant de le faire. Il s'agissait de définir l'espace de simulation au niveau monde et non au niveau de l'objet.\\
+Les flammes sortant des réacteurs des vaisseaux ont été rajoutes par le biais de la création de particules qu'offre Unity. Tout d'abord, Vincent a rajouté des éléments de particules pour créer juste des flammes sortant des réacteurs, mais le groupe s'est mis d'accord pour que les réacteurs laissent une trainée après le passage du vaisseau. Cependant, les particules étant contenu dans le \textit{gameobject} du vaisseau, les flammes tournaient lorsque le vaisseau tournait, au lieu de simplement suivre sa trajectoire. Nous avons après quelques recherches sur internet nous avons trouvé le paramètre permettant de le faire. Il s'agissait de définir l'espace de simulation au niveau monde et non au niveau de l'objet.\\
 
 \begin{center}
 \includegraphics[height=3cm, width=5cm]{vaisseau_bouge.png}
@@ -170,9 +170,9 @@ Les flammes sortant des réacteurs des vaisseaux ont été rajoutes par le biais
 Les trainées laissées par le réacteur sont différentes selon le vaisseau. Par exemple, l'avion laisse une trainée noire de fumée tandis que le vaisseau rouge et noir laisse une trainée bleu rectiligne. De cette façon, les vaisseaux adverses sont plus faciles à reconnaitre parmi les différents éléments de la carte. La création des particules pour la destruction du vaisseau a été commencée sur Unity. Elle se composera de plusieurs particules pour la fumée, les débris et les étincelles. Cependant, n'étant pas terminée, nous ne pouvons pas encore la dévoiler.  \\
 
 \subsection{Création du site internet}
-Vincent s'est occupé de la création du site internet en vue de la seconde soutenance. Il a décidé de créer le site en langage \textit{HTML} par le biais des logiciels d'adobe, Photoshop et DreamWeaver. Ce dernier est un logiciel permettant d'à la fois modifier directement le code du site et de s'occuper de son coté graphique plus aisément.\\
+Vincent s'est occupé de la création du site internet en vue de la seconde soutenance. Il a décidé de créer le site en langage \textit{HTML} par le biais des logiciels d'adobe, Photoshop et DreamWeaver. Ce dernier est un logiciel permettant d'à la fois modifier directement le code du site et de s'occuper de son côté graphique plus aisément.\\
 
-Il a voulu créer un site avec un design sombre qui rappellerait un ciel étoilé avec de nombreuses images des vaisseaux crées afin de le rendre attirant. Les pages du site ont été désignées sur Photoshop avec des images crées spécialement pour le fond d'écran et pour embellir les pages du site. Le site est prévu pour avoir toutes ses pages traduites en anglais et en français en cliquant simplement sur le drapeau correspondant a la langue voulue. Le site contiendra une page d'accueil,une page pour présenter le jeu, une pour présenter l'équipe et une pour que les visiteurs puissent avoir accès au cahier des charges, à l'exécutable du jeu, et peut-être à d'autres contenus à venir.\\
+Il a voulu créer un site avec un design sombre qui rappellerait un ciel étoilé avec de nombreuses images des vaisseaux crées afin de le rendre attirant. Les pages du site ont été désignées sur Photoshop avec des images crées spécialement pour le fond d'écran et pour embellir les pages du site. Le site est prévu pour avoir toutes ses pages traduites en anglais et en français en cliquant simplement sur le drapeau correspondant à la langue voulue. Le site contiendra une page d'accueil, une page pour présenter le jeu, une pour présenter l'équipe et une pour que les visiteurs puissent avoir accès au cahier des charges, à l'exécutable du jeu, et peut-être à d'autres contenus à venir.\\
 
 \begin{center}
 \includegraphics[height=6cm, width=10cm]{site.png}\\
@@ -282,7 +282,7 @@ Les nouveaux vaisseaux et cartes qui seront rajoutées seront jouables en multij
 
 Tout le contenu sera disponible en téléchargement sur le site internet, en ligne. Celui-ci sera achevé, avec le projet disponible dans son intégralité. On pourra suivre l'évolution du jeu au fur et à mesure avec le contenu ajouté, et des renseignement sur tout ce qui tourne autour : les développeurs, les partenaires \dots \\
 
-Le jeu sera fournit avec une installation sur CD-ROM, avec une boite prévue à cette effet. Cette dernière sera probablement désignée sur Photoshop avec toutes les informations nécessaires, sans oublier le PEGI 7. \\ \\ \\ \\ \\ \\
+Le jeu sera fourni avec une installation sur CD-ROM, avec une boite prévue à cette effet. Cette dernière sera probablement désignée sur Photoshop avec toutes les informations nécessaires, sans oublier le PEGI 7. \\ \\ \\ \\ \\ \\
 
 \begin{center}
 \includegraphics[height=4cm, width=4cm]{vaisseux_petit.png}
