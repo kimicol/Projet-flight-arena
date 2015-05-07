@@ -45,6 +45,10 @@ chef de projet : Arthur \bsc{Remaud}}
 \chapter{Rappel de la première soutenance}
 A la première soutenance, nous avions présenté une première carte avec d’ores et déjà des bâtiments en trois dimensions. Il y avait plusieurs vaisseaux faits avec Blender pour la modélisation et Photoshop pour les textures, mais un seul était réellement assez beau et vraiment fini.\\
 
+\begin{center}
+\includegraphics[height=6cm, width=10cm]{carte.jpg}
+\end{center}
+
 Il y avait les déplacements et les tirs du joueur intégrés aux contrôles en utilisant les fonctions \textit{Rotate}, \textit{Translate} et \textit{Instanciate}. Nous avions donc déjà les bases du gameplay et la physique était bien avancée : les collisions étaient déjà intégrées et le terrain était délimité.\\
 
 Le menu contenait déjà les principaux onglets : jouer, multijoueur, options, quitter. La musique du menu avait été choisie pour être celle du thème de \textit{Captain America}. Cependant, certains boutons n'aboutissaient sur rien car le contenu n'avait pas été fait (le multijoueur surtout), mais le menu option avait été entamé avec la gestion du volume de la musique et des bruitages qui était conservé en mémoire même après avoir fermé le jeu grâce à la classe \textit{PlayerPrefs}.\\
@@ -90,20 +94,20 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
 \section{Guillaume Rebut}
 
 \subsection{Écran Partagée} 
- Parce-que de moins en moins de jeu proposent un écran partage (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la mains, nous avons décidé de créer un multijoueur en écran scinde.
+ Parce que de moins en moins de jeu proposent un écran partagé (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la mains, nous avons décidé de créer un multijoueur en écran scindé.
 Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis et U/J pour le tangage. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pave numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage. \\
 
 \begin{center}
 \includegraphics[height=5cm, width=9cm]{split.jpg}
 \end{center}
 
-\subsection{Premier mode de jeu} Le premier mode de jeu est un match a mort chacun pour soi. Le joueur gagne quand un vaisseau ennemi explose ou si il a le plus de points de vie après la fin du temps imparti.\\
+\subsection{Premier mode de jeu} Le premier mode de jeu est un match à mort chacun pour soi. Le joueur gagne quand un vaisseau ennemi explose ou s'il a le plus de points de vie après la fin du temps imparti.\\
  
 \subsection{Son} 
- Nous avons ajoute un court bruit qui se joue lorsque un joueur touche un vaisseau ennemi. pour aider le joueur. En effet, cela permet au joueur de déduire les points de vies restants de son adversaire et réagir en fonction.\\
+ Nous avons ajouté un court bruit qui se joue lorsque un joueur touche un vaisseau ennemi, pour aider le joueur. En effet, cela permet au joueur de déduire les points de vies restants de son adversaire et de réagir en fonction.\\
 
 \subsection{Mouvement}
-Suite aux recommandations des évaluateurs, nous avons décidés de rendre le contrôle du vaisseau moins "arcade". Pour cela, en plus de l'ajout de quaternion, nous avons souhaites rendre les déplacements du vaisseau réaliste. En effet, lorsque l'utilisateur ne fait pas avancer le vaisseau, ce dernier s'immobilise rapidement dans les airs. Pour résoudre ce problème, nous avons décidé d'implémenter les vrais équations de mouvements des avions.\\
+Suite aux recommandations des évaluateurs, nous avons décidés de rendre le contrôle du vaisseau moins "arcade". Pour cela, en plus de l'ajout de quaternion, nous avons souhaités rendre les déplacements du vaisseau réaliste. En effet, lorsque l'utilisateur ne fait pas avancer le vaisseau, ce dernier s'immobilise rapidement dans les airs. Pour résoudre ce problème, nous avons décidé d'implémenter les vrais équations de mouvements des avions.\\
 
  L'équation qui nous intéresse le plus est la suivante : R = 1/2 Cx  p S v.v . Soit la résistance de l'air est égale a la moitie de la surface du vaisseau fois la constante de trainée fois la masse volumique de l'air fois la vitesse au carré, ce que nous avons simplifié par la vitesse au carre fois une constante. Lors des premiers essais, la vitesse était calculée en soustrayant la force de frottement a l'accélération. Cette méthode donnait des résultats satisfaisant car les mouvements était fluide et le vaisseau ne s'arrêtait jamais. Cependant, pour une raison indéterminée, si le joueur décidait de ne pas avancer après avoir réapparu, le vaisseau avait une vitesse négative qui devenait très importante très rapidement et sortait le vaisseau des limites de unity.\\
 
