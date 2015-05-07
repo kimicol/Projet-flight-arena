@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\multi_input.cs" />
      <Compile Include="Assets\Scripts\multi_pause.cs" />
      <Compile Include="Assets\Scripts\multi_setting.cs" />
+     <Compile Include="Assets\Scripts\setting.cs" />
      <Compile Include="Assets\Scripts\vie.cs" />
      <Compile Include="Assets\menus\decor_menu.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
@@ -84,7 +85,7 @@
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>G:/Projet-flight-arena/La bonne map/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>F:/epita/Projet-flight-arena/La bonne map/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -38,14 +38,18 @@ chef de projet : Arthur \bsc{Remaud}}
 
 \tableofcontents
 
+\begin{center}
+\includegraphics[height=6cm, width=9cm]{vaisseaumilitaire.PNG}
+\end{center}
+
 \chapter{Rappel de la première soutenance}
-A la première soutenance, nous avions présenté une première carte avec d’ores et déjà des bâtiments en trois dimensions. Il y avait plusieurs vaisseaux faits avec Blender, mais un seul était réellement fini.\\
+A la première soutenance, nous avions présenté une première carte avec d’ores et déjà des bâtiments en trois dimensions. Il y avait plusieurs vaisseaux faits avec Blender pour la modélisation et Photoshop pour les textures, mais un seul était réellement assez beau et vraiment fini.\\
 
 Il y avait les déplacements et les tirs du joueur intégrés aux contrôles en utilisant les fonctions \textit{Rotate}, \textit{Translate} et \textit{Instanciate}. Nous avions donc déjà les bases du gameplay et la physique était bien avancée : les collisions étaient déjà intégrées et le terrain était délimité.\\
 
-Le menu contenait déjà les principaux onglets : jouer, multijoueur, options, quitter. La musique du menu avait été choisie pour être celle du thème de Captain America. Cependant, certains n'aboutissaient sur rien car le contenu n'avait pas été fait (le multijoueur surtout), mais le menu option avait été entamé avec la gestion du volume qui était conservé en mémoire même après avoir fermé le jeu.\\
+Le menu contenait déjà les principaux onglets : jouer, multijoueur, options, quitter. La musique du menu avait été choisie pour être celle du thème de \textit{Captain America}. Cependant, certains boutons n'aboutissaient sur rien car le contenu n'avait pas été fait (le multijoueur surtout), mais le menu option avait été entamé avec la gestion du volume de la musique et des bruitages qui était conservé en mémoire même après avoir fermé le jeu grâce à la classe \textit{PlayerPrefs}.\\
 
-Il nous avait été signalé que les déplacements seraient mieux si nous utilisions des quaternions, pour avoir un rendu plus réaliste. Ces derniers créant des problèmes avec les collisions du vaisseau, c’était donc un de nos principaux défis pour la seconde soutenance.\\
+Il nous avait été signalé que les déplacements du vaisseau seraient mieux si nous utilisions des quaternions pour les rotations, pour avoir un rendu plus réaliste. Ces derniers créant des problèmes avec les collisions du vaisseau, raison pour laquelle nous ne les avions pas utilisés, c'était donc un de nos principaux défis pour la seconde soutenance.\\
 
 
 \chapter{Retard/Avance par rapport au cahier des charges}
@@ -89,7 +93,11 @@ Nous allons vous décrire ce que chaque membre de l'équipe mr cube a fait penda
  Parce-que de moins en moins de jeu proposent un écran partage (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la mains, nous avons décidé de créer un multijoueur en écran scinde.
 Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis et U/J pour le tangage. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pave numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage. \\
 
-\subsection{Premier mode de jeu} : Le premier mode de jeu est un match a mort chacun pour soi. Le joueur gagne quand un vaisseau ennemi explose ou si il a le plus de points de vie après la fin du temps imparti.\\
+\begin{center}
+\includegraphics[height=5cm, width=9cm]{split.jpg}
+\end{center}
+
+\subsection{Premier mode de jeu} Le premier mode de jeu est un match a mort chacun pour soi. Le joueur gagne quand un vaisseau ennemi explose ou si il a le plus de points de vie après la fin du temps imparti.\\
  
 \subsection{Son} 
  Nous avons ajoute un court bruit qui se joue lorsque un joueur touche un vaisseau ennemi. pour aider le joueur. En effet, cela permet au joueur de déduire les points de vies restants de son adversaire et réagir en fonction.\\
@@ -183,6 +191,10 @@ Pendant cette période, Arthur a surtout travaillé sur le multijoueur. Il a d'a
 
 Maintenant, le joueur peut choisir d'héberger une partie en LAN ou de rejoindre une partie déjà existante. S'il crée sa propre partie, il s'affiche alors dans un coin son adresse IP locale pour qu'il puisse la donner aux joueurs souhaitant le rejoindre. Ces derniers doivent d'abord saisir l'adresse IP pour rejoindre une partie, et ensuite leur vaisseau apparait dans la partie pour commencer à jouer. Cette technique existait pour certains jeux comme \textit{Age of Empire I} pour pouvoir jouer en LAN.\\
 
+\begin{center}
+\includegraphics[height=7cm, width=12cm]{lan.jpg}
+\end{center}
+
 Les règles du jeu sont les mêmes que dans le mode un joueur ou écran séparé.\\
 
 Le principal problème fut qu'au départ, les joueurs contrôlaient le vaisseau de l'autre joueur et donc devait regarder sur l'autre écran pour jouer. De plus, à trois joueurs, les deux premiers connectés voyaient un seul et même vaisseau qu'il contrôlaient tous les deux pendant que le troisième joueur en pilotait un autre. Le dernier vaisseau quant à lui n'était contrôlé par personne et restait immobile. Au final, ce problème venait de l'assignation des caméras et des scripts aux joueurs lorsqu'ils instanciaient un nouveau vaisseau en arrivant.\\
@@ -203,6 +215,10 @@ Parfois, lorsque le vaisseau tournaient longtemps sur lui-même, il se mettait s
 Arthur a commencé à faire une intelligence artificielle pour pouvoir jouer contre des vaisseaux contrôlés par l'ordinateur. Pour le début nous voulions faire un algorithme de \textit{pathfiding}. C'est un algorithme qui permet de calculer la trajectoire la plus courte d'un point A à un point B en évitant les obstacles, et donc permet à une intelligence artificielle de se déplacer facilement. Cependant la 3D nous a posé problème, car on ne peut représenter facilement le terrain sous forme de tableau. Il faudrait utiliser un graphe, mais non seulement nous ne savons pas comment le faire, mais en plus il faudrait en faire un différent pour chaque carte, et nous n'avons pas eu le temps.\\
 
 Nous avons donc opté pour une autre technique : devant le vaisseau, nous avons rajouté des cylindres invisibles qui détectent des collisions avec les murs. Lorsque cela se produit, le vaisseau ralentit puis tourne en conséquence pour ne pas rentrer dans l'obstacle. Il y a quatre cylindre : un pour la gauche, un pour la droite, un pour le haut et un pour le bas. Ils sont placés de manière conique pour mieux détecter les immeubles. Le vaisseau circule donc entre les bâtiments qu'il détecte et évite.
+
+\begin{center}
+\includegraphics[height=7cm, width=12cm]{ia.jpg}
+\end{center}
 
 Nous avons remarqué que cela ne fonctionnait pas pour les objets qui avait pour \textit{collider} un\textit{ Mesh Collider}. Nous avons donc rajouté des \textit{Box Collider} à tous les bâtiments pour qu'il ne fonce pas dedans, tout en veillant à ce qu'il ne crée pas de collision avec les autres vaisseaux. Cependant le vaisseau continue parfois de vouloir passer au travers du terrain ou des limites invisibles du niveau, car les \textit{collider} sont différents.\\
 
@@ -240,17 +256,19 @@ En cas de retard, il pourra aider dans l'élaboration des cartes, pour placer le
 \chapter{Pour la prochaine soutenance}
 Pour la dernière soutenance, le projet devra être fini.\\
 
- Nous allons nous concentrer sur l'intelligence artificielle qui est en retard pour qu'elle soit le plus opérationnelle possible. Elle ne se contentera plus de se déplacer aléatoirement parmi les immeubles, mais attaquera les ennemis et essayera de survivre sous les tirs ennemis. On pourra aussi en rajouter dans les autres modes de jeu, nous voulons parler ici du multijoueur.\\
+ Nous allons nous concentrer sur l'intelligence artificielle qui est en retard pour qu'elle soit le plus opérationnelle possible. Elle ne se contentera plus de se déplacer aléatoirement parmi les immeubles, mais attaquera les ennemis et essayera de survivre sous les tirs ennemis. On pourra aussi en rajouter dans les autres modes de jeu, nous voulons parler ici du multijoueur en LAN et en écran séparé.\\
 
-Il y aura aussi du contenu supplémentaire, notamment des cartes avec de nouveaux bâtiments qui pourront ajouter du gameplay comme des éoliennes ou d'autres sortent de bâtiments mouvants qui obligent les joueurs à slalomer encore plus. Il pourra y avoir aussi des vaisseaux non-joueurs, qui sont juste d'autres obstacles mobiles.
+Il y aura aussi du contenu supplémentaire, notamment des cartes avec de nouveaux bâtiments qui pourront ajouter du gameplay comme des éoliennes ou d'autres sortent de bâtiments mouvants qui obligent les joueurs à slalomer encore plus. Il pourra y avoir aussi des vaisseaux non-joueurs, qui sont juste d'autres obstacles mobiles, comme des citoyens innocents subissant la bataille.\\
 
-Le menu sera adapté en conséquence pour que le joueur choisisse sa carte avant de jouer, sans doute assez similaire au système de choix de vaisseau qui existe actuellement.\\
+Le menu sera adapté en conséquence pour que le joueur choisisse sa carte avant de jouer, sans doute assez similaire au système de choix de vaisseau qui existe actuellement. On pourra aussi choisir le nombre de vaisseaux contrôlés par l'ordinateur pendant la partie.
 
-Toutes les nouveautés seront jouables en multijoueur, que ce soit sur le mode écran séparé ou le mode réseau LAN. Nous essayeront aussi de rajouté le contrôle à la manette, pour les joueurs qui se sentent plus à l'aise avec que sur clavier, et surtout pour éviter de se gêner en écran partagé.\\
+Nous essayerons de rajouter par des moyens détournés de rajouter le choix des touches pour jouer dans le menu des options, mais cela reste optionnel.\\
+
+Toutes les nouveautés seront jouables en multijoueur, que ce soit sur le mode écran séparé ou le mode réseau LAN. Nous essayeront aussi de rajouté le contrôle à la manette, pour les joueurs qui se sentent plus à l'aise avec pour jouer que sur clavier, et surtout pour éviter de se gêner en écran partagé.\\
 
 Tout le contenu sera disponible en téléchargement sur le site internet, en ligne. Celui-ci sera achevé, avec le projet disponible dans son intégralité. On pourra suivre l'évolution du jeu au fur et à mesure avec le contenu ajouté, et des renseignement sur tout ce qui tourne autour : les développeurs, les partenaires \dots \\
 
-Le jeu sera fournit avec une installation sur CD-ROM, avec une boite prévue à cette effet. \\ \\ \\ \\ \\
+Le jeu sera fournit avec une installation sur CD-ROM, avec une boite prévue à cette effet. \\ \\ \\ \\ \\ \\
 
 \begin{center}
 \includegraphics[height=4cm, width=4cm]{vaisseux_petit.png}
