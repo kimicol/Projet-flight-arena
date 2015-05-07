@@ -20,16 +20,16 @@
 \contentsline {subsection}{\numberline {3.1.6}R\IeC {\'e}apparition des vaisseaux}{9}
 \contentsline {subsection}{\numberline {3.1.7}Portage du jeu}{10}
 \contentsline {subsection}{\numberline {3.1.8}Ce que Guillaume doit faire pour la soutenance finale}{10}
-\contentsline {section}{\numberline {3.2}Vincent Rospini-Clerici}{11}
-\contentsline {subsection}{\numberline {3.2.1}Cr\IeC {\'e}ation de nouveaux vaisseaux}{11}
-\contentsline {subsection}{\numberline {3.2.2}Ajout des particules des vaisseaux}{11}
-\contentsline {subsection}{\numberline {3.2.3}Cr\IeC {\'e}ation du site internet}{12}
+\contentsline {section}{\numberline {3.2}Vincent Rospini-Clerici}{12}
+\contentsline {subsection}{\numberline {3.2.1}Cr\IeC {\'e}ation de nouveaux vaisseaux}{12}
+\contentsline {subsection}{\numberline {3.2.2}Ajout des particules des vaisseaux}{12}
+\contentsline {subsection}{\numberline {3.2.3}Cr\IeC {\'e}ation du site internet}{13}
 \contentsline {subsection}{\numberline {3.2.4}Cr\IeC {\'e}ation d'une musique originale}{13}
-\contentsline {subsection}{\numberline {3.2.5}Ce que Vincent doit faire pour la soutenance finale}{13}
-\contentsline {section}{\numberline {3.3}Arthur Remaud}{14}
-\contentsline {subsection}{\numberline {3.3.1}Multijoueur en r\IeC {\'e}seau}{14}
-\contentsline {subsection}{\numberline {3.3.2}Quaternions}{15}
+\contentsline {subsection}{\numberline {3.2.5}Ce que Vincent doit faire pour la soutenance finale}{14}
+\contentsline {section}{\numberline {3.3}Arthur Remaud}{15}
+\contentsline {subsection}{\numberline {3.3.1}Multijoueur en r\IeC {\'e}seau}{15}
+\contentsline {subsection}{\numberline {3.3.2}Quaternions}{16}
 \contentsline {subsection}{\numberline {3.3.3}Intelligence artificielle}{16}
-\contentsline {subsection}{\numberline {3.3.4}Menus}{17}
+\contentsline {subsection}{\numberline {3.3.4}Menus}{18}
 \contentsline {subsection}{\numberline {3.3.5}Ce qu'Arthur doit faire pour la soutenance finale}{19}
 \contentsline {chapter}{\numberline {4}Pour la prochaine soutenance}{20}
