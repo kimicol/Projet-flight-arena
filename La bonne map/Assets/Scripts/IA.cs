@@ -12,7 +12,7 @@ public class IA : controlplayer
 	void Update ()
     {
         
-        fire = true;
+        fire = false;
 
         if(gauche.col)
         {

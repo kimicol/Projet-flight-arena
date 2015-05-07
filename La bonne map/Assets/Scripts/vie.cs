@@ -5,10 +5,11 @@ using System.Threading;
 
 public class vie : MonoBehaviour
 {
-    public int pv = 5;
+    public int pv = 3;
     public int current_life;
     private bool killed;
-    public int frag_limite = 3;
+    private bool affiche = false;
+    public int frag_limite = 5;
     public bool respawn = true;
     public bool ok = false;
     private Vector3 respawn_position;
@@ -24,7 +25,6 @@ public class vie : MonoBehaviour
 
     void Start()
     {
-        //Cube_MeshPart0
         /*anim = gameObject.GetComponent<Animation>();
         if(anim == null)
         {
@@ -140,17 +140,36 @@ public class vie : MonoBehaviour
         else
         {
             thePlayer.guiText.text = ("PLAYER 1 WIN");
-        }       
+        }
+        StartCoroutine(postgameover());
+        while (!affiche)
+        {
+            return;
+        }
     }
     public void gameover(string vainc)
     {
         GameObject.Find("gameoverCAM").camera.depth = 2;
+        thePlayer = GameObject.Find("gameoverGUI");
+        thePlayer.guiText.text = ("GAME OVER");
         GameObject.Find("GameWinner_GUI").guiText.text = (vainc);
+        StartCoroutine(postgameover());
+        while (!affiche)
+        {
+            return;
+        }
 
     }
     IEnumerator W8M8()
     {
         yield return new WaitForSeconds(2.0f);
         ok = true;
+    }
+    IEnumerator postgameover()
+    {
+        Debug.Log("hua");
+        yield return new WaitForSeconds(5.0f);
+        affiche = true;
+        Application.LoadLevel(0);
     }
 }
