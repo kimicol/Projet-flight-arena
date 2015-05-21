@@ -159,8 +159,6 @@ public class mainmenu_script : MonoBehaviour
 
     void menu_inputs()
     {
-        
-
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
         {
             choix_menu = 2;
