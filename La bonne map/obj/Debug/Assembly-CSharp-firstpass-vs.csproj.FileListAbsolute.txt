@@ -9,3 +9,14 @@ G:\Projet-flight-arena\La bonne map\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 G:\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
 G:\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass.dll
 G:\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass.pdb
+F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\UnityEditor.dll
+F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\UnityEngine.dll
+F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\Mono.Cecil.dll
+F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\nunit.framework.dll
+F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\Unity.DataContract.dll
+F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\epita\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
+F:\epita\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass.dll
+F:\epita\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass.pdb

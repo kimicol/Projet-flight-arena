@@ -323,6 +323,22 @@ public class mainmenu_script : MonoBehaviour
 
     void menu_inputs()
     {
+        Event e = Event.current;
+
+        GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 80, 30), "Avancer");
+        if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2, 50, 30), name_keys[0]))
+        {
+            e = Event.current;
+
+            if (e.isKey)
+            {
+                Debug.Log("test2");
+                used_keys[0] = e.keyCode;
+                name_keys[0] = used_keys[0].ToString();
+                Debug.Log(used_keys[0].ToString());
+            }
+        }
+
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
         {
             choix_menu = 2;
