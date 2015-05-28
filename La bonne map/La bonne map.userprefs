@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\menus\mainmenu_script.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\mFakeWaterRefractions1\FakeSurfaceAndBottom4.shader">
     <Files>
+      <File FileName="Assets\mFakeWaterRefractions1\FakeSurfaceAndBottom4.shader" Line="1" Column="1" />
       <File FileName="Assets\menus\mainmenu_script.cs" Line="1" Column="1" />
-      <File FileName="Assets\menus\mainmenu_script.cs" Line="197" Column="77" />
       <File FileName="Assets\Scripts\GUI\testGUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\vie.cs" Line="1" Column="1" />
     </Files>
