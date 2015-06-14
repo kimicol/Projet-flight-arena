@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  14 JUN 2015 17:15
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.3.10)  14 JUN 2015 19:57
 entering extended mode
 **rapport.tex
 ("F:\epita\Projet-flight-arena\latex\rapport projet\rapport.tex"
@@ -464,26 +464,26 @@ File: pdftex.def 2011/01/28 v0.05d Graphics/color for pdfTeX
 \f@ncyO@orf=\skip54
 )
 ("F:\epita\Projet-flight-arena\latex\rapport projet\rapport.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 40.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \degres on input line 39.
-LaTeX Info: Redefining \dots on input line 39.
-LaTeX Info: Redefining \up on input line 39.
+LaTeX Info: Redefining \degres on input line 40.
+LaTeX Info: Redefining \dots on input line 40.
+LaTeX Info: Redefining \up on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -533,44 +533,44 @@ LaTeX Info: Redefining \up on input line 39.
 \makeMPintoPDFobject=\count111
 \everyMPtoPDFconversion=\toks24
 )
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 42.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 43.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 42.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 43.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 42.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 43.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 42.
+(Font)              <14.4> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 42.
+(Font)              <10> on input line 43.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 42.
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+(Font)              <7> on input line 43.
+LaTeX Font Info:    Try loading font information for U+msa on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 42.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -594,17 +594,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
@@ -613,7 +613,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 Here is how much of TeX's memory you used:
  3814 strings out of 494053
  48722 string characters out of 3148603
- 110470 words of memory out of 3000000
+ 110472 words of memory out of 3000000
  7009 multiletter control sequences out of 15000+200000
  63670 words of font info for 64 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -624,7 +624,7 @@ s/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm
 /lmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/lm/lmri12.pfb>
-Output written on rapport.pdf (15 pages, 148699 bytes).
+Output written on rapport.pdf (15 pages, 149899 bytes).
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

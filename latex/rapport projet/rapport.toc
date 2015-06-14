@@ -14,4 +14,4 @@
 \contentsline {subsection}{\numberline {7.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{11}
 \contentsline {subsection}{\numberline {7.2}Multijoueur en r\IeC {\'e}seau}{11}
 \contentsline {section}{\numberline {8}Site internet}{13}
-\contentsline {section}{Conclusion}{13}
+\contentsline {section}{Conclusion}{14}

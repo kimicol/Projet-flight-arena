@@ -30,10 +30,11 @@ chef de projet : Arthur \bsc{Remaud}}
 
 \pagestyle{fancy}
 \fancyhead{}
-\fancyfoot{}
+\fancyfoot{\thepage}
 \lhead{mr cube}
 \rhead{Projet Flight Arena}
 \lfoot{}
+\rfoot{}
 
 
 \begin{document}
@@ -53,11 +54,11 @@ chef de projet : Arthur \bsc{Remaud}}
 
 Le groupe mr cube, composé de Guillaume Rebut, Vincent Rospini Clerici et Arthur Remaud, est fier de vous présenter son projet : \textit{flight arena}.\\
 
-Ce projet répond à une obligation de l'école \bsc{epita} de faire un projet libre par groupe de quatre. Nous avons donc choisi de faire un jeu de vaisseau dirigé à la troisième personne dans lequel le but est d'éliminer ses ennemis. Le but est de nous apprendre à travailler en équipe, tout en gérant un projet du début à la fin.\\
+Ce projet répond à une obligation de l'école \bsc{epita} de faire un projet libre par groupe de quatre. Nous avons donc choisi de faire un jeu de vaisseau dirigé à la troisième personne dans lequel le but est d'éliminer ses ennemis. Le but est de nous apprendre à travailler en équipe, tout en gérant un projet du début à la fin, comportant obligatoirement un cahier des charges, un rapport de projet et plusieurs soutenances.\\
 
 Nous avions pour ce projet l'obligation d'utiliser les langages \textit{Caml} ou {C\#}, avec le moteur Unity pour faire le jeu.\\
 
-Nous étions au départ avec Nikolas Miletic dans le groupe, mais celui-ci est parti en S1\# au cours du mois de janvier. Nous avons alors réparti les tâches de cette manières : Vincent s'occupera principalement des graphismes et du site internet, Guillaume du gameplay et des cartes, et Arthr du code du jeu et des menus.
+Nous étions au départ avec Nikolas Miletic dans le groupe, mais celui-ci est parti en S1\# au cours du mois de janvier. Nous avons alors réparti les tâches de cette manières : Vincent s'occupera principalement des graphismes et du site internet, Guillaume du gameplay et des cartes, et Arthur du code du jeu et des menus.
 
 \newpage
 \section{Graphismes et son}
@@ -89,7 +90,7 @@ Le problème qui se posa avec les quaternions fut en rapport avec les collisions
 
 Le joueur peut tirer grâce à la touche espace, elle aussi détectée par la fonction \textit{Input.GetKey()}. Unity instancie alors une balle qui est stockée dans un prefab grâce à la fonction qui s'appelle, logiquement, \textit{Instantiate()}. La balle part droit devant elle si elle ne touche aucun obstacle, elle disparait d'elle-même au bout de trois secondes avec la fonction \textit{DestroyObject()}, ce qui lui laisse le temps de traverser la carte, afin qu'il n 'y ait pas trop d'objets en même temps à gérer par Unity, ce qui pourrait ralentir le jeu.
 
-La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un événement lorsqu'elle rencontre un objet qui contient un détecteur particulier. En effet, si un vaisseau détecte une collision avec une balle, alors la balle est détruite et le vaisseau perd un point de vie. De plus, si le vaisseau n'a plus de vie, il est alors détruit avec une animation d'explosion.
+La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un événement lorsqu'elle rencontre un objet qui contient un détecteur particulier. En effet, si un vaisseau détecte une collision avec une balle grâce à la fonction \textit{OnTriggerEnter()}, alors la balle est détruite et le vaisseau perd un point de vie. De plus, si le vaisseau n'a plus de vie, il est alors détruit avec une animation d'explosion. Des sons ont été intégrés à chaque étape : au tir, à la collision et à l'explosion.
 
 \newpage
 \section{Gameplay}
@@ -128,10 +129,9 @@ Lorsque l'on démarre le mode réseau, l'antivirus des ordinateurs peut bloquer 
 \newpage
 \section{Site internet}
 
-
-\addcontentsline{toc}{section}{Conclusion}
 \newpage
 \section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
 
 Nous avons adorer faire ce projet tout au long du second semestre. Cela nous a apporté beaucoup de choses, notamment des connaissances des logiciels utilisés comme Unity, Blender \dots Mais au delà de l'aspect technique, cela nous a appris à travailler en équipe, à gérer les emplois du temps, à savoir répartir le travail aux différents membres du groupe en fonction de leurs compétences \dots etc.
 
