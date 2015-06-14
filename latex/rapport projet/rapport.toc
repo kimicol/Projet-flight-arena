@@ -1,2 +1,17 @@
 \select@language {french}
-\contentsline {section}{\numberline {1}Chronologie}{3}
+\contentsline {section}{Introduction}{1}
+\contentsline {section}{\numberline {1}Graphismes et son}{3}
+\contentsline {subsection}{\numberline {1.1}Graphismes}{3}
+\contentsline {subsection}{\numberline {1.2}Son}{3}
+\contentsline {section}{\numberline {2}Contr\IeC {\^o}les du vaisseau}{4}
+\contentsline {subsection}{\numberline {2.1}D\IeC {\'e}placement}{4}
+\contentsline {subsection}{\numberline {2.2}Tirs}{5}
+\contentsline {section}{\numberline {3}Gameplay}{7}
+\contentsline {section}{\numberline {4}Cr\IeC {\'e}ation de niveaux}{8}
+\contentsline {section}{\numberline {5}Interfaces utilisateur}{9}
+\contentsline {section}{\numberline {6}Intelligences artificielles}{10}
+\contentsline {section}{\numberline {7}Multijoueurs}{11}
+\contentsline {subsection}{\numberline {7.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{11}
+\contentsline {subsection}{\numberline {7.2}Multijoueur en r\IeC {\'e}seau}{11}
+\contentsline {section}{\numberline {8}Site internet}{13}
+\contentsline {section}{Conclusion}{13}
