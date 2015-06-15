@@ -47,7 +47,7 @@ chef de projet : Arthur \bsc{Remaud}}
 \maketitle
 
 \section*{Remerciements}
-Nous souhaitons remercier l'école EPITA qui nous a fourni le matériel dont avions besoin pour aboutir a ce projet. Notamment les ordinateurs disponibles 24/24 heures dans les locaux de l'école comprenant la majorité des logiciels nécessaires a la conception du jeu.\\
+Nous souhaitons remercier l'école EPITA qui nous a fourni le matériel dont nous avions besoin pour aboutir à ce projet. Notamment les ordinateurs disponibles 24/24 heures dans les locaux de l'école comprenant la majorité des logiciels nécessaires a la conception du jeu.\\
 
 Nous souhaitons également remercier un de nos ami, Augustin Ledanseur sans qui la bande son originale du jeu n'aurait définitivement pas vu le jour. \\
 
@@ -111,7 +111,11 @@ Tex Live & Rédaction\\
 \newpage
 \section{Graphismes et son}
 
+Pour notre jeu, nous ne voulions pas prendre des graphismes ou des musiques existantes. En effet, plus le jeu était original, plus il nous semblait personnel. Ainsi, nous avons utilisé des logiciels que nous connaissions ou que l'école nous fournissait pour faire nos propres modèles 3D avec leurs textures créées par nos soins, et des musiques originales qui se rapproche le plus de l'ambiance de notre jeu. Nous avons cependant parfois fait un écart par manque de temps.\\
+
 \subsection{Graphismes}
+
+Pour faire nos modèles 3D, nous avons utilisé le logiciel libre Blender, et pour faire les textures, nous avons utilisé Adobe Photoshop fourni par l'école.\\
 
 \subsubsection{Modélisation des vaisseaux}
 
@@ -143,7 +147,6 @@ Les trainées laissées par le réacteur sont différentes selon le vaisseau. Pa
 Lors de la création de ces particules, nous avons rencontré un problème. Les particules étant contenues dans le \textit{gameobject} du vaisseau, les flammes se déplaçaient en même temps que le vaisseau se déplaçait, au lieu de simplement suivre sa trajectoire. Cela donnait alors l’impression que les flammes du réacteur étaient rattachées au vaisseau. Après quelques recherches sur internet nous avons trouvé le paramètre permettant de régler le problème. Il s'agissait de définir l'espace de simulation de la particule au niveau de son environnement et non au niveau de l'objet. Ainsi les particules évoluent librement dans l’espace sans suivre le vaisseau et le résultat est très satisfaisant.\\
 
 La création de l’explosion lors de la destruction du vaisseau a été faite elle aussi sur Unity grâce à l’éditeur de particules. Elle se compose de plusieurs particules. Certaines particules ont été utilisees pour faire de la fumée, d'autres des débris et encore d'autres pour créer des étincelles. Les textures des particules ont été trouvées sur l’\textit{Asset store} et les explications relatives proviennent d'un tutoriel pour créer des explosions aériennes.\\
-
 
 \subsection{Son}
 
