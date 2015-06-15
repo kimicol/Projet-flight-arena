@@ -10,8 +10,10 @@
 \contentsline {section}{\numberline {4}Cr\IeC {\'e}ation de niveaux}{8}
 \contentsline {section}{\numberline {5}Interfaces utilisateur}{9}
 \contentsline {section}{\numberline {6}Intelligences artificielles}{10}
-\contentsline {section}{\numberline {7}Multijoueurs}{11}
-\contentsline {subsection}{\numberline {7.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{11}
-\contentsline {subsection}{\numberline {7.2}Multijoueur en r\IeC {\'e}seau}{11}
-\contentsline {section}{\numberline {8}Site internet}{13}
-\contentsline {section}{Conclusion}{14}
+\contentsline {subsection}{\numberline {6.1}\IeC {\'E}viter les obstacles}{10}
+\contentsline {subsection}{\numberline {6.2}Poursuivre les ennemis}{11}
+\contentsline {section}{\numberline {7}Multijoueurs}{12}
+\contentsline {subsection}{\numberline {7.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{12}
+\contentsline {subsection}{\numberline {7.2}Multijoueur en r\IeC {\'e}seau}{12}
+\contentsline {section}{\numberline {8}Site internet}{14}
+\contentsline {section}{Conclusion}{15}

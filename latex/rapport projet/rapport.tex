@@ -105,6 +105,25 @@ La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un é
 \newpage
 \section{Intelligences artificielles}
 
+Dans notre jeu, nous voulions que le joueur puisse jouer seul face à d'autres vaisseaux pilotés par l'ordinateur. Il fallait donc créer une intelligence artificielle, c'est-à-dire un programme qui, en fonction de la situation, va changer de comportement pour donner l'illusion que l'on joue contre un vrai joueur. Nous avons fait ce programme en deux parties : l'algorithme pour éviter les obstacles que l'on a présenté pour la deuxième soutenance, et l'algorithme pour suivre les ennemis que nous avons fait après.
+
+\subsection{Éviter les obstacles}
+
+C'est Arthur qui s'est occupé de faire l'intelligence artificielle. Dans un premier temps, nous voulions faire un  algorithme de \textit{pathfiding}. C'est un algorithme qui permet de calculer la trajectoire la plus courte d'un point A à un point B en évitant les obstacles, et donc permet à une intelligence artificielle de se déplacer facilement.
+
+Nous avons alors recherché des éléments qui seraient intégrés à Unity pour faire ce genre de programme. Nous avons ainsi découvert les \textit{NavMesh} qui permettent de définir une surface sur laquelle un personnage géré une intelligence artificielle peut se déplacer. Cependant, ils étaient inutiles dans notre jeu, car les vaisseaux ne se déplace pas sur une surface comme le ferait un personnage de jeu de rôle. Il semble qu'il n'existe pas d'aide pour faire de la recherche de trajectoire dans Unity qui intègre aussi la troisième dimension qu'est la hauteur. Nous avons donc commencé à le faire nous-même.
+
+Il existe des algorithmes de \textit{pathfiding} qui reposent sur des tableaux contenant le terrain en disant si le personnage peut passer dans telle ou telle case. Cependant c'est assez compliqué à faire en 3D, sans parler du fait que les bâtiments ne sont pas alignés, peuvent être pivotés et qu'il faudrait refaire un tableau pour chaque carte. Nous avons donc essayé de faire autrement.
+
+On voulait faire en sorte que les vaisseaux ne rentrent pas en collision avec les immeubles ou le sol. Nous avons donc placé à l'avant des vaisseaux pilotés par l'ordinateur des objets invisibles qui servent à détecter les collisions qu'aura le vaisseau s'il ne les évite pas. Ils contiennent des \textit{trigger} qui, dès qu'ils rentrent en collisions, 
+le signal au vaisseau qui ralentit et tourne en conséquence. Il y a 4 objets : un en haut, un en bas, un à gauche et un à droite, tous avancés par rapport au vaisseau. De manière logique, si l'objet en haut détecte une collision, le vaisseau pivote vers le bas, si c'est celui du bas, le vaisseau monte, si c'est l'objet droit qui rencontre un obstacle, le vaisseau tourne à gauche, si c'est le gauche, le vaisseau va à droite.
+
+Nous avons remarqué que les collisions n'étaient pas détectées pour les objets qui avait pour collider un Mesh Collider. Nous avons  donc rajouté des Box Collider à tous les bâtiments pour qu’il ne fonce pas dedans, tout en veillant à ce qu'il ne crée  pas de collision avec les autres vaisseaux. Le vaisseau peut ainsi slalomer entre les immeubles sans les percuter, mais il ne cherche pas à attaquer les autres vaisseaux.
+
+\subsection{Poursuivre les ennemis}
+
+Dès le début de la partie, les vaisseaux qui ont une intelligence artificielle contiennent les informations de tous les autres vaisseaux, de sorte à savoir à tout moment leur localisation. Grâce à la géométrie dans l'espace, on calcule des équations de plan par rapport au vaisseau, de sorte à le découper sur les trois axes. Ainsi, grâce à ses équations et aux coordonnées des vaisseaux ennemis, on peut savoir de quel côté du plan ces vaisseaux se trouvent. Ainsi, on peut savoir à tout moment si un vaisseau est derrière ou devant, s'il est à gauche ou à droite, et enfin s'il est au-dessus ou en dessous. En fonction de ces résultat, le vaisseau va donc poursuivre de préférence un vaisseau qui est devant lui et tournera pour le suivre. Cependant, l'algorithme fait pour éviter les obstacles décrit précédemment est prioritaire, car le principal, avant d'attaquer les adversaires, est de ne pas rentrer dans tous les gratte-ciels qui passent.
+
 \newpage
 \section{Multijoueurs}
 
