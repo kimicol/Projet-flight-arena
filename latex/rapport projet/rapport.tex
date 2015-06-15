@@ -69,17 +69,49 @@ Même s'il s'agit d'acquérir de l'expérience vis-à-vis de soi, et de comprend
 
 La communication est également essentielle. Il nous a fallu adapter la quantité de travail en fonction des capacités de chacun, toujours avoir une longueur d'avance sur l'avancement du projet visé et si possible, prendre de l'avance lorsque cela était possible. Il est question d'acquisition d'expérience par une méthode qui n'est pas forcément accessible à chacun, et le cadre scolaire de l'EPITA nous permet de nous mettre en situation réelle afin de pouvoir surmonter les différentes difficultés que nous rencontrerons lors de nos projets futurs.\\
 
+\section{Prérequis du projet}
+
+Nous avons travaillé sur les ordinateurs de l'école de façon générale car ils nous permettaient de nous réunir en tant que groupe et la plupart des logiciels nécessaires a la création de notre jeu y étaient déjà installés.\\
+
+Voici les différents logiciels que nous avons utilisés tout au long du projet.\\
+
+\begin{tabular}{|c|c|}
+\hline
+Logiciel & Fonction\\
+\hline
+Unity & Moteur graphique\\
+\hline
+Visual Studio & Code\\
+\hline
+Blender & Modélisation 3D\\
+\hline
+Adobe Photoshop & Textures et images\\
+\hline
+Adobe Dreamweaver & Site internet\\
+\hline
+Logic Pro & Musiques\\
+\hline
+Github & Partage de fichiers\\
+\hline
+Tex Live & Rédaction\\
+\hline
+\end{tabular}\\
+\\
 
 \newpage
 \section{Graphismes et son}
 
 \subsection{Graphismes}
 
+\subsubsection{Modélisation des vaisseaux}
+
 Après le visionnage de différents tutoriels Blender sur la modélisation d'objets 3D, Vincent a créé le premier vaisseau qui sera utilisé par le joueur dans le jeu. C'était la première fois qu'il utilisait le logiciel Blender. Il s'est servi principalement de la fonction extrude en partant d'un simple cube pour parvenir à modéliser ce qu'il souhaitait. Cette fonction permet en effet d'avoir un vaisseau en un seul objet plus aisément qu'en utilisant l'ajout de \textit{mesh}. Par exemple, en coupant les solides en différentes parties grâce à l'outil \textit{knife}, cela a permis d'extraire la forme basique des ailes à partir du corps principal du vaisseau.\\
 
 Il a aussi utilisé le modifier \textit{mirror} qui est très important. Il permet de créer une image de l’objet par rapport à un axe. Cela permet au vaisseau d'être parfaitement symétrique en ne créant qu’une partie de celui-ci.\\
 
 Vincent a également utilisé le modifier \textit{subdivision surface} pour créer des surfaces de subdivision, c’est-à-dire découper les faces de l’objet en plusieurs afin de lisser l’objet. Ce \textit{modifier} appliqué sur l’ensemble du vaisseau lui donne cet aspect moins carré et c’était exactement ce qu’il fallait pour aller avec les graphismes du jeu. Une fois la modélisation terminée, il a fallu également texturer toutes les faces du vaisseau afin d'avoir un beau rendu dans le jeu.\\
+
+\subsubsection{Textures des vaisseaux}
 
 Pour se faire, il a fallu se servir de l'outil \textit{UV Mapping} qu'offre Blender. Il s'agit de sélectionner toutes les arrêtes du vaisseau et de les déplier sur un plan en deux dimensions. Le logiciel Photoshop permet ensuite de remplir les différentes faces avec les couleurs et textures voulues. Le vaisseau a été texturé entièrement en rouge et noir avec des dégradés de couleur.\\
 De nombreux problèmes ont été rencontrés lors de la création de textures pour le vaisseau.\\
@@ -91,6 +123,8 @@ Le vaisseau ayant plus de trois cent faces, nous avons décidé de découper l�
 
 Voilà comment le tout premier vaisseau a été réalisé. Dans le souci d'ajouter du contenu, deux nouveaux vaisseaux ont été créés de la même manière sur Blender et texturés sur Photoshop. Il s'agit tout d'abord d'un vaisseau qui ferait penser à un jet militaire tout droit venu du futur. Sa texture de base est comparable aux tâches marrons, beiges et vertes d’un apparat militaire. L'autre est inspiré du P40, un avion militaire américain utilisé durant la seconde guerre mondiale et auquel Vincent a rajouté des nacelles de missiles et des réacteurs pour lui donner un air à la fois futuriste et ancien. Une gueule de requin est dessinée sur l’avant du vaisseau comme sur les dessins sur la carlingue du P40 de l’époque où la gueule de prédateur permettait de rendre l’avion terrifiant pour l’ennemi.
 Des textures différentes sont disponibles pour chaque vaisseau et sont sélectionnables dans le menu au moment de la sélection du vaisseau.\\
+
+\subsubsection{Création de particules}
 
 Les flammes sortant des réacteurs des vaisseaux ont été rajoutées par le biais de la création de particules qu'offre Unity. Tout d'abord, Vincent a rajouté des éléments de particules pour créer juste des flammes sortant des réacteurs, mais le groupe s'est mis d'accord pour que les réacteurs laissent une trainée après le passage du vaisseau. Cette trainée de flammes a été inspirée d’un jeu peu connu mais nous tenant à cœur, du nom de "New York Race". \\
 
@@ -298,10 +332,11 @@ Lorsque l'on démarre le mode réseau, l'antivirus des ordinateurs peut bloquer 
 
 Vincent s'est occupé de la création du site internet officiel du jeu. Il a décidé de créer le site en langage \textit{HTML} par le biais des logiciels d'Adobe, Photoshop et Dreamweaver. Ce dernier est un logiciel permettant de modifier à la fois le code du site directement et de s'occuper de son côté graphique plus aisément.\\
 
-Nous avons voulu créer un site avec un design sombre qui rappellerait un ciel étoilé. De nombreuses images des vaisseaux du jeu sont présentes sur les pages du site afin de le rendre attirant. Les pages du site ont été dessinées sur Photoshop avec des images originales créés spécialement pour le fond d'écran et pour embellir les pages du site.\\
+Nous avons voulu créer un site avec un design sombre qui rappellerait un ciel étoilé. De nombreuses images des vaisseaux du jeu sont présentes sur les pages du site afin de le rendre attirant. Les pages du site ont été dessinées sur Photoshop avec des images originales créées spécialement sur Photoshop pour le fond d'écran et pour embellir les pages du site. Les différents boutons du site contenant un lien ont été créés avec l’outil \textit{tranche} de Photoshop. Cela a permis de mettre des liens vers les autres pages du site ou des liens pour télécharger certains fichiers.\\
 
-Toutes les pages du site sont traduites en anglais et en français. Il suffit tout simplement de cliquer sur le drapeau correspondant à la langue voulue. Le site contient une page d'accueil, une page pour présenter le jeu et qui fait un tour d’horizon très rapide de ce dernier, une page pour présenter l'équipe et une page où les visiteurs ont accès aux différents fichiers du jeu. Cette dernière page donne accès au cahier des charges, aux rapports des différentes soutenances et au fichier exécutable du jeu.\\
+Les pages du site ont ensuite été importés sur  Adobe Dreamweaver. Ce logiciel va segmenter les images importées en différentes parties. Cela permettra d’associer des liens a certaines parties de l’image.\\ 
 
+Toutes les pages du site sont traduites en anglais et en français. Il suffit tout simplement de cliquer sur le drapeau correspondant à la langue voulue pour changer la traduction du site. Le site contient une page d'accueil, une page pour présenter le jeu et qui fait un tour d’horizon très rapide de ce dernier, une page pour présenter l'équipe mr cube et une page où les visiteurs ont accès aux différents fichiers du jeu. Cette dernière page donne accès au cahier des charges, aux rapports des différentes soutenances et au fichier exécutable du jeu.\\
 
 \newpage
 \section*{Conclusions}
@@ -323,7 +358,9 @@ Pour ma part, ce projet a rempli les objectifs que je lui donnais, à savoir de 
 
 Ce projet que nous avons réalisé tout au long du second semestre nous a apporté beaucoup de choses, notamment des connaissances des logiciels utilisés comme Unity, Blender\dots Mais au-delà de l'aspect technique, cela nous a appris à travailler en équipe, à gérer les emplois du temps, à savoir répartir le travail aux différents membres du groupe en fonction de leurs compétences, etc\dots
 
+\newpage
 \section{Annexes}
+
 
 \end{spacing}
 \end{document}
