@@ -112,6 +112,8 @@ La musique qui se lance dès l’entrée sur le menu du jeu vient du film "Capta
 
 Concernant les sons du jeu, nous avons implémenté dans le jeu tous les sons nécessaires à rendre un jeu dynamique. Il y a par exemple le son des projectiles tirés par le vaisseau qui est un son pris sur le jeu "Space Cadet Pinball". Egalement le bruit de l’explosion du vaisseau qui est un son assez fort et le bruit des réacteurs des différents vaisseaux. \\
 
+Nous avons implémenté un court bruit qui se joue lorsque un joueur touche un vaisseau ennemi. Cela aide le joueur car il peut déduire le nombre de points de vies restants de son adversaire et réagir en fonction. Ce son provient d'une librairie de son sur internet a usage gratuit et libre. Nous jouons aussi une musique quand la partie se termine, pendant l'affichage des scores de la partie. Cette musique vient du jeu \textit{HotLine Miami} et est libre d'utilisation. \\
+
 
 \newpage
 \section{Contrôles du vaisseau}
@@ -122,10 +124,6 @@ Nous avons implémentes les contrôles du vaisseau des la première séance de t
 
 Dans un premier temps, Arthur a codé les déplacements des vaisseaux. Pour prendre les touches que le joueur entre, on utilise la fonction \textit{Input.GetKey()} de Unity.\\
 
-Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent des valeurs des avions : le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet. Nous avons aussi choisi de prendre ces valeurs pour des raisons de gameplay. En effet, il est plus facile de tourner avec le lacet plutôt que d'utiliser la combinaison tangage plus roulis. Il est donc logique de rendre cette dernière man\oe uvre plus rapide en exécution pour récompenser les joueurs les plus talentueux. Nous avons placé la caméra de manière à inciter le joueur à utiliser cette dernière man\oe uvre : le vaisseau n'est pas représenté au milieu de l'écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l'inertie  lorsqu'il avance ainsi que sur les trois types de mouvements. Enfin, il est impossible de reculer avec le vaisseau. Le joueur doit faire demi-tour en faisant une boucle.\\
-
-Le vaisseau est entièrement contrôlable au clavier. Les touches directionnelles représentent un joystick d'avion et permettent le tangage (flèche du haut pour piquer et flèche du bas pour "monter") et le roulis (flèche gauche pour une rotation anti-horaire et flèche droite pour une rotation horaire). La touche W permet accélération et les touches A et D permettent de tourner respectivement à gauche et à droite grâce au lacet.\\
-
 Le vaisseau doit donc avancer et tourner sur lui-même pour parcourir les niveaux. Pour cela, nous utilisions tout d'abord respectivement les fonctions \textit{transform.Translate()} et \textit{transform.Rotate()}. L'inertie du vaisseau était gérée par une variable de déplacement qui augmentait à force d'appuyer sur la touche d'accélération, et diminuait dans le cas contraire.\\
 
 Cependant, les mouvements n'étaient pas très réalistes et il nous avait été suggéré à la fin de la première soutenance d'utiliser les quaternions que propose Unity pour donner une meilleure inertie et donc des déplacements plus crédibles. Cela fut rajouté dans la semaine qui suivit, grâce aux nombreux tutoriels et documentations trouvables sur internet.\\
@@ -133,6 +131,14 @@ Cependant, les mouvements n'étaient pas très réalistes et il nous avait été
 Les quaternions sont utilisés en mathématiques dans la géométrie dans l'espace (en trois dimensions), un peu comme les complexes sont utilisés dans le plan (en deux dimensions donc). Ils sont notamment utiles tout ce qui est rotations des objets. De plus, Unity possèdent plusieurs fonctions qui permettent de simplifier leur utilisation. Dans un objet Unity, il y a un quaternion qui contient la rotation de l'objet, appelé \textit{transform.rotation}. On modifie donc cette valeur avec la fonction \textit{Quaternion.Slerp()} qui permet de passer d'une rotation à une autre. Comme quaternion cible, on prend la rotation de l'objet que l'on aditionne à un quaternion auquel on a modifié les valeurs selon les entrées du joueur.\\
 
 Le problème qui se posa avec les quaternions fut en rapport avec les collisions. En effet avant de les ajouter, nous avions mis le \textit{rigidbody} des vaisseaux, soit l'élément qui gère les collisions avec les rebonds et l'inertie engendrée, à zéro. Dans le cas contraire, dès que le vaisseau touchait un obstacle, il rebondissait et partait en vrille, sans que le joueur ne puisse y remédier.\\
+
+Toujours suite aux recommandations des évaluateurs après la deuxième soutenance, nous avons décidés de rendre le contrôle du vaisseau moins "arcade". Pour cela, en plus de l'ajout de quaternion, nous avons souhaités rendre les déplacements du vaisseau réaliste. En effet, lorsque l'utilisateur ne fait pas avancer le vaisseau, ce dernier s'immobilise rapidement dans les airs. Pour résoudre ce problème, nous avons décidé d'implémenter les vrais équations de mouvements des avions.\\
+
+L'équation qui nous intéresse le plus est la suivante : R = 1/2 Cx p S v.v . Soit la résistance de l'air est égale à la moitié de la surface du vaisseau fois la constante de trainée fois la masse volumique de l'air fois la vitesse au carré, ce que nous avons simplifié par la vitesse au carre fois une constante. Lors des premiers essais, la vitesse était calculée en soustrayant la force de frottement a l'accélération. Cette méthode donnait des résultats satisfaisant car les mouvements était fluide et le vaisseau ne s'arrêtait jamais. Cependant, pour une raison indéterminée, si le joueur décidait de ne pas avancer après avoir réapparu, le vaisseau avait une vitesse négative qui devenait très importante très rapidement et sortait le vaisseau des limites de unity. \\
+
+Le problème disparu lorsque nous utilisions \textit{Transform.translate} qui prend en paramètre un \textit{vector 3}. Nous avons ensuite implémentés une option permettant au joueur de freiner. Cette option retrancher une valeur fixe a la vitesse tant que celle-ci était positive. Cependant, malgré toute les précautions prises, notre problème de vitesse négative est réapparus . La solution prise fut d'augmenter la valeur de la force de frottement. \\
+
+La prochaine étape fut d'implémenter la portance. Ceci signifie aussi qu’il fallait implémenter la gravité. Nous avons dû pour cela passer d’une modification de la vitesse grâce a \textit{Transform.translate} a une modification de la vélocité du \textit{rigidbody} du vaisseau. Cependant, l'implémentation de la portance implique une force relative au monde et non au vaisseau. Cette étape ne fut pas d’une grande difficulté mais l'ordre de grandeur des valeurs est différente que celle du référentielle vaisseau. Ce détail nous a empêché de trouve la valeur exacte de manière à ce qui le vaisseau vole en ligne droite lorsqu'il est parallèle au sol, ce qui veut dire que le joueur est tout le temps oblige de compenser cette force, ce qui devient vite ennuyant. Nous avons résolu ce problème par l'ajout d'un module de l'assets store.\\
 
 \subsection{Tirs}
 
@@ -142,6 +148,35 @@ La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un é
 
 \newpage
 \section{Gameplay}
+
+\subsection{Experience de jeu}
+
+Notre jeu est un shooter multijoueur où le joueur est aux commandes d'un vaisseau et combat d'autres vaisseaux sur des petites arènes. Un jeu de bonne qualité se doit d'être facile à prendre en main mais difficile à maitriser. Pour répondre à cette exigence, nous avons décidé de créer les mouvements des vaisseaux en se basant sur les avions de chasse.\\
+
+Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent aussi des valeurs des avions : le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet (les valeurs finales ne sont cependant pas encore déterminées). \\
+
+Nous avons aussi choisi de prendre ces valeurs pour des raisons de gameplay. En effet, il est plus facile de tourner avec le lacet plutôt que d'utiliser la combinaison tangage plus roulis. Il est donc logique de rendre cette dernière manœuvre plus rapide en exécution pour récompenser les joueurs les plus talentueux. \\
+
+Nous avons placé la caméra de manière à inciter le joueur à utiliser cette dernière manœuvre : le vaisseau n'est pas représenté au milieu de l'écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l'inertie, lorsqu'il avance et aussi sur les trois types de mouvements, et il est impossible de reculer avec le vaisseau, il
+faut faire demi-tour. \\
+
+Le vaisseau est entièrement contrôlable au clavier. Les touches directionnelles représentent un joystick d'avion et permettent le tangage (flèche du haut pour piquer et flèche du bas pour "monter") et le roulis (flèche gauche pour une rotation anti-horaire et flèche droite pour une rotation horaire). La touche W permet l'accélération et les touches A et D permettent de tourner respectivement à gauche et à droite grâce au lacet.\\
+
+Les décors occupent une place importante dans le gameplay. Notre niveau contient des buildings de tailles importantes par rapport au vaisseau qui devra les éviter, au risque d'exploser, ce qui augmente la difficulté des manœuvres.\\
+
+Les buildings présentent aussi un aspect défensif important : lorsqu'un vaisseau chasse un autre vaisseau, ce dernier peut s'échapper en se faufilant entre les buildings, en manœuvrant dans le parking ou en se cachant. \\
+
+Certains buildings présentent des particularités dans leur forme qui influencent le gameplay. Prenons comme exemple un parking de plusieurs étages. Un parking propose des entrées sur chaque versant, des piliers, deux étages, un sous-sol et des ouvertures permettant le passage d'un étage à l'autre. Le parking demande, de par son architecture, une bonne maitrise du mouvement du vaisseau et permet au joueur habile de semer son adversaire qui ne pourra le suivre. \\
+
+\subsection{Mode de jeu}
+
+Nous proposons plusieurs expériences de jeu à travers différents modes de jeu. Le mode de jeu principale est un match à mort par équipe. Deux équipes contenant jusqu'à 5 joueurs chacune s'affrontent et tentent de remporter la victoire en étant la première à éliminer 30 fois un adversaire. Elles peuvent aussi gagner si elles ont le plus de points lorsque le temps est écoule. Nous proposons aussi une variante de ce mode o(‘)u 3 équipes contenant jusqu'à 3 joueurs s'affronte et la première équipe a 20 points gagne. Pour les joueurs solitaire, nous proposons un mode de jeu « «mêlée générale» fonctionnant sur le principe du chacun pour soi : jusqu'à 6 joueur s'affronte dans une arène pour être le premier à éliminer 10 adversaires ou, dans une variante, être le dernier survivant sur la carte. \\
+
+Le jeu propose aussi deux mode de jeu à objectif. Le premier est le « King of the Hill ». Deux équipes contenant jusqu'à 5 joueurs s'affrontent pour contrôler une zone. Cette zone se déplace toute les 30 secondes, appartient a une équipe lorsque celle-ci passe plus de 10 secondes à l'intérieur et donne 2 points par seconde à l'équipe la contrôlant. Le deuxième mode de jeu est le «VIP»(pour Very Important Player). Deux équipes contenant jusqu'à 5 joueurs chacune s'affrontent pour tuer le VIP de l'équipe adverse. Le VIP d'une équipe est le meilleur joueur de celle-ci et sa position est indiquée aux ennemis en temps réel. La première équipe qui tue 10 fois le VIP adverse remporte la partie. Nous proposons aussi une variante avec 6 joueurs sans équipe. Le VIP est le meilleur joueur de la partie et le tuer donne 4 points. Lorsque le VIP élimine un autre joueur, il gagne 2 points. Tous les autres joueurs gagnent 1 points lorsqu'il élimine un joueur non VIP et le premier joueur à obtenir 20 points remporte la partie. \\
+
+Le dernier mode de jeu est le mode de jeu « Glitch ». Ce mode de jeu permet au joueur de jouer avec tous les bugs que nous avons rencontrés lors de la création du jeu, tel que des buildings qui volent, la possibilité de passer à travers les buildings sous certaines conditions, le sol ainsi que les quatre murs délimitant la carte et le toit sont visibles et bougent si on rentre dedans, etc… \\
+
+Pour les joueurs désirant créer leurs variantes des modes de jeu de bases, nous proposons la création de parties personnalisées. Le créateur de la partie peut modifier ou supprimer la durée maximale de la partie, décider du nombre limite d'éliminations nécessaire pour remporter la victoire ou décider du nombre de vie de chaque joueurs au début de la partie, décider des types de munitions disponibles au cours de la partie et si celle si sont en nombre illimitées, décider de la carte de jeu sur laquelle la partie se jouera, décider du nombre de joueurs maximum sur le serveurs et dans chaque équipe, décider d'un mot de passe pour rentrer sur le serveur, décider du nombre d'équipes dans la partie, décider du nombre de points de vie de chaque joueur (à ne pas confondre avec le nombre de vie), décider si la minicarte est affiche et si oui, des éléments affichées (tel que l'affichage de l'emplacement de la mort des alliées) et décider de l'affichage des différents éléments  de l'interface utilisateur. \\
 
 \newpage
 \section{Création de niveaux}
@@ -153,16 +188,38 @@ Tout d’abord, nous avons utilisé la méthode la plus répandue pour ajouter u
 
 Les textures du sol ont été créées en utilisant l'outil \textit{brush}(pinceau). Cela permet de peindre le sol pour reproduire de l’herbe, du béton ou des graviers de façon réaliste par exemple. Pour créer des montagnes nous avons utilisé l’outil permettant de choisir l’altitude du sol et recouvert ses flancs avec une texture rocailleuse.\\
 
-\subsection{Création de bâtiments}
+\subsection{Création de la première carte}
 
-Nous avions créé une dizaine de bâtiments différents et entièrement texturés pour les besoins de la première carte. Ces bâtiments ont été créés sur Blender et texturés sur Photoshop de la même façon que les vaisseaux. Ils avaient tous des formes et des hauteurs différentes, mais restaient assez basiques car ils nous permettaient de tester comment Unity gérait les collisions entre le vaisseau et les objets. La première carte est donc une carte plutôt simpliste. \\
+Les différentes versions de la carte ont été créées avec unity. La première version utilisait uniquement le créateur de terrain offert par unity ainsi que l'apport d'assets. Cette méthode fut rapidement abandonner pour plusieurs raisons. Le créateur de terrain de unity ne propose pas de délimitation spatiale, ce qui permet au vaisseau de sortir du niveau et de se balader dans le vide. L'import d'assets créé une différence de qualité entre les différents composants de la carte, ce qui est dérangeant. Les vaisseaux importées ont des formes trop complexes, ce qui veut dire une boite de collision très complexe ce qui créé des bug de collisions. \\
 
-Par soucis d’avoir un environnement dynamique et agréable à jouer, Vincent s’est mis comme objectif de créer une toute nouvelle carte pour le jeu contenant au moins une trentaine de bâtiments texturés dont des objets dynamiques et originaux. Cette carte se passe de nuit et utilise donc une \textit{skybox} sombre. Nous avons choisi la même \textit{skybox} que celle du menu, puisque cette dernière est très bien réalisée.\\
+Cette version de la carte à été en utilisant six plans pour former un cube. Chaque plan contient un \textit{mesh collider} avec l’option \textit{convex} car sans cette option, le vaisseau peut traverser les plans si il touche la ligne de contact entre deux plans. De plus, utiliser un \textit{mesh collider} sur le sol et non un \textit{terrain collider} corrige certains bugs de collisions, notamment un problème où le vaisseau passe à travers le sol.\\
 
-Une centrale nucléaire avec de grosses cheminées recrachant de la vapeur, une centrale hydraulique puisant ses ressources dans une rivière au-dessus de laquelle passent des ponts, des éoliennes dont les pales tournent, des tunnels empruntables pour les vaisseaux et d’autres bâtiments tout aussi originaux ont été ajoutés sur cette nouvelle carte qui a vu le jour entre la seconde et la troisième soutenance. Bien entendu, toutes ces modélisations ont été créées par le graphiste du groupe et texturées par ses soins. Après réflexion, nous nous sommes dit qu'il fallait qu’elles aient toutes une texture pour un environnement de nuit et une texture pour le jour. Ainsi, nous avons pu créer deux cartes identiques de jour et de nuit et ainsi laisser le choix au joueur de jouer de nuit ou de jour.\\
+Les bâtiments, créés par Arhur et Vincent, ont d'abord été implémenté en utilisant des \textit{box collider}. Ceci présente un inconvénient majeur : le cube de collision ne correspondait pas à certain bâtiments complexes. La solution fut de créer un \textit{mesh collider} pour chacun des buildings avec l'option convex. Cette solution ne fonctionne cependant pas pour le parking. En effet, le \textit{mesh collider} créé une boite de collision entre tous les coins de l'objet, ce qui empêche les vaisseaux de rentrer dedans. On a donc créé de nombreuses \textit{box collider} pour résoudre ce cas.
+
+\begin{center}
+\includegraphics[height=7cm, width=13.54cm]{niveau_guillaume.jpg}\\
+\end{center}
+(descrition ouffisime)
+
+\subsection{Création de la carte NUKE }
+
+Par soucis d'avoir un environnement dynamique et agréable à jouer, Vincent s’est mis comme objectif de créer une toute nouvelle carte pour le jeu contenant au moins une trentaine de bâtiments texturés dont des objets dynamiques et originaux. Cette carte se passe de nuit et utilise donc une \textit{skybox} sombre. Nous avons choisi la même \textit{skybox} que celle du menu, puisque cette dernière est très bien réalisée.\\
+
+Une centrale nucléaire avec de grosses cheminées recrachant de la vapeur, une centrale hydraulique puisant ses ressources dans une rivière au-dessus de laquelle passent des ponts, des éoliennes dont les pales tournent, des tunnels empruntables pour les vaisseaux et d’autres bâtiments tout aussi originaux ont été ajoutés sur cette nouvelle carte qui a vu le jour entre la seconde et la troisième soutenance. Bien entendu, toutes ces modélisations ont été créées par le graphiste du groupe et texturées par ses soins. Après réflexion, nous nous sommes dit qu'il fallait qu'elles aient toutes une texture pour un environnement de nuit et une texture pour le jour. Ainsi, nous avons pu créer deux cartes identiques de jour et de nuit et ainsi laisser le choix au joueur de jouer de nuit ou de jour.\\
 
 Lors de la création des éoliennes, la question de l'animation se posait. Fallait-il d'abord créer un objet animé dans Blender, puis le rajouter directement dans Unity, ou bien créer deux objets différents; un pour le mât et l'autre pour les pales. Nous avons finalement opté pour la deuxième solution. La rotation de l'objet contenant les pales a été rajoutée au code source afin d'avoir un rendu dynamique.
 
+\subsection{Carte tutoriel}
+
+ Nous avons souhaité, lors de la conception du jeu, créer un système de mouvement du vaisseau reflétant le plus possible la réalité. Cela implique donc que ce système soit complexe et difficile à prendre en main pour un novice. Pour éviter de rebuter les nouveaux joueurs, le jeu propose de découvrir les techniques de commande du vaisseau sur un niveau prévu à cet effet. \\
+
+Cette carte entrainera premièrement aux trois types de mouvements (selon l'axe vertical, horizontal et transversal) en proposant des obstacles à éviter avec un avion aux ailes larges (sur le modèle de l'avion Solar Impulse). On entrainera ensuite le joueur à tirer plusieurs cibles immobiles, se déplaçant lentement ou rapidement. Après avoir accompli ces taches, nous introduisons au joueur les différents types de munitions du jeu ainsi que quelques conseils d'utilisations (par exemple ne pas utiliser les missiles à tête chercheuse à courte distance ou utiliser le laser avec parcimonie pour éviter une surchauffe). \\
+
+ La prochaine étape de l'entrainement est une partie contre l'intelligence artificielle. Le vaisseau contrôlé par l'ordinateur se déplacera sur la carte en essayant de tirer sur le joueur. L'ennemi aura une difficulté progressive qui se traduira par un style de jeu plus agressif et une vitesse plus importante. Plusieurs aides seront proposées au joueur lors de cette étape : le joueur peut décider que le vaisseau ennemi se déplace à une hauteur constante, supprimant ainsi une dimension de mouvement et simplifiant les manœuvres. Il peut disposer de munitions illimités, d'indications sur la position de l'ennemi même si ce dernier n'est pas directement visible par le joueur ou de points de vies supplémentaire. Si le jeu détecte que le joueur est très en difficulté malgré les différentes aides, le joueur bénéficiera d'une aide à la visée qui cadrera le viseur du joueur sur le vaisseau ennemi lorsque ce dernier sera proche du viseur. \\
+
+Après avoir vaincu l'ordinateur, le joueur devra le combattre à nouveau avec des contraintes supplémentaires. La destruction du vaisseau lorsque celui-ci entre en collision avec un bâtiment sera implémenté ainsi que le frottement de l'air et la gravité. \\
+
+Lors de ce tutoriel, le joueur aura la possibilité de contrôler le vaisseau avec le clavier (en ayant la possibilité de reconfigurer les touches selon ses préférences). Nous recommanderons cependant l'utilisation d'une manette de console de jeu pour piloter le vaisseau. En effet, les manettes proposent au moins un joystick, ce qui est beaucoup plus intuitif pour piloter un avion. Si le joueur décide de jouer à la manette, le tutoriel présentera les astuces et contrôle du vaisseau en fonction. Le joueur peut évidemment reconfigurer les touches de sa manette selon ses préférences et peut à tout moment reprendre le contrôle du vaisseau avec le clavier.\\
 
 \newpage
 \section{Interfaces utilisateur}
@@ -182,6 +239,16 @@ Ces paramètres sont sauvegardés par le jeu et ne se réinitialise pas lorsque 
 \subsection{Menu pause}
 
 Arthur a aussi fait le menu pause du jeu. Celui-ci arrête le temps dans le jeu tant que le joueur est dedans, en mettant la valeur \textit{Time.timeScale} à zéro. Ce menu permet de retourner dans les menus si on veut changer ses paramètres ou de mode de jeu, en chargeant les scènes correspondantes. On peut aussi quitter définitivement le jeu pour retourner sur Windows.
+
+\subsection{Interface Utilisateur en cours de jeu}
+
+L'interface utilisateur ajoute des informations sur l'écran qui permettent au joueur d'interagir avec le monde et de voir ses actions et celles des autres joueurs. Nous avons implémentes deux types d'informations : les fenêtres, fournissant des informations détaillées, ainsi que des informations affichées dynamiquement permettant au joueur de comprendre l'environnement du jeu, de voir les effets de leurs actions et celles des autres.\\
+
+La première fenêtre implémentée fut le cibleur. Pour des raisons de gameplay, les missiles du vaisseau ne se dirigent pas tous vers le même point mais recouvrent une petite zone. Nous affichons donc, pour aider le joueur, cette zone sur l'écran. Cette zone est délimitée par quatre rectangles blancs. Pour faciliter les manipulations, ces quatre rectangles ont des coordonnées pour que tous bougent quand l'un bouge.\\
+
+L'autre fenêtre disponible est l'horloge.  Celle-ci limite le temps de jeu. Lorsque que le temps imparti est dépassé, la partie s'arrête, et le vainqueur est détermine de la manière suivante : une élimination vaut 1 point, une mort -0.5 point et le joueur gagnant est affiche à l'écran. En cas d'égalité, le jeu indique que les joueurs ont fait match nul. \\
+
+Pour aider le joueur à comprendre le fil de sa partie, nous avons implémenté plusieurs informations dynamiques. La plus importante est la carte miniaturisée présente en haut à gauche de l'écran du joueur. Le joueur peut se renseigner sur la position de ses allies, le lieu de leur explosion, l'emplacement des buildings ainsi que le lieu d'explosion des ennemis pour déduire l'emplacement de ses ennemis et se déplacer en fonction. Le joueur dispose aussi d'informations sur son vaisseau, tel que le nombre de coup que le vaisseau peut recevoir avant d'exploser, le nombre d'explosion que peut subir le joueur avant de perdre la partie, le nombre de points de chaque équipe, un conteur de munitions ainsi que l'affichage des différents types de munitions disponibles. Enfin, nous affichons en haut à droite de l'écran un message indiquant quel joueur a détruit quel autre joueur pour chaque élimination.\\
 
 \newpage
 \section{Intelligences artificielles}
@@ -210,6 +277,13 @@ Dès le début de la partie, les vaisseaux qui ont une intelligence artificielle
 Dans notre jeu, nous voulions absolument qu'il y ait du multijoueur, car le jeu serait ennuyeux si on ne pouvait jouer que contre des ordinateurs. En effet pour un jeu de combat aérien en arène fermée, il fallait pouvoir jouer avec ou contre des amis. Nous avons implémenté deux sortes de multijoueur différents : le multijoueur en écran séparé, et le multijoueur en réseau local.\\
 
 \subsection{Multijoueur en écran séparé}
+
+Parce que de moins en moins de jeu proposent un écran partagé (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la main, nous avons décidé de créer un multijoueur en écran scindé.L'utilisation d'une manette de console de jeux est très fortement conseillé car cela laisse le clavier entier libre pour un des deux joueurs. Cependant, nous proposons aussi de jouer sur le même clavier. Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis, U/J pour le tangage et la barre espace pour tirer. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pavé numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage.
+
+\begin{center}
+\includegraphics[height=5cm, width=9cm]{split.jpg}
+\end{center}
+(description de ouf ici)
 
 \subsection{Multijoueur en réseau}
 

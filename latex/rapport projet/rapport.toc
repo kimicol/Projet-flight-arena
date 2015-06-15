@@ -4,25 +4,30 @@
 \contentsline {section}{\numberline {2}Graphismes et son}{6}
 \contentsline {subsection}{\numberline {2.1}Graphismes}{6}
 \contentsline {subsection}{\numberline {2.2}Son}{9}
-\contentsline {section}{\numberline {3}Contr\IeC {\^o}les du vaisseau}{10}
-\contentsline {subsection}{\numberline {3.1}D\IeC {\'e}placement}{10}
-\contentsline {subsection}{\numberline {3.2}Tirs}{12}
-\contentsline {section}{\numberline {4}Gameplay}{13}
-\contentsline {section}{\numberline {5}Cr\IeC {\'e}ation de niveaux}{14}
-\contentsline {subsection}{\numberline {5.1}Environnement de la carte}{14}
-\contentsline {subsection}{\numberline {5.2}Cr\IeC {\'e}ation de b\IeC {\^a}timents}{14}
-\contentsline {section}{\numberline {6}Interfaces utilisateur}{16}
-\contentsline {subsection}{\numberline {6.1}Le menu principal}{16}
-\contentsline {subsection}{\numberline {6.2}Menu pause}{17}
-\contentsline {section}{\numberline {7}Intelligences artificielles}{18}
-\contentsline {subsection}{\numberline {7.1}\IeC {\'E}viter les obstacles}{18}
-\contentsline {subsection}{\numberline {7.2}Poursuivre les ennemis}{19}
-\contentsline {section}{\numberline {8}Multijoueurs}{21}
-\contentsline {subsection}{\numberline {8.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{21}
-\contentsline {subsection}{\numberline {8.2}Multijoueur en r\IeC {\'e}seau}{21}
-\contentsline {section}{\numberline {9}Site internet}{23}
-\contentsline {section}{Conclusion}{24}
-\contentsline {subsection}{\numberline {9.1}Conclusions personnelles}{24}
-\contentsline {subsubsection}{\numberline {9.1.1}Conclusion d'Arthur}{24}
-\contentsline {subsection}{\numberline {9.2}Conclusion finale}{24}
-\contentsline {section}{\numberline {10}Annexes}{24}
+\contentsline {section}{\numberline {3}Contr\IeC {\^o}les du vaisseau}{11}
+\contentsline {subsection}{\numberline {3.1}D\IeC {\'e}placement}{11}
+\contentsline {subsection}{\numberline {3.2}Tirs}{13}
+\contentsline {section}{\numberline {4}Gameplay}{15}
+\contentsline {subsection}{\numberline {4.1}Experience de jeu}{15}
+\contentsline {subsection}{\numberline {4.2}Mode de jeu}{16}
+\contentsline {section}{\numberline {5}Cr\IeC {\'e}ation de niveaux}{19}
+\contentsline {subsection}{\numberline {5.1}Environnement de la carte}{19}
+\contentsline {subsection}{\numberline {5.2}Cr\IeC {\'e}ation de la premi\IeC {\`e}re carte}{19}
+\contentsline {subsection}{\numberline {5.3}Cr\IeC {\'e}ation de la carte NUKE }{20}
+\contentsline {subsection}{\numberline {5.4}Carte tutoriel}{21}
+\contentsline {section}{\numberline {6}Interfaces utilisateur}{24}
+\contentsline {subsection}{\numberline {6.1}Le menu principal}{24}
+\contentsline {subsection}{\numberline {6.2}Menu pause}{25}
+\contentsline {subsection}{\numberline {6.3}Interface Utilisateur en cours de jeu}{25}
+\contentsline {section}{\numberline {7}Intelligences artificielles}{27}
+\contentsline {subsection}{\numberline {7.1}\IeC {\'E}viter les obstacles}{27}
+\contentsline {subsection}{\numberline {7.2}Poursuivre les ennemis}{28}
+\contentsline {section}{\numberline {8}Multijoueurs}{30}
+\contentsline {subsection}{\numberline {8.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{30}
+\contentsline {subsection}{\numberline {8.2}Multijoueur en r\IeC {\'e}seau}{31}
+\contentsline {section}{\numberline {9}Site internet}{33}
+\contentsline {section}{Conclusion}{34}
+\contentsline {subsection}{\numberline {9.1}Conclusions personnelles}{34}
+\contentsline {subsubsection}{\numberline {9.1.1}Conclusion d'Arthur}{34}
+\contentsline {subsection}{\numberline {9.2}Conclusion finale}{34}
+\contentsline {section}{\numberline {10}Annexes}{34}
