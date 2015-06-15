@@ -15,19 +15,19 @@
 \contentsline {subsection}{\numberline {5.2}Cr\IeC {\'e}ation de la premi\IeC {\`e}re carte}{19}
 \contentsline {subsection}{\numberline {5.3}Cr\IeC {\'e}ation de la carte NUKE }{20}
 \contentsline {subsection}{\numberline {5.4}Carte tutoriel}{21}
-\contentsline {section}{\numberline {6}Interfaces utilisateur}{24}
-\contentsline {subsection}{\numberline {6.1}Le menu principal}{24}
-\contentsline {subsection}{\numberline {6.2}Menu pause}{25}
-\contentsline {subsection}{\numberline {6.3}Interface Utilisateur en cours de jeu}{25}
-\contentsline {section}{\numberline {7}Intelligences artificielles}{27}
-\contentsline {subsection}{\numberline {7.1}\IeC {\'E}viter les obstacles}{27}
-\contentsline {subsection}{\numberline {7.2}Poursuivre les ennemis}{28}
-\contentsline {section}{\numberline {8}Multijoueurs}{30}
-\contentsline {subsection}{\numberline {8.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{30}
-\contentsline {subsection}{\numberline {8.2}Multijoueur en r\IeC {\'e}seau}{31}
-\contentsline {section}{\numberline {9}Site internet}{33}
-\contentsline {section}{Conclusion}{34}
-\contentsline {subsection}{\numberline {9.1}Conclusions personnelles}{34}
-\contentsline {subsubsection}{\numberline {9.1.1}Conclusion d'Arthur}{34}
+\contentsline {section}{\numberline {6}Interfaces utilisateur}{23}
+\contentsline {subsection}{\numberline {6.1}Le menu principal}{23}
+\contentsline {subsection}{\numberline {6.2}Menu pause}{24}
+\contentsline {subsection}{\numberline {6.3}Interface Utilisateur en cours de jeu}{24}
+\contentsline {section}{\numberline {7}Intelligences artificielles}{26}
+\contentsline {subsection}{\numberline {7.1}\IeC {\'E}viter les obstacles}{26}
+\contentsline {subsection}{\numberline {7.2}Poursuivre les ennemis}{27}
+\contentsline {section}{\numberline {8}Multijoueurs}{29}
+\contentsline {subsection}{\numberline {8.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{29}
+\contentsline {subsection}{\numberline {8.2}Multijoueur en r\IeC {\'e}seau}{29}
+\contentsline {section}{\numberline {9}Site internet}{32}
+\contentsline {section}{Conclusion}{33}
+\contentsline {subsection}{\numberline {9.1}Conclusions personnelles}{33}
+\contentsline {subsubsection}{\numberline {9.1.1}Conclusion d'Arthur}{33}
 \contentsline {subsection}{\numberline {9.2}Conclusion finale}{34}
 \contentsline {section}{\numberline {10}Annexes}{34}

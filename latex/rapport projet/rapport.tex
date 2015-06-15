@@ -196,11 +196,6 @@ Cette version de la carte à été en utilisant six plans pour former un cube. C
 
 Les bâtiments, créés par Arhur et Vincent, ont d'abord été implémenté en utilisant des \textit{box collider}. Ceci présente un inconvénient majeur : le cube de collision ne correspondait pas à certain bâtiments complexes. La solution fut de créer un \textit{mesh collider} pour chacun des buildings avec l'option convex. Cette solution ne fonctionne cependant pas pour le parking. En effet, le \textit{mesh collider} créé une boite de collision entre tous les coins de l'objet, ce qui empêche les vaisseaux de rentrer dedans. On a donc créé de nombreuses \textit{box collider} pour résoudre ce cas.
 
-\begin{center}
-\includegraphics[height=7cm, width=13.54cm]{niveau_guillaume.jpg}\\
-\end{center}
-(descrition ouffisime)
-
 \subsection{Création de la carte NUKE }
 
 Par soucis d'avoir un environnement dynamique et agréable à jouer, Vincent s’est mis comme objectif de créer une toute nouvelle carte pour le jeu contenant au moins une trentaine de bâtiments texturés dont des objets dynamiques et originaux. Cette carte se passe de nuit et utilise donc une \textit{skybox} sombre. Nous avons choisi la même \textit{skybox} que celle du menu, puisque cette dernière est très bien réalisée.\\
@@ -278,12 +273,10 @@ Dans notre jeu, nous voulions absolument qu'il y ait du multijoueur, car le jeu 
 
 \subsection{Multijoueur en écran séparé}
 
-Parce que de moins en moins de jeu proposent un écran partagé (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la main, nous avons décidé de créer un multijoueur en écran scindé.L'utilisation d'une manette de console de jeux est très fortement conseillé car cela laisse le clavier entier libre pour un des deux joueurs. Cependant, nous proposons aussi de jouer sur le même clavier. Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis, U/J pour le tangage et la barre espace pour tirer. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pavé numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage.
+Parce que de moins en moins de jeu proposent un écran partagé (alors que les écrans s'agrandissent de plus en plus) et que le nombre de jeux de tirs multijoueur sur un seul clavier se comptent sur les doigts de la main, nous avons décidé de créer un multijoueur en écran scindé. L'utilisation d'une manette de console de jeux est très fortement conseillée car cela laisse le clavier entier libre pour un des deux joueurs. Cependant, nous proposons aussi de jouer sur le même clavier.\\
 
-\begin{center}
-\includegraphics[height=5cm, width=9cm]{split.jpg}
-\end{center}
-(description de ouf ici)
+ Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis, U/J pour le tangage et la barre espace pour tirer. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pavé numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage.
+
 
 \subsection{Multijoueur en réseau}
 
@@ -317,6 +310,14 @@ Toutes les pages du site sont traduites en anglais et en français. Il suffit to
 \subsection{Conclusions personnelles}
 
 \subsubsection{Conclusion d'Arthur}
+
+J'ai pris beaucoup de plaisir à faire ce projet. J'ai ainsi découvert Unity que, je pense, je vais réutiliser à l'avenir pour des projets personnels. Je ne pense pas que cela m'a fait progresser en C\#, car Unity ne demande pas de grandes connaissances dans ce langage tel que l'héritage ou les classes abstraites, mais plus dans sa documentation des fonctions existantes. J'ai donc appris à me débrouiller pour apprendre comment utiliser un nouvel outil et comment trouver une solution aux problèmes qui surgissent. J'ai pu aussi découvrir git, surtout avec l'interface windows de gitHub qui devrait m'être utile à l'avenir, que ce soit pour EPITA ou en-dehors.\\
+
+J'ai aussi découvert comment pouvait se dérouler un projet informatique, comment on prévoit les différents scripts, prévoir ce que l'on va écrire et comment on va le faire. De plus, ayant été désigné comme chef de projet par les autres, je devais assigner globalement le travail pour chacun, et surtout je devais pousser les autres à respecter les délais, ce que moi-même j'avais du mal à faire.\\
+
+Cette expérience m'a aussi permis de tisser des liens avec Vincent et Guillaume que je connaissais peu au début du projet. En effet, nous avions choisi ce groupe lors de la conférence des projets de l'année dernière, soit dès le mois de septembre, où nous étions assis à côté et où nous étions d'accord pour faire un jeu de vaisseau.\\
+
+Pour ma part, ce projet a rempli les objectifs que je lui donnais, à savoir de réussir à faire un jeu vidéo complet en un semestre. Nous avons pour cela, en plus d'avoir prévu les parties techniques, dû voir le projet comme des concepteurs pour que ce jeu nous fasse plaisir en tant que joueur.\\
 
 \subsection{Conclusion finale}
 
