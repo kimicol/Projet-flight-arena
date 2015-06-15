@@ -34,5 +34,5 @@
 \contentsline {subsection}{\numberline {10.1}Conclusions personnelles}{34}
 \contentsline {subsubsection}{\numberline {10.1.1}Conclusion d'Arthur}{34}
 \contentsline {subsubsection}{\numberline {10.1.2}Conclusion de Guillaume}{35}
-\contentsline {subsection}{\numberline {10.2}Conclusion finale}{36}
-\contentsline {section}{\numberline {11}Annexes}{37}
+\contentsline {subsection}{\numberline {10.2}Conclusion finale}{37}
+\contentsline {section}{\numberline {11}Annexes}{38}
