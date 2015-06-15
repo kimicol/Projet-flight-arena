@@ -9,7 +9,7 @@
 
 \usepackage[top=2cm, bottom=2.5cm, left=4cm , right=3cm]{geometry}
 \usepackage{setspace}
-\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+%\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
 %Caractères spéciaux
 
@@ -59,7 +59,7 @@ Ce projet répond à une obligation de l'école \bsc{epita} de faire un projet l
 
 Nous avions pour ce projet l'obligation d'utiliser les langages \textit{Caml} ou {C\#}, avec le moteur Unity pour faire le jeu.\\
 
-Nous étions au départ avec Nikolas Miletic dans le groupe, mais celui-ci est parti en S1\# au cours du mois de janvier. Nous avons alors réparti les tâches de cette manières : Vincent s'occupera principalement des graphismes et du site internet, Guillaume du gameplay et des cartes, et Arthur du code du jeu et des menus.
+Nous étions au départ avec Nikolas Miletic dans le groupe, mais celui-ci est parti en S1\# au cours du mois de janvier. Nous avons alors réparti les tâches de cette manières : Vincent s'occupera principalement des graphismes et du site internet, Guillaume du gameplay et des cartes, et Arthur du code du jeu et des menus.\\
 
 \newpage
 \section{Graphismes et son}
@@ -71,27 +71,27 @@ Nous étions au départ avec Nikolas Miletic dans le groupe, mais celui-ci est p
 \newpage
 \section{Contrôles du vaisseau}
 
-Les contrôles du vaisseau sont les premières choses implémentées dans le jeu. En effet nous avions besoin de déplacements pour faire par la suite pour faire la première carte du jeu, afin d'espacer correctement les obstacles pour que le vaisseau puisse faire des man\oe uvres, et des tirs pour pouvoir gérer les dégâts et la mort des vaisseaux.
+Les contrôles du vaisseau sont les premières choses implémentées dans le jeu. En effet nous avions besoin de déplacements pour faire par la suite pour faire la première carte du jeu, afin d'espacer correctement les obstacles pour que le vaisseau puisse faire des man\oe uvres, et des tirs pour pouvoir gérer les dégâts et la mort des vaisseaux.\\
 
 \subsection{Déplacement}
 
-Dans un premier temps, Arthur a codé les déplacements des vaisseaux. Pour prendre les touches que le joueur entre, on utilise la fonction \textit{Input.GetKey()} de Unity. Nous avons choisi comme touches pour le départ les même contrôles que dans les jeux \textit{Battlefield}.
+Dans un premier temps, Arthur a codé les déplacements des vaisseaux. Pour prendre les touches que le joueur entre, on utilise la fonction \textit{Input.GetKey()} de Unity. Nous avons choisi comme touches pour le départ les même contrôles que dans les jeux \textit{Battlefield}.\\
 
-Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent aussi des valeurs des avions : le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet. Nous avons aussi choisi de prendre ces valeurs pour des raisons de gameplay. En effet, il est plus facile de tourner avec le lacet plutôt que d'utiliser la combinaison tangage plus roulis. Il est donc logique de rendre cette dernière man\oe uvre plus rapide en exécution pour récompenser les joueurs les plus talentueux. Nous avons aussi placé la caméra de manière à inciter le joueur à utiliser cette dernière man\oe uvre : le vaisseau n'est pas représenté au milieu de l'écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l'inertie, lorsqu'il avance et aussi sur les trois types de mouvements, et il est impossible de reculer avec le vaisseau, il faut faire demi-tour.
+Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent aussi des valeurs des avions : le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet. Nous avons aussi choisi de prendre ces valeurs pour des raisons de gameplay. En effet, il est plus facile de tourner avec le lacet plutôt que d'utiliser la combinaison tangage plus roulis. Il est donc logique de rendre cette dernière man\oe uvre plus rapide en exécution pour récompenser les joueurs les plus talentueux. Nous avons aussi placé la caméra de manière à inciter le joueur à utiliser cette dernière man\oe uvre : le vaisseau n'est pas représenté au milieu de l'écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l'inertie, lorsqu'il avance et aussi sur les trois types de mouvements, et il est impossible de reculer avec le vaisseau, il faut faire demi-tour.\\
 
- Pour avancer, on utilise la touche Z, pour aller vers la gauche on utilise Q, vers la droite c'est D, pour faire une rotation sur la gauche on utilise la flèche gauche, une rotation vers la droite c'est la flèche droite, et enfin pour aller vers le haut on utilise la flèche bas et vers le bas on utilise la flèche haut. Le haut et le bas sont inversés dans les contrôles pour faire comme dans les jeux utilisant un joystick.
+ Pour avancer, on utilise la touche Z, pour aller vers la gauche on utilise Q, vers la droite c'est D, pour faire une rotation sur la gauche on utilise la flèche gauche, une rotation vers la droite c'est la flèche droite, et enfin pour aller vers le haut on utilise la flèche bas et vers le bas on utilise la flèche haut. Le haut et le bas sont inversés dans les contrôles pour faire comme dans les jeux utilisant un joystick.\\
 
-Le vaisseau doit donc avancer et tourner sur lui-même pour parcourir les niveaux. Pour cela, nous utilisions tout d'abord respectivement les fonctions \textit{transform.Translate()} et \textit{transform.Rotate()}. L'inertie du vaisseau était gérée par une variable de déplacement qui augmentait à force d'appuyer sur la touche d'accélération, et diminuait dans le cas contraire.
+Le vaisseau doit donc avancer et tourner sur lui-même pour parcourir les niveaux. Pour cela, nous utilisions tout d'abord respectivement les fonctions \textit{transform.Translate()} et \textit{transform.Rotate()}. L'inertie du vaisseau était gérée par une variable de déplacement qui augmentait à force d'appuyer sur la touche d'accélération, et diminuait dans le cas contraire.\\
 
-Cependant, les mouvements n'étaient pas très réalistes et il nous avait été suggéré à la fin de la première soutenance d'utiliser les quaternions que propose Unity pour donner une meilleure inertie et donc des déplacements plus crédibles. Cela fut rajouté dans la semaine qui suivit, grâce aux nombreux tutoriels et documentations trouvables sur internet.
+Cependant, les mouvements n'étaient pas très réalistes et il nous avait été suggéré à la fin de la première soutenance d'utiliser les quaternions que propose Unity pour donner une meilleure inertie et donc des déplacements plus crédibles. Cela fut rajouté dans la semaine qui suivit, grâce aux nombreux tutoriels et documentations trouvables sur internet.\\
 
-Le problème qui se posa avec les quaternions fut en rapport avec les collisions. En effet avant de les ajouter, nous avions mis le \textit{rigidbody} des vaisseaux, soit l'élément qui gère les collisions avec les rebonds et l'inertie engendrée, à zéro. Dans le cas contraire, dès que le vaisseau touchait un obstacle, il rebondissait et partait en vrille, sans que le joueur ne puisse y remédier.
+Le problème qui se posa avec les quaternions fut en rapport avec les collisions. En effet avant de les ajouter, nous avions mis le \textit{rigidbody} des vaisseaux, soit l'élément qui gère les collisions avec les rebonds et l'inertie engendrée, à zéro. Dans le cas contraire, dès que le vaisseau touchait un obstacle, il rebondissait et partait en vrille, sans que le joueur ne puisse y remédier.\\
 
 \subsection{Tirs}
 
-Le joueur peut tirer grâce à la touche espace, elle aussi détectée par la fonction \textit{Input.GetKey()}. Unity instancie alors une balle qui est stockée dans un prefab grâce à la fonction qui s'appelle, logiquement, \textit{Instantiate()}. La balle part droit devant elle si elle ne touche aucun obstacle, elle disparait d'elle-même au bout de trois secondes avec la fonction \textit{DestroyObject()}, ce qui lui laisse le temps de traverser la carte, afin qu'il n 'y ait pas trop d'objets en même temps à gérer par Unity, ce qui pourrait ralentir le jeu.
+Le joueur peut tirer grâce à la touche espace, elle aussi détectée par la fonction \textit{Input.GetKey()}. Unity instancie alors une balle qui est stockée dans un prefab grâce à la fonction qui s'appelle, logiquement, \textit{Instantiate()}. La balle part droit devant elle si elle ne touche aucun obstacle, elle disparait d'elle-même au bout de trois secondes avec la fonction \textit{DestroyObject()}, ce qui lui laisse le temps de traverser la carte, afin qu'il n 'y ait pas trop d'objets en même temps à gérer par Unity, ce qui pourrait ralentir le jeu.\\
 
-La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un événement lorsqu'elle rencontre un objet qui contient un détecteur particulier. En effet, si un vaisseau détecte une collision avec une balle grâce à la fonction \textit{OnTriggerEnter()}, alors la balle est détruite et le vaisseau perd un point de vie. De plus, si le vaisseau n'a plus de vie, il est alors détruit avec une animation d'explosion. Des sons ont été intégrés à chaque étape : au tir, à la collision et à l'explosion.
+La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un événement lorsqu'elle rencontre un objet qui contient un détecteur particulier. En effet, si un vaisseau détecte une collision avec une balle grâce à la fonction \textit{OnTriggerEnter()}, alors la balle est détruite et le vaisseau perd un point de vie. De plus, si le vaisseau n'a plus de vie, il est alors détruit avec une animation d'explosion. Des sons ont été intégrés à chaque étape : au tir, à la collision et à l'explosion.\\
 
 \newpage
 \section{Gameplay}
@@ -102,23 +102,32 @@ La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un é
 \newpage
 \section{Interfaces utilisateur}
 
+\subsection{Les menus}
+
+Tout jeu d'aujourd'hui possède un menu, afin de choisir le mode de jeu, si on veut jouer seul ou à plusieurs, pour modifier les options de son, de graphisme ou autre. Unity possède de nombreuses aides pour faire un menu décent, le tout principalement stocké dans la classe GUI (pour \textit{Graphical User Interface}). Ainsi, la fonction \textit{GUI.Button()} crée un bouton qui prend en paramètre le rectangle de sa localisation et ce qu'il contient, soit du texte ou une image. Cette fonction est mis dans une condition, ce qui fait que dès que le joueur clique sur le bouton, on rentre dans la condition et le programme fait les instructions qui suivent.\\
+
+Cet exemple simple permet de montrer basiquement comment Unity gère ses interfaces. Il y a aussi des instructions pour afficher du texte (\textit{GUI.Label}), d'autres pour faire des curseurs que l'on utilise pour le son (\textit{HorizontalSlider()} ou \textit{VerticalSlider()}) et d'autres que nous n'avons pas utilisées.\\
+
+En fonction de ses choix dans le menu, le joueur provoque donc l'ouverture de différentes scènes en fonction du mode de jeu qu'il veut. En effet, les modes de jeu sont dans différentes scènes pour faciliter la lecture des scripts. Mais dans le menu des options, le joueur peut aussi modifier les paramètres de la qualité de l'image, du volume du son et peut changer ses touches de contrôle.\\
+
+Mais en plus, ces paramètres sont sauvegardés par le jeu et ne se réinitialise pas lorsque l'on redémarre le jeu par la suite. Cela est rendu possible grâce à la classe \textit{PlayerPrefs()} de Unity. En effet, cette classe permet de sauvegarder des entier (volume), des chaines de caractères (contrôles) et des flottants (nous n'utilisons pas cette dernière option dans ce projet). On charge ainsi les données de ses sauvegarde au démarrage du jeu pour que le joueur garde ses paramètres habituelles. Cette classe nous permet aussi de sauvegarder le vaisseau qu'a choisi le joueur de la scène du menu à la scène de la carte. Ainsi quand la partie commence, le jeu regarde quelle valeur est sauvegardée pour attribuer au joueur le vaisseau correspondant.\\
+
 \newpage
 \section{Intelligences artificielles}
 
-Dans notre jeu, nous voulions que le joueur puisse jouer seul face à d'autres vaisseaux pilotés par l'ordinateur. Il fallait donc créer une intelligence artificielle, c'est-à-dire un programme qui, en fonction de la situation, va changer de comportement pour donner l'illusion que l'on joue contre un vrai joueur. Nous avons fait ce programme en deux parties : l'algorithme pour éviter les obstacles que l'on a présenté pour la deuxième soutenance, et l'algorithme pour suivre les ennemis que nous avons fait après.
+Dans notre jeu, nous voulions que le joueur puisse jouer seul face à d'autres vaisseaux pilotés par l'ordinateur. Il fallait donc créer une intelligence artificielle, c'est-à-dire un programme qui, en fonction de la situation, va changer de comportement pour donner l'illusion que l'on joue contre un vrai joueur. Nous avons fait ce programme en deux parties : l'algorithme pour éviter les obstacles que l'on a présenté pour la deuxième soutenance, et l'algorithme pour suivre les ennemis que nous avons fait après.\\
 
 \subsection{Éviter les obstacles}
 
-C'est Arthur qui s'est occupé de faire l'intelligence artificielle. Dans un premier temps, nous voulions faire un  algorithme de \textit{pathfiding}. C'est un algorithme qui permet de calculer la trajectoire la plus courte d'un point A à un point B en évitant les obstacles, et donc permet à une intelligence artificielle de se déplacer facilement.
+C'est Arthur qui s'est occupé de faire l'intelligence artificielle. Dans un premier temps, nous voulions faire un  algorithme de \textit{pathfiding}. C'est un algorithme qui permet de calculer la trajectoire la plus courte d'un point A à un point B en évitant les obstacles, et donc permet à une intelligence artificielle de se déplacer facilement.\\
 
-Nous avons alors recherché des éléments qui seraient intégrés à Unity pour faire ce genre de programme. Nous avons ainsi découvert les \textit{NavMesh} qui permettent de définir une surface sur laquelle un personnage géré une intelligence artificielle peut se déplacer. Cependant, ils étaient inutiles dans notre jeu, car les vaisseaux ne se déplace pas sur une surface comme le ferait un personnage de jeu de rôle. Il semble qu'il n'existe pas d'aide pour faire de la recherche de trajectoire dans Unity qui intègre aussi la troisième dimension qu'est la hauteur. Nous avons donc commencé à le faire nous-même.
+Nous avons alors recherché des éléments qui seraient intégrés à Unity pour faire ce genre de programme. Nous avons ainsi découvert les \textit{NavMesh} qui permettent de définir une surface sur laquelle un personnage géré une intelligence artificielle peut se déplacer. Cependant, ils étaient inutiles dans notre jeu, car les vaisseaux ne se déplace pas sur une surface comme le ferait un personnage de jeu de rôle. Il semble qu'il n'existe pas d'aide pour faire de la recherche de trajectoire dans Unity qui intègre aussi la troisième dimension qu'est la hauteur. Nous avons donc commencé à le faire nous-même.\\
 
-Il existe des algorithmes de \textit{pathfiding} qui reposent sur des tableaux contenant le terrain en disant si le personnage peut passer dans telle ou telle case. Cependant c'est assez compliqué à faire en 3D, sans parler du fait que les bâtiments ne sont pas alignés, peuvent être pivotés et qu'il faudrait refaire un tableau pour chaque carte. Nous avons donc essayé de faire autrement.
+Il existe des algorithmes de \textit{pathfiding} qui reposent sur des tableaux contenant le terrain en disant si le personnage peut passer dans telle ou telle case. Cependant c'est assez compliqué à faire en 3D, sans parler du fait que les bâtiments ne sont pas alignés, peuvent être pivotés et qu'il faudrait refaire un tableau pour chaque carte. Nous avons donc essayé de faire autrement.\\
 
-On voulait faire en sorte que les vaisseaux ne rentrent pas en collision avec les immeubles ou le sol. Nous avons donc placé à l'avant des vaisseaux pilotés par l'ordinateur des objets invisibles qui servent à détecter les collisions qu'aura le vaisseau s'il ne les évite pas. Ils contiennent des \textit{trigger} qui, dès qu'ils rentrent en collisions, 
-le signal au vaisseau qui ralentit et tourne en conséquence. Il y a 4 objets : un en haut, un en bas, un à gauche et un à droite, tous avancés par rapport au vaisseau. De manière logique, si l'objet en haut détecte une collision, le vaisseau pivote vers le bas, si c'est celui du bas, le vaisseau monte, si c'est l'objet droit qui rencontre un obstacle, le vaisseau tourne à gauche, si c'est le gauche, le vaisseau va à droite.
+On voulait faire en sorte que les vaisseaux ne rentrent pas en collision avec les immeubles ou le sol. Nous avons donc placé à l'avant des vaisseaux pilotés par l'ordinateur des objets invisibles qui servent à détecter les collisions qu'aura le vaisseau s'il ne les évite pas. Ils contiennent des \textit{trigger} qui, dès qu'ils rentrent en collisions, le signal au vaisseau qui ralentit et tourne en conséquence. Il y a 4 objets : un en haut, un en bas, un à gauche et un à droite, tous avancés par rapport au vaisseau. De manière logique, si l'objet en haut détecte une collision, le vaisseau pivote vers le bas, si c'est celui du bas, le vaisseau monte, si c'est l'objet droit qui rencontre un obstacle, le vaisseau tourne à gauche, si c'est le gauche, le vaisseau va à droite.\\
 
-Nous avons remarqué que les collisions n'étaient pas détectées pour les objets qui avait pour collider un Mesh Collider. Nous avons  donc rajouté des Box Collider à tous les bâtiments pour qu’il ne fonce pas dedans, tout en veillant à ce qu'il ne crée  pas de collision avec les autres vaisseaux. Le vaisseau peut ainsi slalomer entre les immeubles sans les percuter, mais il ne cherche pas à attaquer les autres vaisseaux.
+Nous avons remarqué que les collisions n'étaient pas détectées pour les objets qui avait pour collider un Mesh Collider. Nous avons  donc rajouté des Box Collider à tous les bâtiments pour qu’il ne fonce pas dedans, tout en veillant à ce qu'il ne crée  pas de collision avec les autres vaisseaux. Le vaisseau peut ainsi slalomer entre les immeubles sans les percuter, mais il ne cherche pas à attaquer les autres vaisseaux.\\
 
 \subsection{Poursuivre les ennemis}
 
@@ -127,22 +136,22 @@ Dès le début de la partie, les vaisseaux qui ont une intelligence artificielle
 \newpage
 \section{Multijoueurs}
 
-Dans notre jeu, nous voulions absolument qu'il y ait du multijoueur, car le jeu serait ennuyeux si on ne pouvait jouer que contre des ordinateurs. En effet pour un jeu de combat aérien en arène fermée, il fallait pouvoir jouer avec ou contre des amis. Nous avons implémenté deux sortes de multijoueur différents : le multijoueur en écran séparé, et le multijoueur en réseau local.
+Dans notre jeu, nous voulions absolument qu'il y ait du multijoueur, car le jeu serait ennuyeux si on ne pouvait jouer que contre des ordinateurs. En effet pour un jeu de combat aérien en arène fermée, il fallait pouvoir jouer avec ou contre des amis. Nous avons implémenté deux sortes de multijoueur différents : le multijoueur en écran séparé, et le multijoueur en réseau local.\\
 
 \subsection{Multijoueur en écran séparé}
 
 \subsection{Multijoueur en réseau}
 
-Le multijoueur en réseau LAN (pour Local Area Network) fut commencé après la première soutenance. Le but était de pouvoir jouer à plusieurs sur plusieurs ordinateurs différents reliés par un réseau local. L'avantage par rapport à l'écran séparé est que le joueur a tout l'écran donc peu mieux voir le jeu, et il n'y a pas de problème de répartition de touches de commandes pour les deux joueurs. C'est Arthur qui s'est occupé de cette partie.
+Le multijoueur en réseau LAN (pour Local Area Network) fut commencé après la première soutenance. Le but était de pouvoir jouer à plusieurs sur plusieurs ordinateurs différents reliés par un réseau local. L'avantage par rapport à l'écran séparé est que le joueur a tout l'écran donc peu mieux voir le jeu, et il n'y a pas de problème de répartition de touches de commandes pour les deux joueurs. C'est Arthur qui s'est occupé de cette partie.\\
 
-Il a d'abord essayé de faire un protocole UDP pour relier en LAN (Local Area Network) en s'inspirant du TP que nous avions fait dans les cours habituels lorsque nous avions travaillé sur le protocole TCP, avant de se rendre compte qu'il existait la classe \textit{Network} sur Unity qui simplifie grandement l'élaboration d'un mode multijoueur sur un jeu. Plusieurs tutoriels existent à ce sujet sur internet, Arthur s'en est donc inspiré pour faire un réseau.
+Il a d'abord essayé de faire un protocole UDP pour relier en LAN (Local Area Network) en s'inspirant du TP que nous avions fait dans les cours habituels lorsque nous avions travaillé sur le protocole TCP, avant de se rendre compte qu'il existait la classe \textit{Network} sur Unity qui simplifie grandement l'élaboration d'un mode multijoueur sur un jeu. Plusieurs tutoriels existent à ce sujet sur internet, Arthur s'en est donc inspiré pour faire un réseau.\\
 
-Un des joueurs héberge la partie, et les autres doivent le rejoindre en utilisant son adresse IP locale. A travers le réseau, il fallait envoyer les données des vaisseaux, leurs déplacements, s'ils tiraient et autre. Les coordonnées vaisseaux sont transmises grâce à l'option \textit{Network view} que l'on peut affecter à un objet. Ainsi, tous les joueurs connectés à cette partie voient le vaisseau généré par le joueur qui se connecte.
+Un des joueurs héberge la partie, et les autres doivent le rejoindre en utilisant son adresse IP locale. A travers le réseau, il fallait envoyer les données des vaisseaux, leurs déplacements, s'ils tiraient et autre. Les coordonnées vaisseaux sont transmises grâce à l'option \textit{Network view} que l'on peut affecter à un objet. Ainsi, tous les joueurs connectés à cette partie voient le vaisseau généré par le joueur qui se connecte.\\
 
 L'un des problèmes qui se posa au début, fut que les joueurs ne contrôlaient le vaisseau de l'autre joueur et donc devait regarder sur l'autre écran pour jouer. De plus, à trois joueurs, les deux
-premiers connectés voyaient un seul et même vaisseau qu'il contrôlaient tous les deux pendant que le troisième joueur en pilotait un autre. Le dernier vaisseau quant à lui n'était contrôlé par personne et restait immobile. Au final, ce problème venait de l'assignation des caméras et des scripts aux joueurs lorsqu'ils instanciaient un nouveau vaisseau en arrivant.
+premiers connectés voyaient un seul et même vaisseau qu'il contrôlaient tous les deux pendant que le troisième joueur en pilotait un autre. Le dernier vaisseau quant à lui n'était contrôlé par personne et restait immobile. Au final, ce problème venait de l'assignation des caméras et des scripts aux joueurs lorsqu'ils instanciaient un nouveau vaisseau en arrivant.\\
 
-Un autre problème fut que nous n'arrivions pas à faire disparaitre le vaisseau d'un joueur lorsqu'il se déconnectait de la partie en ligne. En effet la fonction \textit{Network.Destroy()} ne s'appliquait pas au prefab tout entier car il ne contenait pas de networkView. Finalement, nous avons intégré cette fonction dans les scripts qui contrôle les déplacements du vaisseau et de la caméra.
+Un autre problème fut que nous n'arrivions pas à faire disparaitre le vaisseau d'un joueur lorsqu'il se déconnectait de la partie en ligne. En effet la fonction \textit{Network.Destroy()} ne s'appliquait pas au prefab tout entier car il ne contenait pas de networkView. Finalement, nous avons intégré cette fonction dans les scripts qui contrôle les déplacements du vaisseau et de la caméra.\\
 
 Lorsque l'on démarre le mode réseau, l'antivirus des ordinateurs peut bloquer le jeu, ou tout au moins demander l'autorisation à l'utilisateur de laisser libre la connexion. Cela n'est pas une très grande gêne car une fois que l'on désactive les pare-feu, tout revient dans l'ordre, mais nous ne pouvons pas remédier à ce problème définitivement. Cela ne nous empêche cependant pas de jouer.
 
@@ -153,7 +162,7 @@ Lorsque l'on démarre le mode réseau, l'antivirus des ordinateurs peut bloquer 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
-Nous avons adorer faire ce projet tout au long du second semestre. Cela nous a apporté beaucoup de choses, notamment des connaissances des logiciels utilisés comme Unity, Blender \dots Mais au delà de l'aspect technique, cela nous a appris à travailler en équipe, à gérer les emplois du temps, à savoir répartir le travail aux différents membres du groupe en fonction de leurs compétences \dots etc.
+Nous avons adorer faire ce projet tout au long du second semestre. Cela nous a apporté beaucoup de choses, notamment des connaissances des logiciels utilisés comme Unity, Blender \dots Mais au delà de l'aspect technique, cela nous a appris à travailler en équipe, à gérer les emplois du temps, à savoir répartir le travail aux différents membres du groupe en fonction de leurs compétences \dots etc.\\
 
 \end{spacing}
 \end{document}
