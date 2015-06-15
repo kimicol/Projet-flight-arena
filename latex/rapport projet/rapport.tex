@@ -321,6 +321,8 @@ Parce que de moins en moins de jeu proposent un écran partagé (alors que les �
 
  Le joueur 1 utilisera les touches (pour un clavier qwerty) A/D pour le lacet, H/K pour le roulis, U/J pour le tangage et la barre espace pour tirer. Le joueur 2 utilise les touches flèche de droite/flèche de gauche pour le lacet, 4/6 (du pavé numérique) pour le roulis et touche flèche du haut/flèche du bas pour le tangage.
 
+Pour créer le multijoueur en écran partage, nous modifions les valeurs en x et y des offsets des cameras des deux joueurs. Cela modifie leur emplacement en fonction de l'écran. Nous avons aussi change l'implémentation des éléments de l'interface utilisateur. En effet, ils étaient jusque la places a une certaine position de l'écran ce qui signifie que lorsque nous avons implémenté la seconde camera, les éléments ne bouges pas de place. La solution et de placer ces éléments relativement a la camera et non a l'écran. Nous avons aussi réglé divers problèmes de sons que cause une deuxième camera qui sert dans unity d'enregistreur audio.\\
+
 
 \subsection{Multijoueur en réseau}
 
@@ -363,6 +365,19 @@ J'ai aussi découvert comment pouvait se dérouler un projet informatique, comme
 Cette expérience m'a aussi permis de tisser des liens avec Vincent et Guillaume que je connaissais peu au début du projet. En effet, nous avions choisi ce groupe lors de la conférence des projets de l'année dernière, soit dès le mois de septembre, où nous étions assis à côté et où nous étions d'accord pour faire un jeu de vaisseau.\\
 
 Pour ma part, ce projet a rempli les objectifs que je lui donnais, à savoir de réussir à faire un jeu vidéo complet en un semestre. Nous avons pour cela, en plus d'avoir prévu les parties techniques, dû voir le projet comme des concepteurs pour que ce jeu nous fasse plaisir en tant que joueur.\\
+
+\subsubsection{Conclusion de Guillaume}
+
+J'ai beaucoup aimé ce projet pour plusieurs raisons. Je n'avais jamais crée de vrai jeu vidéo, et ce malgré mon  envie, car je n'avais pas les connaissances nécessaire ni les bons logiciels. Ce projet m'a donc donne l'occasion de passer de l'autre cote de la barrière.De plus, il est toujours très agréable de travailler sur un projet et de voir que le résultat produit est a la hauteur de nos espérances et fonctionne.\\
+
+
+J'ai découvert Unity et de manière plus générale, les moteurs de jeu vidéos. Je me suis rendu compte de leurs puissances mais aussi de leurs simplicités d'utilisation par rapport au constructeur python que j'ai utilisé plus jeune pour coder des pseudos-jeux. Unity m'a aussi beaucoup aide a comprendre la programmation oriente objet, de par la nature d'un jeu vidéo mais aussi grâce a l'utilisation de script c par Unity, ainsi que le fonctionnement global des jeux vidéos.\\
+
+J'ai aussi apprécié le travail en groupe. Notre groupe de 3 (suite au départ de Nicolas Miletic en S1) était complémentaire dans les rôles et compétences de chacun et avait l'esprit de travail, ce qui n'était pas le cas de mes groupes de projets au lycée. Pour le projet, nous avons préféré le travail en groupe, notamment lors des semaines précédant les soutenances, au travail individuel ou chacun travail chez soi car cette méthode est plus rapide et plus efficace grâce a l'entraide permanente que cela crée. J'ai appris a mieux travailler en groupe, a planifier le travail, écrire des rapports de projets et des rapports de soutenances, l'utilisation des logiciels de travail en groupe (GitHub) ainsi que le découpage des taches d'un projet informatique. \\
+
+Ce projet m'a aussi appris quelque chose qui sera important pour la suite de mes études informatiques : la recherche d'information. En effet, n'ayant aucune expérience j'ai du tout chercher sur internet, et en anglais, dans les forums d'aides de unity mais aussi sur les sites de programmations connus (tel que StackOverflow). \\
+
+Au final, je termine ce projet avec énormément de nouvelles connaissances et la satisfaction du travail accompli.\\
 
 \subsection{Conclusion finale}
 
