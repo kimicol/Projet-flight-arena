@@ -52,21 +52,52 @@ chef de projet : Arthur \bsc{Remaud}}
 
 \newpage
 \section*{Introduction}
-
 Le groupe mr cube, composé de Guillaume Rebut, Vincent Rospini Clerici et Arthur Remaud, est fier de vous présenter son projet : \textit{flight arena}.\\
 
-Ce projet répond à une obligation de l'école \bsc{epita} de faire un projet libre par groupe de quatre. Nous avons donc choisi de faire un jeu de vaisseau dirigé à la troisième personne dans lequel le but est d'éliminer ses ennemis. Le but est de nous apprendre à travailler en équipe, tout en gérant un projet du début à la fin, comportant obligatoirement un cahier des charges, un rapport de projet et plusieurs soutenances.\\
+Ce projet est réalisé dans le cadre  du projet de première année de l'école \bsc{epita}. C’est un projet libre par groupe de quatre. Le but est de nous apprendre à travailler en équipe, tout en gérant un projet du début à la fin de sa conception. Nous avions pour ce projet l'obligation d'utiliser les langages \textit{Caml} ou {C\#}, avec le moteur Unity pour faire le jeu. Le projet comportant obligatoirement un cahier des charges, et des rapports de projet étalés sur trois soutenances. Ne voulant pas faire un jeu de combat ou de plateforme classique, le groupe est parti de l’idée de créer un jeu semblable à un de ceux de la fameuse saga de "Starfox". Nous avons donc choisi de faire un jeu de vaisseau dirigé à la troisième personne dans lequel le but est d'éliminer ses ennemis.\\
 
-Nous avions pour ce projet l'obligation d'utiliser les langages \textit{Caml} ou {C\#}, avec le moteur Unity pour faire le jeu.\\
+Notre groupe contenait au départ un autre membre, Nikolas Miletic. Celui-ci est parti en S1\# au cours du mois de janvier. Nous avons réparti les tâches de cette manière : Vincent s'est occupé principalement des graphismes et du site internet, Guillaume du gameplay et de l’interface utilisateur, et Arthur du code du jeu et des menus.\\
 
-Nous étions au départ avec Nikolas Miletic dans le groupe, mais celui-ci est parti en S1\# au cours du mois de janvier. Nous avons alors réparti les tâches de cette manières : Vincent s'occupera principalement des graphismes et du site internet, Guillaume du gameplay et des cartes, et Arthur du code du jeu et des menus.\\
 
 \newpage
 \section{Graphismes et son}
 
 \subsection{Graphismes}
 
+Après le visionnage de différents tutoriels Blender sur la modélisation d'objets 3D, Vincent a créé le premier vaisseau qui sera utilisé par le joueur dans le jeu. C'était la première fois qu'il utilisait le logiciel Blender. Il s'est servi principalement de la fonction extrude en partant d'un simple cube pour parvenir à modéliser ce qu'il souhaitait. Cette fonction permet en effet d'avoir un vaisseau en un seul objet plus aisément qu'en utilisant l'ajout de \textit{mesh}. Par exemple, en coupant les solides en différentes parties grâce à l'outil \textit{knife}, cela a permis d'extraire la forme basique des ailes à partir du corps principal du vaisseau.\\
+
+Il a aussi utilisé le modifier \textit{mirror} qui est très important. Il permet de créer une image de l’objet par rapport à un axe. Cela permet au vaisseau d'être parfaitement symétrique en ne créant qu’une partie de celui-ci.\\
+
+Vincent a également utilisé le modifier \textit{subdivision surface} pour créer des surfaces de subdivision, c’est-à-dire découper les faces de l’objet en plusieurs afin de lisser l’objet. Ce \textit{modifier} appliqué sur l’ensemble du vaisseau lui donne cet aspect moins carré et c’était exactement ce qu’il fallait pour aller avec les graphismes du jeu. Une fois la modélisation terminée, il a fallu également texturer toutes les faces du vaisseau afin d'avoir un beau rendu dans le jeu.\\
+
+Pour se faire, il a fallu se servir de l'outil \textit{UV Mapping} qu'offre Blender. Il s'agit de sélectionner toutes les arrêtes du vaisseau et de les déplier sur un plan en deux dimensions. Le logiciel Photoshop permet ensuite de remplir les différentes faces avec les couleurs et textures voulues. Le vaisseau a été texturé entièrement en rouge et noir avec des dégradés de couleur.\\
+De nombreux problèmes ont été rencontrés lors de la création de textures pour le vaisseau.\\
+
+Au moment de passer l’\textit{Uv Mapping} sur Blender pour le premier vaisseau afin de lui ajouter ses textures, nous nous sommes rendu compte que Blender affichait le vaisseau avec des problèmes de symétrie. C’était en réalité dû au modifier \textit{bevel} qui était censé entre autre biseauter les faces du vaisseau. En l’enlevant, Vincent a réalisé que le vaisseau rendait bien mieux avec le modifier \textit{Subdivision Surface} qu’avec le modifier \textit{Bevel} et que les problèmes de symétrie disparaissaient.\\
+
+Un autre problème est survenu lors du dépliage des faces du vaisseau par l’\textit{Uv mapping}.
+Le vaisseau ayant plus de trois cent faces, nous avons décidé de découper l’\textit{Uv mapping} par patrons, mais cette tâche s’est révélée très complexe et lorsque nous avons déplié le patron du vaisseau, les faces étaient méconnaissables et toutes empilées les unes sur les autres. Il a donc fallu opter pour une autre méthode : Sélectionner toutes les faces du vaisseau, puis les déplier toutes indépendamment. Finalement il a fallu repérer toutes les faces et les regrouper par endroit du vaisseau (ailes, avant, etc...) afin de ne pas se perdre au moment de texturer toutes les faces.
+Voilà comment le tout premier vaisseau a été réalisé. Dans le souci d'ajouter du contenu, deux nouveaux vaisseaux ont été créés de la même manière sur Blender et texturés sur Photoshop. Il s'agit tout d'abord d'un vaisseau qui ferait penser à un jet militaire tout droit venu du futur. Sa texture de base est comparable aux tâches marrons, beiges et vertes d’un apparat militaire. L'autre est inspiré du P40, un avion militaire américain utilisé durant la seconde guerre mondiale et auquel Vincent a rajouté des nacelles de missiles et des réacteurs pour lui donner un air à la fois futuriste et ancien. Une gueule de requin est dessinée sur l’avant du vaisseau comme sur les dessins sur la carlingue du P40 de l’époque où la gueule de prédateur permettait de rendre l’avion terrifiant pour l’ennemi. //
+
+Des textures différentes sont disponibles pour chaque vaisseau et sont sélectionnables dans le menu au moment de la sélection du vaisseau.
+Les flammes sortant des réacteurs des vaisseaux ont été rajoutes par le biais de la création de particules qu'offre Unity. Tout d'abord, Vincent a rajouté des éléments de particules pour créer juste des flammes sortant des réacteurs, mais le groupe s'est mis d'accord pour que les réacteurs laissent une trainée après le passage du vaisseau. Cette trainée de flammes a été inspirée d’un jeu peu connu mais nous tenant à cœur, du nom de "New York Race". Lors de la création de ces particules, nous avons rencontré un problème. Les particules étant contenues dans le \textit{gameobject} du vaisseau, les flammes se déplaçaient en même temps que le vaisseau se déplaçait, au lieu de simplement suivre sa trajectoire. Cela donnait alors l’impression que les flammes du réacteur étaient rattachées au vaisseau. Après quelques recherches sur internet nous avons trouvé le paramètre permettant de régler le problème. Il s'agissait de définir l'espace de simulation de la particule au niveau de son environnement et non au niveau de l'objet. Ainsi les particules évoluent librement dans l’espace sans suivre le vaisseau et le résultat est très satisfaisant.\\
+
+Les trainées laissées par le réacteur sont différentes selon le vaisseau. Par exemple, l'avion laisse une trainée noire de fumée, tandis que le vaisseau rouge et noir laisse une trainée variant du bleu à l’orange. De cette façon, les vaisseaux adverses sont plus faciles à reconnaitre parmi les différents éléments de la carte. \\
+
+La création de l’explosion lors de la destruction du vaisseau a été faite elle aussi sur Unity grâce à l’éditeur de particules. Elle se compose de plusieurs particules pour la fumée, les débris et les étincelles. Les textures des particules ont été trouvées sur l’\textit{Asset store} grâce à un tutoriel pour créer des explosions aériennes.\\
+
+
 \subsection{Son}
+
+Nous avons finalement eu le temps et la patience de créer une musique originale pour le jeu. Vincent a contacté un ami à lui qui fait des études musicales afin de savoir s'il était possible de créer des musiques en coopération avec lui. La réponse étant positive, deux musiques ont été créées à ce jour par notre ami assisté par Vincent par le biais du logiciel Logic Pro. \\
+Nous souhaitions des musiques électroniques qui soient futuristes avec un tempo lent et régulier. De ce fait, l'ambiance en ressortant reste angoissante et la peur de voir un ennemi surgir de derrière un bâtiment de la carte ou de se faire surprendre par derrière est présente.\\
+
+"There's something beyond" et "Vincighilan", les deux musiques, ont été ajoutées sur Unity et sont écoutables dès lors qu'un joueur entre dans la partie. \\
+
+La musique qui se lance dès l’entrée sur le menu du jeu vient du film "Captain America" et c’est le thème principal. L’équipe s’étant mise d’accord pour avoir une musique qui fait tout de suite penser aux fameux films de Star Wars dès l’arrivée sur le menu, ce thème nous semblait coller parfaitement à nos attentes. \\
+
+Concernant les sons du jeu, nous avons implémenté dans le jeu tous les sons nécessaires à rendre un jeu dynamique. Il y a par exemple le son des projectiles tirés par le vaisseau qui est un son pris sur le jeu "Space Cadet Pinball". Egalement le bruit de l’explosion du vaisseau qui est un son assez fort et le bruit des réacteurs des différents vaisseaux. \\
+
 
 \newpage
 \section{Contrôles du vaisseau}
@@ -98,6 +129,22 @@ La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un é
 
 \newpage
 \section{Création de niveaux}
+
+\subsection{Environnement de la carte}
+La première chose à faire lorsque l’on créé une nouvelle scène dans Unity est de s’occuper de l’environnement. Cela permet d’avoir une vision globale de ce qui est nécessaire à la carte avant de commencer à rajouter des bâtiments ou autres.\\
+
+Tout d’abord, nous avons utilisé la méthode la plus répandue pour ajouter un "faux" ciel dans Unity. C’est-à-dire, en utilisant \textit{l'asset skybox} de Unity qui permet en quelque sorte de créer une boite texturée ressemblant parfaitement à un ciel. Nous voulions au moins une carte de jour, et une de nuit. Nous avons donc des \textit{skybox} différentes pour chaque scène. La lumière quant à elle est gérée avec un \textit{directional light} créé par l'\textit{asset} de base et est donc modifiable aisément.\\
+
+Les textures du sol ont été créées en utilisant l'outil \textit{brush}(pinceau). Cela permet de peindre le sol pour reproduire de l’herbe, du béton ou des graviers de façon réaliste par exemple. Pour créer des montagnes nous avons utilisé l’outil permettant de choisir l’altitude du sol et recouvert ses flancs avec une texture rocailleuse.\\
+
+\subsection{Création de bâtiments}
+
+Nous avions créé une dizaine de bâtiments différents et entièrement texturés pour les besoins de la première carte. Ces bâtiments ont été créés sur Blender et texturés sur Photoshop de la même façon que les vaisseaux. Ils avaient tous des formes et des hauteurs différentes, mais restaient assez basiques car ils nous permettaient de tester comment Unity gérait les collisions entre le vaisseau et les objets. La première carte est donc une carte plutôt simpliste. \\
+
+Par soucis d’avoir un environnement dynamique et agréable à jouer, Vincent s’est mis comme objectif de créer une toute nouvelle carte pour le jeu contenant au moins une trentaine de bâtiments texturés dont des objets dynamiques et originaux. Cette carte se passe de nuit et utilise donc une \textit{skybox} sombre. Nous avons choisi la même \textit{skybox} que celle du menu, puisque cette dernière est très bien réalisée.\\
+
+Une centrale nucléaire avec de grosses cheminées recrachant de la vapeur, une centrale hydraulique puisant ses ressources dans une rivière au-dessus de laquelle passent des ponts, des éoliennes dont les pales tournent, des tunnels empruntables pour les vaisseaux et d’autres bâtiments tout aussi originaux ont été ajoutés sur cette nouvelle carte qui a vu le jour entre la seconde et la troisième soutenance. Bien entendu, toutes ces modélisations ont été créées par le graphiste du groupe et texturées par ses soins. Apres réflexion, nous nous sommes dit qu’il fallait qu’elles aient toutes une texture pour un environnement de nuit et une texture pour le jour. Ainsi, nous avons pu créer deux cartes identiques de jour et de nuit et ainsi laisser le choix au joueur de jouer de nuit ou de jour.\\
+
 
 \newpage
 \section{Interfaces utilisateur}
@@ -157,6 +204,13 @@ Lorsque l'on démarre le mode réseau, l'antivirus des ordinateurs peut bloquer 
 
 \newpage
 \section{Site internet}
+
+Vincent s'est occupé de la création du site internet officiel du jeu. Il a décidé de créer le site en langage \textit{HTML} par le biais des logiciels d'Adobe, Photoshop et Dreamweaver. Ce dernier est un logiciel permettant de modifier à la fois le code du site directement et de s'occuper de son côté graphique plus aisément.\\
+
+Nous avons voulu créer un site avec un design sombre qui rappellerait un ciel étoilé. De nombreuses images des vaisseaux du jeu sont présentes sur les pages du site afin de le rendre attirant. Les pages du site ont été dessinées sur Photoshop avec des images originales créés spécialement pour le fond d'écran et pour embellir les pages du site.\\
+
+Toutes les pages du site sont traduites en anglais et en français. Il suffit tout simplement de cliquer sur le drapeau correspondant à la langue voulue. Le site contient une page d'accueil, une page pour présenter le jeu et qui fait un tour d’horizon très rapide de ce dernier, une page pour présenter l'équipe et une page où les visiteurs ont accès aux différents fichiers du jeu. Cette dernière page donne accès au cahier des charges, aux rapports des différentes soutenances et au fichier exécutable du jeu.\\
+
 
 \newpage
 \section*{Conclusions}
