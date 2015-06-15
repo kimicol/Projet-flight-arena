@@ -32,7 +32,7 @@ chef de projet : Arthur \bsc{Remaud}}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{\thepage}
-\lhead{mr cube}
+\lhead{\leftmark}
 \rhead{Projet Flight Arena}
 \lfoot{}
 \rfoot{}
@@ -142,25 +142,29 @@ Dans notre jeu, nous voulions absolument qu'il y ait du multijoueur, car le jeu 
 
 \subsection{Multijoueur en réseau}
 
-Le multijoueur en réseau LAN (pour Local Area Network) fut commencé après la première soutenance. Le but était de pouvoir jouer à plusieurs sur plusieurs ordinateurs différents reliés par un réseau local. L'avantage par rapport à l'écran séparé est que le joueur a tout l'écran donc peu mieux voir le jeu, et il n'y a pas de problème de répartition de touches de commandes pour les deux joueurs. C'est Arthur qui s'est occupé de cette partie.\\
+Le multijoueur en réseau LAN (pour Local Area Network) fut commencé après la première soutenance. Le but était de pouvoir jouer à plusieurs sur plusieurs ordinateurs différents reliés par un réseau local. L'avantage de ce mode de multijoueur par rapport à l'écran séparé est que le joueur a tout l'écran pour lui et donc peut mieux voir le jeu, et il n'y a pas de problème de répartition de touches de commandes pour les deux joueurs sur le clavier. C'est Arthur qui s'est occupé de cette partie.\\
 
 Il a d'abord essayé de faire un protocole UDP pour relier en LAN (Local Area Network) en s'inspirant du TP que nous avions fait dans les cours habituels lorsque nous avions travaillé sur le protocole TCP, avant de se rendre compte qu'il existait la classe \textit{Network} sur Unity qui simplifie grandement l'élaboration d'un mode multijoueur sur un jeu. Plusieurs tutoriels existent à ce sujet sur internet, Arthur s'en est donc inspiré pour faire un réseau.\\
 
-Un des joueurs héberge la partie, et les autres doivent le rejoindre en utilisant son adresse IP locale. A travers le réseau, il fallait envoyer les données des vaisseaux, leurs déplacements, s'ils tiraient et autre. Les coordonnées vaisseaux sont transmises grâce à l'option \textit{Network view} que l'on peut affecter à un objet. Ainsi, tous les joueurs connectés à cette partie voient le vaisseau généré par le joueur qui se connecte.\\
+Un des joueurs héberge la partie, et les autres doivent le rejoindre en utilisant son adresse IP locale. Il y a donc classiquement un serveur et plusieurs client, le serveur étant l'hébergeur et les client les joueurs rejoignant la partie. A travers le réseau, il fallait envoyer les données des vaisseaux, leurs déplacements, s'ils tiraient et autre. Les coordonnées vaisseaux sont transmises grâce à l'option \textit{Network view} que l'on peut affecter à un objet. Ainsi, lorsqu'un joueur se connecte à une partie, il crée un vaisseau que lui seul peut contrôler, qui contient un \textit{Network view} pour que tout le monde puisse le voir. Par la suite, tous les jeux différents gèrent de leur côté les tirs et les collisions, afin de ne pas encombrer le réseau, mais le résultat est le même pour tous les joueurs. Nous avons donc recréé les prefab de chaque vaisseau car les scripts de déplacement changeait.\\
 
 L'un des problèmes qui se posa au début, fut que les joueurs ne contrôlaient le vaisseau de l'autre joueur et donc devait regarder sur l'autre écran pour jouer. De plus, à trois joueurs, les deux
 premiers connectés voyaient un seul et même vaisseau qu'il contrôlaient tous les deux pendant que le troisième joueur en pilotait un autre. Le dernier vaisseau quant à lui n'était contrôlé par personne et restait immobile. Au final, ce problème venait de l'assignation des caméras et des scripts aux joueurs lorsqu'ils instanciaient un nouveau vaisseau en arrivant.\\
 
 Un autre problème fut que nous n'arrivions pas à faire disparaitre le vaisseau d'un joueur lorsqu'il se déconnectait de la partie en ligne. En effet la fonction \textit{Network.Destroy()} ne s'appliquait pas au prefab tout entier car il ne contenait pas de networkView. Finalement, nous avons intégré cette fonction dans les scripts qui contrôle les déplacements du vaisseau et de la caméra.\\
 
-Lorsque l'on démarre le mode réseau, l'antivirus des ordinateurs peut bloquer le jeu, ou tout au moins demander l'autorisation à l'utilisateur de laisser libre la connexion. Cela n'est pas une très grande gêne car une fois que l'on désactive les pare-feu, tout revient dans l'ordre, mais nous ne pouvons pas remédier à ce problème définitivement. Cela ne nous empêche cependant pas de jouer.
+Lorsque l'on démarre le mode réseau, l'antivirus des ordinateurs peut bloquer le jeu, ou tout au moins demander l'autorisation à l'utilisateur de laisser libre la connexion. Cela n'est pas une très grande gêne car une fois que l'on désactive les pare-feu, tout revient dans l'ordre, mais nous ne pouvons pas remédier à ce problème définitivement. Cela ne nous empêche cependant pas de jouer.\\
 
 \newpage
 \section{Site internet}
 
 \newpage
-\section*{Conclusion}
+\section*{Conclusions}
 \addcontentsline{toc}{section}{Conclusion}
+
+\subsection{Conclusions personnelles}
+
+\subsection{Conclusion finale}
 
 Nous avons adorer faire ce projet tout au long du second semestre. Cela nous a apporté beaucoup de choses, notamment des connaissances des logiciels utilisés comme Unity, Blender \dots Mais au delà de l'aspect technique, cela nous a appris à travailler en équipe, à gérer les emplois du temps, à savoir répartir le travail aux différents membres du groupe en fonction de leurs compétences \dots etc.\\
 

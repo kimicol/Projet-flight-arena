@@ -18,3 +18,5 @@
 \contentsline {subsection}{\numberline {7.2}Multijoueur en r\IeC {\'e}seau}{14}
 \contentsline {section}{\numberline {8}Site internet}{16}
 \contentsline {section}{Conclusion}{17}
+\contentsline {subsection}{\numberline {8.1}Conclusions personnelles}{17}
+\contentsline {subsection}{\numberline {8.2}Conclusion finale}{17}
