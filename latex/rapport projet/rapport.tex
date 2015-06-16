@@ -13,6 +13,7 @@
 
 \usepackage{titlesec}
 \titlespacing{\section}{0cm}{1cm}{1cm}
+\titlespacing{\subsection}{0cm}{0cm}{0.5cm}
 
 %Caractères spéciaux
 
@@ -24,6 +25,7 @@
 \usepackage{eurosym} %insertion signe euro
 \usepackage{graphicx} %insertion d'images
 \usepackage{fancyhdr} %en-tete et pied de page
+\usepackage{hyperref}%lien url
 
 \title{\bsc{Rapport de projet}\\Projet flight arena}
 \author{mr cube :\\
@@ -92,11 +94,11 @@ Nous souhaitons également remercier un de nos ami, Augustin Ledanseur sans qui 
 \section*{Introduction}
 Le groupe mr cube, composé de Guillaume Rebut, Vincent Rospini Clerici et Arthur Remaud, est fier de vous présenter son projet : \textit{flight arena}.\\
 
-Ce projet est réalisé dans le cadre  du projet de première année de l'école \bsc{Epita}. C’est un projet libre par groupe de quatre. Le but est de nous apprendre à travailler en équipe, tout en gérant un projet du début à la fin de sa conception. Nous avions pour ce projet l'obligation d'utiliser les langages \textit{Caml} ou {C\#} que nous avions appris dans l'année, avec le moteur Unity si nous faisions un jeu vidéo. Le projet comporte obligatoirement un cahier des charges, et des rapports étalés sur trois soutenances pour voir l'avancée du projet. Ne voulant pas faire un jeu de combat ou de plateforme classique, le groupe est parti de l'idée de créer un jeu semblable à un de ceux de la fameuse saga de "Starfox". Nous avons donc choisi de faire un jeu de vaisseau dirigé à la troisième personne dans lequel le but est d'éliminer ses ennemis.\\
+Ce projet est réalisé dans le cadre  du projet de première année de l'école \bsc{Epita}. C’est un projet libre par groupe de quatre. Le but est de nous apprendre à travailler en équipe, tout en gérant un projet du début à la fin de sa conception. Nous avions pour ce projet l'obligation d'utiliser les langages \textit{Caml} ou {C\#} que nous avions appris dans l'année, avec le moteur Unity si nous faisions un jeu vidéo. Le projet comporte obligatoirement un cahier des charges, et des rapports étalés sur trois soutenances pour voir l'avancée du projet. Ne voulant pas faire un jeu de combat ou de plateforme classique, le groupe est parti de l'idée de créer un jeu semblable à un de ceux de la fameuse saga de "Starfox". Nous avons donc choisi de faire un jeu de vaisseau dirigé à la troisième personne dans lequel le but est d'éliminer ses ennemis, en utilisant comme langage le C\# avec le moteur Unity.\\
 
 Notre groupe contenait au départ un autre membre, Nikolas Miletic. Celui-ci est parti en S1\# au cours du mois de janvier. Nous avons réparti les tâches de cette manière : Vincent s'est occupé principalement des graphismes et du site internet, Guillaume du gameplay et de l’interface utilisateur, et Arthur du code du jeu et des menus.\\
 
-Dans un premier temps, nous allons vous parler des objectifs du projet déterminés par l'école et par nous, puis les prérequis utilisés dans le projet et comment nous nous sommes attribués précisément le travail. Ensuite nous détaillerons notre travail dans chaque domaine de la création du jeu vidéo : graphismes et son, contrôles, gameplay, création de niveau, interfaces utilisateur, intelligence artificielle, multijoueurs et site internet.
+Dans un premier temps, nous allons vous parler des objectifs du projet déterminés par l'école et par nous, puis les matériel et logiciels utilisés dans le projet et comment nous nous sommes attribués précisément le travail. Ensuite nous détaillerons notre travail dans chaque domaine de la création du jeu vidéo : graphismes et son, contrôles, gameplay, création de niveau, interfaces utilisateur, intelligence artificielle, multijoueurs et site internet.
 
 \newpage
 \section{Objectifs du projet}
@@ -107,41 +109,41 @@ Un tel projet permet de concrétiser et de mettre en évidence un exemple des ca
 
 Même s'il s'agit d'acquérir de l'expérience vis-à-vis de soi, et de comprendre ce système de fonctionnement de manière individuelle et autonome, il ne faut pas négliger le fait que ce projet a été réalisé en groupe. Dans le monde du travail, la coopération est un apport nécessaire à l'aboutissement de projets. La répartition des tâches s’est effectuée suite à une réflexion sur laquelle il a fallu faire appel aux compétences propres à chaque membre. Il s'agit d'optimiser le travail en le répartissant, et de progresser de la manière la plus efficace possible.\\
 
-La communication est également essentielle. Il nous a fallu adapter la quantité de travail en fonction des capacités de chacun, toujours avoir une longueur d'avance sur l'avancement du projet visé et si possible, prendre de l'avance lorsque cela était possible. Il est question d'acquisition d'expérience par une méthode qui n'est pas forcément accessible à chacun, et le cadre scolaire de l'EPITA nous permet de nous mettre en situation réelle afin de pouvoir surmonter les différentes difficultés que nous rencontrerons lors de nos projets futurs.\\
+La communication est également essentielle. Il nous a fallu adapter la quantité de travail en fonction des capacités de chacun, toujours avoir une longueur d'avance sur l'avancement du projet visé et si possible, prendre de l'avance lorsque cela était possible. Il est question d'acquisition d'expérience par une méthode qui n'est pas forcément accessible à chacun, et le cadre scolaire de l'\bsc{Epita} nous permet de nous mettre en situation réelle afin de pouvoir surmonter les différentes difficultés que nous rencontrerons lors de nos projets futurs.\\
 
-\section{Prérequis du projet}
+\section{Matériel utilisé dans le projet}
 
 Nous avons travaillé sur les ordinateurs de l'école de façon générale car ils nous permettaient de nous réunir en tant que groupe et la plupart des logiciels nécessaires a la création de notre jeu y étaient déjà installés.\\
 
-Voici les différents logiciels que nous avons utilisés tout au long du projet.\\ \\
+Voici les différents logiciels que nous avons utilisés tout au long du projet.\\
 
 \begin{center}
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline
-Logiciel & Fonction\\
+Logiciel & Fonction & Utilisateur(s)\\
 \hline
-Unity & Moteur graphique\\
+Unity & Moteur graphique & Tous\\
 \hline
-Visual Studio & Code\\
+Visual Studio & Code & Tous\\
 \hline
-Blender & Modélisation 3D\\
+Blender & Modélisation 3D & Vincent et Arthur\\
 \hline
-Adobe Photoshop & Textures et images\\
+Adobe Photoshop & Textures et images & Vincent et Arthur\\
 \hline
-Adobe Dreamweaver & Site internet\\
+Adobe Dreamweaver & Site internet & Vincent\\
 \hline
-Logic Pro & Musiques\\
+Logic Pro & Musiques & Aucun (se référer à  la partie son)\\
 \hline
-Github & Partage de fichiers\\
+Github & Partage de fichiers & Tous\\
 \hline
-Tex Live & Rédaction\\
+Tex Live & Rédaction & Tous\\
 \hline
 \end{tabular}\\
 
 \end{center}
 
 \newpage
-\section{Répartition du travail}
+\section{Répartition détaillée du travail}
 
 Nous nous sommes réparti le travail en fonction de nos points forts : par exemple Vincent a fait beaucoup de graphismes car il maniait mieux Blender.\\
 
@@ -252,6 +254,7 @@ Le problème disparu lorsque nous utilisions \textit{Transform.translate} qui pr
 
 La prochaine étape fut d'implémenter la portance. Ceci signifie aussi qu’il fallait implémenter la gravité. Nous avons dû pour cela passer d’une modification de la vitesse grâce a \textit{Transform.translate} a une modification de la vélocité du \textit{rigidbody} du vaisseau. Cependant, l'implémentation de la portance implique une force relative au monde et non au vaisseau. Cette étape ne fut pas d’une grande difficulté mais l'ordre de grandeur des valeurs est différente que celle du référentielle vaisseau. Ce détail nous a empêché de trouve la valeur exacte de manière à ce qui le vaisseau vole en ligne droite lorsqu'il est parallèle au sol, ce qui veut dire que le joueur est tout le temps oblige de compenser cette force, ce qui devient vite ennuyant. Nous avons résolu ce problème par l'ajout d'un module de l'assets store.\\
 
+\newpage
 \subsection{Tirs}
 
 Le joueur peut tirer grâce à la touche espace, elle aussi détectée par la fonction \textit{Input.GetKey()}. Unity instancie alors une balle qui est stockée dans un prefab grâce à la fonction qui s'appelle, logiquement, \textit{Instantiate()}. La balle part droit devant elle si elle ne touche aucun obstacle et disparait d'elle-même au bout de trois secondes avec la fonction \textit{DestroyObject()}, ce qui lui laisse le temps de traverser la carte, afin qu'il n 'y ait pas trop d'objets en même temps à gérer par Unity, ce qui pourrait ralentir le jeu.\\
@@ -259,20 +262,23 @@ Le joueur peut tirer grâce à la touche espace, elle aussi détectée par la fo
 La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un événement lorsqu'elle rencontre un objet qui contient un détecteur particulier. En effet, si un vaisseau détecte une collision avec une balle grâce à la fonction \textit{OnTriggerEnter()}, alors la balle est détruite et le vaisseau perd un point de vie. De plus, si le vaisseau n'a plus de vie, il est alors détruit avec une animation d'explosion. Des sons ont été intégrés à chaque étape : au tir, à la collision et à l'explosion.\\
 
 \newpage
+\subsection{Après la mort}
+
+\newpage
 \section{Gameplay}
 
 \subsection{Expérience de jeu}
 
-Notre jeu est un shooter multijoueur où le joueur est aux commandes d'un vaisseau et combat d'autres vaisseaux sur des petites arènes. Un jeu de bonne qualité se doit d'être facile à prendre en main mais difficile à maitriser. Pour répondre à cette exigence, nous avons décidé de créer les mouvements des vaisseaux en se basant sur les avions de chasse.\\
+Notre jeu est un shooter multijoueur où le joueur est aux commandes d'un vaisseau et combat d'autres vaisseaux ennemis sur des petites arènes. Un jeu de bonne qualité se doit d'être facile à prendre en main mais difficile à maitriser totalement. Pour répondre à cette exigence, nous avons décidé de créer les mouvements des vaisseaux en se basant sur les avions de chasse.\\
 
-Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent aussi des valeurs des avions : le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet (les valeurs finales ne sont cependant pas encore déterminées). \\
+Les vaisseaux ont trois types de mouvements : le roulis, rotation du vaisseau selon l'axe longitudinale, le tangage , rotation du vaisseau sur son axe transversal, et le lacet, rotation du vaisseau selon l'axe vertical. Les vitesses de rotations s'inspirent aussi des valeurs des avions : le tangage est plus rapide que le roulis qui est bien plus rapide que le lacet. \\
 
 Nous avons aussi choisi de prendre ces valeurs pour des raisons de gameplay. En effet, il est plus facile de tourner avec le lacet plutôt que d'utiliser la combinaison tangage plus roulis. Il est donc logique de rendre cette dernière manœuvre plus rapide en exécution pour récompenser les joueurs les plus talentueux. \\
 
 Nous avons placé la caméra de manière à inciter le joueur à utiliser cette dernière manœuvre : le vaisseau n'est pas représenté au milieu de l'écran mais en bas pour donner plus de visibilité. Toujours dans une optique de réalisme et de difficulté, le vaisseau a de l'inertie, lorsqu'il avance et aussi sur les trois types de mouvements, et il est impossible de reculer avec le vaisseau, il
 faut faire demi-tour. \\
 
-Le vaisseau est entièrement contrôlable au clavier. Les touches directionnelles représentent un joystick d'avion et permettent le tangage (flèche du haut pour piquer et flèche du bas pour "monter") et le roulis (flèche gauche pour une rotation anti-horaire et flèche droite pour une rotation horaire). La touche W permet l'accélération et les touches A et D permettent de tourner respectivement à gauche et à droite grâce au lacet.\\
+Le vaisseau est entièrement contrôlable au clavier. Les touches directionnelles représentent un joystick d'avion et permettent le tangage (flèche du haut pour piquer et flèche du bas pour "monter") et le roulis (flèche gauche pour une rotation anti-horaire et flèche droite pour une rotation horaire). Sur un clavier qwerty, la touche W permet l'accélération et les touches A et D permettent de tourner respectivement à gauche et à droite grâce au lacet.\\
 
 Les décors occupent une place importante dans le gameplay. Notre niveau contient des buildings de tailles importantes par rapport au vaisseau qui devra les éviter, au risque d'exploser, ce qui augmente la difficulté des manœuvres.\\
 
@@ -284,7 +290,7 @@ Certains buildings présentent des particularités dans leur forme qui influence
 
 Nous proposons plusieurs expériences de jeu à travers différents modes de jeu. Le mode de jeu principale est un match à mort par équipe. Deux équipes contenant jusqu'à 5 joueurs chacune s'affrontent et tentent de remporter la victoire en étant la première à éliminer 30 fois un adversaire. Elles peuvent aussi gagner si elles ont le plus de points lorsque le temps est écoule. Nous proposons aussi une variante de ce mode o(‘)u 3 équipes contenant jusqu'à 3 joueurs s'affronte et la première équipe a 20 points gagne. Pour les joueurs solitaire, nous proposons un mode de jeu « «mêlée générale» fonctionnant sur le principe du chacun pour soi : jusqu'à 6 joueur s'affronte dans une arène pour être le premier à éliminer 10 adversaires ou, dans une variante, être le dernier survivant sur la carte. \\
 
-Le jeu propose aussi deux mode de jeu à objectif. Le premier est le « King of the Hill ». Deux équipes contenant jusqu'à 5 joueurs s'affrontent pour contrôler une zone. Cette zone se déplace toute les 30 secondes, appartient a une équipe lorsque celle-ci passe plus de 10 secondes à l'intérieur et donne 2 points par seconde à l'équipe la contrôlant. Le deuxième mode de jeu est le «VIP»(pour Very Important Player). Deux équipes contenant jusqu'à 5 joueurs chacune s'affrontent pour tuer le VIP de l'équipe adverse. Le VIP d'une équipe est le meilleur joueur de celle-ci et sa position est indiquée aux ennemis en temps réel. La première équipe qui tue 10 fois le VIP adverse remporte la partie. Nous proposons aussi une variante avec 6 joueurs sans équipe. Le VIP est le meilleur joueur de la partie et le tuer donne 4 points. Lorsque le VIP élimine un autre joueur, il gagne 2 points. Tous les autres joueurs gagnent 1 points lorsqu'il élimine un joueur non VIP et le premier joueur à obtenir 20 points remporte la partie. \\
+Le jeu propose aussi un mode de jeu à objectif. Ce mode de jeu est le «VIP»(pour Very Important Player). Deux équipes contenant jusqu'à 5 joueurs chacune s'affrontent pour tuer le VIP de l'équipe adverse. Le VIP d'une équipe est le meilleur joueur de celle-ci et sa position est indiquée aux ennemis en temps réel. La première équipe qui tue 10 fois le VIP adverse remporte la partie. Nous proposons aussi une variante avec 6 joueurs sans équipe. Le VIP est le meilleur joueur de la partie et le tuer donne 4 points. Lorsque le VIP élimine un autre joueur, il gagne 2 points. Tous les autres joueurs gagnent 1 points lorsqu'il élimine un joueur non VIP et le premier joueur à obtenir 20 points remporte la partie. \\
 
 Le dernier mode de jeu est le mode de jeu « Glitch ». Ce mode de jeu permet au joueur de jouer avec tous les bugs que nous avons rencontrés lors de la création du jeu, tel que des buildings qui volent, la possibilité de passer à travers les buildings sous certaines conditions, le sol ainsi que les quatre murs délimitant la carte et le toit sont visibles et bougent si on rentre dedans, etc… \\
 
@@ -308,7 +314,7 @@ Cette version de la carte à été en utilisant six plans pour former un cube. C
 
 Les bâtiments, créés par Arhur et Vincent, ont d'abord été implémenté en utilisant des \textit{box collider}. Ceci présente un inconvénient majeur : le cube de collision ne correspondait pas à certain bâtiments complexes. La solution fut de créer un \textit{mesh collider} pour chacun des buildings avec l'option convex. Cette solution ne fonctionne cependant pas pour le parking. En effet, le \textit{mesh collider} créé une boite de collision entre tous les coins de l'objet, ce qui empêche les vaisseaux de rentrer dedans. On a donc créé de nombreuses \textit{box collider} pour résoudre ce cas.
 
-\subsection{Création de la carte NUKE }
+\subsection{Création de la carte de nuit}
 
 Par soucis d'avoir un environnement dynamique et agréable à jouer, Vincent s’est mis comme objectif de créer une toute nouvelle carte pour le jeu contenant au moins une trentaine de bâtiments texturés dont des objets dynamiques et originaux. Cette carte se passe de nuit et utilise donc une \textit{skybox} sombre. Nous avons choisi la même \textit{skybox} que celle du menu, puisque cette dernière est très bien réalisée et et convenait parfaitement avec l'atmosphère de la carte.\\
 
@@ -457,7 +463,19 @@ Au final, je termine ce projet avec énormément de nouvelles connaissances et l
 
 \subsection{Conclusion finale}
 
-Ce projet que nous avons réalisé tout au long du second semestre nous a apporté beaucoup de choses, notamment des connaissances des logiciels utilisés comme Unity, Blender\dots Mais au-delà de l'aspect technique, cela nous a appris à travailler en équipe, à gérer les emplois du temps, à savoir répartir le travail aux différents membres du groupe en fonction de leurs compétences, etc\dots
+Ce projet que nous avons réalisé tout au long du second semestre nous a apporté beaucoup de choses, notamment des connaissances des logiciels utilisés comme Unity, Blender\dots Mais au-delà de l'aspect technique, cela nous a appris à travailler en équipe, à gérer les emplois du temps, à savoir répartir le travail aux différents membres du groupe en fonction de leurs compétences. Nous sommes fier d'avoir pu réalisé le rêve d'enfant qu'est de réaliser un jour son propre jeu vidéo.\\
+
+Nous pensons à l'avenir travailler à nouveau ensemble sur des jeux vidéo, mais peut-être en changeant le genre, car nous nous complétons assez bien dans le travail.
+
+\newpage
+\section{Sources}
+\subsection{Sites internet}
+
+\begin{itemize}
+\item Documentation unity3d. [En ligne]. Unity Technologies [consulté le 14 juin 2015]. Disponible sur : \url{http://docs.unity3d.com/Manual/index.html}\\
+\item Unity3D-dev. [en ligne]. Cardinale Anthony [consulté le 14 juin 2015]. Disponible sur : \url{http://www.unity3d-dev.com/}\\
+\item Unity Networking Tutorial en Français. [En ligne]. Geneva Dide, le 3 Mars 2015 [consulté le 14 juin 2015]. Disponible sur : \url{https://www.blanquet.ch/unity-networking-tutorial-en-francais/}\\
+\end{itemize}
 
 \newpage
 \section{Annexes}

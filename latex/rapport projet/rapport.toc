@@ -1,39 +1,42 @@
 \select@language {french}
-\contentsline {section}{Introduction}{3}
-\contentsline {section}{\numberline {1}Objectifs du projet}{5}
-\contentsline {section}{\numberline {2}Pr\IeC {\'e}requis du projet}{6}
-\contentsline {section}{\numberline {3}R\IeC {\'e}partition du travail}{7}
-\contentsline {section}{\numberline {4}Graphismes et son}{8}
-\contentsline {subsection}{\numberline {4.1}Graphismes}{8}
-\contentsline {subsubsection}{\numberline {4.1.1}Mod\IeC {\'e}lisation des vaisseaux}{8}
-\contentsline {subsubsection}{\numberline {4.1.2}Textures des vaisseaux}{9}
-\contentsline {subsubsection}{\numberline {4.1.3}Cr\IeC {\'e}ation de particules}{10}
-\contentsline {subsection}{\numberline {4.2}Son}{12}
-\contentsline {section}{\numberline {5}Contr\IeC {\^o}les du vaisseau}{14}
-\contentsline {subsection}{\numberline {5.1}D\IeC {\'e}placement}{14}
-\contentsline {subsection}{\numberline {5.2}Tirs}{16}
-\contentsline {section}{\numberline {6}Gameplay}{18}
-\contentsline {subsection}{\numberline {6.1}Exp\IeC {\'e}rience de jeu}{18}
-\contentsline {subsection}{\numberline {6.2}Mode de jeu}{19}
-\contentsline {section}{\numberline {7}Cr\IeC {\'e}ation de niveaux}{22}
-\contentsline {subsection}{\numberline {7.1}Environnement de la carte}{22}
-\contentsline {subsection}{\numberline {7.2}Cr\IeC {\'e}ation de la premi\IeC {\`e}re carte}{22}
-\contentsline {subsection}{\numberline {7.3}Cr\IeC {\'e}ation de la carte NUKE }{23}
-\contentsline {subsection}{\numberline {7.4}Carte tutoriel}{24}
-\contentsline {section}{\numberline {8}Interfaces utilisateur}{26}
-\contentsline {subsection}{\numberline {8.1}Le menu principal}{26}
-\contentsline {subsection}{\numberline {8.2}Menu pause}{27}
-\contentsline {subsection}{\numberline {8.3}Interface Utilisateur en cours de jeu}{28}
-\contentsline {section}{\numberline {9}Intelligences artificielles}{30}
-\contentsline {subsection}{\numberline {9.1}\IeC {\'E}viter les obstacles}{30}
-\contentsline {subsection}{\numberline {9.2}Poursuivre les ennemis}{31}
-\contentsline {section}{\numberline {10}Multijoueurs}{33}
-\contentsline {subsection}{\numberline {10.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{33}
-\contentsline {subsection}{\numberline {10.2}Multijoueur en r\IeC {\'e}seau}{34}
-\contentsline {section}{\numberline {11}Site internet}{36}
-\contentsline {section}{Conclusion}{37}
-\contentsline {subsection}{\numberline {11.1}Conclusions personnelles}{37}
-\contentsline {subsubsection}{\numberline {11.1.1}Conclusion d'Arthur}{37}
-\contentsline {subsubsection}{\numberline {11.1.2}Conclusion de Guillaume}{38}
-\contentsline {subsection}{\numberline {11.2}Conclusion finale}{40}
-\contentsline {section}{\numberline {12}Annexes}{41}
+\contentsline {section}{Introduction}{3}{Doc-Start}
+\contentsline {section}{\numberline {1}Objectifs du projet}{5}{section.1}
+\contentsline {section}{\numberline {2}Mat\IeC {\'e}riel utilis\IeC {\'e} dans le projet}{6}{section.2}
+\contentsline {section}{\numberline {3}R\IeC {\'e}partition d\IeC {\'e}taill\IeC {\'e}e du travail}{7}{section.3}
+\contentsline {section}{\numberline {4}Graphismes et son}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Graphismes}{8}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Mod\IeC {\'e}lisation des vaisseaux}{8}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Textures des vaisseaux}{9}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Cr\IeC {\'e}ation de particules}{10}{subsubsection.4.1.3}
+\contentsline {subsection}{\numberline {4.2}Son}{12}{subsection.4.2}
+\contentsline {section}{\numberline {5}Contr\IeC {\^o}les du vaisseau}{14}{section.5}
+\contentsline {subsection}{\numberline {5.1}D\IeC {\'e}placement}{14}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Tirs}{17}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Apr\IeC {\`e}s la mort}{18}{subsection.5.3}
+\contentsline {section}{\numberline {6}Gameplay}{19}{section.6}
+\contentsline {subsection}{\numberline {6.1}Exp\IeC {\'e}rience de jeu}{19}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Mode de jeu}{20}{subsection.6.2}
+\contentsline {section}{\numberline {7}Cr\IeC {\'e}ation de niveaux}{22}{section.7}
+\contentsline {subsection}{\numberline {7.1}Environnement de la carte}{22}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Cr\IeC {\'e}ation de la premi\IeC {\`e}re carte}{22}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Cr\IeC {\'e}ation de la carte de nuit}{23}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Carte tutoriel}{24}{subsection.7.4}
+\contentsline {section}{\numberline {8}Interfaces utilisateur}{26}{section.8}
+\contentsline {subsection}{\numberline {8.1}Le menu principal}{26}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Menu pause}{27}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Interface Utilisateur en cours de jeu}{28}{subsection.8.3}
+\contentsline {section}{\numberline {9}Intelligences artificielles}{30}{section.9}
+\contentsline {subsection}{\numberline {9.1}\IeC {\'E}viter les obstacles}{30}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Poursuivre les ennemis}{31}{subsection.9.2}
+\contentsline {section}{\numberline {10}Multijoueurs}{33}{section.10}
+\contentsline {subsection}{\numberline {10.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{33}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Multijoueur en r\IeC {\'e}seau}{34}{subsection.10.2}
+\contentsline {section}{\numberline {11}Site internet}{36}{section.11}
+\contentsline {section}{Conclusion}{37}{section.11}
+\contentsline {subsection}{\numberline {11.1}Conclusions personnelles}{37}{subsection.11.1}
+\contentsline {subsubsection}{\numberline {11.1.1}Conclusion d'Arthur}{37}{subsubsection.11.1.1}
+\contentsline {subsubsection}{\numberline {11.1.2}Conclusion de Guillaume}{38}{subsubsection.11.1.2}
+\contentsline {subsection}{\numberline {11.2}Conclusion finale}{40}{subsection.11.2}
+\contentsline {section}{\numberline {12}Sources}{41}{section.12}
+\contentsline {subsection}{\numberline {12.1}Sites internet}{41}{subsection.12.1}
+\contentsline {section}{\numberline {13}Annexes}{42}{section.13}

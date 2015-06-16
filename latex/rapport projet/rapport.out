@@ -1,0 +1,41 @@
+\BOOKMARK [1][-]{Doc-Start}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1}{Objectifs du projet}{}% 2
+\BOOKMARK [1][-]{section.2}{Mat\351riel utilis\351 dans le projet}{}% 3
+\BOOKMARK [1][-]{section.3}{R\351partition d\351taill\351e du travail}{}% 4
+\BOOKMARK [1][-]{section.4}{Graphismes et son}{}% 5
+\BOOKMARK [2][-]{subsection.4.1}{Graphismes}{section.4}% 6
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Mod\351lisation des vaisseaux}{subsection.4.1}% 7
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Textures des vaisseaux}{subsection.4.1}% 8
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Cr\351ation de particules}{subsection.4.1}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Son}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Contr\364les du vaisseau}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{D\351placement}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{Tirs}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.3}{Apr\350s la mort}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Gameplay}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{Exp\351rience de jeu}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.2}{Mode de jeu}{section.6}% 17
+\BOOKMARK [1][-]{section.7}{Cr\351ation de niveaux}{}% 18
+\BOOKMARK [2][-]{subsection.7.1}{Environnement de la carte}{section.7}% 19
+\BOOKMARK [2][-]{subsection.7.2}{Cr\351ation de la premi\350re carte}{section.7}% 20
+\BOOKMARK [2][-]{subsection.7.3}{Cr\351ation de la carte de nuit}{section.7}% 21
+\BOOKMARK [2][-]{subsection.7.4}{Carte tutoriel}{section.7}% 22
+\BOOKMARK [1][-]{section.8}{Interfaces utilisateur}{}% 23
+\BOOKMARK [2][-]{subsection.8.1}{Le menu principal}{section.8}% 24
+\BOOKMARK [2][-]{subsection.8.2}{Menu pause}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.3}{Interface Utilisateur en cours de jeu}{section.8}% 26
+\BOOKMARK [1][-]{section.9}{Intelligences artificielles}{}% 27
+\BOOKMARK [2][-]{subsection.9.1}{\311viter les obstacles}{section.9}% 28
+\BOOKMARK [2][-]{subsection.9.2}{Poursuivre les ennemis}{section.9}% 29
+\BOOKMARK [1][-]{section.10}{Multijoueurs}{}% 30
+\BOOKMARK [2][-]{subsection.10.1}{Multijoueur en \351cran s\351par\351}{section.10}% 31
+\BOOKMARK [2][-]{subsection.10.2}{Multijoueur en r\351seau}{section.10}% 32
+\BOOKMARK [1][-]{section.11}{Site internet}{}% 33
+\BOOKMARK [1][-]{section.11}{Conclusion}{}% 34
+\BOOKMARK [2][-]{subsection.11.1}{Conclusions personnelles}{section.11}% 35
+\BOOKMARK [3][-]{subsubsection.11.1.1}{Conclusion d'Arthur}{subsection.11.1}% 36
+\BOOKMARK [3][-]{subsubsection.11.1.2}{Conclusion de Guillaume}{subsection.11.1}% 37
+\BOOKMARK [2][-]{subsection.11.2}{Conclusion finale}{section.11}% 38
+\BOOKMARK [1][-]{section.12}{Sources}{}% 39
+\BOOKMARK [2][-]{subsection.12.1}{Sites internet}{section.12}% 40
+\BOOKMARK [1][-]{section.13}{Annexes}{}% 41
