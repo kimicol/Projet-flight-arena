@@ -25,11 +25,11 @@
 \usepackage{graphicx} %insertion d'images
 \usepackage{fancyhdr} %en-tete et pied de page
 
-\title{\bsc{rapport de projet}\\Projet flight arena}
+\title{\bsc{Rapport de projet}\\Projet flight arena}
 \author{mr cube :\\
-Vincent \bsc{Rospini-Clerici},\\
-Guillaume \bsc{Rebut}\\
-chef de projet : Arthur \bsc{Remaud}}
+Vincent \bsc{Rospini-Clerici} (rospin\_v),\\
+Guillaume \bsc{Rebut} (rebut\_g)\\
+chef de projet : Arthur \bsc{Remaud} (remaud\_a)}
 \date{16 juin 2015}
 
 \pagestyle{fancy}
@@ -44,7 +44,35 @@ chef de projet : Arthur \bsc{Remaud}}
 \begin{document}
 \begin{spacing}{1.5}
 
-\maketitle
+%\maketitle
+
+\begin{titlepage}
+
+\begin{flushright}
+\includegraphics[height=4cm, width=6cm]{logo-epita.png}\\[2cm]
+\end{flushright}
+
+\begin{center}
+\textsc{\LARGE \bsc{Rapport de projet :}}\\[1.5cm]
+
+\textsc{\Large Projet flight arena}\\
+\textsc{du groupe mr cube}\\[1.5cm]
+
+\includegraphics[height=6cm, width=6cm]{MRCUBE.png}\\[1cm]
+
+\begin{flushleft}
+Vincent \bsc{Rospini-Clerici} (rospin\_v),\\
+Guillaume \bsc{Rebut} (rebut\_g)\\
+chef de projet : Arthur \bsc{Remaud} (remaud\_a)
+\end{flushleft}
+
+\begin{flushright}
+1\ier{} année de classe\\ préparatoire intégrée
+\end{flushright}
+
+\vfill{16 juin 2015}
+\end{center}
+\end{titlepage}
 
 \section*{Remerciements}
 Nous souhaitons remercier l'école EPITA qui nous a fourni le matériel dont nous avions besoin pour aboutir à ce projet. Notamment les ordinateurs disponibles 24/24 heures dans les locaux de l'école comprenant la majorité des logiciels nécessaires a la conception du jeu.\\
@@ -68,6 +96,8 @@ Ce projet est réalisé dans le cadre  du projet de première année de l'école
 
 Notre groupe contenait au départ un autre membre, Nikolas Miletic. Celui-ci est parti en S1\# au cours du mois de janvier. Nous avons réparti les tâches de cette manière : Vincent s'est occupé principalement des graphismes et du site internet, Guillaume du gameplay et de l’interface utilisateur, et Arthur du code du jeu et des menus.\\
 
+Dans un premier temps, nous allons vous parler des objectifs du projet déterminer par l'école et par nous, puis les prérequis utilisés dans le projet. Ensuite nous détaillerons notre travail dans chaque domaine de la création : graphismes et son, contrôles, gameplay, création de niveau, interfaces utilisateur, intelligence artificielle, multijoueurs et site internet.
+
 \newpage
 \section{Objectifs du projet}
 
@@ -83,8 +113,9 @@ La communication est également essentielle. Il nous a fallu adapter la quantit�
 
 Nous avons travaillé sur les ordinateurs de l'école de façon générale car ils nous permettaient de nous réunir en tant que groupe et la plupart des logiciels nécessaires a la création de notre jeu y étaient déjà installés.\\
 
-Voici les différents logiciels que nous avons utilisés tout au long du projet.\\
+Voici les différents logiciels que nous avons utilisés tout au long du projet.\\ \\
 
+\begin{center}
 \begin{tabular}{|c|c|}
 \hline
 Logiciel & Fonction\\
@@ -106,7 +137,39 @@ Github & Partage de fichiers\\
 Tex Live & Rédaction\\
 \hline
 \end{tabular}\\
-\\
+
+\end{center}
+
+\newpage
+\section{Répartition du travail}
+
+Nous nous sommes réparti le travail en fonction de nos points forts : par exemple Vincent a fait beaucoup de graphismes car il maniait mieux Blender.\\
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Domaine & Guillaume & Vincent & Arthur\\
+\hline
+Graphisme & 0 \% & 95 \% & 5 \%\\
+\hline
+Son & 0 \% & 0 \% & 0 \% \\
+\hline
+Contrôles du vaisseau & 30 \% & 0 \% & 70  \%\\
+\hline
+Gameplay & 100 \% & 0 \% & 0 \%\\
+\hline
+Création de niveau & 50 \% & 50 \% & 0 \%\\
+\hline
+Interface utilisateur & 25 \% & 0 \% & 75 \%\\
+\hline
+Intelligence artificielle & 0 \% & 0 \% & 100 \%\\
+\hline
+Multijoueurs & 50 \% & 0 \% & 50 \%\\
+\hline
+Site internet & 0 \% & 100 \% & 0 \%\\
+\hline
+\end{tabular}\\
+\end{center}
 
 \newpage
 \section{Graphismes et son}
@@ -148,9 +211,11 @@ Lors de la création de ces particules, nous avons rencontré un problème. Les 
 
 La création de l’explosion lors de la destruction du vaisseau a été faite elle aussi sur Unity grâce à l’éditeur de particules. Elle se compose de plusieurs particules. Certaines particules ont été utilisees pour faire de la fumée, d'autres des débris et encore d'autres pour créer des étincelles. Les textures des particules ont été trouvées sur l’\textit{Asset store} et les explications relatives proviennent d'un tutoriel pour créer des explosions aériennes.\\
 
+\newpage
 \subsection{Son}
 
 Nous avons finalement eu le temps et la patience de créer une musique originale pour le jeu. Vincent a contacté un ami à lui qui fait des études musicales afin de savoir s'il était possible de créer des musiques en coopération avec lui. La réponse étant positive, deux musiques ont été créées à ce jour par notre ami assisté par Vincent par le biais du logiciel Logic Pro. \\
+
 Nous souhaitions des musiques électroniques qui soient futuristes avec un tempo lent et régulier. De ce fait, l'ambiance en ressortant reste angoissante et la peur de voir un ennemi surgir de derrière un bâtiment de la carte ou de se faire surprendre par derrière est présente.\\
 
 "There's something beyond" et "Vincighilan", les deux musiques du jeu, ont été ajoutées sur Unity et sont écoutables dès lors qu'un joueur entre dans la partie. \\
@@ -196,7 +261,7 @@ La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un é
 \newpage
 \section{Gameplay}
 
-\subsection{Experience de jeu}
+\subsection{Expérience de jeu}
 
 Notre jeu est un shooter multijoueur où le joueur est aux commandes d'un vaisseau et combat d'autres vaisseaux sur des petites arènes. Un jeu de bonne qualité se doit d'être facile à prendre en main mais difficile à maitriser. Pour répondre à cette exigence, nous avons décidé de créer les mouvements des vaisseaux en se basant sur les avions de chasse.\\
 
@@ -266,17 +331,19 @@ Lors de ce tutoriel, le joueur aura la possibilité de contrôler le vaisseau av
 \newpage
 \section{Interfaces utilisateur}
 
+Dans un jeu vidéo, on appelle interface utilisateur tout élément aidant le joueur sans faire parti de l'univers du jeu en soit. Nous avons différencié deux grandes sortes d'interfaces : celle qui concerne les menus lorsque le joueur arrive dans le jeu pour naviguer parmi les options, et celle quand le joueur joue qui lui donne des informations sur la partie ou sur l'état de son vaisseau.
+
 \subsection{Le menu principal}
 
-Tout jeux possède un menu, afin de choisir le mode de jeu, si on veut jouer seul ou à plusieurs, pour modifier les options de son, de graphisme ou autre. Unity possède de nombreuses aides pour faire un menu décent, le tout principalement stocké dans la classe GUI (pour \textit{Graphical User Interface}). Ainsi, la fonction \textit{GUI.Button()} crée un bouton qui prend en paramètre le rectangle de sa localisation et ce qu'il contient, soit du texte ou une image. Cette fonction est mis dans une condition, ce qui fait que dès que le joueur clique sur le bouton, on rentre dans la condition et le programme fait les instructions qui suivent.\\
+Tout jeu possède un menu, afin de choisir le mode de jeu, si on veut jouer seul ou à plusieurs, pour modifier les options de son, de graphisme ou autre. Unity possède de nombreuses aides pour faire un menu décent, le tout principalement stocké dans la classe GUI (pour \textit{Graphical User Interface}). Ainsi, la fonction \textit{GUI.Button()} crée un bouton qui prend en paramètre le rectangle de sa localisation et ce qu'il contient, soit du texte ou une image. Cette fonction est mis dans une condition, ce qui fait que dès que le joueur clique sur le bouton, on rentre dans la condition et le programme exécute les instructions qui suivent.\\
 
 Cet exemple permet de montrer basiquement comment Unity gère ses interfaces. Il y a aussi des instructions pour afficher du texte (\textit{GUI.Label}), d'autres pour faire des curseurs que l'on utilise pour le son (\textit{HorizontalSlider()} ou \textit{VerticalSlider()}) et d'autres que nous n'avons pas utilisées.\\
 
-En fonction de ses choix dans le menu, le joueur provoque donc l'ouverture de différentes scènes en fonction du mode de jeu qu'il veut. En effet, les modes de jeu sont dans différentes scènes pour faciliter la lecture des scripts. Mais dans le menu des options, le joueur peut aussi modifier les paramètres de la qualité de l'image, du volume du son et peut changer ses touches de contrôle.\\
+En fonction de ses choix dans le menu, le joueur provoque donc l'ouverture de différentes scènes en fonction du mode de jeu qu'il veut, que l'on charge avec la fonction \textit{Application.LoadLevel()}. En effet, les modes de jeu sont dans différentes scènes pour faciliter la lecture des scripts, et pour rendre plus rapide le chargement des graphismes, les bâtiments n'étant pas sur toutes les cartes. Il peut bien évidement choisir de quitter le jeu (fonction \textit{Application.Quit()}). Mais dans le menu des options, le joueur peut aussi modifier les paramètres de la qualité de l'image, du volume du son et peut changer ses touches de contrôle.\\
 
-Ces paramètres sont sauvegardés par le jeu et ne se réinitialise pas lorsque l'on redémarre le jeu par la suite. Cela est rendu possible grâce à la classe \textit{PlayerPrefs()} de Unity. En effet, cette classe permet de sauvegarder des entier (volume), des chaines de caractères (contrôles) et des flottants (nous n'utilisons pas cette dernière option dans ce projet). On charge ainsi les données de ses sauvegarde au démarrage du jeu pour que le joueur garde ses paramètres habituelles. Cette classe nous permet aussi de sauvegarder le vaisseau qu'a choisi le joueur de la scène du menu à la scène de la carte. Ainsi, quand la partie commence, le jeu regarde quelle valeur est sauvegardée pour attribuer au joueur le vaisseau correspondant, ceux-ci étant conservés au préalable dans des prefab.\\
+Ces paramètres sont sauvegardés par le jeu et ne se réinitialisent pas lorsque l'on redémarre le jeu par la suite. Cela est rendu possible grâce à la classe \textit{PlayerPrefs()} de Unity. En effet, cette classe permet de sauvegarder des entier (volume), des chaines de caractères (contrôles) et des flottants (nous n'utilisons pas cette dernière option dans ce projet). On charge ainsi les données de ces sauvegardes au démarrage du jeu pour que le joueur garde ses paramètres habituelles. Cette classe nous permet aussi de sauvegarder le vaisseau qu'a choisi le joueur de la scène du menu à la scène de la carte. Ainsi, quand la partie commence, le jeu regarde quelle valeur est sauvegardée pour attribuer au joueur le vaisseau correspondant, ceux-ci étant conservés au préalable dans des prefab.\\
 
- Nous avons remarqué que lors de l'exportation des modèles depuis Blender vers Unity, la rotation de l'objet était modifiée ce qui faisait que l'on voyait le dessous du vaisseau 2 et le côté du vaisseau 3. Nous avons alors recherché sur internet pour voir que lors de l'exportation en format fbx sur Blender, il fallait choisir les axes pour définir l'avant et le haut de l'objet. Ainsi tout se remettait à l'endroit et le vaisseau était vu correctement et on pouvait le piloter normalement.\\
+ Nous avons remarqué que lors de l'exportation des modèles depuis Blender vers Unity, la rotation de l'objet était modifiée ce qui faisait que l'on voyait le dessous du vaisseau 2 et le côté du vaisseau 3 après le chargement du niveau. Nous avons alors recherché sur internet pour voir que lors de l'exportation en format fbx sur Blender, il fallait choisir les axes pour définir l'avant et le haut de l'objet. Ainsi tout se remettait à l'endroit et le vaisseau était vu correctement et on pouvait le piloter normalement.\\
 
 \subsection{Menu pause}
 
