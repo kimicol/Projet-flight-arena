@@ -15,31 +15,31 @@
 \contentsline {subsection}{\numberline {5.1}D\IeC {\'e}placement}{17}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Tirs}{20}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Apr\IeC {\`e}s la mort}{21}{subsection.5.3}
-\contentsline {section}{\numberline {6}Gameplay}{22}{section.6}
-\contentsline {subsection}{\numberline {6.1}Exp\IeC {\'e}rience de jeu}{22}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Mode de jeu}{23}{subsection.6.2}
-\contentsline {section}{\numberline {7}Cr\IeC {\'e}ation de niveaux}{25}{section.7}
-\contentsline {subsection}{\numberline {7.1}Environnement de la carte}{25}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Cr\IeC {\'e}ation de la premi\IeC {\`e}re carte}{25}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Cr\IeC {\'e}ation de la carte de nuit}{26}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Carte tutoriel}{27}{subsection.7.4}
-\contentsline {section}{\numberline {8}Interfaces utilisateur}{29}{section.8}
-\contentsline {subsection}{\numberline {8.1}Le menu principal}{29}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Menu pause}{30}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Interface Utilisateur en cours de jeu}{31}{subsection.8.3}
-\contentsline {section}{\numberline {9}Intelligences artificielles}{33}{section.9}
-\contentsline {subsection}{\numberline {9.1}\IeC {\'E}viter les obstacles}{33}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Poursuivre les ennemis}{34}{subsection.9.2}
-\contentsline {section}{\numberline {10}Multijoueurs}{36}{section.10}
-\contentsline {subsection}{\numberline {10.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{36}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Multijoueur en r\IeC {\'e}seau}{38}{subsection.10.2}
-\contentsline {section}{\numberline {11}Site internet}{40}{section.11}
-\contentsline {section}{Conclusion}{41}{section.11}
-\contentsline {subsection}{\numberline {11.1}Conclusions personnelles}{41}{subsection.11.1}
-\contentsline {subsubsection}{\numberline {11.1.1}Conclusion d'Arthur}{41}{subsubsection.11.1.1}
-\contentsline {subsubsection}{\numberline {11.1.2}Conclusion de Guillaume}{42}{subsubsection.11.1.2}
-\contentsline {subsubsection}{\numberline {11.1.3}Conclusion de Vincent}{43}{subsubsection.11.1.3}
-\contentsline {subsection}{\numberline {11.2}Conclusion finale}{45}{subsection.11.2}
-\contentsline {section}{\numberline {12}Sources}{46}{section.12}
-\contentsline {subsection}{\numberline {12.1}Sites internet}{46}{subsection.12.1}
-\contentsline {section}{\numberline {13}Annexes}{47}{section.13}
+\contentsline {section}{\numberline {6}Gameplay}{23}{section.6}
+\contentsline {subsection}{\numberline {6.1}Exp\IeC {\'e}rience de jeu}{23}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Mode de jeu}{24}{subsection.6.2}
+\contentsline {section}{\numberline {7}Cr\IeC {\'e}ation de niveaux}{26}{section.7}
+\contentsline {subsection}{\numberline {7.1}Environnement de la carte}{26}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Cr\IeC {\'e}ation de la premi\IeC {\`e}re carte}{26}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Cr\IeC {\'e}ation de la carte de nuit}{27}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Carte tutoriel}{28}{subsection.7.4}
+\contentsline {section}{\numberline {8}Interfaces utilisateur}{30}{section.8}
+\contentsline {subsection}{\numberline {8.1}Le menu principal}{30}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Menu pause}{31}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Interface Utilisateur en cours de jeu}{32}{subsection.8.3}
+\contentsline {section}{\numberline {9}Intelligences artificielles}{34}{section.9}
+\contentsline {subsection}{\numberline {9.1}\IeC {\'E}viter les obstacles}{34}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Poursuivre les ennemis}{35}{subsection.9.2}
+\contentsline {section}{\numberline {10}Multijoueurs}{37}{section.10}
+\contentsline {subsection}{\numberline {10.1}Multijoueur en \IeC {\'e}cran s\IeC {\'e}par\IeC {\'e}}{37}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Multijoueur en r\IeC {\'e}seau}{39}{subsection.10.2}
+\contentsline {section}{\numberline {11}Site internet}{41}{section.11}
+\contentsline {section}{Conclusion}{42}{section.11}
+\contentsline {subsection}{\numberline {11.1}Conclusions personnelles}{42}{subsection.11.1}
+\contentsline {subsubsection}{\numberline {11.1.1}Conclusion d'Arthur}{42}{subsubsection.11.1.1}
+\contentsline {subsubsection}{\numberline {11.1.2}Conclusion de Guillaume}{43}{subsubsection.11.1.2}
+\contentsline {subsubsection}{\numberline {11.1.3}Conclusion de Vincent}{44}{subsubsection.11.1.3}
+\contentsline {subsection}{\numberline {11.2}Conclusion finale}{46}{subsection.11.2}
+\contentsline {section}{\numberline {12}Sources}{47}{section.12}
+\contentsline {subsection}{\numberline {12.1}Sites internet}{47}{subsection.12.1}
+\contentsline {section}{\numberline {13}Annexes}{48}{section.13}

@@ -163,7 +163,7 @@ Contrôles du vaisseau & 30 \% & 0 \% & 70  \%\\
 \hline
 Gameplay & 100 \% & 0 \% & 0 \%\\
 \hline
-Création de niveau & 50 \% & 50 \% & 0 \%\\
+Création de niveau & 40 \% & 60 \% & 0 \%\\
 \hline
 Interface utilisateur & 25 \% & 0 \% & 75 \%\\
 \hline
@@ -274,6 +274,14 @@ La balle contient un \textit{trigger}, ce qui veut dire qu'elle déclenche un é
 
 \newpage
 \subsection{Après la mort}
+
+Dans un optique de réalisme, nous avons décidé de faire perdre de la vie au vaisseau lorsque celui-ci rentre en collision avec un building, le sol , le toit ou l'un des quatre murs délimitant le niveau. Pour cela, on détecte si le \textit{mesh collider} de l'avion déclenche le \textit{trigger} mis en place sur les surfaces solides. Lorsque cette condition est remplie, nous détruisons le vaisseau et une animation représentant une explosion faite par Vincent est jouée.\\
+ 
+Le vaisseau du joueur, si le mode de jeu le permet, réapparaîtra sur le niveau. Cependant, contrairement à la grande majorité des jeux qui font réapparaître le joueur sur un point prédéfinis, nous avons choisis de rendre la réapparition aléatoire. En effet, même si la réapparition des vaisseaux sur des points prédéfinis présente un grand avantage, car le vaisseau ne sera jamais dans un mur ou en dehors des limites de la carte, cela veut dire que le joueur ennemi est capable de créer des boucles de réapparitions de manière à tuer son adversaire dès que le joueur réapparaît. Nous avons donc choisi de faire réapparaître les vaisseaux aléatoirement en gérant les cas où ils seraient en dehors des limites et les cas où ils réapparaissent dans un objet.\\
+ 
+De plus, pour donner une réelle impression de disparition du vaisseau, le script désactive l'émetteur de particule produisant les flammes du vaisseaux. Nous immobilisons aussi le vaisseau. Pour cela, le script désactivait d'abord le \textit{gameobject} du vaisseau. Cette solution qui semble facile présente en réalité beaucoup de désavantages : les valeurs de mouvements et de rotations sont conservées ce qui veut dire que le vaisseau ne réapparaît pas en étant immobile. De plus, nous avons ajouté le script de réapparition au vaisseau, ce qui veut dire que désactiver le \textit{gameobject} du vaisseau désactive aussi le script de réapparition.\\
+ 
+ La solution que nous avons choisi est la suivante : nous immobilisons dans un premier temps le vaisseau en réinitialisant ses valeurs de rotations et de vitesses. Le script  rend ensuite le vaisseau invisible en désactivant les \textit{mesh rendert} de ses différents composants et en désactivant les collisions. Après un court temps d'attente, le vaisseau réapparaît sur une autre position et retrouve une valeur initiale de points de vie prédéfinie.\\
 
 \newpage
 \section{Gameplay}
@@ -505,6 +513,30 @@ Peut-être à l'avenir travaillerons nous de nouveau ensemble sur des projets in
 
 \newpage
 \section{Annexes}
+
+\begin{figure}[h]
+\center
+\includegraphics[height=7cm, width=12cm]{niveau_guillaume.jpg}
+\caption{La première carte de Guillaume}
+\end{figure}
+
+\begin{figure}[h]
+\center
+\includegraphics[height=7cm, width=12cm]{split.jpg}
+\caption{La multijoueur en écran séparé}
+\end{figure}
+
+\begin{figure}[h]
+\center
+\includegraphics[height=7cm, width=12cm]{menu_arthur.jpg}
+\caption{Le menu principal du jeu}
+\end{figure}
+
+\begin{figure}[h]
+\center
+\includegraphics[height=7cm, width=12cm]{site.png}
+\caption{Le site internet du jeu}
+\end{figure}
 
 \end{spacing}
 \end{document}
