@@ -16,6 +16,11 @@ public class mainmenu_script : MonoBehaviour
     private KeyCode[] all_keys;
     private KeyCode[] used_keys;
     private string[] name_keys;
+
+    private KeyCode change = KeyCode.None;
+    private float t = 0f;
+    private int c = -1;
+    private bool b = true;
     
 
 	// Use this for initialization
@@ -323,16 +328,33 @@ public class mainmenu_script : MonoBehaviour
 
     void menu_inputs()
     {
-        GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 80, 30), "Avancer");
-        if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2, 50, 30), name_keys[0]))
+        if (b)
         {
-            
-        }
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 80, 30), "Avancer");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2, 50, 30), name_keys[0]))
+            {
+                c = 0;
+                t = 10f;
+                b = false;
+            }
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
+            {
+                choix_menu = 2;
+                return;
+            }
+
+            if (c >= 0 && change != KeyCode.None)
+            {
+                used_keys[0] = change;
+                name_keys[0] = used_keys[0].ToString();
+                c = -1;
+                change = KeyCode.None;
+            }
+        }
+        else
         {
-            choix_menu = 2;
-            return;
+            b = changement_touche();
         }
     }
 
@@ -377,5 +399,20 @@ public class mainmenu_script : MonoBehaviour
                 Application.LoadLevel(3);
                 break;
         }
+    }
+
+    bool changement_touche()
+    {
+        Debug.Log("test");
+
+        if(Event.current.type == EventType.keyDown)
+        {
+            this.change = Event.current.keyCode;
+            return true;
+        }
+
+        t -= Time.deltaTime;
+
+        return t <= 0f;
     }
 }
