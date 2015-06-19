@@ -330,11 +330,67 @@ public class mainmenu_script : MonoBehaviour
     {
         if (b)
         {
-            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 80, 30), "Avancer");
-            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2, 50, 30), name_keys[0]))
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 - 200, 80, 30), "Avancer");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2 - 200, 80, 30), name_keys[0]))
             {
                 c = 0;
-                t = 10f;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 - 150, 80, 30), "Haut");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2 - 150, 80, 30), name_keys[1]))
+            {
+                c = 1;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 - 100, 80, 30), "Bas");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2 - 100, 80, 30), name_keys[2]))
+            {
+                c = 2;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 - 50, 80, 30), "Gauche");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2 - 50, 80, 30), name_keys[3]))
+            {
+                c = 3;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2, 80, 30), "Droite");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2, 80, 30), name_keys[4]))
+            {
+                c = 4;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 + 50, 80, 30), "Rotation Gauche");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2 + 50, 80, 30), name_keys[5]))
+            {
+                c = 5;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 + 100, 80, 30), "Rotation Droite");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2 + 100, 80, 30), name_keys[6]))
+            {
+                c = 6;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2, Screen.height / 2 + 150, 80, 30), "Tirer");
+            if (GUI.Button(new Rect(Screen.width / 2 + 100, Screen.height / 2 + 150, 80, 30), name_keys[7]))
+            {
+                c = 7;
+                t = 5f;
                 b = false;
             }
 
@@ -346,10 +402,27 @@ public class mainmenu_script : MonoBehaviour
 
             if (c >= 0 && change != KeyCode.None)
             {
-                used_keys[0] = change;
-                name_keys[0] = used_keys[0].ToString();
+                used_keys[c] = change;
+                name_keys[c] = used_keys[c].ToString();
                 c = -1;
                 change = KeyCode.None;
+                t = 0f;
+            }
+            else
+            {
+                #region get_prefs
+                for (int i = 0; i < 3; i++)
+                {
+                    PlayerPrefs.SetString("avancer" + i, name_keys[8 * i]);
+                    PlayerPrefs.SetString("rothaut" + i, name_keys[8 * i + 1]);
+                    PlayerPrefs.SetString("rotbas" + i, name_keys[8 * i + 2]);
+                    PlayerPrefs.SetString("pivgauche" + i, name_keys[8 * i + 3]);
+                    PlayerPrefs.SetString("pivdroite" + i, name_keys[8 * i + 4]);
+                    PlayerPrefs.SetString("rotgauche" + i, name_keys[8 * i + 5]);
+                    PlayerPrefs.SetString("rotdroite" + i, name_keys[8 * i + 6]);
+                    PlayerPrefs.SetString("feu" + i, name_keys[8 * i + 7]);
+                }
+                #endregion
             }
         }
         else
@@ -403,8 +476,6 @@ public class mainmenu_script : MonoBehaviour
 
     bool changement_touche()
     {
-        Debug.Log("test");
-
         if(Event.current.type == EventType.keyDown)
         {
             this.change = Event.current.keyCode;
