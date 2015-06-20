@@ -4,18 +4,9 @@ using System.Collections;
 public class inputs : controlplayer
 {
 
-    public KeyCode Avancer = KeyCode.W;
-    public KeyCode RotHaut = KeyCode.UpArrow;
-    public KeyCode RotBas = KeyCode.DownArrow;
-    public KeyCode PivGauche = KeyCode.A;
-    public KeyCode PivDroite = KeyCode.D;
-    public KeyCode RotGauche = KeyCode.LeftArrow;
-    public KeyCode RotDroite = KeyCode.RightArrow;
-    public KeyCode feu = KeyCode.Space;
-
     private KeyCode[] all_keys;
     private string[] name_keys;
-    private KeyCode[] used_keys;
+    public KeyCode[] used_keys;
 
 	// Use this for initialization
 	void Start () 

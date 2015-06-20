@@ -10,7 +10,7 @@ public class flamme_script : MonoBehaviour {
     {
         otherObject = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
         inputs bob = otherObject.GetComponent<inputs>();
-        AvanC = bob.Avancer;
+        AvanC = KeyCode.W;
     }
 	
 	// Update is called once per frame

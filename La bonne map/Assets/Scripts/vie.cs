@@ -37,6 +37,7 @@ public class vie : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(ok);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
             //anim.Play();
@@ -48,7 +49,6 @@ public class vie : MonoBehaviour
             {
                 if (frag_limite > 1)
                 {
-
                     System.Random rnd = new System.Random();
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     inputs bob = this.gameObject.GetComponent<inputs>();
@@ -64,6 +64,7 @@ public class vie : MonoBehaviour
                     {
                         return;
                     }
+                    Debug.Log("hue");
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     respawn_position.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
                     transform.position = respawn_position;
@@ -90,7 +91,7 @@ public class vie : MonoBehaviour
                         shut.PlayOneShot(endgame_sound);
                     }
                     catch
-                    { Debug.Log("hue"); }
+                    { Debug.Log("hu2"); }
                     Debug.Log("son");
                     gameover();
                     killed = true;
@@ -109,7 +110,11 @@ public class vie : MonoBehaviour
         }
         ok = false;
     }
-
+    void OnCollisionEnter(Collision collision)
+    {
+            this.current_life -= 1;
+            ok = false;
+    }
     void OnGUI()
     {
 
