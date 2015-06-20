@@ -112,7 +112,7 @@ public class vie : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-            this.current_life -= 1;
+            this.current_life -= 2;
             ok = false;
     }
     void OnGUI()
