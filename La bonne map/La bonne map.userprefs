@@ -1,11 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\mFakeWaterRefractions1\FakeSurfaceAndBottom4.shader">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\IA.cs">
     <Files>
-      <File FileName="Assets\mFakeWaterRefractions1\FakeSurfaceAndBottom4.shader" Line="1" Column="1" />
-      <File FileName="Assets\menus\mainmenu_script.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GUI\testGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\vie.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\IA.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

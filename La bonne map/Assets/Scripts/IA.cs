@@ -7,11 +7,27 @@ public class IA : controlplayer
     public ia_collid droite;
     public ia_collid haut;
     public ia_collid bas;
+
+    public Transform point_devant;
+    public Transform point_droite;
+    public Transform point_haut;
+
+    private plan horizontal;
+    private plan vertical;
+    private plan devant;
+
+    void Start()
+    {
+        
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        
+        horizontal = new plan(this.transform, new Vector3(point_haut.position.x - this.transform.position.x, point_haut.position.y - this.transform.position.y, point_haut.position.z - this.transform.position.z));
+        vertical = new plan(this.transform, new Vector3(point_droite.position.x - this.transform.position.x, point_droite.position.y - this.transform.position.y, point_droite.position.z - this.transform.position.z));
+        devant = new plan(this.transform, new Vector3(point_devant.position.x - this.transform.position.x, point_devant.position.y - this.transform.position.y, point_devant.position.z - this.transform.position.z));
+
         fire = false;
 
         if(gauche.col)
