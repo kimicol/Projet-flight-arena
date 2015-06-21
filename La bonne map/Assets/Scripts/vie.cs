@@ -37,7 +37,6 @@ public class vie : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(ok);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
             //anim.Play();
@@ -64,7 +63,6 @@ public class vie : MonoBehaviour
                     {
                         return;
                     }
-                    Debug.Log("hue");
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     respawn_position.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
                     transform.position = respawn_position;
