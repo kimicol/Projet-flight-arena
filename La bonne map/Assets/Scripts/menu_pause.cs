@@ -5,6 +5,7 @@ public class menu_pause : MonoBehaviour
 {
 
     int paused = 0;
+    int var = 0;
     float volume;
     bool changed_sound = false;
     public GUISkin skin;
@@ -84,6 +85,39 @@ public class menu_pause : MonoBehaviour
             {
                 volume = newLength;
             }
+            string[] toolbarStrings = new string[] { "Mono", "Stereo", "Quad", "Surround", "5.1", "7.1"};
+            var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 + 55, 800, 25), var, toolbarStrings);
+            switch (var)
+            {
+                case 0:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mono;
+                    break;
+                case 1:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Stereo;
+                    break;
+                case 2:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Quad;
+                    break;
+                case 3:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Surround;
+                    break;
+                case 4:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mode5point1;
+                    break;
+                case 5:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mode7point1;
+                    break;
+            }
+
+        }
+        if (paused == 4) // Touches
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Pause");
+        }
+        if (paused == 5) // Video
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Pause");
+
         }
     }
 }
