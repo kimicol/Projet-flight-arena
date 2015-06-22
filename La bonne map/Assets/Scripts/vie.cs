@@ -37,7 +37,6 @@ public class vie : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(ok);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
             //anim.Play();
@@ -92,7 +91,6 @@ public class vie : MonoBehaviour
                     }
                     catch
                     { Debug.Log("hu2"); }
-                    Debug.Log("son");
                     gameover();
                     killed = true;
                 }
