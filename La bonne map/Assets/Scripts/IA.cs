@@ -20,7 +20,7 @@ public class IA : controlplayer
 
     void Start()
     {
-        this.liste = setting.liste;
+        
     }
 	
 	// Update is called once per frame

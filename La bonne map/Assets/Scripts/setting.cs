@@ -15,7 +15,6 @@ public class setting : MonoBehaviour
     public GameObject IA2;
     public GameObject IA3;
     int nb_joueur = 2;
-    public static Rigidbody[] liste;
     private Rigidbody[] temp;
 
 	// Use this for initialization
@@ -77,6 +76,12 @@ public class setting : MonoBehaviour
                     temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
                     break;
             }
+        }
+
+        for (int i = 1; i < nb_joueur; i++)
+        {
+            IA ordi = temp[i].gameObject.GetComponent<IA>();
+            ordi.liste = temp;
         }
 	}
 	
