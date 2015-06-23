@@ -64,8 +64,10 @@ public class IA : controlplayer
         }
         else//mettre a false
         {
-            PG = false;
-            PD = false;
+            //PG = false;
+            //PD = false;
+            PD = vertical.is_on_right(cible);
+            PG = !PD;
             av = true;
         }
 
@@ -81,8 +83,10 @@ public class IA : controlplayer
         }
         else//mettre a false
         {
-            RB = false;
-            RH = false;
+            //RB = false;
+            //RH = false;
+            RB = horizontal.is_on_right(cible);
+            RH = !RB;
         }
          
         deplacements();
