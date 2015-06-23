@@ -16,6 +16,8 @@ public class IA : controlplayer
     private plan vertical;
     private plan devant;
 
+    private Rigidbody[] liste = setting.liste;
+
     void Start()
     {
         
@@ -28,6 +30,24 @@ public class IA : controlplayer
         vertical = new plan(this.transform, new Vector3(point_droite.position.x - this.transform.position.x, point_droite.position.y - this.transform.position.y, point_droite.position.z - this.transform.position.z));
         devant = new plan(this.transform, new Vector3(point_devant.position.x - this.transform.position.x, point_devant.position.y - this.transform.position.y, point_devant.position.z - this.transform.position.z));
 
+        //Choose the enemy
+        Transform cible = liste[0].transform;
+        float distance = Vector3.Distance(this.transform.position, cible.position);
+        for (int i = 1; i < liste.Length; i++)
+        {
+            if (liste[i].transform != this.transform && distance > Vector3.Distance(this.transform.position, liste[i].transform.position))
+            {
+                cible = liste[i].transform;
+            }
+        }
+
+        //Follow the "cible"
+        RH = horizontal.is_on_right(cible);
+        RB = !RH;
+        PD = vertical.is_on_right(cible);
+        PG = !PD;
+
+        //Dodge buildings
         fire = false;
 
         if(gauche.col)
