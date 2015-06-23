@@ -14,13 +14,14 @@ public class setting : MonoBehaviour
     public GameObject IA1;
     public GameObject IA2;
     public GameObject IA3;
-    public static Rigidbody[] liste;
     int nb_joueur = 2;
+    public static Rigidbody[] liste;
+    private Rigidbody[] temp;
 
 	// Use this for initialization
 	void Start () 
     {
-        liste = new Rigidbody[nb_joueur];
+        temp = new Rigidbody[nb_joueur];
 
         choix = PlayerPrefs.GetInt("player", choix);
 
@@ -41,13 +42,16 @@ public class setting : MonoBehaviour
         switch(choix)
         {
             case 1:
-                liste[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
                 break;
             case 2:
-                liste[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                temp[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
                 break;
             case 3:
-                liste[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                temp[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                break;
+            default:
+                temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
                 break;
         }
 
@@ -61,16 +65,16 @@ public class setting : MonoBehaviour
             switch (rnd.Next(0, 3))
             {
                 case 0:
-                    liste[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                    temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
                     break;
                 case 1:
-                    liste[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                    temp[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
                     break;
                 case 2:
-                    liste[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                    temp[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
                     break;
                 default:
-                    liste[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                    temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
                     break;
             }
         }
@@ -79,6 +83,6 @@ public class setting : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-	
+        
 	}
 }
