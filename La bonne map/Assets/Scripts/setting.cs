@@ -15,13 +15,13 @@ public class setting : MonoBehaviour
     public GameObject IA2;
     public GameObject IA3;
     int nb_joueur = 2;
-    private Rigidbody[] temp;
+    public GameObject[] temp;
     bool b = true;
 
 	// Use this for initialization
 	void Start () 
     {
-        temp = new Rigidbody[nb_joueur];
+        temp = new GameObject[nb_joueur];
 
         choix = PlayerPrefs.GetInt("player", choix);
 
@@ -42,19 +42,18 @@ public class setting : MonoBehaviour
         switch(choix)
         {
             case 1:
-                temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                 break;
             case 2:
-                temp[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                temp[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                 break;
             case 3:
-                temp[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                temp[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                 break;
             default:
-                temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                 break;
         }
-
 
         //IAs
         for (int i = 1; i < nb_joueur; i++)
@@ -65,16 +64,16 @@ public class setting : MonoBehaviour
             switch (rnd.Next(0, 3))
             {
                 case 0:
-                    temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                    temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 case 1:
-                    temp[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                    temp[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 case 2:
-                    temp[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                    temp[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 default:
-                    temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as Rigidbody;
+                    temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
             }
         }
@@ -85,13 +84,11 @@ public class setting : MonoBehaviour
     {
         if(b)
         {
-            Debug.Log("testa");
-
             try
             {
                 for (int i = 1; i < nb_joueur; i++)
                 {
-                    IA ordi = temp[i].gameObject.GetComponent<IA>();
+                    IA ordi = temp[i].GetComponentInChildren<IA>();
                     ordi.liste = temp;
                 }
 
@@ -100,6 +97,7 @@ public class setting : MonoBehaviour
             }
             catch
             {
+                Debug.Log("pas fait");
                 b = true;
             }
         }
