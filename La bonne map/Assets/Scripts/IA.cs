@@ -35,18 +35,22 @@ public class IA : controlplayer
         float distance = Vector3.Distance(this.transform.position, cible.position);
         for (int i = 1; i < this.liste.Length; i++)
         {
-            if (this.liste[i].transform != this.transform && distance > Vector3.Distance(this.transform.position, this.liste[i].transform.position))
+            if (Vector3.Distance(this.transform.position, this.liste[i].transform.position) > 1 && distance > Vector3.Distance(this.transform.position, this.liste[i].transform.position))
             {
                 cible = this.liste[i].transform;
+                distance = Vector3.Distance(this.transform.position, this.liste[i].transform.position);
             }
         }
 
+        if (cible == this.liste[0].transform)
+
         //Follow the "cible"
-        RH = horizontal.is_on_right(cible);
-        RB = !RH;
+        //RH = horizontal.is_on_right(cible);
+        //RB = !RH;
         PD = vertical.is_on_right(cible);
         PG = !PD;
 
+        /*
         //Dodge buildings
         fire = false;
 
@@ -82,9 +86,11 @@ public class IA : controlplayer
             RB = false;
             RH = false;
         }
-
+        */
+        
         //A RETIRER
         av = false;
+         
 
         deplacements();
     }
