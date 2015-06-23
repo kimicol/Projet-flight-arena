@@ -16,7 +16,7 @@ public class IA : controlplayer
     private plan vertical;
     private plan devant;
 
-    public Rigidbody[] liste;
+    public GameObject[] liste;
 
     void Start()
     {
@@ -45,12 +45,12 @@ public class IA : controlplayer
         if (cible == this.liste[0].transform)
 
         //Follow the "cible"
-        //RH = horizontal.is_on_right(cible);
-        //RB = !RH;
+        RB = horizontal.is_on_right(cible);
+        RH = !RB;
         PD = vertical.is_on_right(cible);
         PG = !PD;
 
-        /*
+       
         //Dodge buildings
         fire = false;
 
@@ -86,12 +86,7 @@ public class IA : controlplayer
             RB = false;
             RH = false;
         }
-        */
-        
-        //A RETIRER
-        av = false;
          
-
         deplacements();
     }
 }
