@@ -83,6 +83,9 @@ public class IA : controlplayer
             RH = false;
         }
 
+        //A RETIRER
+        av = false;
+
         deplacements();
     }
 }
