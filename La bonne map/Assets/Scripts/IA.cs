@@ -16,7 +16,7 @@ public class IA : controlplayer
     private plan vertical;
     private plan devant;
 
-    public GameObject[] liste;
+    public Rigidbody[] liste;
 
     void Start()
     {
