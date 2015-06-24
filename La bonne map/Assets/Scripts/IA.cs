@@ -33,18 +33,21 @@ public class IA : controlplayer
         devant = new plan(pos, new Vector3(point_devant.position.x - pos.position.x, point_devant.position.y - pos.position.y, point_devant.position.z - pos.position.z));
 
         //Choose the enemy
-        Transform cible = this.liste[0].gameObject.GetComponentInChildren<Transform>();
+        Transform cible = this.liste[0].gameObject.transform.GetChild(0);
         float distance = Vector3.Distance(pos.position, cible.position);
         for (int i = 1; i < this.liste.Length; i++)
         {
-            if (Vector3.Distance(pos.position, this.liste[i].gameObject.GetComponentInChildren<Transform>().position) > 1 && distance > Vector3.Distance(pos.position, this.liste[i].gameObject.GetComponentInChildren<Transform>().position))
+            if (Vector3.Distance(pos.position, this.liste[i].gameObject.transform.GetChild(0).position) > 5 && distance > Vector3.Distance(pos.position, this.liste[i].gameObject.transform.GetChild(0).position))
             {
-                cible = this.liste[i].gameObject.GetComponentInChildren<Transform>();
-                distance = Vector3.Distance(pos.position, this.liste[i].gameObject.GetComponentInChildren<Transform>().position);
+                cible = this.liste[i].gameObject.transform.GetChild(0);
+                distance = Vector3.Distance(pos.position, this.liste[i].transform.GetChild(0).position);
             }
         }
 
-        Debug.Log("Child " + gameObject.transform.childCount);
+        //Debug.Log("Child " + gameObject.transform.childCount);
+        //Debug.Log("position " + cible.position);
+        //Debug.Log("cible " + cible.ToString());
+        //Debug.Log("me " + pos.ToString());
         
         //Follow the "cible"
         /*

@@ -97,7 +97,7 @@ public class setting : MonoBehaviour
                 }
 
                 b = false;
-                Debug.Log("fait");
+                //Debug.Log("fait");
             }
             catch
             {

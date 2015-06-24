@@ -91,8 +91,8 @@ public class vie : MonoBehaviour
                         shut.PlayOneShot(endgame_sound);
                     }
                     catch
-                    { Debug.Log("hu2"); }
-                    Debug.Log("son");
+                    { /*Debug.Log("hu2");*/ }
+                    //Debug.Log("son");
                     gameover();
                     killed = true;
                 }
