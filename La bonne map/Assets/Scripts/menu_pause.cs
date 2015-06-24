@@ -6,8 +6,8 @@ public class menu_pause : MonoBehaviour
 {
 
     int paused = 0;
-    int temp; // a changer 
-    int temp2 = 8;
+    int temp = 8; // a changer 
+    int temp2;
     float volume;
     bool changed_sound = false;
     public GUISkin skin;
@@ -18,17 +18,17 @@ public class menu_pause : MonoBehaviour
         volume = this.camera.audio.volume;
         if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.Disable)
         {
-            temp = 0;
+            temp2 = 0;
         }
         else
         {
             if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.Enable)
             {
-                temp = 1;
+                temp2 = 1;
             }
             else
             {
-                temp = 2;
+                temp2 = 2;
             }
         }
     }
@@ -101,7 +101,7 @@ public class menu_pause : MonoBehaviour
             {
                 volume = newLength;
             }
-            string[] toolbarStrings = new string[] { "Mono", "Stereo", "Quad", "Surround", "5.1", "7.1"};
+            string[] toolbarStrings = new string[] { "Mono", "Stereo", "Quad", "Surround", "5.1", "7.1" };
             int var = 0;
             var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 + 55, 800, 25), var, toolbarStrings);
             switch (var)
@@ -134,9 +134,9 @@ public class menu_pause : MonoBehaviour
             GUI.SelectionGrid(new Rect(Screen.width / 2 - 160, Screen.height / 2 - 160, 200, 200), 0, toolbarStrings, 1);
             GameObject bob = GameObject.Find("Vaisseaux");
             inputs touche_1 = bob.GetComponentsInChildren<inputs>()[0];
-            string key = GUI.TextField(new Rect(Screen.width / 2 +50, Screen.height / 2 - 160, 150, 20), touche_1.used_keys[0].ToString());
-            //try { touche_1.used_keys[0] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            //catch { }
+            string key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 160, 150, 20), touche_1.used_keys[0].ToString());
+            try { touche_1.used_keys[0] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
+            catch { }
             key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 133, 150, 20), KeyCode.UpArrow.ToString());
             try { touche_1.used_keys[1] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
             catch { }
@@ -152,7 +152,7 @@ public class menu_pause : MonoBehaviour
             key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 32, 150, 20), KeyCode.LeftArrow.ToString());
             try { touche_1.used_keys[5] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
             catch { }
-            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 -7, 150, 20), KeyCode.RightArrow.ToString());
+            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 7, 150, 20), KeyCode.RightArrow.ToString());
             try { touche_1.used_keys[6] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
             catch { }
             key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 + 19, 150, 20), KeyCode.Space.ToString());
@@ -167,9 +167,9 @@ public class menu_pause : MonoBehaviour
         {
             GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Pause");
 
-            GUI.Box(new Rect(Screen.width / 2 - 160, Screen.height / 2 - 160, 300,25), "Anisotropic Textures");
+            GUI.Box(new Rect(Screen.width / 2 - 160, Screen.height / 2 - 160, 300, 25), "Anisotropic Textures");
             string[] toolbarStrings = new string[] { "Disable", "Enable", "Force Enable" };
-            int var = temp;
+            int var = temp2;
             var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 - 125, 800, 25), var, toolbarStrings);
             switch (var)
             {
@@ -183,11 +183,11 @@ public class menu_pause : MonoBehaviour
                     QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
                     break;
             }
-            temp = var;
-            var = temp2;
+            temp2 = var;
+            var = temp;
             GUI.Box(new Rect(Screen.width / 2 - 160, Screen.height / 2 - 60, 300, 25), "Anti Aliasing");
-            toolbarStrings = new string[] {"0" ,"2x", "4x", "8x"};
-            var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 -20, 800, 25), var, toolbarStrings);
+            toolbarStrings = new string[] { "0", "2x", "4x", "8x" };
+            var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 - 20, 800, 25), var, toolbarStrings);
             switch (var)
             {
                 case 0:
@@ -203,7 +203,7 @@ public class menu_pause : MonoBehaviour
                     QualitySettings.antiAliasing = 8;
                     break;
             }
-            temp2 = var;
+            temp = var;
             bool coche = QualitySettings.softVegetation;
             coche = GUI.Toggle(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 20, 800, 25), coche, "Soft Particles");
             QualitySettings.softVegetation = coche;
@@ -224,4 +224,3 @@ public class menu_pause : MonoBehaviour
         }
     }
 }
-
