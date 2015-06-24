@@ -213,8 +213,9 @@ public class menu_pause : MonoBehaviour
             if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 220, 300, 25), "Retour au menu principal"))
             { paused = 1; }
             Light lt = GameObject.FindObjectOfType<Light>();
-            volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 100, 300, 25), volume, 0.0F, 1.0F);
-            string lengthText = GUI.TextField(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 125, 300, 25), volume.ToString());
+            float lumi = lt.intensity;
+            lumi = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 100, 300, 25), lumi, 0.0F, 1.0F);
+            string lengthText = GUI.TextField(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 125, 300, 25), lumi.ToString());
             float newLength;
             if (float.TryParse(lengthText, out newLength))
             {
