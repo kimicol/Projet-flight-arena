@@ -60,7 +60,6 @@
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
-     <None Include="Assets\mFakeWaterRefractions1\FakeSurfaceAndBottom4.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>F:/epita/Projet-flight-arena/La bonne map/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
