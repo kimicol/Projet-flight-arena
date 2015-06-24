@@ -86,7 +86,7 @@ public class setting : MonoBehaviour
     {
         if (b)
         {
-            Debug.Log("testa");
+            //Debug.Log("testa");
 
             try
             {

@@ -58,7 +58,6 @@ public class menu_pause : MonoBehaviour
 
     void OnGUI()
     {
-        Debug.Log(paused);
         skin.label.fontSize = 70;
         GUI.skin = skin;
         if (paused == 1) // Menu principal
@@ -221,7 +220,7 @@ public class menu_pause : MonoBehaviour
             {
                 lt.intensity = newLength;
             }
-            Debug.Log("AA : " + temp + " filtre : " + temp2);
+            //Debug.Log("AA : " + temp + " filtre : " + temp2);
         }
     }
 }
