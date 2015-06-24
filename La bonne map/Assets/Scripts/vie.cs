@@ -14,6 +14,7 @@ public class vie : MonoBehaviour
     public bool ok = false;
     private Vector3 respawn_position;
     public GameObject winner;
+    public GameObject sphere;
     private GameObject thePlayer;
     private GameObject crosshair;
     private MeshRenderer cube0;
@@ -49,6 +50,7 @@ public class vie : MonoBehaviour
             {
                 if (frag_limite > 1)
                 {
+                    sphere.renderer.enabled = false;
                     System.Random rnd = new System.Random();
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     controlplayer bob = this.gameObject.GetComponent<controlplayer>();
@@ -78,6 +80,7 @@ public class vie : MonoBehaviour
                     bob.enabled = true;
                     frag_limite--;
                     ok = false;
+                    sphere.renderer.enabled = true;
                 }
                 else
                 {
