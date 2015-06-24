@@ -13,8 +13,13 @@ public class plan
         d = - a * point.position.x - b * point.position.y - c * point.position.z;
     }
 
-    public bool is_on_right(Transform point)
+    public bool is_on_right(Transform point, ref float distance)
     {
-        return (a * point.position.x + b * point.position.y + c * point.position.z + d > 0);
+        Vector3 posi = point.position;
+        distance = Mathf.Abs(a * posi.x + b * posi.y + c * posi.z + d) / Mathf.Sqrt(a*a + b*b + c*c);
+
+        //Debug.Log("dist " + distance);
+
+        return (a * posi.x + b * posi.y + c * posi.z + d > 0);
     }
 }

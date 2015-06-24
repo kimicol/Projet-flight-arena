@@ -26,28 +26,29 @@ public class IA : controlplayer
 	// Update is called once per frame
 	void Update ()
     {
-        horizontal = new plan(this.rigidbody.transform, new Vector3(point_haut.position.x - this.rigidbody.transform.position.x, point_haut.position.y - this.rigidbody.transform.position.y, point_haut.position.z - this.rigidbody.transform.position.z));
-        vertical = new plan(this.rigidbody.transform, new Vector3(point_droite.position.x - this.rigidbody.transform.position.x, point_droite.position.y - this.rigidbody.transform.position.y, point_droite.position.z - this.rigidbody.transform.position.z));
-        devant = new plan(this.rigidbody.transform, new Vector3(point_devant.position.x - this.rigidbody.transform.position.x, point_devant.position.y - this.rigidbody.transform.position.y, point_devant.position.z - this.rigidbody.transform.position.z));
+        horizontal = new plan(this.gameObject.transform, new Vector3(point_haut.position.x - this.gameObject.transform.position.x, point_haut.position.y - this.gameObject.transform.position.y, point_haut.position.z - this.gameObject.transform.position.z));
+        vertical = new plan(this.gameObject.transform, new Vector3(point_droite.position.x - this.gameObject.transform.position.x, point_droite.position.y - this.gameObject.transform.position.y, point_droite.position.z - this.gameObject.transform.position.z));
+        devant = new plan(this.gameObject.transform, new Vector3(point_devant.position.x - this.gameObject.transform.position.x, point_devant.position.y - this.gameObject.transform.position.y, point_devant.position.z - this.gameObject.transform.position.z));
 
         //Choose the enemy
-        Transform cible = this.liste[0].rigidbody.transform;
-        float distance = Vector3.Distance(this.rigidbody.transform.position, cible.position);
+        Transform cible = this.liste[0].gameObject.transform;
+        float distance = Vector3.Distance(this.gameObject.transform.position, cible.position);
         for (int i = 1; i < this.liste.Length; i++)
         {
-            if (Vector3.Distance(this.rigidbody.transform.position, this.liste[i].rigidbody.transform.position) > 1 && distance > Vector3.Distance(this.rigidbody.transform.position, this.liste[i].rigidbody.transform.position))
+            if (Vector3.Distance(this.gameObject.transform.position, this.liste[i].gameObject.transform.position) > 1 && distance > Vector3.Distance(this.gameObject.transform.position, this.liste[i].gameObject.transform.position))
             {
-                cible = this.liste[i].rigidbody.transform;
-                distance = Vector3.Distance(this.rigidbody.transform.position, this.liste[i].rigidbody.transform.position);
+                cible = this.liste[i].gameObject.transform;
+                distance = Vector3.Distance(this.gameObject.transform.position, this.liste[i].gameObject.transform.position);
             }
         }
 
         //Follow the "cible"
+        /*
         RB = horizontal.is_on_right(cible);
         RH = !RB;
         PD = vertical.is_on_right(cible);
         PG = !PD;
-
+        */
        
         //Dodge buildings
         fire = false;
@@ -66,8 +67,11 @@ public class IA : controlplayer
         {
             //PG = false;
             //PD = false;
-            PD = vertical.is_on_right(cible);
-            PG = !PD;
+            float distance_plan = 0f;
+            bool is_in_front = devant.is_on_right(cible, ref distance_plan);
+            bool on_right = vertical.is_on_right(cible, ref distance_plan);
+            PD = on_right && (distance_plan >= 10 || !is_in_front);
+            PG = !on_right && (distance_plan >= 10 || !is_in_front);
             av = true;
         }
 
@@ -85,9 +89,14 @@ public class IA : controlplayer
         {
             //RB = false;
             //RH = false;
-            RB = horizontal.is_on_right(cible);
-            RH = !RB;
+            float distance_plan_bis = 0f;
+            bool is_in_front_bis = devant.is_on_right(cible, ref distance_plan_bis);
+            bool on_right = horizontal.is_on_right(cible, ref distance_plan_bis);
+            RB = on_right && (distance_plan_bis >= 10 || !is_in_front_bis);
+            RH = !on_right && (distance_plan_bis >= 10 || !is_in_front_bis);
         }
+
+        //av = false;
          
         deplacements();
     }
