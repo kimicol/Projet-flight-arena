@@ -26,22 +26,22 @@ public class IA : controlplayer
 	// Update is called once per frame
 	void Update ()
     {
-        horizontal = new plan(this.gameObject.transform, new Vector3(point_haut.position.x - this.gameObject.transform.position.x, point_haut.position.y - this.gameObject.transform.position.y, point_haut.position.z - this.gameObject.transform.position.z));
-        vertical = new plan(this.gameObject.transform, new Vector3(point_droite.position.x - this.gameObject.transform.position.x, point_droite.position.y - this.gameObject.transform.position.y, point_droite.position.z - this.gameObject.transform.position.z));
-        devant = new plan(this.gameObject.transform, new Vector3(point_devant.position.x - this.gameObject.transform.position.x, point_devant.position.y - this.gameObject.transform.position.y, point_devant.position.z - this.gameObject.transform.position.z));
+        horizontal = new plan(this.gameObject.rigidbody.transform, new Vector3(point_haut.position.x - this.gameObject.rigidbody.transform.position.x, point_haut.position.y - this.gameObject.rigidbody.transform.position.y, point_haut.position.z - this.gameObject.rigidbody.transform.position.z));
+        vertical = new plan(this.gameObject.rigidbody.transform, new Vector3(point_droite.position.x - this.gameObject.rigidbody.transform.position.x, point_droite.position.y - this.gameObject.rigidbody.transform.position.y, point_droite.position.z - this.gameObject.rigidbody.transform.position.z));
+        devant = new plan(this.gameObject.rigidbody.transform, new Vector3(point_devant.position.x - this.gameObject.rigidbody.transform.position.x, point_devant.position.y - this.gameObject.rigidbody.transform.position.y, point_devant.position.z - this.gameObject.rigidbody.transform.position.z));
 
         //Choose the enemy
-        Transform cible = this.liste[0].gameObject.transform;
-        float distance = Vector3.Distance(this.gameObject.transform.position, cible.position);
+        Transform cible = this.liste[0].gameObject.rigidbody.transform;
+        float distance = Vector3.Distance(this.gameObject.rigidbody.transform.position, cible.position);
         for (int i = 1; i < this.liste.Length; i++)
         {
-            if (Vector3.Distance(this.gameObject.transform.position, this.liste[i].gameObject.transform.position) > 1 && distance > Vector3.Distance(this.gameObject.transform.position, this.liste[i].gameObject.transform.position))
+            if (Vector3.Distance(this.gameObject.rigidbody.transform.position, this.liste[i].gameObject.rigidbody.transform.position) > 1 && distance > Vector3.Distance(this.gameObject.rigidbody.transform.position, this.liste[i].gameObject.rigidbody.transform.position))
             {
-                cible = this.liste[i].gameObject.transform;
-                distance = Vector3.Distance(this.gameObject.transform.position, this.liste[i].gameObject.transform.position);
+                cible = this.liste[i].gameObject.rigidbody.transform;
+                distance = Vector3.Distance(this.gameObject.rigidbody.transform.position, this.liste[i].gameObject.rigidbody.transform.position);
             }
         }
-
+        
         //Follow the "cible"
         /*
         RB = horizontal.is_on_right(cible);
