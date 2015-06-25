@@ -33,5 +33,6 @@ public class flamme_script : MonoBehaviour {
         {
             this.particleSystem.enableEmission = false;
         }
+        Debug.Log(particleSystem.enableEmission);
 	}
 }

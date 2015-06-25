@@ -30,13 +30,13 @@ public class controlplayer : MonoBehaviour
     private int i;
     private float recharge;
     private float tps_rech = 0.25f;
-    public string vaisseau_nom;
 
 	// Use this for initialization
 	void Start ()
     {
         i = 0;
         recharge = 0f;
+
 	}
 
     protected void deplacements()
@@ -102,19 +102,13 @@ public class controlplayer : MonoBehaviour
     {
         if (recharge <= 0f)
         {
-            projectile.name = this.gameObject.GetComponent<vie>().name;
             //Rigidbody instance;
             if (i == 0)
-            {
-                /*instance =*/
-                Instantiate(projectile, origine.position, origine.rotation);
-            }
+                /*instance =*/ Instantiate(projectile, origine.position, origine.rotation);
             else
-            {
-                /*instance =*/
-                Instantiate(projectile, origine2.position, origine2.rotation);
-            }
+                /*instance =*/ Instantiate(projectile, origine2.position, origine2.rotation);
             i = (i + 1) % 2;
+
             recharge = tps_rech;
         }
     }
