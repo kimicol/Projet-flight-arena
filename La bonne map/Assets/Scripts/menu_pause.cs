@@ -4,7 +4,7 @@ using UnityEditor;
 
 public class menu_pause : MonoBehaviour
 {
-
+    #region attribut
     int paused = 0;
     int aliasing = 8; // a changer 
     int anisotropic;
@@ -16,8 +16,86 @@ public class menu_pause : MonoBehaviour
     private int qualite_image = 0;
     private int son = 0;
 
+    private KeyCode[] all_keys;
+    private KeyCode[] used_keys;
+    private string[] name_keys;
+
+    private KeyCode change = KeyCode.None;
+    private float t = 0f;
+    private int c = -1;
+    private bool b = true;
+    #endregion
+
     void Start()
     {
+        #region keys
+        all_keys = new KeyCode[63];
+        all_keys[0] = KeyCode.Ampersand;
+        all_keys[1] = KeyCode.A;
+        all_keys[2] = KeyCode.AltGr;
+        all_keys[3] = KeyCode.Alpha0;
+        all_keys[4] = KeyCode.Alpha1;
+        all_keys[5] = KeyCode.Alpha2;
+        all_keys[6] = KeyCode.Alpha3;
+        all_keys[7] = KeyCode.Alpha4;
+        all_keys[8] = KeyCode.Alpha5;
+        all_keys[9] = KeyCode.Alpha6;
+        all_keys[10] = KeyCode.Alpha7;
+        all_keys[11] = KeyCode.Alpha8;
+        all_keys[12] = KeyCode.Alpha9;
+        all_keys[13] = KeyCode.B;
+        all_keys[14] = KeyCode.C;
+        all_keys[15] = KeyCode.D;
+        all_keys[16] = KeyCode.Delete;
+        all_keys[17] = KeyCode.DownArrow;
+        all_keys[18] = KeyCode.E;
+        all_keys[19] = KeyCode.F;
+        all_keys[20] = KeyCode.G;
+        all_keys[21] = KeyCode.H;
+        all_keys[22] = KeyCode.I;
+        all_keys[23] = KeyCode.J;
+        all_keys[24] = KeyCode.K;
+        all_keys[25] = KeyCode.Keypad0;
+        all_keys[26] = KeyCode.Keypad1;
+        all_keys[27] = KeyCode.Keypad2;
+        all_keys[28] = KeyCode.Keypad3;
+        all_keys[29] = KeyCode.Keypad4;
+        all_keys[30] = KeyCode.Keypad5;
+        all_keys[31] = KeyCode.Keypad6;
+        all_keys[32] = KeyCode.Keypad7;
+        all_keys[33] = KeyCode.Keypad8;
+        all_keys[34] = KeyCode.Keypad9;
+        all_keys[35] = KeyCode.KeypadEnter;
+        all_keys[36] = KeyCode.L;
+        all_keys[37] = KeyCode.LeftAlt;
+        all_keys[38] = KeyCode.LeftArrow;
+        all_keys[39] = KeyCode.LeftControl;
+        all_keys[40] = KeyCode.LeftShift;
+        all_keys[41] = KeyCode.M;
+        all_keys[42] = KeyCode.N;
+        all_keys[43] = KeyCode.O;
+        all_keys[44] = KeyCode.P;
+        all_keys[45] = KeyCode.Q;
+        all_keys[46] = KeyCode.R;
+        all_keys[47] = KeyCode.Return;
+        all_keys[48] = KeyCode.RightAlt;
+        all_keys[49] = KeyCode.RightArrow;
+        all_keys[50] = KeyCode.RightControl;
+        all_keys[51] = KeyCode.RightShift;
+        all_keys[52] = KeyCode.S;
+        all_keys[53] = KeyCode.Space;
+        all_keys[54] = KeyCode.T;
+        all_keys[55] = KeyCode.Tab;
+        all_keys[56] = KeyCode.U;
+        all_keys[57] = KeyCode.UpArrow;
+        all_keys[58] = KeyCode.V;
+        all_keys[59] = KeyCode.W;
+        all_keys[60] = KeyCode.X;
+        all_keys[61] = KeyCode.Y;
+        all_keys[62] = KeyCode.Z;
+        #endregion
+
+        #region PlayerPrefs
         //volume = this.camera.audio.volume;
         volume = PlayerPrefs.GetFloat("Volume", volume);
         if (PlayerPrefs.HasKey("Volume"))
@@ -105,6 +183,106 @@ public class menu_pause : MonoBehaviour
         }
         else
             PlayerPrefs.SetInt("anisotropic", anisotropic);
+        #endregion
+
+        used_keys = new KeyCode[24];
+        name_keys = new string[24];
+        #region joueur0
+        used_keys[0] = KeyCode.W;
+        used_keys[1] = KeyCode.UpArrow;
+        used_keys[2] = KeyCode.DownArrow;
+        used_keys[3] = KeyCode.A;
+        used_keys[4] = KeyCode.D;
+        used_keys[5] = KeyCode.LeftArrow;
+        used_keys[6] = KeyCode.RightArrow;
+        used_keys[7] = KeyCode.Space;
+        #endregion
+        #region joueur1
+        used_keys[8] = KeyCode.W;
+        used_keys[9] = KeyCode.U;
+        used_keys[10] = KeyCode.J;
+        used_keys[11] = KeyCode.A;
+        used_keys[12] = KeyCode.D;
+        used_keys[13] = KeyCode.H;
+        used_keys[14] = KeyCode.K;
+        used_keys[15] = KeyCode.Space;
+        #endregion
+        #region joueur2
+        used_keys[16] = KeyCode.UpArrow;
+        used_keys[17] = KeyCode.Keypad8;
+        used_keys[18] = KeyCode.Keypad5;
+        used_keys[19] = KeyCode.LeftArrow;
+        used_keys[20] = KeyCode.RightArrow;
+        used_keys[21] = KeyCode.Keypad4;
+        used_keys[22] = KeyCode.Keypad6;
+        used_keys[23] = KeyCode.Keypad0;
+        #endregion
+        for (int i = 0; i < used_keys.Length; i++)
+        {
+            name_keys[i] = used_keys[i].ToString();
+        }
+
+        #region get_prefs
+        for (int i = 0; i < 3; i++)
+        {
+            name_keys[i * 8] = PlayerPrefs.GetString("avancer" + i, name_keys[8 * i]);
+            if (PlayerPrefs.HasKey("avancer" + i))
+                name_keys[i * 8] = PlayerPrefs.GetString("avancer" + i, name_keys[8 * i]);
+            else
+                PlayerPrefs.SetString("avancer" + i, name_keys[8 * i]);
+
+            name_keys[i * 8 + 1] = PlayerPrefs.GetString("rothaut" + i, name_keys[8 * i + 1]);
+            if (PlayerPrefs.HasKey("rothaut" + i))
+                name_keys[i * 8 + 1] = PlayerPrefs.GetString("rothaut" + i, name_keys[8 * i + 1]);
+            else
+                PlayerPrefs.SetString("rothaut" + i, name_keys[8 * i + 1]);
+
+            name_keys[i * 8 + 2] = PlayerPrefs.GetString("rotbas" + i, name_keys[8 * i + 2]);
+            if (PlayerPrefs.HasKey("rotbas" + i))
+                name_keys[i * 8 + 2] = PlayerPrefs.GetString("rotbas" + i, name_keys[8 * i + 2]);
+            else
+                PlayerPrefs.SetString("rotbas" + i, name_keys[8 * i + 2]);
+
+            name_keys[i * 8 + 3] = PlayerPrefs.GetString("pivgauche" + i, name_keys[8 * i + 3]);
+            if (PlayerPrefs.HasKey("pivgauche" + i))
+                name_keys[i * 8 + 3] = PlayerPrefs.GetString("pivgauche" + i, name_keys[8 * i + 3]);
+            else
+                PlayerPrefs.SetString("pivgauche" + i, name_keys[8 * i + 3]);
+
+            name_keys[i * 8 + 4] = PlayerPrefs.GetString("pivdroite" + i, name_keys[8 * i + 4]);
+            if (PlayerPrefs.HasKey("pivdroite" + i))
+                name_keys[i * 8 + 4] = PlayerPrefs.GetString("pivdroite" + i, name_keys[8 * i + 4]);
+            else
+                PlayerPrefs.SetString("pivdroite" + i, name_keys[8 * i + 4]);
+
+            name_keys[i * 8 + 5] = PlayerPrefs.GetString("rotgauche" + i, name_keys[8 * i + 5]);
+            if (PlayerPrefs.HasKey("rotgauche" + i))
+                name_keys[i * 8 + 5] = PlayerPrefs.GetString("rotgauche" + i, name_keys[8 * i + 5]);
+            else
+                PlayerPrefs.SetString("rotgauche" + i, name_keys[8 * i + 5]);
+
+            name_keys[i * 8 + 6] = PlayerPrefs.GetString("rotdroite" + i, name_keys[8 * i + 6]);
+            if (PlayerPrefs.HasKey("rotdroite" + i))
+                name_keys[i * 8 + 6] = PlayerPrefs.GetString("rotdroite" + i, name_keys[8 * i + 6]);
+            else
+                PlayerPrefs.SetString("rotdroite" + i, name_keys[8 * i + 6]);
+
+            name_keys[i * 8 + 7] = PlayerPrefs.GetString("feu" + i, name_keys[8 * i + 7]);
+            if (PlayerPrefs.HasKey("feu" + i))
+                name_keys[i * 8 + 7] = PlayerPrefs.GetString("feu" + i, name_keys[8 * i + 7]);
+            else
+                PlayerPrefs.SetString("feu" + i, name_keys[8 * i + 7]);
+        }
+        #endregion
+
+        for (int i = 0; i < used_keys.Length; i++)
+        {
+            int j = 0;
+            while (j < all_keys.Length && all_keys[j].ToString() != name_keys[i])
+                j++;
+            if (j < all_keys.Length)
+                used_keys[i] = all_keys[j];
+        }
     }
 
     void Update()
@@ -151,20 +329,20 @@ public class menu_pause : MonoBehaviour
             }
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Options"))
                 paused = 2; 
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Retour au menu"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Retour au menu du jeu"))
                 Application.LoadLevel(0);
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Quitter le jeu"))
                 Application.Quit();
         }
         else if (paused == 2) // option
         {
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 80, 300, 25), "Retour au menu principal"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Retour au menu pause"))
             { paused = 1; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Son"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 80, 300, 25), "Son"))
             { paused = 3; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Réglage des touches"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Réglage des touches"))
                 paused = 4;
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Vidéo"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Vidéo"))
             { paused = 5; }
         }
         else if (paused == 3) // son
@@ -206,7 +384,7 @@ public class menu_pause : MonoBehaviour
                     break;
             }
 
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 140, 300, 25), "Retour au menu principal"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 140, 300, 25), "Retour au menu pause"))
             { paused = 1; }
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 300, 25), "Retour au menu Options"))
             { paused = 2; }
@@ -215,37 +393,11 @@ public class menu_pause : MonoBehaviour
         else if (paused == 4) // Touches
         {
             #region touches
-            string[] toolbarStrings = new string[] { "Avancer", "Rotation Haut", "Rotation Bas", "Pivoter gauche", "Pivoter Droite", "Rotation Gauche", "Rotation Droite", "Tirer" };
-            GUI.SelectionGrid(new Rect(Screen.width / 2 - 160, Screen.height / 2 - 160, 200, 200), 0, toolbarStrings, 1);
-            GameObject bob = GameObject.Find("Vaisseaux");
-            inputs touche_1 = bob.GetComponentsInChildren<inputs>()[0];
-            string key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 160, 150, 20), touche_1.used_keys[0].ToString());
-            try { touche_1.used_keys[0] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            catch { }
-            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 133, 150, 20), KeyCode.UpArrow.ToString());
-            try { touche_1.used_keys[1] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            catch { }
-            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 107, 150, 20), KeyCode.DownArrow.ToString());
-            try { touche_1.used_keys[2] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            catch { }
-            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 83, 150, 20), touche_1.used_keys[3].ToString());
-            try { touche_1.used_keys[3] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            catch { }
-            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 57, 150, 20), touche_1.used_keys[4].ToString());
-            try { touche_1.used_keys[4] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            catch { }
-            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 32, 150, 20), KeyCode.LeftArrow.ToString());
-            try { touche_1.used_keys[5] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            catch { }
-            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 - 7, 150, 20), KeyCode.RightArrow.ToString());
-            try { touche_1.used_keys[6] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            catch { }
-            key = GUI.TextField(new Rect(Screen.width / 2 + 50, Screen.height / 2 + 19, 150, 20), KeyCode.Space.ToString());
-            try { touche_1.used_keys[7] = (KeyCode)System.Enum.Parse(typeof(KeyCode), key); }
-            catch { }
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 80, 300, 25), "Retour au menu Options"))
+            menu_inputs();
+
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 190, 300, 25), "Retour au menu Options"))
             { paused = 2; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 110, 300, 25), "Retour au menu principal"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 220, 300, 25), "Retour au menu pause"))
             { paused = 1; }
             #endregion
         }
@@ -306,11 +458,126 @@ public class menu_pause : MonoBehaviour
 
             if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 180, 300, 25), "Retour au menu Options"))
             { paused = 2; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 220, 300, 25), "Retour au menu principal"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 220, 300, 25), "Retour au menu pause"))
             { paused = 1; }
 
             //Debug.Log("AA : " + temp + " filtre : " + temp2);
             #endregion
         }
+    }
+
+    /// <summary>
+    /// Changer les touches pour le joueur
+    /// </summary>
+    void menu_inputs()
+    {
+        if (b)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 120, 50), "Avancer");
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 150, 30), name_keys[0]))
+            {
+                c = 0;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 150, 120, 50), "Haut");
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 150, 150, 30), name_keys[1]))
+            {
+                c = 1;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 120, 50), "Bas");
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 100, 150, 30), name_keys[2]))
+            {
+                c = 2;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 120, 50), "Gauche");
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 50, 150, 30), name_keys[3]))
+            {
+                c = 3;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2, 120, 50), "Droite");
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 150, 30), name_keys[4]))
+            {
+                c = 4;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 120, 50), "Rotation Gauche");
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 50, 150, 30), name_keys[5]))
+            {
+                c = 5;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 120, 50), "Rotation Droite");
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 100, 150, 30), name_keys[6]))
+            {
+                c = 6;
+                t = 5f;
+                b = false;
+            }
+
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 150, 120, 50), "Tirer");
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 150, 150, 30), name_keys[7]))
+            {
+                c = 7;
+                t = 5f;
+                b = false;
+            }
+
+            if (c >= 0 && change != KeyCode.None)
+            {
+                used_keys[c] = change;
+                name_keys[c] = used_keys[c].ToString();
+                c = -1;
+                change = KeyCode.None;
+                t = 0f;
+            }
+            else
+            {
+                #region get_prefs
+                for (int i = 0; i < 3; i++)
+                {
+                    PlayerPrefs.SetString("avancer" + i, name_keys[8 * i]);
+                    PlayerPrefs.SetString("rothaut" + i, name_keys[8 * i + 1]);
+                    PlayerPrefs.SetString("rotbas" + i, name_keys[8 * i + 2]);
+                    PlayerPrefs.SetString("pivgauche" + i, name_keys[8 * i + 3]);
+                    PlayerPrefs.SetString("pivdroite" + i, name_keys[8 * i + 4]);
+                    PlayerPrefs.SetString("rotgauche" + i, name_keys[8 * i + 5]);
+                    PlayerPrefs.SetString("rotdroite" + i, name_keys[8 * i + 6]);
+                    PlayerPrefs.SetString("feu" + i, name_keys[8 * i + 7]);
+                }
+                #endregion
+            }
+        }
+        else
+        {
+            b = changement_touche();
+        }
+    }
+
+    bool changement_touche()
+    {
+        if (Event.current.type == EventType.keyDown)
+        {
+            this.change = Event.current.keyCode;
+            return true;
+        }
+
+        t -= Time.deltaTime;
+
+        return t <= 0f;
     }
 }
