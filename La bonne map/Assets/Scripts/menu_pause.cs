@@ -24,6 +24,7 @@ public class menu_pause : MonoBehaviour
     private float t = 0f;
     private int c = -1;
     private bool b = true;
+    private bool un_joueur = true;
     #endregion
 
     void Start()
@@ -395,9 +396,9 @@ public class menu_pause : MonoBehaviour
             #region touches
             menu_inputs();
 
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 190, 300, 25), "Retour au menu Options"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 250, 300, 25), "Retour au menu Options"))
             { paused = 2; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 220, 300, 25), "Retour au menu pause"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 280, 300, 25), "Retour au menu pause"))
             { paused = 1; }
             #endregion
         }
@@ -473,69 +474,212 @@ public class menu_pause : MonoBehaviour
     {
         if (b)
         {
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 120, 50), "Avancer");
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 150, 30), name_keys[0]))
+            if (un_joueur)
             {
-                c = 0;
-                t = 5f;
-                b = false;
+                #region un_joueur
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 120, 50), "Avancer");
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 150, 30), name_keys[0]))
+                {
+                    c = 0;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 150, 120, 50), "Haut");
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 150, 150, 30), name_keys[1]))
+                {
+                    c = 1;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 120, 50), "Bas");
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 100, 150, 30), name_keys[2]))
+                {
+                    c = 2;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 120, 50), "Gauche");
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 50, 150, 30), name_keys[3]))
+                {
+                    c = 3;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2, 120, 50), "Droite");
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 150, 30), name_keys[4]))
+                {
+                    c = 4;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 120, 50), "Rotation Gauche");
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 50, 150, 30), name_keys[5]))
+                {
+                    c = 5;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 120, 50), "Rotation Droite");
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 100, 150, 30), name_keys[6]))
+                {
+                    c = 6;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 150, 120, 50), "Tirer");
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 150, 150, 30), name_keys[7]))
+                {
+                    c = 7;
+                    t = 5f;
+                    b = false;
+                }
+                #endregion
+            }
+            else
+            {
+                #region joueurs_split
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 200, 120, 50), "Avancer");
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 30), name_keys[8]))
+                {
+                    c = 8;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 150, 120, 50), "Haut");
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 150, 150, 30), name_keys[9]))
+                {
+                    c = 9;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 100, 120, 50), "Bas");
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 150, 30), name_keys[10]))
+                {
+                    c = 10;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 50, 120, 50), "Gauche");
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 150, 30), name_keys[11]))
+                {
+                    c = 11;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2, 120, 50), "Droite");
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 150, 30), name_keys[12]))
+                {
+                    c = 12;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 50, 120, 50), "Rotation Gauche");
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 150, 30), name_keys[13]))
+                {
+                    c = 13;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 100, 120, 50), "Rotation Droite");
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 150, 30), name_keys[14]))
+                {
+                    c = 14;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 150, 120, 50), "Tirer");
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 150, 150, 30), name_keys[15]))
+                {
+                    c = 15;
+                    t = 5f;
+                    b = false;
+                }
+
+                //DEUXIEME JOUEUR
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 200, 120, 50), "Avancer");
+                if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 - 200, 150, 30), name_keys[16]))
+                {
+                    c = 16;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 150, 120, 50), "Haut");
+                if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 - 150, 150, 30), name_keys[17]))
+                {
+                    c = 17;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 100, 120, 50), "Bas");
+                if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 - 100, 150, 30), name_keys[18]))
+                {
+                    c = 18;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 50, 120, 50), "Gauche");
+                if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 - 50, 150, 30), name_keys[19]))
+                {
+                    c = 19;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2, 120, 50), "Droite");
+                if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2, 150, 30), name_keys[20]))
+                {
+                    c = 20;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 50, 120, 50), "Rotation Gauche");
+                if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 + 50, 150, 30), name_keys[21]))
+                {
+                    c = 21;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 100, 120, 50), "Rotation Droite");
+                if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 + 100, 150, 30), name_keys[22]))
+                {
+                    c = 22;
+                    t = 5f;
+                    b = false;
+                }
+
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 150, 120, 50), "Tirer");
+                if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 + 150, 150, 30), name_keys[23]))
+                {
+                    c = 23;
+                    t = 5f;
+                    b = false;
+                }
+                #endregion
             }
 
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 150, 120, 50), "Haut");
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 150, 150, 30), name_keys[1]))
-            {
-                c = 1;
-                t = 5f;
-                b = false;
-            }
-
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 120, 50), "Bas");
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 100, 150, 30), name_keys[2]))
-            {
-                c = 2;
-                t = 5f;
-                b = false;
-            }
-
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 120, 50), "Gauche");
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 50, 150, 30), name_keys[3]))
-            {
-                c = 3;
-                t = 5f;
-                b = false;
-            }
-
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2, 120, 50), "Droite");
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 150, 30), name_keys[4]))
-            {
-                c = 4;
-                t = 5f;
-                b = false;
-            }
-
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 120, 50), "Rotation Gauche");
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 50, 150, 30), name_keys[5]))
-            {
-                c = 5;
-                t = 5f;
-                b = false;
-            }
-
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 120, 50), "Rotation Droite");
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 100, 150, 30), name_keys[6]))
-            {
-                c = 6;
-                t = 5f;
-                b = false;
-            }
-
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 150, 120, 50), "Tirer");
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 150, 150, 30), name_keys[7]))
-            {
-                c = 7;
-                t = 5f;
-                b = false;
-            }
+            if (GUI.Button(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 200, 300, 25), "Joueur 1"))
+                un_joueur = true;
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 200, 300, 25), "Deux joueurs (écran séparé)"))
+                un_joueur = false;
 
             if (c >= 0 && change != KeyCode.None)
             {
