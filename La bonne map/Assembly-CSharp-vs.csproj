@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\GUI\player2gui_life.cs" />
      <Compile Include="Assets\Scripts\GUI\testGUI.cs" />
      <Compile Include="Assets\Scripts\IA.cs" />
+     <Compile Include="Assets\Scripts\KillFeed.cs" />
      <Compile Include="Assets\Scripts\PlayerMvtTest.cs" />
      <Compile Include="Assets\Scripts\Scripts\Road.cs" />
      <Compile Include="Assets\Scripts\balle.cs" />
@@ -86,7 +87,7 @@
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>F:/epita/Projet-flight-arena/La bonne map/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>G:/Projet-flight-arena/La bonne map/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

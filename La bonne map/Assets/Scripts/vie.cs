@@ -11,6 +11,7 @@ public class vie : MonoBehaviour
     public string name;
     public bool bool_killfeed;
     public string tueur;
+    public string couleur;
     private bool affiche = false;
     public int frag_limite = 5;
     public bool respawn = true;
@@ -41,7 +42,7 @@ public class vie : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(bool_killfeed);
+        //Debug.Log(bool_killfeed);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
             //anim.Play();
@@ -116,7 +117,7 @@ public class vie : MonoBehaviour
             {
                 bool_killfeed = true;
             }
-            Debug.Log(current_life + " <- current_life + bool -> " + bool_killfeed);
+            //Debug.Log(current_life + " <- current_life + bool -> " + bool_killfeed);
             audio.PlayOneShot(hitmarker);
         }
         ok = false;
@@ -125,6 +126,10 @@ public class vie : MonoBehaviour
     {
             this.current_life -= 2;
             ok = false;
+            if (current_life <= 0)
+            {
+                bool_killfeed = true;
+            }
             this.tueur = "Bad piloting";
     }
     void OnGUI()
