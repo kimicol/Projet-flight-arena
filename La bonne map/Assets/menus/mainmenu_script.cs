@@ -6,6 +6,8 @@ public class mainmenu_script : MonoBehaviour
     private int choix_menu = 1;
     private float volume = 0.5f;
     private int player = 1;
+    private int qualite_image = 0;
+
     public GUISkin skin;
     public Texture vaisseau1;
     public Texture vaisseau2;
@@ -96,18 +98,28 @@ public class mainmenu_script : MonoBehaviour
         #endregion
 
         //GUI.skin = skin;
+        #region PlayerPrefs
         volume = PlayerPrefs.GetFloat("Volume", volume);
         if(PlayerPrefs.HasKey("Volume"))
             AudioListener.volume = PlayerPrefs.GetFloat("Volume");
         else
             PlayerPrefs.SetFloat("Volume", volume);
 
-
         player = PlayerPrefs.GetInt("player", player);
-        if(PlayerPrefs.HasKey("player"))
+        if (PlayerPrefs.HasKey("player"))
             player = PlayerPrefs.GetInt("player", player);
         else
             PlayerPrefs.SetInt("player", player);
+
+        qualite_image = PlayerPrefs.GetInt("qualite_image", qualite_image);
+        if (PlayerPrefs.HasKey("qualite_image"))
+        {
+            qualite_image = PlayerPrefs.GetInt("qualite_image", qualite_image);
+            QualitySettings.SetQualityLevel(qualite_image);
+        }
+        else
+            PlayerPrefs.SetInt("qualite_image", qualite_image);
+        #endregion
 
         used_keys = new KeyCode[24];
         name_keys = new string[24];
@@ -292,18 +304,16 @@ public class mainmenu_script : MonoBehaviour
 
                 //menu video
             case 2:
-                GUI.Label(new Rect(Screen.width / 6, Screen.height / 2, 200, 30), "Qualité de l'image :" );
+                #region image
+                GUI.Label(new Rect(Screen.width / 3, Screen.height / 2, 200, 30), "Qualité de l'image :" );
 
-                for (int i = 0; i < QualitySettings.names.Length; i++)
-                {
-                    if (GUI.Button(new Rect(10 * (i + 1) + i * (Screen.width / QualitySettings.names.Length - 10), Screen.height / 2 + 40, Screen.width / QualitySettings.names.Length - (QualitySettings.names.Length + 1) * 10, 30), QualitySettings.names[i]))
-                    {
-                        QualitySettings.SetQualityLevel(i, true);
-                    }
-                }
-
+                qualite_image = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 +40, 800, 30), qualite_image, QualitySettings.names);
+                QualitySettings.SetQualityLevel(qualite_image, true);
+                PlayerPrefs.SetInt("qualite_image", qualite_image);
+                
                 if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
                     options = 1;
+                #endregion
                 break;
 
                 //menu son
