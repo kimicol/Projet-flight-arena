@@ -11,6 +11,9 @@ public class balle : MonoBehaviour {
         this.gameObject.tag = "balle";
         DestroyObject(gameObject, 2);
         audio.Play();
+        string temp = name;
+        temp = temp.Remove(temp.Length - 7);
+        name = temp;
 	}
 	
 	// Update is called once per frame

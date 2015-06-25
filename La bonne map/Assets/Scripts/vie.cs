@@ -8,6 +8,9 @@ public class vie : MonoBehaviour
     public int pv = 3;
     public int current_life;
     private bool killed;
+    public string name;
+    public bool bool_killfeed;
+    public string tueur;
     private bool affiche = false;
     public int frag_limite = 5;
     public bool respawn = true;
@@ -38,7 +41,7 @@ public class vie : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(ok);
+        Debug.Log(bool_killfeed);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
             //anim.Play();
@@ -107,9 +110,14 @@ public class vie : MonoBehaviour
     {
         if (collision.gameObject.tag == "balle")
         {
+            this.tueur = collision.name;
             this.current_life -= 1;
+            if (current_life <= 0)
+            {
+                bool_killfeed = true;
+            }
+            Debug.Log(current_life + " <- current_life + bool -> " + bool_killfeed);
             audio.PlayOneShot(hitmarker);
-            //Debug.Log(current_life + " script pv");
         }
         ok = false;
     }
@@ -117,6 +125,7 @@ public class vie : MonoBehaviour
     {
             this.current_life -= 2;
             ok = false;
+            this.tueur = "Bad piloting";
     }
     void OnGUI()
     {
