@@ -308,6 +308,7 @@ public class mainmenu_script : MonoBehaviour
 
                 //menu son
             case 3:
+                #region son
                 //volume
                 volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 40, 100, 30), volume, 0.0f, 1.0f);
                 GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 80, 100, 30), ("Volume : " + (int)(10*volume)));
@@ -348,6 +349,7 @@ public class mainmenu_script : MonoBehaviour
 
                 if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
                     options = 1;
+                #endregion
                 break;
 
                 //menu touches

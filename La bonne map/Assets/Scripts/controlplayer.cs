@@ -102,11 +102,11 @@ public class controlplayer : MonoBehaviour
     {
         if (recharge <= 0f)
         {
-            Rigidbody instance;
+            //Rigidbody instance;
             if (i == 0)
-                instance = Instantiate(projectile, origine.position, origine.rotation) as Rigidbody;
+                /*instance =*/ Instantiate(projectile, origine.position, origine.rotation);
             else
-                instance = Instantiate(projectile, origine2.position, origine2.rotation) as Rigidbody;
+                /*instance =*/ Instantiate(projectile, origine2.position, origine2.rotation);
             i = (i + 1) % 2;
 
             recharge = tps_rech;

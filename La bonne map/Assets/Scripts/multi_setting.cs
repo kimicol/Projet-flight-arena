@@ -3,15 +3,17 @@ using System.Collections;
 
 public class multi_setting : MonoBehaviour 
 {
+    public GUISkin skin;
+
     private int menu;
     private string ip = "";
     private int port = 25000;
+
     private int choix_vaisseau = 1;
     public GameObject prefab1;
     public GameObject prefab2;
     public GameObject prefab3;
     private GameObject vaisseau;
-    private bool b = true;
 
 	// Use this for initialization
 	void Start () 
@@ -31,6 +33,8 @@ public class multi_setting : MonoBehaviour
 
     void OnGUI()
     {
+        GUI.skin = this.skin;
+
         switch(menu)
         {
             case 1:
@@ -44,7 +48,7 @@ public class multi_setting : MonoBehaviour
 
     void select_connexion()
     {
-        if (GUI.Button(new Rect(Screen.width/2, Screen.height/2, 300, 30), "Héberger"))
+        if (GUI.Button(new Rect(Screen.width/2 - 150, Screen.height/2 - 50, 300, 30), "Héberger"))
         {
             Network.InitializeServer(4, 25000, true);
             if (Network.peerType == NetworkPeerType.Server)
@@ -54,9 +58,14 @@ public class multi_setting : MonoBehaviour
             }
         }
 
-        if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 30, 300, 30), "Rejoindre"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 30), "Rejoindre"))
         {
             menu = 2;
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Retour au menu"))
+        {
+            Application.LoadLevel(0);
         }
     }
 
