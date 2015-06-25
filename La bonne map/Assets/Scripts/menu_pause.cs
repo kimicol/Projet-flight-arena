@@ -6,12 +6,15 @@ public class menu_pause : MonoBehaviour
 {
 
     int paused = 0;
-    int temp = 8; // a changer 
-    int temp2;
-    float volume;
+    int aliasing = 8; // a changer 
+    int anisotropic;
+    private float volume;
     bool changed_sound = false;
     public GUISkin skin;
     AudioListener main;
+
+    private int qualite_image = 0;
+    private int son = 0;
 
     void Start()
     {
@@ -22,21 +25,86 @@ public class menu_pause : MonoBehaviour
         else
             PlayerPrefs.SetFloat("Volume", volume);
 
-        if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.Disable)
+        son = PlayerPrefs.GetInt("son", son);
+        if (PlayerPrefs.HasKey("son"))
         {
-            temp2 = 0;
+            son = PlayerPrefs.GetInt("son", son);
+            switch (son)
+            {
+                case 0:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mono;
+                    break;
+                case 1:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Stereo;
+                    break;
+                case 2:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Quad;
+                    break;
+                case 3:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Surround;
+                    break;
+                case 4:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mode5point1;
+                    break;
+                case 5:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mode7point1;
+                    break;
+            }
         }
         else
+            PlayerPrefs.SetInt("son", son);
+
+        qualite_image = PlayerPrefs.GetInt("qualite_image", qualite_image);
+        if (PlayerPrefs.HasKey("qualite_image"))
         {
-            if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.Enable)
+            qualite_image = PlayerPrefs.GetInt("qualite_image", qualite_image);
+            QualitySettings.SetQualityLevel(qualite_image);
+        }
+        else
+            PlayerPrefs.SetInt("qualite_image", qualite_image);
+
+        aliasing = PlayerPrefs.GetInt("aliasing", aliasing);
+        if (PlayerPrefs.HasKey("aliasing"))
+        {
+            aliasing = PlayerPrefs.GetInt("aliasing", aliasing);
+            switch (aliasing)
             {
-                temp2 = 1;
-            }
-            else
-            {
-                temp2 = 2;
+                case 0:
+                    QualitySettings.antiAliasing = 0;
+                    break;
+                case 1:
+                    QualitySettings.antiAliasing = 2;
+                    break;
+                case 2:
+                    QualitySettings.antiAliasing = 4;
+                    break;
+                case 3:
+                    QualitySettings.antiAliasing = 8;
+                    break;
             }
         }
+        else
+            PlayerPrefs.SetInt("aliasing", aliasing);
+
+        anisotropic = PlayerPrefs.GetInt("anisotropic", anisotropic);
+        if (PlayerPrefs.HasKey("anisotropic"))
+        {
+            qualite_image = PlayerPrefs.GetInt("anisotropic", anisotropic);
+            switch (anisotropic)
+            {
+                case 0:
+                    QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
+                    break;
+                case 1:
+                    QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
+                    break;
+                case 2:
+                    QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
+                    break;
+            }
+        }
+        else
+            PlayerPrefs.SetInt("anisotropic", anisotropic);
     }
 
     void Update()
@@ -186,9 +254,8 @@ public class menu_pause : MonoBehaviour
             #region video
             GUI.Label(new Rect(Screen.width / 2 - 160, Screen.height / 2 - 160, 300, 25), "Anisotropic Textures");
             string[] toolbarStrings = new string[] { "Disable", "Enable", "Force Enable" };
-            int var = temp2;
-            var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 - 125, 800, 25), var, toolbarStrings);
-            switch (var)
+            anisotropic = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 - 125, 800, 25), anisotropic, toolbarStrings);
+            switch (anisotropic)
             {
                 case 0:
                     QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
@@ -200,12 +267,12 @@ public class menu_pause : MonoBehaviour
                     QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
                     break;
             }
-            temp2 = var;
-            var = temp;
+            PlayerPrefs.SetInt("anisotropic", anisotropic);
+
             GUI.Label(new Rect(Screen.width / 2 - 160, Screen.height / 2 - 60, 300, 25), "Anti Aliasing");
             toolbarStrings = new string[] { "0", "2x", "4x", "8x" };
-            var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 - 20, 800, 25), var, toolbarStrings);
-            switch (var)
+            aliasing = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 - 20, 800, 25), aliasing, toolbarStrings);
+            switch (aliasing)
             {
                 case 0:
                     QualitySettings.antiAliasing = 0;
@@ -220,7 +287,8 @@ public class menu_pause : MonoBehaviour
                     QualitySettings.antiAliasing = 8;
                     break;
             }
-            temp = var;
+            PlayerPrefs.SetInt("aliasing", aliasing);
+
             bool coche = QualitySettings.softVegetation;
             coche = GUI.Toggle(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 20, 800, 25), coche, "Soft Particles");
             QualitySettings.softVegetation = coche;

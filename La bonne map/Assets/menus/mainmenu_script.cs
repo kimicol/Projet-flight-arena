@@ -5,8 +5,12 @@ public class mainmenu_script : MonoBehaviour
 {
     private int choix_menu = 1;
     private float volume = 0.5f;
+    private int son = 0;
     private int player = 1;
+
     private int qualite_image = 0;
+    private int aliasing = 0;
+    private int anisotropic;
 
     public GUISkin skin;
     public Texture vaisseau1;
@@ -97,13 +101,41 @@ public class mainmenu_script : MonoBehaviour
         all_keys[62] = KeyCode.Z;
         #endregion
 
-        //GUI.skin = skin;
         #region PlayerPrefs
         volume = PlayerPrefs.GetFloat("Volume", volume);
         if(PlayerPrefs.HasKey("Volume"))
             AudioListener.volume = PlayerPrefs.GetFloat("Volume");
         else
             PlayerPrefs.SetFloat("Volume", volume);
+
+        son = PlayerPrefs.GetInt("son", son);
+        if (PlayerPrefs.HasKey("son"))
+        {
+            son = PlayerPrefs.GetInt("son", son);
+            switch (son)
+            {
+                case 0:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mono;
+                    break;
+                case 1:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Stereo;
+                    break;
+                case 2:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Quad;
+                    break;
+                case 3:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Surround;
+                    break;
+                case 4:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mode5point1;
+                    break;
+                case 5:
+                    AudioSettings.speakerMode = AudioSpeakerMode.Mode7point1;
+                    break;
+            }
+        }
+        else
+            PlayerPrefs.SetInt("son", son);
 
         player = PlayerPrefs.GetInt("player", player);
         if (PlayerPrefs.HasKey("player"))
@@ -119,7 +151,51 @@ public class mainmenu_script : MonoBehaviour
         }
         else
             PlayerPrefs.SetInt("qualite_image", qualite_image);
+
+        aliasing = PlayerPrefs.GetInt("aliasing", aliasing);
+        if (PlayerPrefs.HasKey("aliasing"))
+        {
+            aliasing = PlayerPrefs.GetInt("aliasing", aliasing);
+            switch (aliasing)
+            {
+                case 0:
+                    QualitySettings.antiAliasing = 0;
+                    break;
+                case 1:
+                    QualitySettings.antiAliasing = 2;
+                    break;
+                case 2:
+                    QualitySettings.antiAliasing = 4;
+                    break;
+                case 3:
+                    QualitySettings.antiAliasing = 8;
+                    break;
+            }
+        }
+        else
+            PlayerPrefs.SetInt("aliasing", aliasing);
+
+        anisotropic = PlayerPrefs.GetInt("anisotropic", anisotropic);
+        if (PlayerPrefs.HasKey("anisotropic"))
+        {
+            qualite_image = PlayerPrefs.GetInt("anisotropic", anisotropic);
+            switch (anisotropic)
+            {
+                case 0:
+                    QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
+                    break;
+                case 1:
+                    QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
+                    break;
+                case 2:
+                    QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
+                    break;
+            }
+        }
+        else
+            PlayerPrefs.SetInt("anisotropic", anisotropic);
         #endregion
+        //GUI.skin = skin;
 
         used_keys = new KeyCode[24];
         name_keys = new string[24];
@@ -226,7 +302,7 @@ public class mainmenu_script : MonoBehaviour
         GUI.skin = skin;
         int taille = GUI.skin.label.fontSize;
         GUI.skin.label.fontSize = 70;
-        GUI.Label(new Rect(Screen.width / 3, Screen.height / 5, Screen.width*3/4, Screen.height / 5), "Flight Arena");
+        GUI.Label(new Rect(Screen.width / 3, Screen.height / 6, Screen.width*3/4, Screen.height / 5), "Flight Arena");
         GUI.skin.label.fontSize = taille;
 		GUI.DrawTexture (new Rect (Screen.width - 150, Screen.height - 150, 150, 150), logo);
         switch(choix_menu)
@@ -286,32 +362,81 @@ public class mainmenu_script : MonoBehaviour
     /// </summary>
     void menu_options()
     {
-        //GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Options");
-
         switch(options)
         {
                 //premier menu
             case 1:
-                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 80, 300, 25), "Vidéo"))
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 300, 30), "Vidéo"))
                 { options = 2; }
-                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Son"))
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 300, 30), "Son"))
                 { options = 3; }
-                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Réglage des touches"))
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 30), "Réglage des touches"))
                     options = 4;
-                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Retour au menu principal"))
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Retour au menu principal"))
                 { choix_menu = 1; }
                 break;
 
                 //menu video
             case 2:
                 #region image
-                GUI.Label(new Rect(Screen.width / 3, Screen.height / 2, 200, 30), "Qualité de l'image :" );
-
-                qualite_image = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 +40, 800, 30), qualite_image, QualitySettings.names);
+                GUI.Label(new Rect(Screen.width / 3, Screen.height / 2 - 200, 200, 30), "Qualité de l'image :" );
+                qualite_image = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 - 160, 800, 30), qualite_image, QualitySettings.names);
                 QualitySettings.SetQualityLevel(qualite_image, true);
                 PlayerPrefs.SetInt("qualite_image", qualite_image);
-                
-                if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
+
+                GUI.Label(new Rect(Screen.width / 3, Screen.height / 2 - 120, 300, 30), "Anisotropic Textures");
+                string[] toolbarStrings = new string[] { "Disable", "Enable", "Force Enable" };
+                anisotropic = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 - 80, 800, 30), anisotropic, toolbarStrings);
+                switch (anisotropic)
+                {
+                    case 0:
+                        QualitySettings.anisotropicFiltering = AnisotropicFiltering.Disable;
+                        break;
+                    case 1:
+                        QualitySettings.anisotropicFiltering = AnisotropicFiltering.Enable;
+                        break;
+                    case 2:
+                        QualitySettings.anisotropicFiltering = AnisotropicFiltering.ForceEnable;
+                        break;
+                }
+                PlayerPrefs.SetInt("anisotropic", anisotropic);
+
+                GUI.Label(new Rect(Screen.width / 3, Screen.height / 2 - 20, 300, 30), "Anti Aliasing");
+                toolbarStrings = new string[] { "0", "2x", "4x", "8x" };
+                aliasing = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 + 20, 800, 30), aliasing, toolbarStrings);
+                switch (aliasing)
+                {
+                    case 0:
+                        QualitySettings.antiAliasing = 0;
+                        break;
+                    case 1:
+                        QualitySettings.antiAliasing = 2;
+                        break;
+                    case 2:
+                        QualitySettings.antiAliasing = 4;
+                        break;
+                    case 3:
+                        QualitySettings.antiAliasing = 8;
+                        break;
+                }
+                PlayerPrefs.SetInt("aliasing", aliasing);
+
+                bool coche = QualitySettings.softVegetation;
+                coche = GUI.Toggle(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 60, 800, 30), coche, "Soft Particles");
+                QualitySettings.softVegetation = coche;
+
+                GUI.Label(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 100, 300, 30), "Luminosité");
+                Light lt = GameObject.FindObjectOfType<Light>();
+                float lumi = lt.intensity;
+                lumi = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 140, 300, 30), lumi, 0.0F, 1.0F);
+                string lengthText = GUI.TextField(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 180, 300, 30), lumi.ToString());
+                float newLength;
+                if (float.TryParse(lengthText, out newLength))
+                {
+                    lt.intensity = newLength;
+                }
+
+                if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 240, 400, 30), "Retour"))
                     options = 1;
                 #endregion
                 break;
@@ -322,20 +447,19 @@ public class mainmenu_script : MonoBehaviour
                 //volume
                 volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 40, 100, 30), volume, 0.0f, 1.0f);
                 GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 80, 100, 30), ("Volume : " + (int)(10*volume)));
-                string lengthText = GUI.TextField(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 20, 300, 25), volume.ToString());
-                float newLength;
-                if (float.TryParse(lengthText, out newLength))
+                string chaine_volume = GUI.TextField(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 20, 300, 25), volume.ToString());
+                float putVolume;
+                if (float.TryParse(chaine_volume, out putVolume))
                 {
-                    volume = newLength;
+                    volume = putVolume;
                 }
                 AudioListener.volume = volume;
                 PlayerPrefs.SetFloat("Volume", volume);
 
                 //Orientation du son
-                string[] toolbarStrings = new string[] { "Mono", "Stéréo", "Quad", "Surround", "5.1", "7.1" };
-                int var = 0;
-                var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 + 55, 800, 25), var, toolbarStrings);
-                switch (var)
+                string[] toolbarSound = new string[] { "Mono", "Stéréo", "Quad", "Surround", "5.1", "7.1" };
+                son = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 + 55, 800, 25), son, toolbarSound);
+                switch (son)
                 {
                     case 0:
                         AudioSettings.speakerMode = AudioSpeakerMode.Mono;
@@ -356,6 +480,7 @@ public class mainmenu_script : MonoBehaviour
                         AudioSettings.speakerMode = AudioSpeakerMode.Mode7point1;
                         break;
                 }
+                PlayerPrefs.SetInt("son", son);
 
                 if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
                     options = 1;
@@ -371,14 +496,6 @@ public class mainmenu_script : MonoBehaviour
                  */
                 break;
         }
-
-        /*
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Clavier"))
-        {
-            choix_menu = 4;
-            return;
-        }
-         */ 
     }
 
     void menu_selection()
