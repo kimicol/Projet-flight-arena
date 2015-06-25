@@ -147,6 +147,68 @@ public class inputs : controlplayer
 	// Update is called once per frame
 	void Update () 
     {
+        #region name_keys
+        int i = 0;
+        name_keys[i * 8] = PlayerPrefs.GetString("avancer" + i, name_keys[8 * i]);
+        if (PlayerPrefs.HasKey("avancer" + i))
+            name_keys[i * 8] = PlayerPrefs.GetString("avancer" + i, name_keys[8 * i]);
+        else
+            PlayerPrefs.SetString("avancer" + i, name_keys[8 * i]);
+
+        name_keys[i * 8 + 1] = PlayerPrefs.GetString("rothaut" + i, name_keys[8 * i + 1]);
+        if (PlayerPrefs.HasKey("rothaut" + i))
+            name_keys[i * 8 + 1] = PlayerPrefs.GetString("rothaut" + i, name_keys[8 * i + 1]);
+        else
+            PlayerPrefs.SetString("rothaut" + i, name_keys[8 * i + 1]);
+
+        name_keys[i * 8 + 2] = PlayerPrefs.GetString("rotbas" + i, name_keys[8 * i + 2]);
+        if (PlayerPrefs.HasKey("rotbas" + i))
+            name_keys[i * 8 + 2] = PlayerPrefs.GetString("rotbas" + i, name_keys[8 * i + 2]);
+        else
+            PlayerPrefs.SetString("rotbas" + i, name_keys[8 * i + 2]);
+
+        name_keys[i * 8 + 3] = PlayerPrefs.GetString("pivgauche" + i, name_keys[8 * i + 3]);
+        if (PlayerPrefs.HasKey("pivgauche" + i))
+            name_keys[i * 8 + 3] = PlayerPrefs.GetString("pivgauche" + i, name_keys[8 * i + 3]);
+        else
+            PlayerPrefs.SetString("pivgauche" + i, name_keys[8 * i + 3]);
+
+        name_keys[i * 8 + 4] = PlayerPrefs.GetString("pivdroite" + i, name_keys[8 * i + 4]);
+        if (PlayerPrefs.HasKey("pivdroite" + i))
+            name_keys[i * 8 + 4] = PlayerPrefs.GetString("pivdroite" + i, name_keys[8 * i + 4]);
+        else
+            PlayerPrefs.SetString("pivdroite" + i, name_keys[8 * i + 4]);
+
+        name_keys[i * 8 + 5] = PlayerPrefs.GetString("rotgauche" + i, name_keys[8 * i + 5]);
+        if (PlayerPrefs.HasKey("rotgauche" + i))
+            name_keys[i * 8 + 5] = PlayerPrefs.GetString("rotgauche" + i, name_keys[8 * i + 5]);
+        else
+            PlayerPrefs.SetString("rotgauche" + i, name_keys[8 * i + 5]);
+
+        name_keys[i * 8 + 6] = PlayerPrefs.GetString("rotdroite" + i, name_keys[8 * i + 6]);
+        if (PlayerPrefs.HasKey("rotdroite" + i))
+            name_keys[i * 8 + 6] = PlayerPrefs.GetString("rotdroite" + i, name_keys[8 * i + 6]);
+        else
+            PlayerPrefs.SetString("rotdroite" + i, name_keys[8 * i + 6]);
+
+        name_keys[i * 8 + 7] = PlayerPrefs.GetString("feu" + i, name_keys[8 * i + 7]);
+        if (PlayerPrefs.HasKey("feu" + i))
+            name_keys[i * 8 + 7] = PlayerPrefs.GetString("feu" + i, name_keys[8 * i + 7]);
+        else
+            PlayerPrefs.SetString("feu" + i, name_keys[8 * i + 7]);
+        #endregion
+
+        for (int j = 0; j < used_keys.Length; j++)
+        {
+            int k = 0;
+
+            while (k < all_keys.Length && all_keys[k].ToString() != name_keys[j])
+                k++;
+
+            if (k < all_keys.Length)
+                used_keys[j] = all_keys[k];
+        }
+     
         av = Input.GetKey(used_keys[0]);
         RH = Input.GetKey(used_keys[1]);
         RB = Input.GetKey(used_keys[2]);
