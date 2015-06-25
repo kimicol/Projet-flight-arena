@@ -716,7 +716,15 @@ public class menu_pause : MonoBehaviour
     {
         if (Event.current.type == EventType.keyDown)
         {
-            this.change = Event.current.keyCode;
+            KeyCode input = Event.current.keyCode;
+
+            int i = 0;
+            while (i < all_keys.Length && all_keys[i] != input)
+                i++;
+
+            if(i < all_keys.Length)
+                this.change = input;
+
             return true;
         }
 

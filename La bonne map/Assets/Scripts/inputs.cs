@@ -208,7 +208,7 @@ public class inputs : controlplayer
             if (k < all_keys.Length)
                 used_keys[j] = all_keys[k];
         }
-
+     
         av = Input.GetKey(used_keys[0]);
         RH = Input.GetKey(used_keys[1]);
         RB = Input.GetKey(used_keys[2]);
