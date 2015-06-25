@@ -21,6 +21,8 @@ public class mainmenu_script : MonoBehaviour
     private float t = 0f;
     private int c = -1;
     private bool b = true;
+
+    private int options = 1;
     
 
 	// Use this for initialization
@@ -272,35 +274,99 @@ public class mainmenu_script : MonoBehaviour
     /// </summary>
     void menu_options()
     {
-        //Gestion du son
-        volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 40, 100, 30), volume, 0.0f, 1.0f);
-        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 80, 100, 30), ("Volume : " + (int)(10*volume)));
+        //GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Options");
 
-        AudioListener.volume = volume;
-        PlayerPrefs.SetFloat("Volume", volume);
-
-        //gestion de la qualite de l'image
-        GUI.Label(new Rect(Screen.width / 6, Screen.height / 2, 200, 30), "Qualité de l'image :" );
-
-        for (int i = 0; i < QualitySettings.names.Length; i++)
+        switch(options)
         {
-            if (GUI.Button(new Rect(10 * (i + 1) + i * (Screen.width / QualitySettings.names.Length - 10), Screen.height / 2 + 40, Screen.width / QualitySettings.names.Length - (QualitySettings.names.Length + 1) * 10, 30), QualitySettings.names[i]))
-            {
-                QualitySettings.SetQualityLevel(i, true);
-            }
+                //premier menu
+            case 1:
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 80, 300, 25), "Vidéo"))
+                { options = 2; }
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Son"))
+                { options = 3; }
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Réglage des touches"))
+                    options = 4;
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Retour au menu principal"))
+                { choix_menu = 1; }
+                break;
+
+                //menu video
+            case 2:
+                GUI.Label(new Rect(Screen.width / 6, Screen.height / 2, 200, 30), "Qualité de l'image :" );
+
+                for (int i = 0; i < QualitySettings.names.Length; i++)
+                {
+                    if (GUI.Button(new Rect(10 * (i + 1) + i * (Screen.width / QualitySettings.names.Length - 10), Screen.height / 2 + 40, Screen.width / QualitySettings.names.Length - (QualitySettings.names.Length + 1) * 10, 30), QualitySettings.names[i]))
+                    {
+                        QualitySettings.SetQualityLevel(i, true);
+                    }
+                }
+
+                if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
+                    options = 1;
+                break;
+
+                //menu son
+            case 3:
+                //volume
+                volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 40, 100, 30), volume, 0.0f, 1.0f);
+                GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 80, 100, 30), ("Volume : " + (int)(10*volume)));
+                string lengthText = GUI.TextField(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 20, 300, 25), volume.ToString());
+                float newLength;
+                if (float.TryParse(lengthText, out newLength))
+                {
+                    volume = newLength;
+                }
+                AudioListener.volume = volume;
+                PlayerPrefs.SetFloat("Volume", volume);
+
+                //Orientation du son
+                string[] toolbarStrings = new string[] { "Mono", "Stéréo", "Quad", "Surround", "5.1", "7.1" };
+                int var = 0;
+                var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 + 55, 800, 25), var, toolbarStrings);
+                switch (var)
+                {
+                    case 0:
+                        AudioSettings.speakerMode = AudioSpeakerMode.Mono;
+                        break;
+                    case 1:
+                        AudioSettings.speakerMode = AudioSpeakerMode.Stereo;
+                        break;
+                    case 2:
+                        AudioSettings.speakerMode = AudioSpeakerMode.Quad;
+                        break;
+                    case 3:
+                        AudioSettings.speakerMode = AudioSpeakerMode.Surround;
+                        break;
+                    case 4:
+                        AudioSettings.speakerMode = AudioSpeakerMode.Mode5point1;
+                        break;
+                    case 5:
+                        AudioSettings.speakerMode = AudioSpeakerMode.Mode7point1;
+                        break;
+                }
+
+                if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
+                    options = 1;
+                break;
+
+                //menu touches
+            case 4:
+                menu_inputs();
+                /*
+                if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
+                    options = 1;
+                 */
+                break;
         }
 
+        /*
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Clavier"))
         {
             choix_menu = 4;
             return;
         }
-
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
-        {
-            choix_menu = 1;
-            return;
-        }
+         */ 
     }
 
     void menu_selection()
@@ -326,6 +392,9 @@ public class mainmenu_script : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changer les touches pour le joueur
+    /// </summary>
     void menu_inputs()
     {
         if (b)
@@ -396,7 +465,7 @@ public class mainmenu_script : MonoBehaviour
 
             if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 200, 400, 25), "Retour"))
             {
-                choix_menu = 2;
+                options = 1;
                 return;
             }
 

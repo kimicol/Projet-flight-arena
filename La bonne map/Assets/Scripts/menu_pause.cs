@@ -15,7 +15,13 @@ public class menu_pause : MonoBehaviour
 
     void Start()
     {
-        volume = this.camera.audio.volume;
+        //volume = this.camera.audio.volume;
+        volume = PlayerPrefs.GetFloat("Volume", volume);
+        if (PlayerPrefs.HasKey("Volume"))
+            AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+        else
+            PlayerPrefs.SetFloat("Volume", volume);
+
         if (QualitySettings.anisotropicFiltering == AnisotropicFiltering.Disable)
         {
             temp2 = 0;
@@ -73,7 +79,7 @@ public class menu_pause : MonoBehaviour
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Quitter le jeu"))
                 Application.Quit();
         }
-        if (paused == 2) // option
+        else if (paused == 2) // option
         {
             GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Pause");
 
@@ -81,12 +87,12 @@ public class menu_pause : MonoBehaviour
             { paused = 1; }
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Son"))
             { paused = 3; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Reglage des touches"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Réglage des touches"))
                 paused = 4;
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Video"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Vidéo"))
             { paused = 5; }
         }
-        if (paused == 3) // son
+        else if (paused == 3) // son
         {
             GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Pause");
 
@@ -94,6 +100,8 @@ public class menu_pause : MonoBehaviour
             { paused = 1; }
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Retour au menu Options"))
             { paused = 2; }
+
+            //Changement du volume
             volume = GUI.HorizontalSlider(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), volume, 0.0F, 1.0F); // A verifier sur quelle valeur est change et difference avec valeur du menu
             string lengthText = GUI.TextField(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 20, 300, 25), volume.ToString());
             float newLength;
@@ -101,7 +109,9 @@ public class menu_pause : MonoBehaviour
             {
                 volume = newLength;
             }
-            string[] toolbarStrings = new string[] { "Mono", "Stereo", "Quad", "Surround", "5.1", "7.1" };
+            PlayerPrefs.SetFloat("Volume", volume);
+
+            string[] toolbarStrings = new string[] { "Mono", "Stéréo", "Quad", "Surround", "5.1", "7.1" };
             int var = 0;
             var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 + 55, 800, 25), var, toolbarStrings);
             switch (var)
@@ -127,7 +137,7 @@ public class menu_pause : MonoBehaviour
             }
 
         }
-        if (paused == 4) // Touches
+        else if (paused == 4) // Touches
         {
             GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Pause");
             string[] toolbarStrings = new string[] { "Avancer", "Rotation Haut", "Rotation Bas", "Pivoter gauche", "Pivoter Droite", "Rotation Gauche", "Rotation Droite", "Tirer" };
@@ -163,7 +173,7 @@ public class menu_pause : MonoBehaviour
             if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 110, 300, 25), "Retour au menu principal"))
             { paused = 1; }
         }
-        if (paused == 5) // Video
+        else if (paused == 5) // Video
         {
             GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Pause");
 
@@ -208,6 +218,7 @@ public class menu_pause : MonoBehaviour
             coche = GUI.Toggle(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 20, 800, 25), coche, "Soft Particles");
             QualitySettings.softVegetation = coche;
             GUI.Box(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 60, 300, 25), "Luminosité");
+
             if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 180, 300, 25), "Retour au menu Options"))
             { paused = 2; }
             if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 220, 300, 25), "Retour au menu principal"))
