@@ -62,6 +62,7 @@ public class multi_input : controlplayer
 
     void OnApplicationQuit()
     {
+        Network.Destroy(this.gameObject);
         Network.Disconnect();
     }
 
