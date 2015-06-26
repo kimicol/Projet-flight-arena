@@ -120,6 +120,18 @@ public class setting : MonoBehaviour
             PlayerPrefs.SetInt("anisotropic", anisotropic);
         #endregion
 
+        nb_joueur = PlayerPrefs.GetInt("nb_ia", nb_joueur);
+        if (PlayerPrefs.HasKey("nb_ia"))
+        {
+            choix = PlayerPrefs.GetInt("nb_ia", nb_joueur);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("player", choix);
+        }
+
+        nb_joueur++;
+
         temp = new GameObject[nb_joueur];
 
         choix = PlayerPrefs.GetInt("player", choix);

@@ -31,6 +31,9 @@ public class mainmenu_script : MonoBehaviour
     private bool un_joueur = true;
 
     private int options = 1;
+    private int selection = 1;
+
+    private int nb_ia = 1;
     #endregion
 
     // Use this for initialization
@@ -144,6 +147,12 @@ public class mainmenu_script : MonoBehaviour
             player = PlayerPrefs.GetInt("player", player);
         else
             PlayerPrefs.SetInt("player", player);
+
+        nb_ia = PlayerPrefs.GetInt("nb_ia", nb_ia);
+        if (PlayerPrefs.HasKey("nb_ia"))
+            nb_ia = PlayerPrefs.GetInt("nb_ia", nb_ia);
+        else
+            PlayerPrefs.SetInt("nb_ia", nb_ia);
 
         qualite_image = PlayerPrefs.GetInt("qualite_image", qualite_image);
         if (PlayerPrefs.HasKey("qualite_image"))
@@ -500,26 +509,60 @@ public class mainmenu_script : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Selection de la carte, du vaisseau et du nombre d'IA
+    /// </summary>
     void menu_selection()
     {
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
+        switch (selection)
         {
-            choix_menu = 1;
-        }
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 150), vaisseau1))
-        {
-            PlayerPrefs.SetInt("player", 1);
-            choix_menu = 6;
-        }
-        if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 150, 150), vaisseau2))
-        {
-            PlayerPrefs.SetInt("player", 2);
-            choix_menu = 6;
-        }
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 150, 150), vaisseau3))
-        {
-            PlayerPrefs.SetInt("player", 3);
-            choix_menu = 6;
+            case 1:
+                if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
+                {
+                    choix_menu = 1;
+                }
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 150), vaisseau1))
+                {
+                    PlayerPrefs.SetInt("player", 1);
+                    selection = 2;
+                }
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 150, 150), vaisseau2))
+                {
+                    PlayerPrefs.SetInt("player", 2);
+                    selection = 2;
+                }
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 150, 150), vaisseau3))
+                {
+                    PlayerPrefs.SetInt("player", 3);
+                    selection = 2;
+                }
+                break;
+                //mettre les IA
+            case 2:
+                GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 30, 300, 30), "Nombre d'ordinateurs :");
+                string input = GUI.TextField(new Rect(Screen.width / 2 - 50, Screen.height / 2, 100, 30), "" + nb_ia);
+                if(int.TryParse(input, out nb_ia))
+                {
+                    if (nb_ia < 0)
+                        nb_ia = 0;
+                    else if (nb_ia > 8)
+                        nb_ia = 8;
+                }
+
+                if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 30), "Suivant"))
+                {
+                    PlayerPrefs.SetInt("nb_ia", nb_ia);
+                    selection = 3;
+                }
+                if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 30), "Retour"))
+                {
+                    selection = 1;
+                }
+                break;
+                //choisir la carte
+            case 3:
+                choix_menu = 6;
+                break;
         }
     }
 
