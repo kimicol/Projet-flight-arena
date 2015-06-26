@@ -5,6 +5,7 @@ using System.Threading;
 
 public class vie : MonoBehaviour
 {
+    #region attributs
     public int pv = 3;
     public int current_life;
     private bool killed;
@@ -28,6 +29,7 @@ public class vie : MonoBehaviour
     private Transform selected;
     public GUISkin skin;
     public Animation anim;
+    #endregion
 
     void Start()
     {
@@ -132,6 +134,7 @@ public class vie : MonoBehaviour
             }
             this.tueur = "Bad piloting";
     }
+
     void OnGUI()
     {
 
@@ -154,6 +157,7 @@ public class vie : MonoBehaviour
 
         }
     }
+
     public int VAFANCULO()
     {
         return this.current_life;

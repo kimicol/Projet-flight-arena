@@ -79,6 +79,7 @@ public class IA : controlplayer
             bool on_right = vertical.is_on_right(cible, ref distance_plan);
             PD = on_right && (distance_plan >= 10 || !is_in_front);
             PG = !on_right && (distance_plan >= 10 || !is_in_front);
+            fire = distance_plan <= 10 && is_in_front;
             av = true;
         }
 
@@ -101,6 +102,7 @@ public class IA : controlplayer
             bool on_right = horizontal.is_on_right(cible, ref distance_plan_bis);
             RB = on_right && (distance_plan_bis >= 10 || !is_in_front_bis);
             RH = !on_right && (distance_plan_bis >= 10 || !is_in_front_bis);
+            fire = fire && distance_plan_bis <= 10;
         }
 
         //av = false;
