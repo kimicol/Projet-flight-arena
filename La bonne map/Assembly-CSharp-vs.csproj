@@ -60,7 +60,6 @@
      <Compile Include="Assets\Scripts\controlcameramulti.cs" />
      <Compile Include="Assets\Scripts\controlplayer.cs" />
      <Compile Include="Assets\Scripts\flamme_script.cs" />
-     <Compile Include="Assets\Scripts\flammeplayer2.cs" />
      <Compile Include="Assets\Scripts\ia_collid.cs" />
      <Compile Include="Assets\Scripts\inputs.cs" />
      <Compile Include="Assets\Scripts\menu_pause.cs" />

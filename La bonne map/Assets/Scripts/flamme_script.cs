@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class flamme_script : MonoBehaviour {
-    private GameObject otherObject;
-    //private KeyCode AvanC;
-    vie VI;
+public class flamme_script : MonoBehaviour
+{
+    public GameObject otherObject;
+    private vie VI;
+    private controlplayer cpl;
+
 	// Use this for initialization
     void Start()
     {
-        otherObject = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
-       // inputs inpu = otherObject.GetComponent<inputs>();
         VI = otherObject.GetComponent<vie>();
-       // AvanC = inpu.used_keys[0];
+        cpl = otherObject.GetComponent<controlplayer>();
     }
 	
 	// Update is called once per frame
@@ -19,15 +19,7 @@ public class flamme_script : MonoBehaviour {
     {
         if (VI.current_life > 0)
         {
-            ;
-            if (Input.GetKey(KeyCode.W))
-            {
-                 this.particleSystem.enableEmission = true;       
-            }
-            else
-            {
-                this.particleSystem.enableEmission = false;
-            }
+            this.particleSystem.enableEmission = cpl.av;
         }
         else
         {

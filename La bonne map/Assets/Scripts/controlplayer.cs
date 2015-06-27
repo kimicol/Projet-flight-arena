@@ -14,7 +14,7 @@ public class controlplayer : MonoBehaviour
     public float r_acceleration = 3f;
     public float cap = 60f;
 
-    protected bool av = false;
+    public bool av = false;
     protected bool RH = false;
     protected bool RB = false;
     protected bool PG = false;
