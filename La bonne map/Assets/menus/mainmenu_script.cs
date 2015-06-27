@@ -116,6 +116,7 @@ public class mainmenu_script : MonoBehaviour
             AudioListener.volume = PlayerPrefs.GetFloat("Volume");
         else
             PlayerPrefs.SetFloat("Volume", volume);
+        AudioListener.volume = volume;
 
         son = PlayerPrefs.GetInt("son", son);
         if (PlayerPrefs.HasKey("son"))
