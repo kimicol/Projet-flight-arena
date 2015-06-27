@@ -37,6 +37,7 @@ public class mainmenu_script : MonoBehaviour
     private int selection = 1;
 
     private int nb_ia = 1;
+    private int mode_jeu = 1;
     #endregion
 
     // Use this for initialization
@@ -209,6 +210,7 @@ public class mainmenu_script : MonoBehaviour
         else
             PlayerPrefs.SetInt("anisotropic", anisotropic);
         #endregion
+        
         //GUI.skin = skin;
 
         used_keys = new KeyCode[24];
@@ -309,6 +311,16 @@ public class mainmenu_script : MonoBehaviour
             if (j < all_keys.Length)
                 used_keys[i] = all_keys[j];
         }
+
+        mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        if (PlayerPrefs.HasKey("mode_jeu"))
+        {
+            mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("mode_jeu", mode_jeu);
+        }
     }
 
     void OnGUI()
@@ -352,6 +364,7 @@ public class mainmenu_script : MonoBehaviour
         {
             load_after = 1;
             choix_menu = 3;
+            mode_jeu = 1;
         }
 
         if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2, 400, 25), "Multijoueur"))
@@ -839,6 +852,7 @@ public class mainmenu_script : MonoBehaviour
         {
             load_after = 2;
             choix_menu = 3;
+            mode_jeu = 2;
             //Application.Quit();
         }
 
@@ -846,6 +860,7 @@ public class mainmenu_script : MonoBehaviour
         {
             load_after = 3;
             choix_menu = 3;
+            mode_jeu = 3;
             //Application.Quit();
         }
 
@@ -858,42 +873,15 @@ public class mainmenu_script : MonoBehaviour
     void chargement_jeu()
     {
         GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height / 2 - 20, 150, 40), "Chargements ...");
+        PlayerPrefs.SetInt("mode_jeu", mode_jeu);
 
         if (choix_carte == 1)
         {
-            switch (load_after)
-            {
-                case 1:
-                    //un joueur
-                    Application.LoadLevel(1);
-                    break;
-                case 2:
-                    //ecran splite
-                    Application.LoadLevel(2);
-                    break;
-                case 3:
-                    //multi reseau
-                    Application.LoadLevel(3);
-                    break;
-            }
+            Application.LoadLevel(1);
         }
         else
         {
-            switch (load_after)
-            {
-                case 1:
-                    //un joueur
-                    Application.LoadLevel(4);
-                    break;
-                case 2:
-                    //ecran splite
-                    Application.LoadLevel(5);
-                    break;
-                case 3:
-                    //multi reseau
-                    Application.LoadLevel(6);
-                    break;
-            }
+            Application.LoadLevel(2);
         }
     }
 

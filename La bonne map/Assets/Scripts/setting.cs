@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class setting : MonoBehaviour 
+public class setting : MonoBehaviour
 {
+    #region attributs
     //Mettre l'image en bonne qualité
     private int qualite_image = 0;
     private int aliasing = 0;
@@ -26,12 +27,38 @@ public class setting : MonoBehaviour
     int nb_joueur = 2;
     private GameObject[] temp;
 
+    //Pour le multi
+    public GameObject vaisseau1_multi;
+    public GameObject vaisseau2_multi;
+    public GameObject vaisseau3_multi;
+    private int menu;
+    private string ip = "";
+    private int port = 25000;
+    public GUISkin skin;
+    private GameObject vaisseau_multi;
+
     bool b = true;
 
-	// Use this for initialization
+    private int mode_jeu = 2;
+    #endregion
+
+    void Awake()
+    {
+        mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        if (PlayerPrefs.HasKey("mode_jeu"))
+        {
+            mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("mode_jeu", mode_jeu);
+        }
+    }
+
+    // Use this for initialization
 	void Start ()
     {
-        #region PlayerPrefs
+        #region PlayerPrefs Options
         volume = PlayerPrefs.GetFloat("Volume", volume);
         if (PlayerPrefs.HasKey("Volume"))
             AudioListener.volume = PlayerPrefs.GetFloat("Volume");
@@ -120,73 +147,180 @@ public class setting : MonoBehaviour
             PlayerPrefs.SetInt("anisotropic", anisotropic);
         #endregion
 
-        nb_joueur = PlayerPrefs.GetInt("nb_ia", nb_joueur);
-        if (PlayerPrefs.HasKey("nb_ia"))
+        if (mode_jeu == 1)
         {
-            choix = PlayerPrefs.GetInt("nb_ia", nb_joueur);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("player", choix);
-        }
+            #region setup un joueur
+            nb_joueur = PlayerPrefs.GetInt("nb_ia", nb_joueur);
+            if (PlayerPrefs.HasKey("nb_ia"))
+            {
+                nb_joueur = PlayerPrefs.GetInt("nb_ia", nb_joueur);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("nb_ia", nb_joueur);
+            }
 
-        nb_joueur++;
+            nb_joueur++;
 
-        temp = new GameObject[nb_joueur];
+            temp = new GameObject[nb_joueur];
 
-        choix = PlayerPrefs.GetInt("player", choix);
-        if (PlayerPrefs.HasKey("player"))
-        {
             choix = PlayerPrefs.GetInt("player", choix);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("player", choix);
-        }
+            if (PlayerPrefs.HasKey("player"))
+            {
+                choix = PlayerPrefs.GetInt("player", choix);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("player", choix);
+            }
 
-        System.Random rnd = new System.Random();
-        Vector3 pos = Vector3.zero;
-        pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
-
-        //joueur
-        switch(choix)
-        {
-            case 1:
-                temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                break;
-            case 2:
-                temp[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                break;
-            case 3:
-                temp[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                break;
-            default:
-                temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                break;
-        }
-
-
-        //IAs
-        for (int i = 1; i < nb_joueur; i++)
-        {
-            pos = Vector3.zero;
+            System.Random rnd = new System.Random();
+            Vector3 pos = Vector3.zero;
             pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
 
-            switch (rnd.Next(0, 3))
+            //joueur
+            switch (choix)
             {
-                case 0:
-                    temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                    break;
                 case 1:
-                    temp[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 case 2:
-                    temp[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    temp[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    break;
+                case 3:
+                    temp[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 default:
-                    temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
             }
+
+
+            //IAs
+            for (int i = 1; i < nb_joueur; i++)
+            {
+                pos = Vector3.zero;
+                pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+
+                switch (rnd.Next(0, 3))
+                {
+                    case 0:
+                        temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        break;
+                    case 1:
+                        temp[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        break;
+                    case 2:
+                        temp[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        break;
+                    default:
+                        temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        break;
+                }
+            }
+            #endregion
+        }
+        else if(mode_jeu == 2)
+        {
+            #region ecran splite
+            nb_joueur = PlayerPrefs.GetInt("nb_ia", nb_joueur);
+            if (PlayerPrefs.HasKey("nb_ia"))
+            {
+                nb_joueur = PlayerPrefs.GetInt("nb_ia", nb_joueur);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("nb_ia", nb_joueur);
+            }
+
+            nb_joueur += 2;
+
+            temp = new GameObject[nb_joueur];
+
+            choix = PlayerPrefs.GetInt("player", choix);
+            if (PlayerPrefs.HasKey("player"))
+            {
+                choix = PlayerPrefs.GetInt("player", choix);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("player", choix);
+            }
+
+            System.Random rnd = new System.Random();
+            Vector3 pos = Vector3.zero;
+            pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+
+            //joueur
+            switch (choix)
+            {
+                case 1:
+                    temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    temp[1] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    break;
+                case 2:
+                    temp[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    temp[1] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    break;
+                case 3:
+                    temp[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    temp[1] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    break;
+                default:
+                    temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    temp[1] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    break;
+            }
+
+            Camera first = temp[0].GetComponentInChildren<Camera>();
+            first.rect = new Rect(0, 0, 1f, 0.5f);
+            inputs toucheplayer1 = temp[0].GetComponentInChildren<inputs>();
+            toucheplayer1.i = 1;
+
+            Camera second = temp[1].GetComponentInChildren<Camera>();
+            second.rect = new Rect(0, 0.5f, 1f, 0.5f);
+            inputs toucheplayer2 = temp[1].GetComponentInChildren<inputs>();
+            toucheplayer2.i = 2;
+
+            //IAs
+            for (int i = 2; i < nb_joueur; i++)
+            {
+                pos = Vector3.zero;
+                pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+
+                switch (rnd.Next(0, 3))
+                {
+                    case 0:
+                        temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        break;
+                    case 1:
+                        temp[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        break;
+                    case 2:
+                        temp[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        break;
+                    default:
+                        temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        break;
+                }
+            }
+            #endregion
+        }
+        else if(mode_jeu == 3)
+        {
+            #region multijoueur
+            menu = 1;
+            choix = PlayerPrefs.GetInt("player", choix);
+
+            if (PlayerPrefs.HasKey("player"))
+            {
+                choix = PlayerPrefs.GetInt("player", choix);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("player", choix);
+            }
+            #endregion
         }
 	}
 	
@@ -214,4 +348,117 @@ public class setting : MonoBehaviour
             }
         }
 	}
+
+
+    /*------------- POUR LE MULTI ------------------*/
+
+    void OnGUI()
+    {
+        if (mode_jeu == 3)
+        {
+            GUI.skin = this.skin;
+
+            switch (menu)
+            {
+                case 1:
+                    select_connexion();
+                    break;
+                case 2:
+                    menu_rejoindre();
+                    break;
+            }
+        }
+    }
+
+    void select_connexion()
+    {
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 300, 30), "Héberger"))
+        {
+            Network.InitializeServer(4, 25000, true);
+            if (Network.peerType == NetworkPeerType.Server)
+            {
+                menu = 3;
+                //nouveau_joueur();
+            }
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 30), "Rejoindre"))
+        {
+            menu = 2;
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Retour au menu"))
+        {
+            Application.LoadLevel(0);
+        }
+    }
+
+    void menu_rejoindre()
+    {
+        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), "IP de l'hébergeur : ");
+
+        ip = GUI.TextField(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 300, 40), ip, 15);
+
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
+        {
+            Network.Connect(ip, port);
+            if (Network.peerType == NetworkPeerType.Client)
+            {
+                menu = 3;
+                //nouveau_joueur();
+            }
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
+            menu = 1;
+    }
+
+    void OnServerInitialized()
+    {
+        nouveau_joueur();
+    }
+
+    void OnConnectedToServer()
+    {
+        menu = 3;
+        nouveau_joueur();
+    }
+
+    void OnDisconnectedFromServer(NetworkDisconnection info)
+    {
+        Destroy(vaisseau_multi);
+        NetworkView.Destroy(vaisseau_multi);
+    }
+
+    void OnPlayerDisconnected(NetworkPlayer player)
+    {
+        Network.RemoveRPCs(player);
+        Network.DestroyPlayerObjects(player);
+    }
+
+    void nouveau_joueur()
+    {
+        Vector3 pos = Vector3.zero;
+
+        System.Random rnd = new System.Random();
+        pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+        //pos.Set(50, 0, 0);
+        //Debug.Log(Network.peerType);
+        switch (choix)
+        {
+            case 1:
+                vaisseau_multi = (GameObject)Network.Instantiate(vaisseau1_multi, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
+                break;
+            case 2:
+                vaisseau_multi = (GameObject)Network.Instantiate(vaisseau2_multi, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
+                break;
+            case 3:
+                vaisseau_multi = (GameObject)Network.Instantiate(vaisseau3_multi, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
+                break;
+        }
+
+        this.camera.enabled = false;
+        //vaisseau.camera.enabled = true;
+    }
 }
