@@ -22,7 +22,7 @@ public class vie : MonoBehaviour
     public GameObject sphere;
     private GameObject thePlayer;
     private GameObject crosshair;
-    private MeshRenderer cube0;
+    
     public AudioClip hitmarker;
     public AudioClip endgame_sound;
     public Transform depart;
@@ -66,15 +66,20 @@ public class vie : MonoBehaviour
             {
                 if (frag_limite > 1)
                 {
+                    MeshRenderer[] cube0;
+
                     sphere.renderer.enabled = false;
                     System.Random rnd = new System.Random();
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     controlplayer bob = this.gameObject.GetComponent<controlplayer>();
                     bob.enabled = false;
-                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>()[0];
-                    cube0.renderer.enabled = false;
-                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>()[1];
-                    cube0.renderer.enabled = false;
+
+                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>();
+                    for (int i = 0; i < cube0.Length; i++)
+                    {
+                        cube0[i].enabled = false;
+                    }
+
                     crosshair = GameObject.Find("crosshair");
                     crosshair.guiTexture.enabled = false;
                     StartCoroutine(W8M8());
@@ -88,10 +93,12 @@ public class vie : MonoBehaviour
                     transform.position = respawn_position;
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     current_life = pv;
-                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>()[0];
-                    cube0.renderer.enabled = true;
-                    cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>()[1];
-                    cube0.renderer.enabled = true;
+
+                    for (int i = 0; i < cube0.Length; i++)
+                    {
+                        cube0[i].renderer.enabled = true;
+                    }
+                    
                     crosshair.guiTexture.enabled = true;
                     bob.enabled = true;
                     frag_limite--;
