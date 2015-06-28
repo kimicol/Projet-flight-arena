@@ -112,8 +112,11 @@ public class mainmenu_script : MonoBehaviour
 
         #region PlayerPrefs
         volume = PlayerPrefs.GetFloat("Volume", volume);
-        if(PlayerPrefs.HasKey("Volume"))
+        if (PlayerPrefs.HasKey("Volume"))
+        {
             AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+            volume = PlayerPrefs.GetFloat("Volume");
+        }
         else
             PlayerPrefs.SetFloat("Volume", volume);
         AudioListener.volume = volume;
@@ -322,6 +325,8 @@ public class mainmenu_script : MonoBehaviour
         {
             PlayerPrefs.SetInt("mode_jeu", mode_jeu);
         }
+
+        this.audio.Play();
     }
 
     void OnGUI()

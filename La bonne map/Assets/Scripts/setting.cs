@@ -40,6 +40,7 @@ public class setting : MonoBehaviour
     bool b = true;
 
     private int mode_jeu = 2;
+    private string name = "";
     #endregion
 
     void Awake()
@@ -218,6 +219,21 @@ public class setting : MonoBehaviour
                         break;
                 }
             }
+
+            for (int i = 0; i < temp.Length; i++)
+            {
+                vie life = temp[i].GetComponent<vie>();
+                if (life == null)
+                {
+                    life = temp[i].GetComponentInChildren<vie>();
+                }
+
+                life.global_cam = this.camera;
+                if (i == 0)
+                    life.name = "player";
+                else
+                    life.name = "computer " + i;
+            }
             #endregion
         }
         else if(mode_jeu == 2)
@@ -304,12 +320,28 @@ public class setting : MonoBehaviour
                         break;
                 }
             }
+
+            for (int i = 0; i < temp.Length; i++)
+            {
+                vie life = temp[i].GetComponent<vie>();
+                if (life == null)
+                {
+                    life = temp[i].GetComponentInChildren<vie>();
+                }
+
+                life.global_cam = this.camera;
+
+                if (i <= 1)
+                    life.name = "player " + (i + 1);
+                else
+                    life.name = "computer " + (i - 1);
+            }
             #endregion
         }
         else if(mode_jeu == 3)
         {
             #region multijoueur
-            menu = 1;
+            menu = 0;
             choix = PlayerPrefs.GetInt("player", choix);
 
             if (PlayerPrefs.HasKey("player"))
@@ -360,6 +392,9 @@ public class setting : MonoBehaviour
 
             switch (menu)
             {
+                case 0:
+                    set_name();
+                    break;
                 case 1:
                     select_connexion();
                     break;
@@ -367,6 +402,21 @@ public class setting : MonoBehaviour
                     menu_rejoindre();
                     break;
             }
+        }
+    }
+
+    void set_name()
+    {
+        this.name = GUI.TextField(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 20, 300, 25), name);
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 30), "Continuer"))
+        {
+            menu = 1;
+        }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Retour au menu"))
+        {
+            Application.LoadLevel(0);
         }
     }
 
@@ -387,9 +437,9 @@ public class setting : MonoBehaviour
             menu = 2;
         }
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Retour au menu"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Retour"))
         {
-            Application.LoadLevel(0);
+            menu = 0;
         }
     }
 
@@ -457,6 +507,14 @@ public class setting : MonoBehaviour
                 vaisseau_multi = (GameObject)Network.Instantiate(vaisseau3_multi, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
                 break;
         }
+
+        vie life = vaisseau_multi.GetComponent<vie>();
+        if (life == null)
+            life = vaisseau_multi.GetComponentInChildren<vie>();
+
+        life.name = this.name;
+
+        life.global_cam = this.camera;
 
         this.camera.enabled = false;
         //vaisseau.camera.enabled = true;
