@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class KillFeed : MonoBehaviour {
+public class KillFeed : MonoBehaviour 
+{
 	// Use this for initialization
     List<vie> vaisseaux = new List<vie>();
     string[,] mort = new string[10,3];

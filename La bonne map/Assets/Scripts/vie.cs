@@ -29,6 +29,10 @@ public class vie : MonoBehaviour
     private Transform selected;
     public GUISkin skin;
     public Animation anim;
+    public ParticleSystem explosion;
+
+    public Camera global_cam;
+    private bool test = true;
     #endregion
 
     void Start()
@@ -47,6 +51,12 @@ public class vie : MonoBehaviour
         //Debug.Log(bool_killfeed);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
+            if (test)
+            {
+                GameObject explode = Instantiate(explosion, this.transform.position, this.transform.rotation) as GameObject;
+                test = false;
+            }
+
             //anim.Play();
             if (!respawn)
             {
@@ -164,7 +174,7 @@ public class vie : MonoBehaviour
     }
     public void gameover ()
     {
-        GameObject.Find("gameoverCAM").camera.depth = 2;
+        global_cam.depth = 2;
         winner = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
         thePlayer = GameObject.Find("gameoverGUI");
         thePlayer.guiText.text = ("GAME OVER");

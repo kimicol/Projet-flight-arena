@@ -218,6 +218,17 @@ public class setting : MonoBehaviour
                         break;
                 }
             }
+
+            for (int i = 0; i < temp.Length; i++)
+            {
+                vie life = temp[i].GetComponent<vie>();
+                if (life == null)
+                {
+                    life = temp[i].GetComponentInChildren<vie>();
+                }
+
+                life.global_cam = this.camera;
+            }
             #endregion
         }
         else if(mode_jeu == 2)
@@ -303,6 +314,17 @@ public class setting : MonoBehaviour
                         temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                 }
+            }
+
+            for (int i = 0; i < temp.Length; i++)
+            {
+                vie life = temp[i].GetComponent<vie>();
+                if (life == null)
+                {
+                    life = temp[i].GetComponentInChildren<vie>();
+                }
+
+                life.global_cam = this.camera;
             }
             #endregion
         }
@@ -457,6 +479,12 @@ public class setting : MonoBehaviour
                 vaisseau_multi = (GameObject)Network.Instantiate(vaisseau3_multi, pos, Quaternion.AngleAxis(0, Vector3.left), 0);
                 break;
         }
+
+        vie life = vaisseau_multi.GetComponent<vie>();
+        if (life == null)
+            life = vaisseau_multi.GetComponentInChildren<vie>();
+
+        life.global_cam = this.camera;
 
         this.camera.enabled = false;
         //vaisseau.camera.enabled = true;

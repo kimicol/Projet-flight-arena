@@ -4,11 +4,13 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - winner: {instanceID: 0}
+  - sphere: {instanceID: 0}
   - hitmarker: {instanceID: 0}
   - endgame_sound: {fileID: 8300000, guid: d7ed6b5a601931a40b8e23cb3db27cb9, type: 3}
   - depart: {instanceID: 0}
   - skin: {instanceID: 0}
   - anim: {instanceID: 0}
+  - explosion: {fileID: 19800004, guid: 617d26c866a0c7a45817a5de55fdab03, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
