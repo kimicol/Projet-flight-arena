@@ -39,7 +39,7 @@ public class setting : MonoBehaviour
 
     bool b = true;
 
-    private int mode_jeu = 2;
+    private int mode_jeu = 1;
     private string name = "";
     #endregion
 
