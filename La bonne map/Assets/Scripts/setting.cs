@@ -25,7 +25,7 @@ public class setting : MonoBehaviour
     public GameObject IA2;
     public GameObject IA3;
     int nb_joueur = 2;
-    private GameObject[] temp;
+    public GameObject[] all_spaceships;
 
     //Pour le multi
     public GameObject vaisseau1_multi;
@@ -41,6 +41,9 @@ public class setting : MonoBehaviour
 
     private int mode_jeu = 1;
     private string name = "";
+
+    private string[,] mort = new string[10, 3];
+    private int x = 0;
     #endregion
 
     void Awake()
@@ -163,7 +166,7 @@ public class setting : MonoBehaviour
 
             nb_joueur++;
 
-            temp = new GameObject[nb_joueur];
+            all_spaceships = new GameObject[nb_joueur];
 
             choix = PlayerPrefs.GetInt("player", choix);
             if (PlayerPrefs.HasKey("player"))
@@ -183,16 +186,16 @@ public class setting : MonoBehaviour
             switch (choix)
             {
                 case 1:
-                    temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 case 2:
-                    temp[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 case 3:
-                    temp[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 default:
-                    temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
             }
 
@@ -206,26 +209,26 @@ public class setting : MonoBehaviour
                 switch (rnd.Next(0, 3))
                 {
                     case 0:
-                        temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        all_spaceships[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                     case 1:
-                        temp[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        all_spaceships[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                     case 2:
-                        temp[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        all_spaceships[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                     default:
-                        temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        all_spaceships[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                 }
             }
 
-            for (int i = 0; i < temp.Length; i++)
+            for (int i = 0; i < all_spaceships.Length; i++)
             {
-                vie life = temp[i].GetComponent<vie>();
+                vie life = all_spaceships[i].GetComponent<vie>();
                 if (life == null)
                 {
-                    life = temp[i].GetComponentInChildren<vie>();
+                    life = all_spaceships[i].GetComponentInChildren<vie>();
                 }
 
                 life.global_cam = this.camera;
@@ -251,7 +254,7 @@ public class setting : MonoBehaviour
 
             nb_joueur += 2;
 
-            temp = new GameObject[nb_joueur];
+            all_spaceships = new GameObject[nb_joueur];
 
             choix = PlayerPrefs.GetInt("player", choix);
             if (PlayerPrefs.HasKey("player"))
@@ -271,31 +274,32 @@ public class setting : MonoBehaviour
             switch (choix)
             {
                 case 1:
-                    temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                    temp[1] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[1] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 case 2:
-                    temp[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                    temp[1] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[0] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[1] = Instantiate(vaisseau2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 case 3:
-                    temp[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                    temp[1] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[0] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[1] = Instantiate(vaisseau3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
                 default:
-                    temp[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                    temp[1] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[0] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                    all_spaceships[1] = Instantiate(vaisseau1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                     break;
             }
 
-            Camera first = temp[0].GetComponentInChildren<Camera>();
+            Camera first = all_spaceships[0].GetComponentInChildren<Camera>();
             first.rect = new Rect(0, 0, 1f, 0.5f);
-            inputs toucheplayer1 = temp[0].GetComponentInChildren<inputs>();
+            inputs toucheplayer1 = all_spaceships[0].GetComponentInChildren<inputs>();
             toucheplayer1.i = 1;
 
-            Camera second = temp[1].GetComponentInChildren<Camera>();
+            Camera second = all_spaceships[1].GetComponentInChildren<Camera>();
             second.rect = new Rect(0, 0.5f, 1f, 0.5f);
-            inputs toucheplayer2 = temp[1].GetComponentInChildren<inputs>();
+            second.GetComponent<AudioListener>().enabled = false;
+            inputs toucheplayer2 = all_spaceships[1].GetComponentInChildren<inputs>();
             toucheplayer2.i = 2;
 
             //IAs
@@ -307,26 +311,26 @@ public class setting : MonoBehaviour
                 switch (rnd.Next(0, 3))
                 {
                     case 0:
-                        temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        all_spaceships[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                     case 1:
-                        temp[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        all_spaceships[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                     case 2:
-                        temp[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        all_spaceships[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                     default:
-                        temp[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                        all_spaceships[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
                         break;
                 }
             }
 
-            for (int i = 0; i < temp.Length; i++)
+            for (int i = 0; i < all_spaceships.Length; i++)
             {
-                vie life = temp[i].GetComponent<vie>();
+                vie life = all_spaceships[i].GetComponent<vie>();
                 if (life == null)
                 {
-                    life = temp[i].GetComponentInChildren<vie>();
+                    life = all_spaceships[i].GetComponentInChildren<vie>();
                 }
 
                 life.global_cam = this.camera;
@@ -367,8 +371,8 @@ public class setting : MonoBehaviour
             {
                 for (int i = 1; i < nb_joueur; i++)
                 {
-                    IA ordi = temp[i].gameObject.GetComponentInChildren<IA>();
-                    ordi.liste = temp;
+                    IA ordi = all_spaceships[i].gameObject.GetComponentInChildren<IA>();
+                    ordi.liste = all_spaceships;
                 }
 
                 b = false;
@@ -424,10 +428,11 @@ public class setting : MonoBehaviour
     {
         if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 300, 30), "Héberger"))
         {
-            Network.InitializeServer(4, 25000, true);
+            Network.InitializeServer(8, 25000, true);
             if (Network.peerType == NetworkPeerType.Server)
             {
                 menu = 3;
+                all_spaceships = new GameObject[8];
                 //nouveau_joueur();
             }
         }
@@ -517,6 +522,17 @@ public class setting : MonoBehaviour
         life.global_cam = this.camera;
 
         this.camera.enabled = false;
+
+        int i = 0;
+        while(i < all_spaceships.Length && all_spaceships[i] != null)
+        {
+            i++;
+        }
+
+        if(i < all_spaceships.Length)
+        {
+            all_spaceships[i] = vaisseau_multi;
+        }
         //vaisseau.camera.enabled = true;
     }
 }

@@ -10,13 +10,24 @@ public class controlcamera : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        vie_restante = vaisseau.GetComponents<vie>()[0];
+        vie_restante = vaisseau.GetComponent<vie>();
 	}
 
     void OnGUI()
-    { /*
+    {
         GUI.skin = sk;
-        GUI.Label(new Rect(Screen.width - 50, Screen.height - 30, 50, 30), "" + vie_restante.current_life); */
+        /*
+        Debug.Log(camera.rect.y);
+        if (this.camera.rect.yMax == 1)
+        {
+            GUI.Label(new Rect(Screen.width - 50, (0.5f * Screen.height) - 30, 50, 30), "" + vie_restante.current_life);
+        }
+        else
+        {
+            GUI.Label(new Rect(Screen.width - 50, (Screen.height) - 30, 50, 30), "" + vie_restante.current_life);
+        }
+        */
+        GUI.Label(new Rect(Screen.width - 50, (camera.rect.y + 0.5f) * Screen.height - 30, 50, 30), "" + vie_restante.current_life);
     }
 	
 	// Update is called once per frame

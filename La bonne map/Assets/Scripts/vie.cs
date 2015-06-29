@@ -32,7 +32,7 @@ public class vie : MonoBehaviour
     public ParticleSystem explosion;
 
     public Camera global_cam;
-    private bool test = true;
+    private bool can_explode = true;
     #endregion
 
     void Start()
@@ -51,10 +51,10 @@ public class vie : MonoBehaviour
         //Debug.Log(bool_killfeed);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
-            if (test)
+            if (can_explode)
             {
                 GameObject explode = Instantiate(explosion, this.transform.position, this.transform.rotation) as GameObject;
-                test = false;
+                can_explode = false;
             }
 
             //anim.Play();
@@ -111,7 +111,7 @@ public class vie : MonoBehaviour
                     DestroyObject(this.gameObject);
                     try
                     {
-                        GameObject steveGameObject = GameObject.Find("player 1 cam");
+                        Camera steveGameObject = this.GetComponentInParent<Camera>();
                         AudioSource shut = steveGameObject.GetComponent<AudioSource>();
                         shut.audio.clip = endgame_sound;
                         shut.PlayOneShot(endgame_sound);
@@ -123,6 +123,10 @@ public class vie : MonoBehaviour
                     killed = true;
                 }
             }
+        }
+        else
+        {
+            can_explode = true;
         }
     }
 
@@ -156,8 +160,10 @@ public class vie : MonoBehaviour
     {
 
         if (skin != null)
+        {
             skin.label.fontSize = 70;
-        GUI.skin = skin;
+            GUI.skin = skin;
+        }
         if (killed)
         {
             GUI.Label(new Rect(Screen.width / 2 - 130, Screen.height / 6, Screen.width / 2, Screen.height / 5), "Perdu");
@@ -179,10 +185,11 @@ public class vie : MonoBehaviour
     {
         return this.current_life;
     }
+
     public void gameover ()
     {
         global_cam.depth = 2;
-        winner = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI");
+
         thePlayer = GameObject.Find("gameoverGUI");
         thePlayer.guiText.text = ("GAME OVER");
         vie bob = winner.GetComponent<vie>();
@@ -201,9 +208,11 @@ public class vie : MonoBehaviour
             return;
         }
     }
+
     public void gameover(string vainc)
     {
-        GameObject.Find("gameoverCAM").camera.depth = 2;
+        global_cam.depth = 2;
+        //GameObject.Find("gameoverCAM").camera.depth = 2;
         thePlayer = GameObject.Find("gameoverGUI");
         thePlayer.guiText.text = ("GAME OVER");
         GameObject.Find("GameWinner_GUI").guiText.text = (vainc);
