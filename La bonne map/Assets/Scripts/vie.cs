@@ -33,6 +33,9 @@ public class vie : MonoBehaviour
 
     public Camera global_cam;
     private bool can_explode = true;
+
+    public GameObject[] all_spaceships;
+    private vie[] all_life;
     #endregion
 
     void Start()
@@ -44,6 +47,16 @@ public class vie : MonoBehaviour
         }*/
         current_life = pv;
         killed = false;
+
+        all_life = new vie[all_spaceships.Length];
+        for (int i = 0; i < all_spaceships.Length; i++)
+        {
+            all_life[i] = all_spaceships[i].GetComponent<vie>();
+            if(all_life[i] == null)
+            {
+                all_life[i] = all_spaceships[i].GetComponentInChildren<vie>();
+            }
+        }
     }
 
     void Update()
@@ -71,8 +84,8 @@ public class vie : MonoBehaviour
                     sphere.renderer.enabled = false;
                     System.Random rnd = new System.Random();
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
-                    controlplayer bob = this.gameObject.GetComponent<controlplayer>();
-                    bob.enabled = false;
+                    //controlplayer bob = this.gameObject.GetComponent<controlplayer>();
+                    //bob.enabled = false;
 
                     cube0 = this.gameObject.GetComponentsInChildren<MeshRenderer>();
                     for (int i = 0; i < cube0.Length; i++)
@@ -80,8 +93,12 @@ public class vie : MonoBehaviour
                         cube0[i].enabled = false;
                     }
 
-                    crosshair = GameObject.Find("crosshair");
-                    crosshair.guiTexture.enabled = false;
+                    try
+                    {
+                        crosshair = GameObject.Find("crosshair");
+                        crosshair.guiTexture.enabled = false;
+                    }
+                    catch { }
                     StartCoroutine(W8M8());
                     if (!ok)
                     {
@@ -100,7 +117,7 @@ public class vie : MonoBehaviour
                     }
                     
                     crosshair.guiTexture.enabled = true;
-                    bob.enabled = true;
+                    //bob.enabled = true;
                     frag_limite--;
                     ok = false;
                     sphere.renderer.enabled = true;
@@ -130,6 +147,7 @@ public class vie : MonoBehaviour
         }
     }
 
+    
     void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "balle")
@@ -145,8 +163,11 @@ public class vie : MonoBehaviour
         }
         ok = false;
     }
+    
     void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.tag != "ia_coll")
+        {
             this.current_life -= 2;
             ok = false;
             if (current_life <= 0)
@@ -154,6 +175,7 @@ public class vie : MonoBehaviour
                 bool_killfeed = true;
             }
             this.tueur = "Bad piloting";
+        }
     }
 
     void OnGUI()
@@ -188,24 +210,38 @@ public class vie : MonoBehaviour
 
     public void gameover ()
     {
-        global_cam.depth = 2;
+        int alive = 0;
+        int count = -1;
+        for (int i = 0; i < all_life.Length; i++)
+        {
+            if(all_life[i].current_life > 0)
+            {
+                alive++;
+                count = i;
+            }
+        }
 
-        thePlayer = GameObject.Find("gameoverGUI");
-        thePlayer.guiText.text = ("GAME OVER");
-        vie bob = winner.GetComponent<vie>();
-        thePlayer = GameObject.Find("GameWinner_GUI");
-        if (bob.frag_limite<1)
+        if(alive == 1)
         {
-            thePlayer.guiText.text = ("PLAYER 2 WIN");
+            thePlayer = GameObject.Find("gameoverGUI");
+            thePlayer.guiText.text = ("GAME OVER");
+            GameObject.Find("GameWinner_GUI").guiText.text = (all_life[count].name + " WIN");
+            StartCoroutine(postgameover());
+            while (!affiche)
+            {
+                return;
+            }
         }
-        else
+        else if(alive < 1)
         {
-            thePlayer.guiText.text = ("PLAYER 1 WIN");
-        }
-        StartCoroutine(postgameover());
-        while (!affiche)
-        {
-            return;
+            thePlayer = GameObject.Find("gameoverGUI");
+            thePlayer.guiText.text = ("GAME OVER");
+            GameObject.Find("GameWinner_GUI").guiText.text = ("GAME DRAW");
+            StartCoroutine(postgameover());
+            while (!affiche)
+            {
+                return;
+            }
         }
     }
 

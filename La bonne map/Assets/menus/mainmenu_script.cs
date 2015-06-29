@@ -19,6 +19,7 @@ public class mainmenu_script : MonoBehaviour
     public Texture vaisseau3;
     public Texture carte1;
     public Texture carte2;
+    public Texture carte3;
 	public Texture logo;
     private int load_after = 0;
     private int choix_carte = 1;
@@ -587,14 +588,19 @@ public class mainmenu_script : MonoBehaviour
                 {
                     selection = 2;
                 }
-                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 150, 150), carte1))
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 150), carte1))
                 {
                     choix_carte = 1;
                     choix_menu = 6;
                 }
-                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 100, 150, 150), carte2))
+                if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 150, 150), carte2))
                 {
                     choix_carte = 2;
+                    choix_menu = 6;
+                }
+                if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 150, 150), carte3))
+                {
+                    choix_carte = 3;
                     choix_menu = 6;
                 }
                 break;
@@ -881,6 +887,8 @@ public class mainmenu_script : MonoBehaviour
         GUI.Label(new Rect(Screen.width / 2 - 75, Screen.height / 2 - 20, 150, 40), "Chargements ...");
         PlayerPrefs.SetInt("mode_jeu", mode_jeu);
 
+        Application.LoadLevel(choix_carte);
+        /*
         if (choix_carte == 1)
         {
             Application.LoadLevel(1);
@@ -889,6 +897,7 @@ public class mainmenu_script : MonoBehaviour
         {
             Application.LoadLevel(2);
         }
+        */
     }
 
     bool changement_touche()

@@ -8,7 +8,7 @@ public class ia_collid : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
-	
+        this.gameObject.tag = "ia_coll";
 	}
 	
 	// Update is called once per frame

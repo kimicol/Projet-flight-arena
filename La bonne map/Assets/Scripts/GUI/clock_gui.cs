@@ -45,7 +45,7 @@ public class clock_gui : MonoBehaviour
             GameObject vaisseau = set.all_spaceships[0];
             int stockage = -100;
             int index = 0;
-            bool egualite = false;
+            bool egalite = false;
             for (int i = 0; i < set.all_spaceships.Length; i++)
             {
                 vie life = set.all_spaceships[i].GetComponent<vie>();
@@ -67,18 +67,18 @@ public class clock_gui : MonoBehaviour
                 {
                     if (life.frag_limite == stockage)
                     {
-                        egualite = true;
+                        egalite = true;
                     }
                     else
                     {
-                        egualite = false;
+                        egalite = false;
                         stockage = life.frag_limite;
                         index = i;
                     }
                 }
             }
 
-            if (!egualite)
+            if (!egalite)
             {
                 try
                 {
@@ -102,6 +102,7 @@ public class clock_gui : MonoBehaviour
             }
         }
 	}
+
     private void OnGUI()
     {
         time_text =limite_temps - Convert.ToInt32(Time.time - startTime);

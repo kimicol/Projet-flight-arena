@@ -37,10 +37,28 @@ public class IA : controlplayer
         float distance = Vector3.Distance(pos.position, cible.position);
         for (int i = 1; i < this.liste.Length; i++)
         {
-            if (Vector3.Distance(pos.position, this.liste[i].gameObject.transform.GetChild(0).position) > 5 && distance > Vector3.Distance(pos.position, this.liste[i].gameObject.transform.GetChild(0).position))
+            bool b;
+
+            try
             {
-                cible = this.liste[i].gameObject.transform.GetChild(0);
-                distance = Vector3.Distance(pos.position, this.liste[i].transform.GetChild(0).position);
+                b = this.liste[i].gameObject.transform.GetChild(0).position != null;
+            }
+            catch
+            {
+                b = false;
+            }
+
+            if (b)
+            {
+                try
+                {
+                    if (liste[i].GetComponentInChildren<vie>().current_life > 0 && Vector3.Distance(pos.position, this.liste[i].gameObject.transform.GetChild(0).position) > 5 && distance > Vector3.Distance(pos.position, this.liste[i].gameObject.transform.GetChild(0).position))
+                    {
+                        cible = this.liste[i].gameObject.transform.GetChild(0);
+                        distance = Vector3.Distance(pos.position, this.liste[i].transform.GetChild(0).position);
+                    }
+                }
+                catch { }
             }
         }
 

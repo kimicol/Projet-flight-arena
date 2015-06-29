@@ -41,9 +41,6 @@ public class setting : MonoBehaviour
 
     private int mode_jeu = 1;
     private string name = "";
-
-    private string[,] mort = new string[10, 3];
-    private int x = 0;
     #endregion
 
     void Awake()
@@ -180,7 +177,7 @@ public class setting : MonoBehaviour
 
             System.Random rnd = new System.Random();
             Vector3 pos = Vector3.zero;
-            pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+            pos.Set(rnd.Next(-100, 100), rnd.Next(-10, 50), rnd.Next(-100, 100));
 
             //joueur
             switch (choix)
@@ -204,7 +201,7 @@ public class setting : MonoBehaviour
             for (int i = 1; i < nb_joueur; i++)
             {
                 pos = Vector3.zero;
-                pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+                pos.Set(rnd.Next(-100, 100), rnd.Next(-10, 50), rnd.Next(-100, 100));
 
                 switch (rnd.Next(0, 3))
                 {
@@ -223,6 +220,10 @@ public class setting : MonoBehaviour
                 }
             }
 
+            Camera first = all_spaceships[0].GetComponentInChildren<Camera>();
+            controlcamera firstcontrol = first.GetComponent<controlcamera>();
+            firstcontrol.vvv = this.all_spaceships;
+
             for (int i = 0; i < all_spaceships.Length; i++)
             {
                 vie life = all_spaceships[i].GetComponent<vie>();
@@ -232,6 +233,7 @@ public class setting : MonoBehaviour
                 }
 
                 life.global_cam = this.camera;
+                life.all_spaceships = this.all_spaceships;
                 if (i == 0)
                     life.name = "player";
                 else
@@ -268,7 +270,7 @@ public class setting : MonoBehaviour
 
             System.Random rnd = new System.Random();
             Vector3 pos = Vector3.zero;
-            pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+            pos.Set(rnd.Next(-100, 100), rnd.Next(-10, 50), rnd.Next(-100, 100));
 
             //joueur
             switch (choix)
@@ -291,22 +293,11 @@ public class setting : MonoBehaviour
                     break;
             }
 
-            Camera first = all_spaceships[0].GetComponentInChildren<Camera>();
-            first.rect = new Rect(0, 0, 1f, 0.5f);
-            inputs toucheplayer1 = all_spaceships[0].GetComponentInChildren<inputs>();
-            toucheplayer1.i = 1;
-
-            Camera second = all_spaceships[1].GetComponentInChildren<Camera>();
-            second.rect = new Rect(0, 0.5f, 1f, 0.5f);
-            second.GetComponent<AudioListener>().enabled = false;
-            inputs toucheplayer2 = all_spaceships[1].GetComponentInChildren<inputs>();
-            toucheplayer2.i = 2;
-
             //IAs
             for (int i = 2; i < nb_joueur; i++)
             {
                 pos = Vector3.zero;
-                pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+                pos.Set(rnd.Next(-100, 50), rnd.Next(-10, 50), rnd.Next(-100, 100));
 
                 switch (rnd.Next(0, 3))
                 {
@@ -325,6 +316,23 @@ public class setting : MonoBehaviour
                 }
             }
 
+            Camera first = all_spaceships[0].GetComponentInChildren<Camera>();
+            first.rect = new Rect(0, 0, 1f, 0.5f);
+            controlcamera firstcontrol = first.GetComponent<controlcamera>();
+            firstcontrol.vvv = this.all_spaceships;
+            inputs toucheplayer1 = all_spaceships[0].GetComponentInChildren<inputs>();
+            toucheplayer1.i = 1;
+
+            Camera second = all_spaceships[1].GetComponentInChildren<Camera>();
+            second.rect = new Rect(0, 0.5f, 1f, 0.5f);
+            second.GetComponent<AudioListener>().enabled = false;
+            controlcamera secondcontrol = second.GetComponent<controlcamera>();
+            secondcontrol.vvv = this.all_spaceships;
+            inputs toucheplayer2 = all_spaceships[1].GetComponentInChildren<inputs>();
+            toucheplayer2.i = 2;
+
+            
+
             for (int i = 0; i < all_spaceships.Length; i++)
             {
                 vie life = all_spaceships[i].GetComponent<vie>();
@@ -334,7 +342,7 @@ public class setting : MonoBehaviour
                 }
 
                 life.global_cam = this.camera;
-
+                life.all_spaceships = this.all_spaceships;
                 if (i <= 1)
                     life.name = "player " + (i + 1);
                 else
@@ -369,10 +377,21 @@ public class setting : MonoBehaviour
 
             try
             {
-                for (int i = 1; i < nb_joueur; i++)
+                if (mode_jeu == 1)
                 {
-                    IA ordi = all_spaceships[i].gameObject.GetComponentInChildren<IA>();
-                    ordi.liste = all_spaceships;
+                    for (int i = 1; i < nb_joueur; i++)
+                    {
+                        IA ordi = all_spaceships[i].gameObject.GetComponentInChildren<IA>();
+                        ordi.liste = all_spaceships;
+                    }
+                }
+                else if(mode_jeu == 2)
+                {
+                    for (int i = 2; i < nb_joueur; i++)
+                    {
+                        IA ordi = all_spaceships[i].gameObject.GetComponentInChildren<IA>();
+                        ordi.liste = all_spaceships;
+                    }
                 }
 
                 b = false;
@@ -497,7 +516,7 @@ public class setting : MonoBehaviour
         Vector3 pos = Vector3.zero;
 
         System.Random rnd = new System.Random();
-        pos.Set(rnd.Next(-150, 50), rnd.Next(-50, 20), rnd.Next(-170, 100));
+        pos.Set(rnd.Next(-100, 100), rnd.Next(-10, 50), rnd.Next(-100, 100));
         //pos.Set(50, 0, 0);
         //Debug.Log(Network.peerType);
         switch (choix)
@@ -518,7 +537,7 @@ public class setting : MonoBehaviour
             life = vaisseau_multi.GetComponentInChildren<vie>();
 
         life.name = this.name;
-
+        life.all_spaceships = this.all_spaceships;
         life.global_cam = this.camera;
 
         this.camera.enabled = false;
@@ -533,6 +552,10 @@ public class setting : MonoBehaviour
         {
             all_spaceships[i] = vaisseau_multi;
         }
+
+        Camera first = all_spaceships[i].GetComponentInChildren<Camera>();
+        controlcamera firstcontrol = first.GetComponent<controlcamera>();
+        firstcontrol.vvv = this.all_spaceships;
         //vaisseau.camera.enabled = true;
     }
 }
