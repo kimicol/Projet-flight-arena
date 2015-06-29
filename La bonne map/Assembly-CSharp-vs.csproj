@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\rotation_pale.cs" />
      <Compile Include="Assets\Scripts\selfDestruction.cs" />
      <Compile Include="Assets\Scripts\setting.cs" />
+     <Compile Include="Assets\Scripts\target_disappear.cs" />
      <Compile Include="Assets\Scripts\vie.cs" />
      <Compile Include="Assets\menus\decor_menu.cs" />
      <Compile Include="Assets\menus\mainmenu_script.cs" />
