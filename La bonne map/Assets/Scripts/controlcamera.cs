@@ -12,9 +12,21 @@ public class controlcamera : MonoBehaviour
     string[,] mort; // = new string[vvv.Length, 3];
     int x = 0;
 
+    int mode_jeu = 1;
+
 	// Use this for initialization
 	void Start ()
     {
+        mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        if (PlayerPrefs.HasKey("mode_jeu"))
+        {
+            mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("mode_jeu", mode_jeu);
+        }
+
         vie_restante = vaisseau.GetComponent<vie>();
 
         mort = new string[vvv.Length, 3];
@@ -43,7 +55,18 @@ public class controlcamera : MonoBehaviour
             GUI.Label(new Rect(Screen.width - 50, (Screen.height) - 30, 50, 30), "" + vie_restante.current_life);
         }
         */
-        GUI.Label(new Rect(Screen.width - 50, (camera.rect.y + 0.5f) * Screen.height - 30, 50, 30), "" + vie_restante.current_life);
+        if (mode_jeu == 2)
+        {
+            if (camera.rect.yMax == 1f)
+                GUI.Label(new Rect(Screen.width - 50, 0.5f * Screen.height - 30, 50, 30), "" + vie_restante.current_life);
+            else
+                GUI.Label(new Rect(Screen.width - 50, Screen.height - 30, 50, 30), "" + vie_restante.current_life);
+        }
+        else
+        {
+            GUI.Label(new Rect(Screen.width - 50, (camera.rect.yMax) * Screen.height - 30, 50, 30), "" + vie_restante.current_life);
+        }
+        //Debug.Log(camera.rect.yMax);
 
         for (int w = 0; w < x; w++)
         {
@@ -60,6 +83,9 @@ public class controlcamera : MonoBehaviour
             }
             GUI.Label(new Rect(1, (camera.rect.y + 0.5f) * Screen.height + (1 + 20 * w), 300, 25), "<size=20>" + "<color=" + coul + ">" + mort[w, 0] + "</color>" + " has slain " + "<color=" + mort[w, 2] + ">" + mort[w, 1] + "</color>" + "</size>", style);
         }
+
+        if (vie_restante.frag_limite <= 0)
+            this.camera.enabled = false;
     }
 	
 	// Update is called once per frame

@@ -176,6 +176,19 @@ public class vie : MonoBehaviour
             }
             this.tueur = "Bad piloting";
         }
+
+        if (collision.gameObject.tag == "balle")
+        {
+            this.tueur = collision.gameObject.name;
+            this.current_life -= 1;
+            if (current_life <= 0)
+            {
+                bool_killfeed = true;
+            }
+            //Debug.Log(current_life + " <- current_life + bool -> " + bool_killfeed);
+            audio.PlayOneShot(hitmarker);
+        }
+        ok = false;
     }
 
     void OnGUI()
