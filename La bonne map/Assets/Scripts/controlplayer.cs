@@ -32,6 +32,21 @@ public class controlplayer : MonoBehaviour
     private float tps_rech = 0.25f;
     public string vaisseau_nom;
 
+    private int mode_jeu = 1;
+
+    void Awake()
+    {
+        mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        if (PlayerPrefs.HasKey("mode_jeu"))
+        {
+            mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("mode_jeu", mode_jeu);
+        }
+    }
+
 	// Use this for initialization
 	void Start ()
     {
@@ -107,12 +122,18 @@ public class controlplayer : MonoBehaviour
             if (j == 0)
             {
                 /*instance =*/
-                Instantiate(projectile, origine.position, origine.rotation);
+                if(mode_jeu == 3)
+                    Network.Instantiate(projectile, origine.position, origine.rotation,0);
+                else
+                    Instantiate(projectile, origine.position, origine.rotation);
             }
             else
             {
                 /*instance =*/
-                Instantiate(projectile, origine2.position, origine2.rotation);
+                if(mode_jeu == 3)
+                    Network.Instantiate(projectile, origine2.position, origine2.rotation, 0);
+                else
+                    Instantiate(projectile, origine2.position, origine2.rotation);
             }
             j = (j + 1) % 2;
             recharge = tps_rech;

@@ -49,6 +49,15 @@ public class controlcameramulti : MonoBehaviour
             this.transform.Translate(new Vector3(0f, 3f, -9f));
         }
 
+        for (int i = 0; i < vvv.Length; i++)
+        {
+            all_vaisseaux[i] = vvv[i].GetComponent<vie>();
+            if (all_vaisseaux[i] == null)
+            {
+                all_vaisseaux[i] = vvv[i].GetComponentInChildren<vie>();
+            }
+        }
+
         foreach (var item in all_vaisseaux)
         {
             try
