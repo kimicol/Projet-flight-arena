@@ -122,8 +122,11 @@ public class controlplayer : MonoBehaviour
             if (j == 0)
             {
                 /*instance =*/
-                if(mode_jeu == 3)
-                    Network.Instantiate(projectile, origine.position, origine.rotation,0);
+                if (mode_jeu == 3)
+                {
+                    Network.Instantiate(projectile, origine.position, origine.rotation, 0);
+                    Debug.Log("test");
+                }
                 else
                     Instantiate(projectile, origine.position, origine.rotation);
             }

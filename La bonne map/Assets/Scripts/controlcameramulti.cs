@@ -23,12 +23,16 @@ public class controlcameramulti : MonoBehaviour
 
         mort = new string[vvv.Length, 3];
         all_vaisseaux = new vie[vvv.Length];
+
         for (int i = 0; i < vvv.Length; i++)
         {
-            all_vaisseaux[i] = vvv[i].GetComponent<vie>();
-            if (all_vaisseaux[i] == null)
+            if (vvv[i] != null)
             {
-                all_vaisseaux[i] = vvv[i].GetComponentInChildren<vie>();
+                all_vaisseaux[i] = vvv[i].GetComponent<vie>();
+                if (all_vaisseaux[i] == null)
+                {
+                    all_vaisseaux[i] = vvv[i].GetComponentInChildren<vie>();
+                }
             }
         }
     }
@@ -51,10 +55,13 @@ public class controlcameramulti : MonoBehaviour
 
         for (int i = 0; i < vvv.Length; i++)
         {
-            all_vaisseaux[i] = vvv[i].GetComponent<vie>();
-            if (all_vaisseaux[i] == null)
+            if (vvv[i] != null)
             {
-                all_vaisseaux[i] = vvv[i].GetComponentInChildren<vie>();
+                all_vaisseaux[i] = vvv[i].GetComponent<vie>();
+                if (all_vaisseaux[i] == null)
+                {
+                    all_vaisseaux[i] = vvv[i].GetComponentInChildren<vie>();
+                }
             }
         }
 
