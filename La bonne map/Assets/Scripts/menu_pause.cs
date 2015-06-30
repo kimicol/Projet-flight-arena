@@ -323,27 +323,27 @@ public class menu_pause : MonoBehaviour
 
         if (paused == 1) // Menu principal
         {
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 80, 300, 25), "Retour au jeu"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 80, 300, 25), "Return"))
             { 
                 paused = 0;
                 Time.timeScale = 1f; 
             }
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Options"))
                 paused = 2; 
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Retour au menu du jeu"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Main Menu"))
                 Application.LoadLevel(0);
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Quitter le jeu"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Close the game"))
                 Application.Quit();
         }
         else if (paused == 2) // option
         {
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Retour au menu pause"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Pause Menu"))
             { paused = 1; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 80, 300, 25), "Son"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 80, 300, 25), "Audio"))
             { paused = 3; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Réglage des touches"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 25), "Controllers settings"))
                 paused = 4;
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Vidéo"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 40, 300, 25), "Video"))
             { paused = 5; }
         }
         else if (paused == 3) // son
@@ -360,7 +360,7 @@ public class menu_pause : MonoBehaviour
             }
             PlayerPrefs.SetFloat("Volume", volume);
 
-            string[] toolbarStrings = new string[] { "Mono", "Stéréo", "Quad", "Surround", "5.1", "7.1" };
+            string[] toolbarStrings = new string[] { "Mono", "Stereo", "Quad", "Surround", "5.1", "7.1" };
             int var = 0;
             var = GUI.Toolbar(new Rect(Screen.width / 2 - 400, Screen.height / 2 + 50, 800, 25), var, toolbarStrings);
             switch (var)
@@ -385,9 +385,9 @@ public class menu_pause : MonoBehaviour
                     break;
             }
 
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 140, 300, 25), "Retour au menu pause"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 140, 300, 25), "Main menu"))
             { paused = 1; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 300, 25), "Retour au menu Options"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 300, 25), "Options menu"))
             { paused = 2; }
             #endregion
         }
@@ -396,9 +396,9 @@ public class menu_pause : MonoBehaviour
             #region touches
             menu_inputs();
 
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 250, 300, 25), "Retour au menu Options"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 250, 300, 25), "Options menu"))
             { paused = 2; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 280, 300, 25), "Retour au menu pause"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 280, 300, 25), "Pause menu"))
             { paused = 1; }
             #endregion
         }
@@ -445,7 +445,7 @@ public class menu_pause : MonoBehaviour
             bool coche = QualitySettings.softVegetation;
             coche = GUI.Toggle(new Rect(Screen.width / 2 - 100, Screen.height / 2 + 20, 800, 25), coche, "Soft Particles");
             QualitySettings.softVegetation = coche;
-            GUI.Label(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 60, 300, 25), "Luminosité");
+            GUI.Label(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 60, 300, 25), "Luminosity");
 
             Light lt = GameObject.FindObjectOfType<Light>();
             float lumi = lt.intensity;
@@ -457,9 +457,9 @@ public class menu_pause : MonoBehaviour
                 lt.intensity = newLength;
             }
 
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 180, 300, 25), "Retour au menu Options"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 180, 300, 25), "Options menu"))
             { paused = 2; }
-            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 220, 300, 25), "Retour au menu pause"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 160, Screen.height / 2 + 220, 300, 25), "Pause menu"))
             { paused = 1; }
 
             //Debug.Log("AA : " + temp + " filtre : " + temp2);
@@ -477,7 +477,7 @@ public class menu_pause : MonoBehaviour
             if (un_joueur)
             {
                 #region un_joueur
-                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 120, 50), "Avancer");
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 120, 50), "Forward");
                 if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 200, 150, 30), name_keys[0]))
                 {
                     c = 0;
@@ -485,7 +485,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 150, 120, 50), "Haut");
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 150, 120, 50), "Up");
                 if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 150, 150, 30), name_keys[1]))
                 {
                     c = 1;
@@ -493,7 +493,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 120, 50), "Bas");
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 120, 50), "Down");
                 if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 100, 150, 30), name_keys[2]))
                 {
                     c = 2;
@@ -501,7 +501,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 120, 50), "Gauche");
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 120, 50), "Left");
                 if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 50, 150, 30), name_keys[3]))
                 {
                     c = 3;
@@ -509,7 +509,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2, 120, 50), "Droite");
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2, 120, 50), "Right");
                 if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 150, 30), name_keys[4]))
                 {
                     c = 4;
@@ -517,7 +517,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 120, 50), "Rotation Gauche");
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 120, 50), "Left Rotation");
                 if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 50, 150, 30), name_keys[5]))
                 {
                     c = 5;
@@ -525,7 +525,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 120, 50), "Rotation Droite");
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 120, 50), "Right Rotation");
                 if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 100, 150, 30), name_keys[6]))
                 {
                     c = 6;
@@ -533,7 +533,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 150, 120, 50), "Tirer");
+                GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 150, 120, 50), "Fire");
                 if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 150, 150, 30), name_keys[7]))
                 {
                     c = 7;
@@ -545,7 +545,7 @@ public class menu_pause : MonoBehaviour
             else
             {
                 #region joueurs_split
-                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 200, 120, 50), "Avancer");
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 200, 120, 50), "Forward");
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 30), name_keys[8]))
                 {
                     c = 8;
@@ -553,7 +553,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 150, 120, 50), "Haut");
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 150, 120, 50), "Up");
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 150, 150, 30), name_keys[9]))
                 {
                     c = 9;
@@ -561,7 +561,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 100, 120, 50), "Bas");
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 100, 120, 50), "Down");
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 150, 30), name_keys[10]))
                 {
                     c = 10;
@@ -569,7 +569,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 50, 120, 50), "Gauche");
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 50, 120, 50), "Left");
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 150, 30), name_keys[11]))
                 {
                     c = 11;
@@ -577,7 +577,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2, 120, 50), "Droite");
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2, 120, 50), "Right");
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 150, 30), name_keys[12]))
                 {
                     c = 12;
@@ -585,7 +585,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 50, 120, 50), "Rotation Gauche");
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 50, 120, 50), "Letf Rotation");
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 150, 30), name_keys[13]))
                 {
                     c = 13;
@@ -593,7 +593,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 100, 120, 50), "Rotation Droite");
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 100, 120, 50), "Right Rotation");
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 100, 150, 30), name_keys[14]))
                 {
                     c = 14;
@@ -601,7 +601,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 150, 120, 50), "Tirer");
+                GUI.Label(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 150, 120, 50), "Fire");
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 150, 150, 30), name_keys[15]))
                 {
                     c = 15;
@@ -610,7 +610,7 @@ public class menu_pause : MonoBehaviour
                 }
 
                 //DEUXIEME JOUEUR
-                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 200, 120, 50), "Avancer");
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 200, 120, 50), "Forward");
                 if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 - 200, 150, 30), name_keys[16]))
                 {
                     c = 16;
@@ -618,7 +618,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 150, 120, 50), "Haut");
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 150, 120, 50), "Up");
                 if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 - 150, 150, 30), name_keys[17]))
                 {
                     c = 17;
@@ -626,7 +626,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 100, 120, 50), "Bas");
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 100, 120, 50), "Down");
                 if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 - 100, 150, 30), name_keys[18]))
                 {
                     c = 18;
@@ -634,7 +634,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 50, 120, 50), "Gauche");
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 - 50, 120, 50), "Left");
                 if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 - 50, 150, 30), name_keys[19]))
                 {
                     c = 19;
@@ -642,7 +642,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2, 120, 50), "Droite");
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2, 120, 50), "Right");
                 if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2, 150, 30), name_keys[20]))
                 {
                     c = 20;
@@ -650,7 +650,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 50, 120, 50), "Rotation Gauche");
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 50, 120, 50), "Left Rotation");
                 if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 + 50, 150, 30), name_keys[21]))
                 {
                     c = 21;
@@ -658,7 +658,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 100, 120, 50), "Rotation Droite");
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 100, 120, 50), "Right Rotation");
                 if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 + 100, 150, 30), name_keys[22]))
                 {
                     c = 22;
@@ -666,7 +666,7 @@ public class menu_pause : MonoBehaviour
                     b = false;
                 }
 
-                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 150, 120, 50), "Tirer");
+                GUI.Label(new Rect(Screen.width / 2 + 10, Screen.height / 2 + 150, 120, 50), "Fire");
                 if (GUI.Button(new Rect(Screen.width / 2 + 150, Screen.height / 2 + 150, 150, 30), name_keys[23]))
                 {
                     c = 23;
@@ -676,9 +676,9 @@ public class menu_pause : MonoBehaviour
                 #endregion
             }
 
-            if (GUI.Button(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 200, 300, 25), "Joueur 1"))
+            if (GUI.Button(new Rect(Screen.width / 2 - 300, Screen.height / 2 + 200, 300, 25), "Player 1"))
                 un_joueur = true;
-            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 200, 300, 25), "Deux joueurs (écran séparé)"))
+            if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 + 200, 300, 25), "Two players (split screen)"))
                 un_joueur = false;
 
             if (c >= 0 && change != KeyCode.None)

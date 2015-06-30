@@ -259,7 +259,7 @@ public class setting : MonoBehaviour
             }
 
             nb_joueur += 2;
-            Debug.Log("nb joueur " + nb_joueur);
+            //aDebug.Log("nb joueur " + nb_joueur);
 
             all_spaceships = new GameObject[nb_joueur];
 

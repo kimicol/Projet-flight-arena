@@ -31,11 +31,11 @@ public class clock_gui : MonoBehaviour
                 stop = 1 / stop;
                 try { steveGameObject = set.all_spaceships[0]; Debug.Log("Propre"); }
                 catch { steveGameObject = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI"); }
+                Debug.Log("pdnt");
                 AudioSource shut = steveGameObject.GetComponent<AudioSource>();
                 Debug.Log("avant");
                 if (shut == null)
                 {
-                    Debug.Log("pdnt");
                     shut = steveGameObject.GetComponentInChildren<AudioSource>();
                 }
                 Debug.Log("apres");

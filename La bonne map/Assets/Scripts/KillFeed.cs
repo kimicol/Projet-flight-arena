@@ -16,7 +16,7 @@ public class KillFeed : MonoBehaviour
             //Debug.Log(item.name);
             vaisseaux.Add(item);
         }
-        vaisseaux.RemoveRange(vaisseaux.Count - 2,vaisseaux.Count - 2);
+       // vaisseaux.RemoveRange(vaisseaux.Count - 2,vaisseaux.Count - 2);
 	}
 	
 	// Update is called once per frame
@@ -24,16 +24,20 @@ public class KillFeed : MonoBehaviour
     {
         foreach (var item in vaisseaux)
         {
-            if (item.bool_killfeed)
+            try
             {
-                //Debug.Log("name" + item.name + " tueur" + item.tueur);
-                mort[x, 0] = item.tueur;
-                mort[x, 1] = item.name;
-                mort[x, 2] = item.couleur;
-                x++;
-                item.bool_killfeed = false;
-                StartCoroutine(W8M8());
+                if (item.bool_killfeed)
+                {
+                    //Debug.Log("name" + item.name + " tueur" + item.tueur);
+                    mort[x, 0] = item.tueur;
+                    mort[x, 1] = item.name;
+                    mort[x, 2] = item.couleur;
+                    x++;
+                    item.bool_killfeed = false;
+                    StartCoroutine(W8M8());
+                }
             }
+            catch { }
         }
 	}
     IEnumerator W8M8()
