@@ -435,9 +435,11 @@ public class setting : MonoBehaviour
 
     void set_name()
     {
+		GUI.skin.label.fontSize = 20;
+		GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 20, 300, 25), "Enter your name :");
         this.name = GUI.TextField(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 20, 300, 25), name);
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 30, 300, 30), "Next"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 300, 30), "Next"))
         {
             menu = 1;
         }
@@ -475,6 +477,7 @@ public class setting : MonoBehaviour
 
     void menu_rejoindre()
     {
+		GUI.skin.label.fontSize = 20;
         GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), "Host IP : ");
 
         ip = GUI.TextField(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 300, 40), ip, 15);

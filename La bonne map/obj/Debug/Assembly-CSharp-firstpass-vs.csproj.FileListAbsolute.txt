@@ -20,3 +20,14 @@ F:\epita\Projet-flight-arena\La bonne map\Temp\bin\Debug\ICSharpCode.NRefactory.
 F:\epita\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
 F:\epita\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass.dll
 F:\epita\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass.pdb
+F:\projet git\Projet-flight-arena\La bonne map\Temp\bin\Debug\Assembly-CSharp-firstpass.dll
+F:\projet git\Projet-flight-arena\La bonne map\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+F:\projet git\Projet-flight-arena\La bonne map\Temp\bin\Debug\UnityEditor.dll
+F:\projet git\Projet-flight-arena\La bonne map\Temp\bin\Debug\UnityEngine.dll
+F:\projet git\Projet-flight-arena\La bonne map\Temp\bin\Debug\Mono.Cecil.dll
+F:\projet git\Projet-flight-arena\La bonne map\Temp\bin\Debug\nunit.framework.dll
+F:\projet git\Projet-flight-arena\La bonne map\Temp\bin\Debug\Unity.DataContract.dll
+F:\projet git\Projet-flight-arena\La bonne map\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\projet git\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass-vs.csprojResolveAssemblyReference.cache
+F:\projet git\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass.dll
+F:\projet git\Projet-flight-arena\La bonne map\obj\Debug\Assembly-CSharp-firstpass.pdb

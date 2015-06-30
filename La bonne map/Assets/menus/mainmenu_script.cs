@@ -20,6 +20,7 @@ public class mainmenu_script : MonoBehaviour
     public Texture carte1;
     public Texture carte2;
     public Texture carte3;
+	public Texture carte4;
 	public Texture logo;
     private int load_after = 0;
     private int choix_carte = 1;
@@ -562,6 +563,8 @@ public class mainmenu_script : MonoBehaviour
                 break;
                 //mettre les IA
             case 2:
+				if(mode_jeu == 3)
+					selection = 3;
                 GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 30, 300, 30), "Number of AI player :");
                 string input = GUI.TextField(new Rect(Screen.width / 2 - 50, Screen.height / 2, 100, 30), "" + nb_ia);
                 if(int.TryParse(input, out nb_ia))
@@ -586,7 +589,10 @@ public class mainmenu_script : MonoBehaviour
             case 3:
                 if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Back"))
                 {
-                    selection = 2;
+					if(mode_jeu == 3)
+						selection = 1;
+					else
+						selection = 2;
                 }
                 if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 200, 150, 150), carte1))
                 {
@@ -603,6 +609,11 @@ public class mainmenu_script : MonoBehaviour
                     choix_carte = 3;
                     choix_menu = 6;
                 }
+				if (mode_jeu == 1 && GUI.Button(new Rect(Screen.width / 2, Screen.height / 2 - 50, 150, 150), carte4))
+				{
+					choix_carte = 4;
+					choix_menu = 6;
+				}
                 break;
         }
     }
