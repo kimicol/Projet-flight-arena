@@ -437,12 +437,12 @@ public class setting : MonoBehaviour
     {
         this.name = GUI.TextField(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 20, 300, 25), name);
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 30), "Continuer"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 30, 300, 30), "Next"))
         {
             menu = 1;
         }
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Retour au menu"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Back to menu"))
         {
             Application.LoadLevel(0);
         }
@@ -450,23 +450,24 @@ public class setting : MonoBehaviour
 
     void select_connexion()
     {
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 300, 30), "Héberger"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 50, 300, 30), "Host"))
         {
+            all_spaceships = new GameObject[8];
+
             Network.InitializeServer(8, 25000, true);
             if (Network.peerType == NetworkPeerType.Server)
             {
                 menu = 3;
-                all_spaceships = new GameObject[8];
                 //nouveau_joueur();
             }
         }
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 30), "Rejoindre"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2, 300, 30), "Join"))
         {
             menu = 2;
         }
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Retour"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 50, 300, 30), "Back"))
         {
             menu = 0;
         }
@@ -474,12 +475,12 @@ public class setting : MonoBehaviour
 
     void menu_rejoindre()
     {
-        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), "IP de l'hébergeur : ");
+        GUI.Label(new Rect(Screen.width / 2 - 200, Screen.height / 2, 100, 30), "Host IP : ");
 
         ip = GUI.TextField(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 30, 300, 40), ip, 15);
 
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Rejoindre"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 100, 400, 25), "Join"))
         {
             Network.Connect(ip, port);
             if (Network.peerType == NetworkPeerType.Client)
@@ -489,7 +490,7 @@ public class setting : MonoBehaviour
             }
         }
 
-        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Retour"))
+        if (GUI.Button(new Rect(Screen.width / 2 - 200, Screen.height / 2 + 150, 400, 25), "Back"))
             menu = 1;
     }
 
@@ -553,14 +554,15 @@ public class setting : MonoBehaviour
             i++;
         }
 
+        //Debug.Log(i);
         if(i < all_spaceships.Length)
         {
             all_spaceships[i] = vaisseau_multi;
+            Camera first = all_spaceships[i].GetComponentInChildren<Camera>();
+            controlcameramulti firstcontrol = first.GetComponent<controlcameramulti>();
+            firstcontrol.vvv = this.all_spaceships;
         }
-
-        Camera first = all_spaceships[i].GetComponentInChildren<Camera>();
-        controlcamera firstcontrol = first.GetComponent<controlcamera>();
-        firstcontrol.vvv = this.all_spaceships;
+        
         //vaisseau.camera.enabled = true;
     }
 }

@@ -37,7 +37,27 @@ public class vie : MonoBehaviour
 
     public GameObject[] all_spaceships;
     private vie[] all_life;
+
+    private int mode_jeu = 1;
     #endregion
+
+    void Awake()
+    {
+        mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        if (PlayerPrefs.HasKey("mode_jeu"))
+        {
+            mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("mode_jeu", mode_jeu);
+        }
+
+        if(mode_jeu == 3)
+        {
+            frag_limite = 9999;
+        }
+    }
 
     void Start()
     {
@@ -52,16 +72,34 @@ public class vie : MonoBehaviour
         all_life = new vie[all_spaceships.Length];
         for (int i = 0; i < all_spaceships.Length; i++)
         {
-            all_life[i] = all_spaceships[i].GetComponent<vie>();
-            if(all_life[i] == null)
+            if (all_spaceships[i] != null)
             {
-                all_life[i] = all_spaceships[i].GetComponentInChildren<vie>();
+                all_life[i] = all_spaceships[i].GetComponent<vie>();
+                if (all_life[i] == null)
+                {
+                    all_life[i] = all_spaceships[i].GetComponentInChildren<vie>();
+                }
             }
         }
     }
 
     void Update()
     {
+        if (mode_jeu == 3)
+        {
+            for (int i = 0; i < all_spaceships.Length; i++)
+            {
+                if (all_spaceships[i] != null)
+                {
+                    all_life[i] = all_spaceships[i].GetComponent<vie>();
+                    if (all_life[i] == null)
+                    {
+                        all_life[i] = all_spaceships[i].GetComponentInChildren<vie>();
+                    }
+                }
+            }
+        }
+
         //Debug.Log(bool_killfeed);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
@@ -237,7 +275,7 @@ public class vie : MonoBehaviour
         int count = -1;
         for (int i = 0; i < all_life.Length; i++)
         {
-            if(all_life[i].current_life > 0)
+            if(all_life[i] != null && all_life[i].current_life > 0)
             {
                 alive++;
                 count = i;
