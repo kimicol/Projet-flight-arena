@@ -16,6 +16,16 @@ public class multi_input : controlplayer
     {
         //enabled = networkView.isMine;
         rigidbody.isKinematic = !networkView.isMine;
+
+        mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        if (PlayerPrefs.HasKey("mode_jeu"))
+        {
+            mode_jeu = PlayerPrefs.GetInt("mode_jeu", mode_jeu);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("mode_jeu", mode_jeu);
+        }
     }
 
 	// Use this for initialization
