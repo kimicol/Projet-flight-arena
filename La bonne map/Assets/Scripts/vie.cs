@@ -11,6 +11,7 @@ public class vie : MonoBehaviour
     private bool killed;
     public string name;
     public bool bool_killfeed;
+    private bool test_feed = false;
     public string tueur;
     public string couleur;
     private bool affiche = false;
@@ -105,6 +106,7 @@ public class vie : MonoBehaviour
                         return;
                     }
                     //Debug.Log("hue");
+                    test_feed = false;
                     transform.rotation = Quaternion.AngleAxis(0, Vector3.left);
                     respawn_position.Set(rnd.Next(-120, 120), rnd.Next(80), rnd.Next(-120, 120));
                     transform.position = respawn_position;
@@ -156,7 +158,12 @@ public class vie : MonoBehaviour
             this.current_life -= 1;
             if (current_life <= 0)
             {
-                bool_killfeed = true;
+                if (!test_feed)
+                {
+                    bool_killfeed = true;
+                    test_feed = true;
+                }
+                
             }
             //Debug.Log(current_life + " <- current_life + bool -> " + bool_killfeed);
             audio.PlayOneShot(hitmarker);
@@ -172,7 +179,11 @@ public class vie : MonoBehaviour
             ok = false;
             if (current_life <= 0)
             {
-                bool_killfeed = true;
+                if (!test_feed)
+                {
+                    bool_killfeed = true;
+                    test_feed = true;
+                }
             }
             this.tueur = "Bad piloting";
         }
@@ -212,7 +223,6 @@ public class vie : MonoBehaviour
                 Application.LoadLevel(0);
             if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 40, 300, 25), "Quitter le jeu"))
                 Application.Quit();
-
         }
     }
 

@@ -25,10 +25,12 @@ public class clock_gui : MonoBehaviour
 
         if ((limite_temps - Convert.ToInt32(Time.time - startTime)) < 1)
         {
+            GameObject steveGameObject;
             try
             {
                 stop = 1 / stop;
-                GameObject steveGameObject = set.all_spaceships[0];
+                try { steveGameObject = set.all_spaceships[0]; Debug.Log("Propre"); }
+                catch { steveGameObject = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI"); }
                 AudioSource shut = steveGameObject.GetComponent<AudioSource>();
                 if (shut == null)
                 {
@@ -41,9 +43,19 @@ public class clock_gui : MonoBehaviour
             }
             catch
             { }
-
-            GameObject vaisseau = set.all_spaceships[0];
-            int stockage = -100;
+            try
+            {
+                foreach (var item in set.all_spaceships)
+	{
+        item.GetComponent<controlcamera>();
+	}
+            }
+            catch { Debug.Log("non"); }
+            vie john = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI").GetComponent<vie>();
+            john.gameover("GAME DRAW");
+            
+            //GameObject vaisseau = set.all_spaceships[0];
+          /*  int stockage = -100;
             int index = 0;
             bool egalite = false;
             for (int i = 0; i < set.all_spaceships.Length; i++)
@@ -99,7 +111,7 @@ public class clock_gui : MonoBehaviour
                 {
                     set.all_spaceships[index].GetComponentInChildren<vie>().gameover("GAME DRAW");
                 }
-            }
+            } */
         }
 	}
 

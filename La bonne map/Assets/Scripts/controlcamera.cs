@@ -10,7 +10,6 @@ public class controlcamera : MonoBehaviour
     public GameObject[] vvv;
     private vie[] all_vaisseaux;
     string[,] mort; // = new string[vvv.Length, 3];
-    int x = 0;
 
     int mode_jeu = 1;
 
@@ -44,19 +43,11 @@ public class controlcamera : MonoBehaviour
     void OnGUI()
     {
         GUI.skin = sk;
-        /*
-        Debug.Log(camera.rect.y);
-        if (this.camera.rect.yMax == 1)
-        {
-            GUI.Label(new Rect(Screen.width - 50, (0.5f * Screen.height) - 30, 50, 30), "" + vie_restante.current_life);
-        }
-        else
-        {
-            GUI.Label(new Rect(Screen.width - 50, (Screen.height) - 30, 50, 30), "" + vie_restante.current_life);
-        }
-        */
+        
         if (mode_jeu == 2)
         {
+            if (vie_restante.current_life < 0)
+                vie_restante.current_life = 0;
             if (camera.rect.yMax == 1f)
                 GUI.Label(new Rect(Screen.width - 50, 0.5f * Screen.height - 30, 50, 30), "" + vie_restante.current_life);
             else
@@ -64,26 +55,11 @@ public class controlcamera : MonoBehaviour
         }
         else
         {
+            if (vie_restante.current_life < 0)
+                vie_restante.current_life = 0;
             GUI.Label(new Rect(Screen.width - 50, (camera.rect.yMax) * Screen.height - 30, 50, 30), "" + vie_restante.current_life);
         }
         //Debug.Log(camera.rect.yMax);
-
-        for (int w = 0; w < x; w++)
-        {
-            GUIStyle style = new GUIStyle();
-            style.richText = true;
-            string coul;
-            if (mort[w, 2] == "red")
-            {
-                coul = "blue";
-            }
-            else
-            {
-                coul = "red";
-            }
-            GUI.Label(new Rect(1, (camera.rect.y + 0.5f) * Screen.height + (1 + 20 * w), 300, 25), "<size=20>" + "<color=" + coul + ">" + mort[w, 0] + "</color>" + " has slain " + "<color=" + mort[w, 2] + ">" + mort[w, 1] + "</color>" + "</size>", style);
-        }
-
         if (vie_restante.frag_limite <= 0)
             this.camera.enabled = false;
     }
@@ -96,44 +72,6 @@ public class controlcamera : MonoBehaviour
             this.transform.position = vaisseau.transform.position;
             this.transform.Translate(new Vector3(0f, 3f, -9f));
             this.transform.rotation = vaisseau.transform.rotation;
-        }
-
-        foreach (var item in all_vaisseaux)
-        {
-            if (item.bool_killfeed)
-            {
-                bool b = true;
-                for (int i = 0; i < x; i++)
-                {
-                    for (int j = 0; j < all_vaisseaux.Length; j++)
-                    {
-                        b = b && all_vaisseaux[j].name != mort[i, 1];
-                    }
-                }
-
-                if (b)
-                {
-                    //Debug.Log("name" + item.name + " tueur" + item.tueur);
-                    mort[x, 0] = item.tueur;
-                    mort[x, 1] = item.name;
-                    mort[x, 2] = item.couleur;
-                    x++;
-                    item.bool_killfeed = false;
-                    StartCoroutine(W8M8());
-                }
-            }
-        }
-    }
-
-    IEnumerator W8M8()
-    {
-        yield return new WaitForSeconds(2.0f);
-        x--;
-        mort[0, 0] = ""; mort[0, 1] = "";
-        for (int i = 0; i < x - 1; i++)
-        {
-            mort[i, 0] = mort[i + 1, 0];
-            mort[i, 1] = mort[i + 1, 1];
         }
     }
 }

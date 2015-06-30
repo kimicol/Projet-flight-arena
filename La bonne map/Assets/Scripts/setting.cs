@@ -203,21 +203,25 @@ public class setting : MonoBehaviour
                 pos = Vector3.zero;
                 pos.Set(rnd.Next(-100, 100), rnd.Next(-10, 50), rnd.Next(-100, 100));
 
-                switch (rnd.Next(0, 3))
+                try
                 {
-                    case 0:
-                        all_spaceships[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                        break;
-                    case 1:
-                        all_spaceships[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                        break;
-                    case 2:
-                        all_spaceships[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                        break;
-                    default:
-                        all_spaceships[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
-                        break;
+                    switch (rnd.Next(0, 3))
+                    {
+                        case 0:
+                            all_spaceships[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                            break;
+                        case 1:
+                            all_spaceships[i] = Instantiate(IA2, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                            break;
+                        case 2:
+                            all_spaceships[i] = Instantiate(IA3, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                            break;
+                        default:
+                            all_spaceships[i] = Instantiate(IA1, pos, Quaternion.AngleAxis(0, Vector3.left)) as GameObject;
+                            break;
+                    }
                 }
+                catch { }
             }
 
             Camera first = all_spaceships[0].GetComponentInChildren<Camera>();
@@ -255,6 +259,7 @@ public class setting : MonoBehaviour
             }
 
             nb_joueur += 2;
+            Debug.Log("nb joueur " + nb_joueur);
 
             all_spaceships = new GameObject[nb_joueur];
 
