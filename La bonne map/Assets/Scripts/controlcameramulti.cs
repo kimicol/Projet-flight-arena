@@ -20,7 +20,11 @@ public class controlcameramulti : MonoBehaviour
         //vie_restante = vaisseau.GetComponents<vie>()[0];
 
         vie_restante = vaisseau.GetComponent<vie>();
+    }
 
+	// Use this for initialization
+	void Start ()
+    {
         mort = new string[vvv.Length, 3];
         all_vaisseaux = new vie[vvv.Length];
 
@@ -35,12 +39,6 @@ public class controlcameramulti : MonoBehaviour
                 }
             }
         }
-    }
-
-	// Use this for initialization
-	void Start ()
-    {
-
 	}
 	
 	// Update is called once per frame
@@ -52,7 +50,7 @@ public class controlcameramulti : MonoBehaviour
             this.transform.position = vaisseau.transform.position;
             this.transform.Translate(new Vector3(0f, 3f, -9f));
         }
-
+        
         for (int i = 0; i < vvv.Length; i++)
         {
             if (vvv[i] != null)
