@@ -219,6 +219,8 @@ public class vie : MonoBehaviour
     
     void OnCollisionEnter(Collision collision)
     {
+        //Debug.Log(collision.gameObject.name);
+
         if(collision.gameObject.tag != "ia_coll")
         {
             this.current_life -= 2;

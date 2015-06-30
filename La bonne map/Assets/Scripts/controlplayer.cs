@@ -109,7 +109,6 @@ public class controlplayer : MonoBehaviour
     {
         if (recharge <= 0f)
         {
-            Debug.Log(mode_jeu);
             projectile.name = this.gameObject.GetComponent<vie>().name;
             //Rigidbody instance;
             if (j == 0)
@@ -117,7 +116,6 @@ public class controlplayer : MonoBehaviour
                 /*instance =*/
                 if (mode_jeu == 3)
                 {
-                    //Debug.Log("test");
                     Network.Instantiate(projectile, origine.position, origine.rotation, 0);
                 }
                 else
@@ -128,7 +126,6 @@ public class controlplayer : MonoBehaviour
                 /*instance =*/
                 if(mode_jeu == 3)
                 {
-                    //Debug.Log("test");
                     Network.Instantiate(projectile, origine2.position, origine2.rotation, 0);
                 }
                 else

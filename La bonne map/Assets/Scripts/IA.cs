@@ -63,6 +63,7 @@ public class IA : controlplayer
        
         //Dodge buildings
         fire = false;
+        av = true;
 
         if(gauche.col)
         {
