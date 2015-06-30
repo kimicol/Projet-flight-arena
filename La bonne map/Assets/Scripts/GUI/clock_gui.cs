@@ -29,19 +29,19 @@ public class clock_gui : MonoBehaviour
             try
             {
                 stop = 1 / stop;
-                try { steveGameObject = set.all_spaceships[0]; Debug.Log("Propre"); }
+                try { steveGameObject = set.all_spaceships[0]; /*Debug.Log("Propre"); */}
                 catch { steveGameObject = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI"); }
-                Debug.Log("pdnt");
+                /*Debug.Log("pdnt");*/
                 AudioSource shut = steveGameObject.GetComponent<AudioSource>();
-                Debug.Log("avant");
+                //Debug.Log("avant");
                 if (shut == null)
                 {
                     shut = steveGameObject.GetComponentInChildren<AudioSource>();
                 }
-                Debug.Log("apres");
+                //Debug.Log("apres");
                 shut.audio.clip = endgame_sound;
                 shut.PlayOneShot(endgame_sound);
-                Debug.Log("debug son");
+                //Debug.Log("debug son");
                 stop--;
 
             }
@@ -54,7 +54,7 @@ public class clock_gui : MonoBehaviour
         item.GetComponent<controlcamera>();
 	}
             }
-            catch { Debug.Log("non"); }
+            catch { /*Debug.Log("non");*/ }
             vie john = GameObject.Find("IL EST BEAU LE VAISSEAU OUI OUI").GetComponent<vie>();
             john.gameover("GAME DRAW");
             

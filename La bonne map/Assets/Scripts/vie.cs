@@ -103,9 +103,17 @@ public class vie : MonoBehaviour
         //Debug.Log(bool_killfeed);
         if (current_life <= 0)//&& !anim.isPlaying)
         {
+            GameObject explode;
+
             if (can_explode)
             {
-                GameObject explode = Instantiate(explosion, this.transform.position, this.transform.rotation) as GameObject;
+                if(mode_jeu == 3)
+                {
+                    explode = Network.Instantiate(explosion, this.transform.position, this.transform.rotation, 0) as GameObject;
+                }
+                else
+                    explode = Instantiate(explosion, this.transform.position, this.transform.rotation) as GameObject;
+
                 can_explode = false;
             }
 
